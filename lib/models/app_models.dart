@@ -6,6 +6,14 @@ class AppUser {
   final String name;
   final String email;
   final String goal;
+
+  AppUser copyWith({String? name, String? email, String? goal}) {
+    return AppUser(
+      name: name ?? this.name,
+      email: email ?? this.email,
+      goal: goal ?? this.goal,
+    );
+  }
 }
 
 class DashboardSummary {

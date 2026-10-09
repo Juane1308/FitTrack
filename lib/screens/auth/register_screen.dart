@@ -5,7 +5,7 @@ import '../../core/validators/validators.dart';
 import '../../providers/auth_provider.dart';
 import 'auth_messages.dart';
 import 'auth_scaffold.dart';
-import 'login_screen.dart';
+import 'verify_email_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -51,23 +51,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
-    await showDialog<void>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Cuenta creada correctamente.'),
-        content: const Text('Ahora puedes iniciar sesión en FITTRACK.'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('Continuar'),
-          ),
-        ],
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute<void>(
+        builder: (_) => VerifyEmailScreen(
+          email: _emailController.text.trim().toLowerCase(),
+        ),
       ),
-    );
-    if (!mounted) return;
-    Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute<void>(builder: (_) => const LoginScreen()),
-      (_) => false,
     );
   }
 

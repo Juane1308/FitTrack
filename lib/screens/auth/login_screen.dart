@@ -3,11 +3,13 @@ import 'package:provider/provider.dart';
 
 import '../../core/validators/validators.dart';
 import '../../providers/auth_provider.dart';
+import '../../repositories/auth_repository.dart';
 import '../home/main_shell.dart';
 import 'auth_messages.dart';
 import 'auth_scaffold.dart';
 import 'forgot_password_screen.dart';
 import 'register_screen.dart';
+import 'verify_email_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -36,6 +38,16 @@ class _LoginScreenState extends State<LoginScreen> {
       password: _passwordController.text,
     );
     if (!mounted) return;
+    if (result.status == AuthResultStatus.emailNotVerified) {
+      Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (_) => VerifyEmailScreen(
+            email: _emailController.text.trim().toLowerCase(),
+          ),
+        ),
+      );
+      return;
+    }
     if (result.isSuccess) {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute<void>(builder: (_) => const MainShell()),

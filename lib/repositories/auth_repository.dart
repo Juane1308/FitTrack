@@ -9,13 +9,20 @@ enum AuthResultStatus {
   emailAlreadyRegistered,
   invalidCredentials,
   inactiveAccount,
+  emailNotVerified,
+  verificationFailed,
+  termsNotAccepted,
+  networkError,
+  unknownError,
 }
 
 class AuthResult {
-  const AuthResult({required this.status, this.user});
+  const AuthResult({required this.status, this.user, this.message, this.sessionToken});
 
   final AuthResultStatus status;
   final AppUser? user;
+  final String? message;
+  final String? sessionToken;
 
   bool get isSuccess => status == AuthResultStatus.success;
 }
@@ -25,11 +32,20 @@ abstract interface class AuthRepository {
     required String name,
     required String email,
     required String password,
+    bool acceptTerms = true,
   });
 
   Future<AuthResult> login({required String email, required String password});
 
-  Future<void> requestPasswordReset(String email);
+  Future<AuthResult?> restoreSession();
+
+  Future<AuthResult> verifyEmail({required String email, required String code});
+
+  Future<AuthResult> resendVerificationCode({required String email});
+
+  Future<AuthResult> requestPasswordReset(String email);
+
+  Future<void> logout();
 }
 
 class MockAuthRepository implements AuthRepository {
@@ -40,8 +56,12 @@ class MockAuthRepository implements AuthRepository {
     required String name,
     required String email,
     required String password,
+    bool acceptTerms = true,
   }) async {
     await Future<void>.delayed(const Duration(milliseconds: 250));
+    if (!acceptTerms) {
+      return const AuthResult(status: AuthResultStatus.termsNotAccepted);
+    }
     final normalizedEmail = email.trim().toLowerCase();
     if (_users.containsKey(normalizedEmail)) {
       return const AuthResult(status: AuthResultStatus.emailAlreadyRegistered);
@@ -80,9 +100,30 @@ class MockAuthRepository implements AuthRepository {
   }
 
   @override
-  Future<void> requestPasswordReset(String email) async {
+  Future<AuthResult?> restoreSession() async => null;
+
+  @override
+  Future<AuthResult> verifyEmail({required String email, required String code}) async {
+    await Future<void>.delayed(const Duration(milliseconds: 250));
+    return const AuthResult(status: AuthResultStatus.success);
+  }
+
+  @override
+  Future<AuthResult> resendVerificationCode({required String email}) async {
+    await Future<void>.delayed(const Duration(milliseconds: 250));
+    return const AuthResult(status: AuthResultStatus.success);
+  }
+
+  @override
+  Future<AuthResult> requestPasswordReset(String email) async {
     await Future<void>.delayed(const Duration(milliseconds: 250));
     // El MOCK no envía correos. Tampoco revela si una dirección existe.
+    return const AuthResult(status: AuthResultStatus.success);
+  }
+
+  @override
+  Future<void> logout() async {
+    await Future<void>.delayed(const Duration(milliseconds: 100));
   }
 
   String _hashPassword(String password) {
