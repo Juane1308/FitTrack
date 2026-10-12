@@ -61,6 +61,8 @@ flutter:
   assets:
     - assets/images/fittrack_logo.png
     - assets/images/nutrition/foods/categories/
+    - assets/images/nutrition/foods/items/
+    - backend/data/nutrition/foods.json
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
