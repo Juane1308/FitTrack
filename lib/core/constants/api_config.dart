@@ -3,6 +3,14 @@ import 'package:flutter/foundation.dart';
 class ApiConfig {
   const ApiConfig._();
 
+  /// La app usa autenticación simulada por defecto para poder probar el flujo
+  /// sin levantar el backend. Activa la API al ejecutar con
+  /// --dart-define=FITTRACK_USE_API=true.
+  static const useApi = bool.fromEnvironment(
+    'FITTRACK_USE_API',
+    defaultValue: false,
+  );
+
   static const _configuredBaseUrl = String.fromEnvironment(
     'FITTRACK_API_URL',
   );

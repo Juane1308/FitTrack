@@ -5,6 +5,7 @@ import '../../core/validators/validators.dart';
 import '../../providers/auth_provider.dart';
 import 'auth_messages.dart';
 import 'auth_scaffold.dart';
+import 'login_screen.dart';
 import 'verify_email_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -40,7 +41,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
-    final result = await context.read<AuthProvider>().register(
+    final authProvider = context.read<AuthProvider>();
+    final result = await authProvider.register(
       name: _nameController.text,
       email: _emailController.text,
       password: _passwordController.text,
@@ -48,6 +50,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (!mounted) return;
     if (!result.isSuccess) {
       _showMessage(authErrorMessage(result.status));
+      return;
+    }
+
+    if (!authProvider.requiresEmailVerification) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Cuenta simulada creada. Ya puedes iniciar sesión.'),
+        ),
+      );
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute<void>(builder: (_) => const LoginScreen()),
+      );
       return;
     }
 

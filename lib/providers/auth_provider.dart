@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import '../core/constants/api_config.dart';
 import '../models/app_models.dart';
 import '../repositories/api_auth_repository.dart';
 import '../repositories/auth_repository.dart';
@@ -8,11 +9,14 @@ enum AuthStatus { loggedOut, loading, authenticated }
 
 class AuthProvider extends ChangeNotifier {
   AuthProvider({AuthRepository? repository})
-    : _repository = repository ?? ApiAuthRepository() {
+    : _repository = repository ??
+          (ApiConfig.useApi ? ApiAuthRepository() : MockAuthRepository()),
+      _mockRepository = MockAuthRepository() {
     initialization = _restoreSession();
   }
 
-  final AuthRepository _repository;
+  AuthRepository _repository;
+  final MockAuthRepository _mockRepository;
   AuthStatus _status = AuthStatus.loggedOut;
   AppUser? _currentUser;
   String? _sessionToken;
@@ -22,6 +26,7 @@ class AuthProvider extends ChangeNotifier {
   AppUser? get currentUser => _currentUser;
   bool get isAuthenticated => _status == AuthStatus.authenticated;
   bool get isLoading => _status == AuthStatus.loading;
+  bool get requiresEmailVerification => _repository is ApiAuthRepository;
   String? get sessionToken => _sessionToken;
 
   Future<void> _restoreSession() async {
@@ -50,11 +55,13 @@ class AuthProvider extends ChangeNotifier {
   }) async {
     _status = AuthStatus.loading;
     notifyListeners();
-    final result = await _repository.register(
-      name: name,
-      email: email,
-      password: password,
-      acceptTerms: acceptTerms,
+    final result = await _withMockFallback(
+      (repository) => repository.register(
+        name: name,
+        email: email,
+        password: password,
+        acceptTerms: acceptTerms,
+      ),
     );
     _status = AuthStatus.loggedOut;
     notifyListeners();
@@ -67,7 +74,9 @@ class AuthProvider extends ChangeNotifier {
   }) async {
     _status = AuthStatus.loading;
     notifyListeners();
-    final result = await _repository.login(email: email, password: password);
+    final result = await _withMockFallback(
+      (repository) => repository.login(email: email, password: password),
+    );
     if (result.isSuccess) {
       _currentUser = result.user;
       _sessionToken = result.sessionToken;
@@ -80,15 +89,33 @@ class AuthProvider extends ChangeNotifier {
   }
 
   Future<AuthResult> verifyEmail({required String email, required String code}) {
-    return _repository.verifyEmail(email: email, code: code);
+    return _withMockFallback(
+      (repository) => repository.verifyEmail(email: email, code: code),
+    );
   }
 
   Future<AuthResult> resendVerificationCode({required String email}) {
-    return _repository.resendVerificationCode(email: email);
+    return _withMockFallback(
+      (repository) => repository.resendVerificationCode(email: email),
+    );
   }
 
   Future<AuthResult> requestPasswordReset(String email) {
-    return _repository.requestPasswordReset(email);
+    return _withMockFallback(
+      (repository) => repository.requestPasswordReset(email),
+    );
+  }
+
+  Future<AuthResult> _withMockFallback(
+    Future<AuthResult> Function(AuthRepository repository) action,
+  ) async {
+    var result = await action(_repository);
+    if (result.status == AuthResultStatus.networkError &&
+        _repository is ApiAuthRepository) {
+      _repository = _mockRepository;
+      result = await action(_repository);
+    }
+    return result;
   }
 
   Future<void> logout() async {
