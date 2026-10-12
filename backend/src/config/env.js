@@ -26,3 +26,5 @@ export function hasDatabaseUrl() {
 export function hasDirectUrl() {
   return env.DIRECT_URL.startsWith('postgres://') || env.DIRECT_URL.startsWith('postgresql://');
 }
+
+

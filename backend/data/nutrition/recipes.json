@@ -1,0 +1,2127 @@
+{
+  "source": "Kaggle: Food Ingredients and Recipes Dataset with Images; valores de energía y macronutrientes complementados con Epicurious Recipes with Rating and Nutrition.",
+  "categories": {
+    "desayunos": [
+      {
+        "id": 1105065748,
+        "nombre": "Huevo Frito Con Chile Y Aceite De Oliva, Aguacate Y Germinados",
+        "ingredientes": [
+          "1 taza de brotes (como girasol, rábano o alfalfa)",
+          "1 cucharadita de jugo de lima fresco",
+          "Sal kosher, pimienta recién molida",
+          "2 cucharadas de aceite de oliva",
+          "2 huevos grandes",
+          "Hojuelas de pimiento rojo triturado",
+          "2 tortillas o panes planos de granos germinados",
+          "Salsa picante (para servir)",
+          "1 onza de queso feta",
+          "Rodajas de aguacate y gajos de lima (para servir)"
+        ],
+        "ingredientes_principales": [
+          "1 taza de brotes (como girasol, rábano o alfalfa)",
+          "1 cucharadita de jugo de lima fresco",
+          "Sal kosher, pimienta recién molida",
+          "2 cucharadas de aceite de oliva"
+        ],
+        "instrucciones": "Mezcle los brotes con el jugo de limón en un tazón pequeño; Sazón con sal y pimienta.\nCaliente el aceite en una sartén mediana a fuego medio alto. Cuando el aceite esté caliente, rompa ambos huevos en una sartén y sazona con sal y pimienta. El aceite debe burbujear alrededor de los huevos desde el principio. Cocine, girando la sartén de vez en cuando, hasta que las claras estén doradas y crujientes en los bordes y se asienten alrededor de la yema (que debe estar líquida), aproximadamente 2 minutos. Agrega hojuelas de pimiento rojo al aceite y retira la sartén del fuego. Mientras tanto, caliente las tortillas sobre una hornilla de gas hasta que estén calientes y ligeramente carbonizadas en algunos puntos (o calientes en el horno o en un horno tostador).\nColoque los brotes sobre las tortillas y cuba con huevos fritos. Vierta el aceite de chile de la sartén y rocíe con la salsa picante. Desmenuza el queso feta y sírvelo con rodajas de aguacate, rodajas de lima y más salsa picante.",
+        "pasos": [
+          "Mezcle los brotes con el jugo de limón en un tazón pequeño; Sazón con sal y pimienta.",
+          "Caliente el aceite en una sartén mediana a fuego medio alto. Cuando el aceite esté caliente, rompa ambos huevos en una sartén y sazona con sal y pimienta. El aceite debe burbujear alrededor de los huevos desde el principio. Cocine, girando la sartén de vez en cuando, hasta que las claras estén doradas y crujientes en los bordes y se asienten alrededor de la yema (que debe estar líquida), aproximadamente 2 minutos. Agrega hojuelas de pimiento rojo al aceite y retira la sartén del fuego. Mientras tanto, caliente las tortillas sobre una hornilla de gas hasta que estén calientes y ligeramente carbonizadas en algunos puntos (o calientes en el horno o en un horno tostador).",
+          "Coloque los brotes sobre las tortillas y cuba con huevos fritos. Vierta el aceite de chile de la sartén y rocíe con la salsa picante. Desmenuza el queso feta y sírvelo con rodajas de aguacate, rodajas de lima y más salsa picante."
+        ],
+        "categorias_fittrack": [
+          "desayunos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-1105065748.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 240,
+        "valor_nutricional": "240 kcal por porción",
+        "proteina_g": 9,
+        "carbohidratos_g": 3.8,
+        "grasas_g": 21,
+        "dificultad": ""
+      },
+      {
+        "id": 3739879119,
+        "nombre": "Hash de papa con pimiento shishito y huevos fritos",
+        "ingredientes": [
+          "1 libra de patatas nuevas rojas pequeñas, lavadas (unas 10)",
+          "1 libra de pimientos shishito, sin tallos y dejados enteros",
+          "2/3 taza de queso Jack rallado (aproximadamente 3 onzas)",
+          "1 taza de cebollalines en rodajas",
+          "3/4 cucharadita de sal kosher y más al gusto",
+          "3 cucharadas de mantequilla sin sal, cantidad dividida",
+          "4 huevos grandes",
+          "Hojas verdes para ensalada aliñadas, para servir",
+          "Salsa picante para servir"
+        ],
+        "ingredientes_principales": [
+          "1 libra de patatas nuevas rojas pequeñas, lavadas (unas 10)",
+          "1 libra de pimientos shishito, sin tallos y dejados enteros",
+          "2/3 taza de queso Jack rallado (aproximadamente 3 onzas)",
+          "1 taza de cebollalines en rodajas"
+        ],
+        "instrucciones": "En una olla grande equipada con una canasta vaporera, cocine las papas al vapor hasta que estén tiernas, aproximadamente 20 minutos. Transfiera las papas a un recipiente grande hasta que estén lo suficientemente frías como para manipularlas. Con las palmas de las manos, aplasta suavemente las patatas. Agregue los shishitos, el queso, las cebollas y 3/4 de cucharadita de sal al tazón y, con una cuchara de madera, mezcle suavemente para combinar.\nEn una sartén antiadherente grande a fuego medio, derrita 1 cucharada de mantequilla. Agregue la mezcla de papa y fría, volteando una o dos veces, hasta que el queso se derrita, los pimientos estén suaves y la mezcla esté dorada, aproximadamente 10 minutos. Retirar de la sartén y dividir en cuatro platos.\nLimpia la sartén y calienta las 2 cucharadas de mantequilla restantes a fuego medio alto. Cascar los huevos y freír hasta obtener el punto deseado. Cubra el picadillo con huevos fritos y sirva inmediatamente con verduras y salsa picante.",
+        "pasos": [
+          "En una olla grande equipada con una canasta vaporera, cocine las papas al vapor hasta que estén tiernas, aproximadamente 20 minutos. Transfiera las papas a un recipiente grande hasta que estén lo suficientemente frías como para manipularlas. Con las palmas de las manos, aplasta suavemente las patatas. Agregue los shishitos, el queso, las cebollas y 3/4 de cucharadita de sal al tazón y, con una cuchara de madera, mezcle suavemente para combinar.",
+          "En una sartén antiadherente grande a fuego medio, derrita 1 cucharada de mantequilla. Agregue la mezcla de papa y fría, volteando una o dos veces, hasta que el queso se derrita, los pimientos estén suaves y la mezcla esté dorada, aproximadamente 10 minutos. Retirar de la sartén y dividir en cuatro platos.",
+          "Limpia la sartén y calienta las 2 cucharadas de mantequilla restantes a fuego medio alto. Cascar los huevos y freír hasta obtener el punto deseado. Cubra el picadillo con huevos fritos y sirva inmediatamente con verduras y salsa picante."
+        ],
+        "categorias_fittrack": [
+          "desayunos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3739879119.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 354,
+        "valor_nutricional": "354 kcal por porción",
+        "proteina_g": 16,
+        "carbohidratos_g": 27.5,
+        "grasas_g": 20,
+        "dificultad": ""
+      },
+      {
+        "id": 2896248934,
+        "nombre": "Tortitas de camote con mantequilla de miel y canela",
+        "ingredientes": [
+          "1/4 taza de mantequilla sin sal, a temperatura ambiente",
+          "1 1/2 cucharadas de miel",
+          "1/8 cucharadita de canela molida",
+          "2 huevos grandes",
+          "1 taza de suero de leche, y más si es necesario",
+          "2 1/2 cucharadas de aceite vegetal",
+          "1 taza de mezcla para panqueques comprada en la tienda",
+          "1 pizca pequeña de nuez moscada molida",
+          "1 batata pequeña, hervida, pelada y triturada (aproximadamente 1 1/2 tazas)"
+        ],
+        "ingredientes_principales": [
+          "1/4 taza de mantequilla sin sal, a temperatura ambiente",
+          "1 1/2 cucharadas de miel",
+          "1/8 cucharadita de canela molida",
+          "2 huevos grandes"
+        ],
+        "instrucciones": "1. Batir la mantequilla, la miel y la canela hasta que quede suave. Transfiera al refrigerador hasta que esté listo para usar.\n2. En un recipiente grande, mezcle los huevos, el suero de leche y el aceite. Agregue la mezcla para panqueques y la nuez moscada hasta que estén combinados. Incorpora la batata. Si la masa parece demasiado espesa, agregue más suero de leche hasta que alcance la consistencia deseada (debe estar espesa pero aún se puede verter).\n3. Coloque una plancha o sartén grande engrasada a fuego medio alto. Trabajando en tandas, vierta la masa sobre él y la cocina hasta que la superficie del panqueque esté cubierta de burbujas, de 2 a 3 minutos. Voltee y cocine el otro lado hasta que esté dorado, de 1 a 2 minutos más. Sirva, cubierta con mantequilla de miel y canela y un poco de jarabe de arce.",
+        "pasos": [
+          "1. Batir la mantequilla, la miel y la canela hasta que quede suave. Transfiera al refrigerador hasta que esté listo para usar.",
+          "2. En un recipiente grande, mezcle los huevos, el suero de leche y el aceite. Agregue la mezcla para panqueques y la nuez moscada hasta que estén combinados. Incorpora la batata. Si la masa parece demasiado espesa, agregue más suero de leche hasta que alcance la consistencia deseada (debe estar espesa pero aún se puede verter).",
+          "3. Coloque una plancha o sartén grande engrasada a fuego medio alto. Trabajando en tandas, vierta la masa sobre él y la cocina hasta que la superficie del panqueque esté cubierta de burbujas, de 2 a 3 minutos. Voltee y cocine el otro lado hasta que esté dorado, de 1 a 2 minutos más. Sirva, cubierta con mantequilla de miel y canela y un poco de jarabe de arce."
+        ],
+        "categorias_fittrack": [
+          "desayunos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2896248934.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 396,
+        "valor_nutricional": "396 kcal por porción",
+        "proteina_g": 10,
+        "carbohidratos_g": 35,
+        "grasas_g": 24,
+        "dificultad": ""
+      },
+      {
+        "id": 182896701,
+        "nombre": "Cerezas en almíbar de almendras sobre yogur griego",
+        "ingredientes": [
+          "4 tazas de cerezas rojas o negras frescas sin hueso (aproximadamente 1 1/2 libras)",
+          "1/4 taza de jarabe de almendras (como Monin o Torani)",
+          "1/4 taza de azúcar",
+          "2 cucharadas de jugo de limón fresco",
+          "7 tazas de yogur griego natural, revuelto para aflojar",
+          "1 taza de almendras crudas enteras, picadas en trozos grandes"
+        ],
+        "ingredientes_principales": [
+          "4 tazas de cerezas rojas o negras frescas sin hueso (aproximadamente 1 1/2 libras)",
+          "1/4 taza de jarabe de almendras (como Monin o Torani)",
+          "1/4 taza de azúcar",
+          "2 cucharadas de jugo de limón fresco"
+        ],
+        "instrucciones": "Lleve las cerezas, el jarabe de almendras, el azúcar, el jugo de limón y 1/4 taza de agua a fuego lento en una cacerola mediana a fuego medio-alto, revolviendo hasta que el azúcar se disuelva. Cocine a fuego lento, revolviendo ocasionalmente, hasta que el líquido esté ligeramente espeso pero las cerezas aún mantengan su forma, aproximadamente 5 minutos. Transfiera la mezcla a un bol y deje enfriar por completo. Enfriar hasta que esté frío. HACER CON ANTICIPACIÓN: Se puede hacer con 1 semana de anticipación. Cubrir y mantener frío.\nDivida el yogur en tazones. Vierta las cerezas con su jugo. Adorne con almendras picadas.",
+        "pasos": [
+          "Lleve las cerezas, el jarabe de almendras, el azúcar, el jugo de limón y 1/4 taza de agua a fuego lento en una cacerola mediana a fuego medio-alto, revolviendo hasta que el azúcar se disuelva. Cocine a fuego lento, revolviendo ocasionalmente, hasta que el líquido esté ligeramente espeso pero las cerezas aún mantengan su forma, aproximadamente 5 minutos. Transfiera la mezcla a un bol y deje enfriar por completo. Enfriar hasta que esté frío. HACER CON ANTICIPACIÓN: Se puede hacer con 1 semana de anticipación. Cubrir y mantener frío.",
+          "Divida el yogur en tazones. Vierta las cerezas con su jugo. Adorne con almendras picadas."
+        ],
+        "categorias_fittrack": [
+          "desayunos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-182896701.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 520,
+        "valor_nutricional": "520 kcal por porción",
+        "proteina_g": 29,
+        "carbohidratos_g": 42.5,
+        "grasas_g": 26,
+        "dificultad": ""
+      },
+      {
+        "id": 1715287692,
+        "nombre": "Avena Al Horno",
+        "ingredientes": [
+          "2 tazas/7 oz/200 g de copos de avena",
+          "1/2 taza/2 oz/60 g de nueces en trozos, tostadas y picadas",
+          "1/3 taza/2 oz/60 g de azúcar de caña natural o jarabe de arce, y más para servir",
+          "1 cucharadita de levadura en polvo sin aluminio",
+          "1 1/2 cucharaditas de canela molida",
+          "1/2 cucharadita escasa de sal marina de grano fino",
+          "2 tazas/475 ml de leche",
+          "1 huevo grande",
+          "3 cucharadas de mantequilla sin sal, derretida y ligeramente enfriada",
+          "2 cucharaditas de extracto puro de vainilla",
+          "2 plátanos maduros, cortados en trozos de 1 cm/1/2 pulgada",
+          "1 1/2 tazas/6,5 oz/185 g de arándanos, arándanos o bayas mixtas"
+        ],
+        "ingredientes_principales": [
+          "2 tazas/7 oz/200 g de copos de avena",
+          "1/2 taza/2 oz/60 g de nueces en trozos, tostadas y picadas",
+          "1/3 taza/2 oz/60 g de azúcar de caña natural o jarabe de arce, y más para servir",
+          "1 cucharadita de levadura en polvo sin aluminio"
+        ],
+        "instrucciones": "Precalienta el horno a 375°F/190°C con una rejilla en el tercio superior del horno. Unte con mantequilla generosamente el interior de una fuente para hornear cuadrada de 8 pulgadas/20 cm.\nEn un bol, mezcle la avena, la mitad de las nueces, el azúcar, si se usa, el polvo para hornear, la canela y la sal.\nEn otro bol, mezcle el jarabe de arce, si lo usa, la leche, el huevo, la mitad de la mantequilla y la vainilla.\nColoque los plátanos en una sola capa en el fondo de la fuente para hornear preparada. Espolvorea dos tercios de las bayas por encima. Cubre la fruta con la mezcla de avena. Rocíe lentamente la mezcla de leche sobre la avena. Dale suavemente a la fuente para hornear un par de golpes en la encimera para asegurarte de que la leche se mueva a través de la avena. Esparza las bayas restantes y las nueces restantes por encima.\nHornee durante 35 a 45 minutos, hasta que la parte superior esté bien dorada y la mezcla de avena se haya endurecido. Retirar del horno y dejar enfriar unos minutos. Rocíe el resto de la mantequilla derretida por encima y sirva. Espolvorea con un poco más de azúcar o rocía con jarabe de arce si lo quieres un poco más dulce.",
+        "pasos": [
+          "Precalienta el horno a 375°F/190°C con una rejilla en el tercio superior del horno. Unte con mantequilla generosamente el interior de una fuente para hornear cuadrada de 8 pulgadas/20 cm.",
+          "En un bol, mezcle la avena, la mitad de las nueces, el azúcar, si se usa, el polvo para hornear, la canela y la sal.",
+          "En otro bol, mezcle el jarabe de arce, si lo usa, la leche, el huevo, la mitad de la mantequilla y la vainilla.",
+          "Coloque los plátanos en una sola capa en el fondo de la fuente para hornear preparada. Espolvorea dos tercios de las bayas por encima. Cubre la fruta con la mezcla de avena. Rocíe lentamente la mezcla de leche sobre la avena. Dale suavemente a la fuente para hornear un par de golpes en la encimera para asegurarte de que la leche se mueva a través de la avena. Esparza las bayas restantes y las nueces restantes por encima.",
+          "Hornee durante 35 a 45 minutos, hasta que la parte superior esté bien dorada y la mezcla de avena se haya endurecido. Retirar del horno y dejar enfriar unos minutos. Rocíe el resto de la mantequilla derretida por encima y sirva. Espolvorea con un poco más de azúcar o rocía con jarabe de arce si lo quieres un poco más dulce."
+        ],
+        "categorias_fittrack": [
+          "desayunos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-1715287692.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 264,
+        "valor_nutricional": "264 kcal por porción",
+        "proteina_g": 8,
+        "carbohidratos_g": 28.8,
+        "grasas_g": 13,
+        "dificultad": ""
+      },
+      {
+        "id": 2678803437,
+        "nombre": "Granola de cereza y coco con yogur",
+        "ingredientes": [
+          "3 tazas de copos de avena",
+          "1 taza de almendras picadas",
+          "3/4 taza de coco rallado sin azúcar",
+          "1/4 taza de semillas de sésamo",
+          "1/2 taza de cerezas secas, picadas",
+          "6 cucharadas de aceite de coco, derretido",
+          "3 cucharadas de miel",
+          "3 cucharadas de jarabe de arce puro",
+          "1 cucharadita de extracto de vainilla",
+          "1 cucharadita de canela molida",
+          "1/2 cucharadita de sal",
+          "1 litro de yogur natural, para servir"
+        ],
+        "ingredientes_principales": [
+          "3 tazas de copos de avena",
+          "1 taza de almendras picadas",
+          "3/4 taza de coco rallado sin azúcar",
+          "1/4 taza de semillas de sésamo"
+        ],
+        "instrucciones": "Precalienta el horno a 350°F.\nEn un tazón grande, combine la avena, las almendras, el coco, las semillas de sésamo y las cerezas.\nEn un recipiente aparte, mezcle el aceite de coco, la miel, el jarabe de arce, el extracto de vainilla, la canela y la sal. Vierta la mezcla húmeda sobre la mezcla seca y revuelva bien para combinar. Extienda sobre una bandeja para hornear forrada con papel pergamino.\nHornee la granola hasta que esté dorada en los bordes, de 20 a 25 minutos, revolviendo suavemente de vez en cuando.\nSirva granola con yogur y fruta, si lo desea.",
+        "pasos": [
+          "Precalienta el horno a 350°F.",
+          "En un tazón grande, combine la avena, las almendras, el coco, las semillas de sésamo y las cerezas.",
+          "En un recipiente aparte, mezcle el aceite de coco, la miel, el jarabe de arce, el extracto de vainilla, la canela y la sal. Vierta la mezcla húmeda sobre la mezcla seca y revuelva bien para combinar. Extienda sobre una bandeja para hornear forrada con papel pergamino.",
+          "Hornee la granola hasta que esté dorada en los bordes, de 20 a 25 minutos, revolviendo suavemente de vez en cuando.",
+          "Sirva granola con yogur y fruta, si lo desea."
+        ],
+        "categorias_fittrack": [
+          "desayunos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2678803437.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 530,
+        "valor_nutricional": "530 kcal por porción",
+        "proteina_g": 10,
+        "carbohidratos_g": 55,
+        "grasas_g": 30,
+        "dificultad": ""
+      },
+      {
+        "id": 2347407518,
+        "nombre": "Revuelto de verduras y cereales",
+        "ingredientes": [
+          "4 huevos grandes batidos",
+          "1 cucharada de leche",
+          "1/4 cucharadita de sal kosher",
+          "2 cucharadas de aceite de oliva virgen extra",
+          "1 cebolla verde, partes blanca y verde claro, finamente picada (aproximadamente 1 cucharada)",
+          "2 dientes de ajo picados",
+          "1 taza colmada / 240 ml de verduras de hojas verdes picadas y bien empaquetadas (como col rizada, hojas de acelgas sin costillas o espinacas)",
+          "1/2 taza / 120 ml de cereales integrales cocidos (bayas de trigo, farro, cebada o mijo)",
+          "1 cucharada de cebollino fresco picado",
+          "Pimienta negra recién molida",
+          "Sal en escamas",
+          "Pan crujiente, muffins ingleses tostados o tortillas de maíz calientes, para servir"
+        ],
+        "ingredientes_principales": [
+          "4 huevos grandes batidos",
+          "1 cucharada de leche",
+          "1/4 cucharadita de sal kosher",
+          "2 cucharadas de aceite de oliva virgen extra"
+        ],
+        "instrucciones": "En un tazón grande, mezcle los huevos, la leche y la sal kosher; dejar de lado. Calienta 1 cucharada de aceite de oliva en una sartén a fuego medio. Agregue la cebolla verde y el ajo y saltee hasta que estén suaves, de 1 a 2 minutos. Agregue las verduras, los granos y la 1 cucharada restante de aceite de oliva y saltee hasta que las verduras se ablanden y los granos estén bien calientes, de 3 a 5 minutos.\nDisminuya el fuego a bajo y vierta la mezcla de huevo, revolviendo suavemente para mezclarlos con las verduras y los granos. Continúe revolviendo hasta que estén suavemente revueltos, de 2 a 3 minutos. Retire del fuego, agregue las cebolletas y sazone con pimienta.\nSirva caliente con una pizca de sal en escamas encima y pan crujiente, muffins ingleses tostados o tortillas de maíz calientes al lado.",
+        "pasos": [
+          "En un tazón grande, mezcle los huevos, la leche y la sal kosher; dejar de lado. Calienta 1 cucharada de aceite de oliva en una sartén a fuego medio. Agregue la cebolla verde y el ajo y saltee hasta que estén suaves, de 1 a 2 minutos. Agregue las verduras, los granos y la 1 cucharada restante de aceite de oliva y saltee hasta que las verduras se ablanden y los granos estén bien calientes, de 3 a 5 minutos.",
+          "Disminuya el fuego a bajo y vierta la mezcla de huevo, revolviendo suavemente para mezclarlos con las verduras y los granos. Continúe revolviendo hasta que estén suavemente revueltos, de 2 a 3 minutos. Retire del fuego, agregue las cebolletas y sazone con pimienta.",
+          "Sirva caliente con una pizca de sal en escamas encima y pan crujiente, muffins ingleses tostados o tortillas de maíz calientes al lado."
+        ],
+        "categorias_fittrack": [
+          "desayunos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2347407518.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 335,
+        "valor_nutricional": "335 kcal por porción",
+        "proteina_g": 15,
+        "carbohidratos_g": 14.8,
+        "grasas_g": 24,
+        "dificultad": ""
+      },
+      {
+        "id": 2851566712,
+        "nombre": "Prosciutto, huevo frito y parmesano sobre pan campestre",
+        "ingredientes": [
+          "2 rebanadas de pan toscano, ciabatta u otro pan crujiente",
+          "4 a 6 rodajas finas de parmesano",
+          "2 lonchas finas de prosciutto",
+          "2 cucharadas de mantequilla sin sal",
+          "2 huevos (preferiblemente orgánicos)",
+          "4 filetes de anchoa salados, finamente picados",
+          "1 diente de ajo, pelado y cortado en rodajas finas",
+          "1 puñado de espinacas tiernas frescas",
+          "1 exprimido de jugo de limón fresco",
+          "Sal y pimienta negra recién molida al gusto"
+        ],
+        "ingredientes_principales": [
+          "2 rebanadas de pan toscano, ciabatta u otro pan crujiente",
+          "4 a 6 rodajas finas de parmesano",
+          "2 lonchas finas de prosciutto",
+          "2 cucharadas de mantequilla sin sal"
+        ],
+        "instrucciones": "Precaliente el asador, con la bandeja en la posición más baja. Ase el pan por un lado hasta que esté tostado, de 1 a 2 minutos. Retire y divida el queso y el prosciutto uniformemente por los lados sin tostar. Regrese al asador y cocine, con la cara abierta, hasta que el prosciutto esté crujiente y el queso haya comenzado a derretirse, aproximadamente 1 minuto. Apague el asador y deje los sándwiches adentro para que se mantengan calientes. En una sartén, derrita 1 cucharada de mantequilla y luego fría los huevos hasta que estén cocidos. Retire los sándwiches y cubra cada uno con un huevo. Agrega el resto de la mantequilla a la sartén y saltea las anchoas y el ajo a fuego medio-alto, revolviendo constantemente, hasta que el ajo comience a ablandarse. Agrega las espinacas y cocina hasta que se ablanden, luego agrega el jugo de limón, la sal y la pimienta. Vierta sobre los sándwiches y sirva.\nOmita las anchoas, el ajo, las espinacas y el jugo de limón. Cubra con otra rebanada de pan tostado antes de servir. Y si el prosciutto y el parmesano están demasiado picantes, sustitúyalos por jamón cocido con miel y queso cheddar blanco.",
+        "pasos": [
+          "Precaliente el asador, con la bandeja en la posición más baja. Ase el pan por un lado hasta que esté tostado, de 1 a 2 minutos. Retire y divida el queso y el prosciutto uniformemente por los lados sin tostar. Regrese al asador y cocine, con la cara abierta, hasta que el prosciutto esté crujiente y el queso haya comenzado a derretirse, aproximadamente 1 minuto. Apague el asador y deje los sándwiches adentro para que se mantengan calientes. En una sartén, derrita 1 cucharada de mantequilla y luego fría los huevos hasta que estén cocidos. Retire los sándwiches y cubra cada uno con un huevo. Agrega el resto de la mantequilla a la sartén y saltea las anchoas y el ajo a fuego medio-alto, revolviendo constantemente, hasta que el ajo comience a ablandarse. Agrega las espinacas y cocina hasta que se ablanden, luego agrega el jugo de limón, la sal y la pimienta. Vierta sobre los sándwiches y sirva.",
+          "Omita las anchoas, el ajo, las espinacas y el jugo de limón. Cubra con otra rebanada de pan tostado antes de servir. Y si el prosciutto y el parmesano están demasiado picantes, sustitúyalos por jamón cocido con miel y queso cheddar blanco."
+        ],
+        "categorias_fittrack": [
+          "desayunos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2851566712.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 500,
+        "valor_nutricional": "500 kcal por porción",
+        "proteina_g": 38,
+        "carbohidratos_g": 6,
+        "grasas_g": 36,
+        "dificultad": ""
+      }
+    ],
+    "almuerzos": [
+      {
+        "id": 3985205727,
+        "nombre": "Wrap de lentejas, manzana y pavo",
+        "ingredientes": [
+          "4 tazas de caldo de pollo o de verduras bajo en sodio",
+          "1 taza de lentejas marrones secas",
+          "1/2 taza de lentejas verdes francesas secas",
+          "2 tallos de apio picados",
+          "1 zanahoria grande, pelada y picada",
+          "1 ramita de tomillo fresco",
+          "1 cucharadita de sal kosher",
+          "1 tomate mediano, sin corazón, sin semillas y cortado en cubitos",
+          "1 manzana Fuji pequeña, sin corazón y cortada en cubitos",
+          "1 cucharada de jugo de limón recién exprimido",
+          "2 cucharaditas de aceite de oliva virgen extra",
+          "Pimienta negra recién molida al gusto",
+          "3 hojas de lavash integral, cortadas por la mitad transversalmente, o 6 tortillas de harina (12 pulgadas)",
+          "3/4 libra de pechuga de pavo, en rodajas finas",
+          "1/2 cabeza de lechuga Bibb"
+        ],
+        "ingredientes_principales": [
+          "4 tazas de caldo de pollo o de verduras bajo en sodio",
+          "1 taza de lentejas marrones secas",
+          "1/2 taza de lentejas verdes francesas secas",
+          "2 tallos de apio picados"
+        ],
+        "instrucciones": "1. Coloque el caldo, las lentejas, el apio, la zanahoria, el tomillo y la sal en una cacerola mediana y deje hervir. Reduzca el fuego a bajo y cocine a fuego lento hasta que las lentejas estén tiernas, aproximadamente 30 minutos, dependiendo de las lentejas. (Si comienza a secarse, agregue agua según sea necesario). Retire y deseche el tomillo. Escurrir y transferir la mezcla a un bol; dejar enfriar.\n2. Incorpora el tomate, la manzana, el jugo de limón y el aceite de oliva. Sazona con la pimienta.\n3. Para preparar una envoltura, coloque 1 hoja de lavash sobre una superficie de trabajo limpia. Extienda un poco de la mezcla de lentejas en el extremo más cercano a usted, dejando un borde de 1 pulgada. Cubra con varias rebanadas de pavo y luego un poco de lechuga. Enrolle el lavash, córtelo transversalmente y sirva. Si usa tortillas, extienda las lentejas en el centro, cubra con el pavo y la lechuga y doble hacia arriba la parte inferior, el lado izquierdo y el lado derecho antes de alejarlas.",
+        "pasos": [
+          "1. Coloque el caldo, las lentejas, el apio, la zanahoria, el tomillo y la sal en una cacerola mediana y deje hervir. Reduzca el fuego a bajo y cocine a fuego lento hasta que las lentejas estén tiernas, aproximadamente 30 minutos, dependiendo de las lentejas. (Si comienza a secarse, agregue agua según sea necesario). Retire y deseche el tomillo. Escurrir y transferir la mezcla a un bol; dejar enfriar.",
+          "2. Incorpora el tomate, la manzana, el jugo de limón y el aceite de oliva. Sazona con la pimienta.",
+          "3. Para preparar una envoltura, coloque 1 hoja de lavash sobre una superficie de trabajo limpia. Extienda un poco de la mezcla de lentejas en el extremo más cercano a usted, dejando un borde de 1 pulgada. Cubra con varias rebanadas de pavo y luego un poco de lechuga. Enrolle el lavash, córtelo transversalmente y sirva. Si usa tortillas, extienda las lentejas en el centro, cubra con el pavo y la lechuga y doble hacia arriba la parte inferior, el lado izquierdo y el lado derecho antes de alejarlas."
+        ],
+        "categorias_fittrack": [
+          "almuerzos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3985205727.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 426,
+        "valor_nutricional": "426 kcal por porción",
+        "proteina_g": 30,
+        "carbohidratos_g": 60.8,
+        "grasas_g": 7,
+        "dificultad": ""
+      },
+      {
+        "id": 1667001441,
+        "nombre": "Ensalada de atún, espárragos y patatas nuevas con vinagreta de cebollino y alcaparras fritas",
+        "ingredientes": [
+          "1/3 taza de cebollino fresco picado",
+          "1/4 taza de vinagre de champagne",
+          "1 chalota pequeña, picada en trozos grandes",
+          "1 cucharadita de miel",
+          "1 cucharadita de mostaza Dijon",
+          "2/3 taza de aceite vegetal",
+          "1/3 taza de aceite de oliva virgen extra",
+          "1 1/2 libras de espárragos horribles, con los tallos pelados",
+          "1 1/4 libras de papas rojas tiernas, cortadas por la mitad o en cuartos",
+          "1/3 taza de aceite de oliva",
+          "1/2 taza de alcaparras, escurridas y secas",
+          "8 onzas de verduras de primavera mixtas",
+          "16 rábanos grandes, recortados y en rodajas muy finas (aproximadamente 3 tazas)",
+          "3 huevos duros grandes, pelados y cortados en cuartos",
+          "12 onzas de atún importado envasado en aceite, escurrido",
+          "Flores de cebollino (opcional)"
+        ],
+        "ingredientes_principales": [
+          "1/3 taza de cebollino fresco picado",
+          "1/4 taza de vinagre de champagne",
+          "1 chalota pequeña, picada en trozos grandes",
+          "1 cucharadita de miel"
+        ],
+        "instrucciones": "Haga puré los primeros 5 ingredientes en la licuadora hasta que quede suave. Con la máquina en marcha, agregue gradualmente el aceite vegetal y luego el aceite de oliva. Sazone al gusto con sal y pimienta. HACER CON ANTICIPACIÓN: Se puede hacer con 1 día de anticipación. Cubrir y enfriar.\nCocine los espárragos en una sartén grande con agua hirviendo con sal hasta que estén tiernos, de 4 a 5 minutos. Transfiera los espárragos a un recipiente de 13x9x2 pulgadas con agua helada para que se enfríen. Escurrir los espárragos y secarlos. HACER CON ANTICIPACIÓN: Se puede realizar con 8 horas de anticipación. Envuélvalo en toallas de papel, luego en plástico y enfríe.\nColoque las papas en una cacerola grande. Agregue suficiente agua para cubrir las papas 1 pulgada. Espolvorea con sal. Deje hervir y cocine hasta que las patatas estén tiernas, de 10 a 15 minutos, dependiendo del tamaño de las patatas. Drenar; dejar enfriar 5 minutos. Colóquelo en un recipiente mediano. Agrega 1/4 taza de vinagreta; vuelva a cubrir. Sazone al gusto con sal y pimienta.\nCaliente el aceite de oliva en una sartén pequeña a fuego medio alto. Agregue las alcaparras y frías hasta que estén crujientes y abiertas como flores, revolviendo con frecuencia, de 45 a 60 segundos. Con una espumadera, transfiera las alcaparras a toallas de papel para escurrir. HACER CON ANTICIPACIÓN: Las papas y las alcaparras se pueden preparar con 2 horas de anticipación. Dejar reposar a temperatura ambiente.\nColoque los espárragos en un recipiente grande. Agregue 2 cucharadas de vinagreta y revuelva para cubrir. Mezcle las papas nuevamente para cubrirlas y agregue 1 cucharada más de vinagreta si está seca. Coloque las verduras y los rabanos en otro recipiente grande. Mezcle con suficiente vinagreta para cubrir. Distribuya las verduras y los rábanos en un plato grande. Coloque las patatas, los espárragos, los huevos y el atún encima de las verduras. Rocie un poco de vinagreta sobre el atún. Espolvoree con alcaparras fritas y flores de cebollino, si lo desea.",
+        "pasos": [
+          "Haga puré los primeros 5 ingredientes en la licuadora hasta que quede suave. Con la máquina en marcha, agregue gradualmente el aceite vegetal y luego el aceite de oliva. Sazone al gusto con sal y pimienta. HACER CON ANTICIPACIÓN: Se puede hacer con 1 día de anticipación. Cubrir y enfriar.",
+          "Cocine los espárragos en una sartén grande con agua hirviendo con sal hasta que estén tiernos, de 4 a 5 minutos. Transfiera los espárragos a un recipiente de 13x9x2 pulgadas con agua helada para que se enfríen. Escurrir los espárragos y secarlos. HACER CON ANTICIPACIÓN: Se puede realizar con 8 horas de anticipación. Envuélvalo en toallas de papel, luego en plástico y enfríe.",
+          "Coloque las papas en una cacerola grande. Agregue suficiente agua para cubrir las papas 1 pulgada. Espolvorea con sal. Deje hervir y cocine hasta que las patatas estén tiernas, de 10 a 15 minutos, dependiendo del tamaño de las patatas. Drenar; dejar enfriar 5 minutos. Colóquelo en un recipiente mediano. Agrega 1/4 taza de vinagreta; vuelva a cubrir. Sazone al gusto con sal y pimienta.",
+          "Caliente el aceite de oliva en una sartén pequeña a fuego medio alto. Agregue las alcaparras y frías hasta que estén crujientes y abiertas como flores, revolviendo con frecuencia, de 45 a 60 segundos. Con una espumadera, transfiera las alcaparras a toallas de papel para escurrir. HACER CON ANTICIPACIÓN: Las papas y las alcaparras se pueden preparar con 2 horas de anticipación. Dejar reposar a temperatura ambiente.",
+          "Coloque los espárragos en un recipiente grande. Agregue 2 cucharadas de vinagreta y revuelva para cubrir. Mezcle las papas nuevamente para cubrirlas y agregue 1 cucharada más de vinagreta si está seca. Coloque las verduras y los rabanos en otro recipiente grande. Mezcle con suficiente vinagreta para cubrir. Distribuya las verduras y los rábanos en un plato grande. Coloque las patatas, los espárragos, los huevos y el atún encima de las verduras. Rocie un poco de vinagreta sobre el atún. Espolvoree con alcaparras fritas y flores de cebollino, si lo desea."
+        ],
+        "categorias_fittrack": [
+          "almuerzos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-1667001441.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 421,
+        "valor_nutricional": "421 kcal por porción",
+        "proteina_g": 10,
+        "carbohidratos_g": 21,
+        "grasas_g": 33,
+        "dificultad": ""
+      },
+      {
+        "id": 3439714972,
+        "nombre": "Ensalada De Huevo Y Pepino Y Albahaca",
+        "ingredientes": [
+          "6 huevos duros, cortados en cubitos (2 tazas)",
+          "3/4 taza de pepinos cortados en cubitos, sin semillas (aproximadamente 1/2 pepino)",
+          "1/4 taza de chalotas picadas",
+          "1/2 taza de cebollas verdes en rodajas (solo la parte verde)",
+          "3 cucharadas de albahaca fresca picada ligeramente compactada",
+          "1/2 taza de mayonesa",
+          "1/4 cucharadita de sal kosher",
+          "1/4 cucharadita de pimienta recién molida"
+        ],
+        "ingredientes_principales": [
+          "6 huevos duros, cortados en cubitos (2 tazas)",
+          "3/4 taza de pepinos cortados en cubitos, sin semillas (aproximadamente 1/2 pepino)",
+          "1/4 taza de chalotas picadas",
+          "1/2 taza de cebollas verdes en rodajas (solo la parte verde)"
+        ],
+        "instrucciones": "Combine suavemente los huevos, los pepinos, las chalotas, las cebollas verdes y la albahaca en un recipiente mediano. Agrega la mayonesa, la sal y la pimienta.\nGuárdelo en el refrigerador hasta por tres días.",
+        "pasos": [
+          "Combine suavemente los huevos, los pepinos, las chalotas, las cebollas verdes y la albahaca en un recipiente mediano. Agrega la mayonesa, la sal y la pimienta.",
+          "Guárdelo en el refrigerador hasta por tres días."
+        ],
+        "categorias_fittrack": [
+          "almuerzos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3439714972.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 215,
+        "valor_nutricional": "215 kcal por porción",
+        "proteina_g": 6,
+        "carbohidratos_g": 2.8,
+        "grasas_g": 20,
+        "dificultad": ""
+      },
+      {
+        "id": 2238121038,
+        "nombre": "Sopa De Pepino Y Eneldo Con Cebolletas",
+        "ingredientes": [
+          "5 pepinos grandes, pelados, cortados en cuartos a lo largo y sin semillas",
+          "1 manojo de cebolla",
+          "1 manojo de eneldo, con las puntas recogidas",
+          "1 diente de ajo picado",
+          "Zumo de 3 limones grandes",
+          "4 tazas de suero de leche",
+          "1 taza de yogur natural",
+          "Sal",
+          "Pimienta blanca recién molida",
+          "Una pizca de Tabasco"
+        ],
+        "ingredientes_principales": [
+          "5 pepinos grandes, pelados, cortados en cuartos a lo largo y sin semillas",
+          "1 manojo de cebolla",
+          "1 manojo de eneldo, con las puntas recogidas",
+          "1 diente de ajo picado"
+        ],
+        "instrucciones": "1. Corta la mitad de los pepinos en rodajas finas en forma transversal. Corta finamente la mitad de las ceboletas en forma transversal. Deja de lado.\n2. Pique en trozos grandes los pepinos y las cebolletas restantes y transfiérelo a un recipiente grande. Agregue el eneldo, el ajo, el jugo de limón, el suero de leche y el yogur, y revuelva bien pero suavemente. Sazone con sal y pimienta y haga puré en una licuadora hasta que se licue. (NOTA: puede utilizar un procesador de alimentos, pero una licuadora le dará un resultado más suave y agradable).\n3. Transfiera la sopa a un recipiente grande y agregue los pepinos en rodajas y las cebollas reservadas. Ajuste el condimento con sal, pimienta y Tabasco al gusto. Enfriar durante al menos 2 horas en el frigorífico.",
+        "pasos": [
+          "1. Corta la mitad de los pepinos en rodajas finas en forma transversal. Corta finamente la mitad de las ceboletas en forma transversal. Deja de lado.",
+          "2. Pique en trozos grandes los pepinos y las cebolletas restantes y transfiérelo a un recipiente grande. Agregue el eneldo, el ajo, el jugo de limón, el suero de leche y el yogur, y revuelva bien pero suavemente. Sazone con sal y pimienta y haga puré en una licuadora hasta que se licue. (NOTA: puede utilizar un procesador de alimentos, pero una licuadora le dará un resultado más suave y agradable).",
+          "3. Transfiera la sopa a un recipiente grande y agregue los pepinos en rodajas y las cebollas reservadas. Ajuste el condimento con sal, pimienta y Tabasco al gusto. Enfriar durante al menos 2 horas en el frigorífico."
+        ],
+        "categorias_fittrack": [
+          "almuerzos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2238121038.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 145,
+        "valor_nutricional": "145 kcal por porción",
+        "proteina_g": 9,
+        "carbohidratos_g": 20.5,
+        "grasas_g": 3,
+        "dificultad": ""
+      },
+      {
+        "id": 2076048834,
+        "nombre": "Ensalada de Sashimi con Soja y Naranja",
+        "ingredientes": [
+          "4 naranjas",
+          "1 o 2 limas",
+          "1 cucharada de salsa de soja",
+          "3 cucharadas de aceite de semilla de uva",
+          "6 tazas de hojas de maché (canónigos)",
+          "2 tazas de lechuga frisée, cortada en trozos pequeños",
+          "1/2 pepino, pelado, sin semillas y en rodajas finas (opcional)",
+          "7 onzas de salmón apto para sushi, sin piel",
+          "1 cucharadita de semillas de sésamo, tostadas"
+        ],
+        "ingredientes_principales": [
+          "4 naranjas",
+          "1 o 2 limas",
+          "1 cucharada de salsa de soja",
+          "3 cucharadas de aceite de semilla de uva"
+        ],
+        "instrucciones": "Ralla la ralladura de 1 naranja y la lima en un bol grande. Exprime 1 cucharada de jugo de naranja rallada y 2 cucharadas de jugo de lima rallada en el tazón (es posible que necesites una segunda lima para obtener las 2 cucharadas de jugo). Incorpora la salsa de soja y el aceite. Deja el aderezo a un lado.\nUtilice un cuchillo afilado para cortar la cáscara y la médula de las naranjas restantes. Trabajando sobre un tazón, corte entre las membranas para liberar los gajos de naranja y déjelos caer en el tazón. Vierte el jugo en una taza y resérvalo para otro uso. Agregue el maché, el frisée y los pepinos, si los usa, a los gajos de naranja. Con un cuchillo grande y afilado, corte el salmón en rodajas de 1/3 de pulgada de grosor. Agrega el salmón al bol. Rocíe con el aderezo y revuelva suavemente para cubrir. Deje que los sabores se mezclen durante al menos 2 minutos.\nDivida la ensalada en 4 platos para servir. Espolvorea con las semillas de sésamo tostadas y sirve.",
+        "pasos": [
+          "Ralla la ralladura de 1 naranja y la lima en un bol grande. Exprime 1 cucharada de jugo de naranja rallada y 2 cucharadas de jugo de lima rallada en el tazón (es posible que necesites una segunda lima para obtener las 2 cucharadas de jugo). Incorpora la salsa de soja y el aceite. Deja el aderezo a un lado.",
+          "Utilice un cuchillo afilado para cortar la cáscara y la médula de las naranjas restantes. Trabajando sobre un tazón, corte entre las membranas para liberar los gajos de naranja y déjelos caer en el tazón. Vierte el jugo en una taza y resérvalo para otro uso. Agregue el maché, el frisée y los pepinos, si los usa, a los gajos de naranja. Con un cuchillo grande y afilado, corte el salmón en rodajas de 1/3 de pulgada de grosor. Agrega el salmón al bol. Rocíe con el aderezo y revuelva suavemente para cubrir. Deje que los sabores se mezclen durante al menos 2 minutos.",
+          "Divida la ensalada en 4 platos para servir. Espolvorea con las semillas de sésamo tostadas y sirve."
+        ],
+        "categorias_fittrack": [
+          "almuerzos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2076048834.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 285,
+        "valor_nutricional": "285 kcal por porción",
+        "proteina_g": 14,
+        "carbohidratos_g": 16.8,
+        "grasas_g": 18,
+        "dificultad": ""
+      },
+      {
+        "id": 46257027,
+        "nombre": "Ensalada mesclun con verduras, queso de cabra y ajo crujiente",
+        "ingredientes": [
+          "1 cucharada de mantequilla sin sal",
+          "4 dientes de ajo, en rodajas finas",
+          "2 chalotas grandes picadas",
+          "Zumo de 1 limón grande",
+          "3 cucharadas de aceite de oliva virgen extra",
+          "2 cucharadas de mostaza Dijon",
+          "1/2 taza de piñones",
+          "Unas 10 tazas de mezclum",
+          "1 pimiento naranja grande, sin semillas y picado en trozos grandes",
+          "4 remolachas cocidas, en rodajas finas",
+          "1 litro de tomates cherry, cortados por la mitad",
+          "1/2 taza de arándanos secos",
+          "1 cucharada de eneldo fresco picado o 1 cucharadita seco",
+          "1/8 cucharadita de hojuelas de cebolla seca",
+          "4 onzas de queso de cabra fresco"
+        ],
+        "ingredientes_principales": [
+          "1 cucharada de mantequilla sin sal",
+          "4 dientes de ajo, en rodajas finas",
+          "2 chalotas grandes picadas",
+          "Zumo de 1 limón grande"
+        ],
+        "instrucciones": "En una sartén pequeña a fuego moderado, derrita la mantequilla hasta que comience a burbujear ligeramente. Agregue el ajo y saltee, revolviendo ocasionalmente, hasta que esté dorado y ligeramente crujiente, aproximadamente 2 minutos. Vierta el ajo y la mantequilla en un tazón pequeño y déjelo enfriar. No limpie la sartén.\nEn un tazón pequeño o taza medidora, combine las chalotas, el jugo de limón, el aceite de oliva y la mostaza de Dijon. Batir para combinar y luego sazonar al gusto con sal marina fina y pimienta negra recién molida.\nRegrese la sartén pequeña a la estufa a fuego lento y tueste los piñones, revolviendo ocasionalmente, hasta que estén aromáticos y ligeramente dorados, aproximadamente 3 minutos. Transfiera a un plato y deje enfriar.\nEn un tazón grande, coloque capas de mezclum, pimiento, remolacha, tomates, arándanos y piñones. Agrega el eneldo, las hojuelas de cebolla seca y el ajo frito, incluida la mantequilla del bol. Agite bien el aderezo, luego rocíelo sobre la ensalada y revuelva para combinar. Sazone al gusto con sal y pimienta, desmenuce el queso de cabra por encima y sirva.",
+        "pasos": [
+          "En una sartén pequeña a fuego moderado, derrita la mantequilla hasta que comience a burbujear ligeramente. Agregue el ajo y saltee, revolviendo ocasionalmente, hasta que esté dorado y ligeramente crujiente, aproximadamente 2 minutos. Vierta el ajo y la mantequilla en un tazón pequeño y déjelo enfriar. No limpie la sartén.",
+          "En un tazón pequeño o taza medidora, combine las chalotas, el jugo de limón, el aceite de oliva y la mostaza de Dijon. Batir para combinar y luego sazonar al gusto con sal marina fina y pimienta negra recién molida.",
+          "Regrese la sartén pequeña a la estufa a fuego lento y tueste los piñones, revolviendo ocasionalmente, hasta que estén aromáticos y ligeramente dorados, aproximadamente 3 minutos. Transfiera a un plato y deje enfriar.",
+          "En un tazón grande, coloque capas de mezclum, pimiento, remolacha, tomates, arándanos y piñones. Agrega el eneldo, las hojuelas de cebolla seca y el ajo frito, incluida la mantequilla del bol. Agite bien el aderezo, luego rocíelo sobre la ensalada y revuelva para combinar. Sazone al gusto con sal y pimienta, desmenuce el queso de cabra por encima y sirva."
+        ],
+        "categorias_fittrack": [
+          "almuerzos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-46257027.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 454,
+        "valor_nutricional": "454 kcal por porción",
+        "proteina_g": 12,
+        "carbohidratos_g": 31.8,
+        "grasas_g": 31,
+        "dificultad": ""
+      },
+      {
+        "id": 2711981851,
+        "nombre": "Ensalada de arroz negro con hierbas, rábanos y ricotta salata",
+        "ingredientes": [
+          "1/4 taza de aceite de oliva",
+          "2 cucharadas de vinagre de Jerez o vinagre de vino tinto",
+          "Sal kosher, pimienta recién molida",
+          "1 taza de arroz negro",
+          "Sal kosher",
+          "2 tazas de rábanos mixtos, rebanados y en cuartos",
+          "Pimienta negra recién molida",
+          "2 onzas de ricotta salata (ricotta seca salada), en rodajas finas",
+          "1/4 taza de almendras tostadas, sin sal y picadas",
+          "1/4 taza de eneldo fresco picado",
+          "2 cucharadas de cebollino fresco picado"
+        ],
+        "ingredientes_principales": [
+          "1/4 taza de aceite de oliva",
+          "2 cucharadas de vinagre de Jerez o vinagre de vino tinto",
+          "Sal kosher, pimienta recién molida",
+          "1 taza de arroz negro"
+        ],
+        "instrucciones": "Combine aceite y vinagre en un recipiente pequeño hermético; tapar y agitar bien. Sazone con sal y pimienta.\nLa vinagreta se puede preparar con 3 días de anticipación; enfriar.\nCombine el arroz y 1 3/4 tazas de agua en una cacerola mediana; sazone con sal. Llevar a ebullición en la estufa a fuego alto. Reduzca el fuego, cubra la cacerola y cocine a fuego lento hasta que el arroz esté tierno y se absorba el líquido, de 45 a 50 minutos. Retirar del fuego, esponjar el arroz y dejar reposar tapado durante 10 minutos. Dejar enfriar.\nJusto antes de servir, mezcle el arroz y los rábanos con el aderezo en un tazón grande; sazone con sal y pimienta. Agregue ricotta salata, almendras, eneldo y cebollino y revuelva.",
+        "pasos": [
+          "Combine aceite y vinagre en un recipiente pequeño hermético; tapar y agitar bien. Sazone con sal y pimienta.",
+          "La vinagreta se puede preparar con 3 días de anticipación; enfriar.",
+          "Combine el arroz y 1 3/4 tazas de agua en una cacerola mediana; sazone con sal. Llevar a ebullición en la estufa a fuego alto. Reduzca el fuego, cubra la cacerola y cocine a fuego lento hasta que el arroz esté tierno y se absorba el líquido, de 45 a 50 minutos. Retirar del fuego, esponjar el arroz y dejar reposar tapado durante 10 minutos. Dejar enfriar.",
+          "Justo antes de servir, mezcle el arroz y los rábanos con el aderezo en un tazón grande; sazone con sal y pimienta. Agregue ricotta salata, almendras, eneldo y cebollino y revuelva."
+        ],
+        "categorias_fittrack": [
+          "almuerzos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2711981851.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 381,
+        "valor_nutricional": "381 kcal por porción",
+        "proteina_g": 8,
+        "carbohidratos_g": 40,
+        "grasas_g": 21,
+        "dificultad": ""
+      },
+      {
+        "id": 3137386923,
+        "nombre": "Sopa De Tortilla De Pollo",
+        "ingredientes": [
+          "1 cucharada de aceite de oliva",
+          "1 cebolla picada",
+          "1 cucharadita de sal",
+          "1 pimiento verde o rojo, cortado en cubitos",
+          "1 diente de ajo picado",
+          "1 cucharadita de comino en polvo",
+          "1 caja de 32 oz de caldo de pollo",
+          "1 hoja de laurel",
+          "1 1/2 tazas de granos de maíz congelados",
+          "1 lata de tomate de 15 oz, cortado en cubitos",
+          "1 libra de pechuga de pollo, deshuesada y sin piel",
+          "zumo de 1 lima",
+          "Chips de tortilla triturados"
+        ],
+        "ingredientes_principales": [
+          "1 cucharada de aceite de oliva",
+          "1 cebolla picada",
+          "1 cucharadita de sal",
+          "1 pimiento verde o rojo, cortado en cubitos"
+        ],
+        "instrucciones": "En una olla grande calienta 1 cucharada de aceite de oliva y sofríe la cebolla y la sal durante 3 minutos.\nAgrega los pimientos morrones, el diente de ajo y el comino y saltea por 2 minutos más.\nAgregue el caldo y los ingredientes restantes (excepto el jugo de limón y los chips de tortilla). Llevar a ebullición y luego reducir a fuego lento.\nDespués de 10 a 15 minutos (dependiendo del tamaño de las pechugas de pollo), retire el pollo de la olla y desmenúcelo con un tenedor. Vuelva a colocar el pollo desmenuzado en la olla con el jugo de limón y cocine a fuego lento durante otros 3-4 minutos o hasta que el pollo esté caliente.\nRetire la hoja de laurel, vierta la sopa en tazones y cubra con chips de tortilla triturados para que todos los revuelvan por su cuenta. Sirva con los ingredientes deseados a un lado.",
+        "pasos": [
+          "En una olla grande calienta 1 cucharada de aceite de oliva y sofríe la cebolla y la sal durante 3 minutos.",
+          "Agrega los pimientos morrones, el diente de ajo y el comino y saltea por 2 minutos más.",
+          "Agregue el caldo y los ingredientes restantes (excepto el jugo de limón y los chips de tortilla). Llevar a ebullición y luego reducir a fuego lento.",
+          "Después de 10 a 15 minutos (dependiendo del tamaño de las pechugas de pollo), retire el pollo de la olla y desmenúcelo con un tenedor. Vuelva a colocar el pollo desmenuzado en la olla con el jugo de limón y cocine a fuego lento durante otros 3-4 minutos o hasta que el pollo esté caliente.",
+          "Retire la hoja de laurel, vierta la sopa en tazones y cubra con chips de tortilla triturados para que todos los revuelvan por su cuenta. Sirva con los ingredientes deseados a un lado."
+        ],
+        "categorias_fittrack": [
+          "almuerzos"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3137386923.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 429,
+        "valor_nutricional": "429 kcal por porción",
+        "proteina_g": 33,
+        "carbohidratos_g": 33.8,
+        "grasas_g": 18,
+        "dificultad": ""
+      }
+    ],
+    "comidas": [
+      {
+        "id": 3201429800,
+        "nombre": "Mi pavo asado favorito",
+        "ingredientes": [
+          "1 1/2 tazas de sal kosher",
+          "5 limones cortados por la mitad",
+          "1/2 taza de miel",
+          "1 manojo de tomillo",
+          "1 manojo de perejil",
+          "2 hojas de laurel",
+          "2 cabezas de ajo, cortadas por la mitad en forma transversal",
+          "3 cucharadas de granos de pimienta negra enteros",
+          "6 cuartos de agua helada",
+          "Pavo de 18 a 20 libras, descongelado si está congelado",
+          "3/4 taza (1 1/2 barra) de mantequilla sin sal, cortada en trozos",
+          "4 cebollas amarillas medianas, peladas y cortadas en gajos de 2 pulgadas",
+          "6 zanahorias medianas, cortadas en trozos de 2 pulgadas",
+          "4 costillas de apio, cortadas en trozos de 2 pulgadas",
+          "3 cucharadas de aceite de canola",
+          "3 cucharadas de sal kosher",
+          "1 manojo de romero",
+          "1 manojo de tomillo",
+          "2 hojas de laurel",
+          "1 cabeza de ajo, cortada por la mitad transversalmente",
+          "Olla de 12 cuartos y un recipiente apto para alimentos de 20 cuartos (o una olla de 20 cuartos)",
+          "fuente para asar grande con rejilla",
+          "hilo de cocina"
+        ],
+        "ingredientes_principales": [
+          "1 1/2 tazas de sal kosher",
+          "5 limones cortados por la mitad",
+          "1/2 taza de miel",
+          "1 manojo de tomillo"
+        ],
+        "instrucciones": "Si usa una olla de 12 cuartos, combine 4 litros de agua en la olla con sal, limón, miel, tomillo, perejil, hojas de laurel, ajo y granos de pimienta. Cubrir y llevar una ebullición. Revuelva hasta que la sal se disuelva, luego retire del fuego. Transfiera la salmuera a un recipiente apto para alimentos de 20 cuartos y agregue 6 cuartos de agua helada. Deja enfriar por completo.\nSi usa una olla de 20 cuartos, combine 4 litros de agua en la olla con sal, limón, miel, tomillo, perejil, hojas de laurel, ajo y granos de pimienta. Cubrir y llevar una ebullición. Revuelva hasta que la sal se disuelva, luego retire del fuego y agregue 6 cuartos de agua helada. Deja enfriar por completo.\nSumerja el pavo en la salmuera y refrigerador por 24 horas.\nDespués de 24 horas, retire el pavo de la salmuera, séquelo y colóquelo en una bandeja para hornear con borde, con la pechuga hacia arriba, para que se seque al aire durante un mínimo de 24 horas en el refrigerador. Una vez que el pavo esté seco, estará listo para asar.\nPrecalienta el horno a 450°F con la rejilla en el tercio inferior del horno. Retire el pavo del refrigerador 1 hora antes de asarlo.\nEn una cacerola mediana, derrita la mantequilla a fuego lento. Retirar y dejar reposar 3 minutos. Retire la espuma y deséchela. Vierta lentamente la mantequilla en un recipiente mediano, dejando los sólidos lácteos en la olla. Deseche los sólidos y reserve la mantequilla clarificada en un recipiente.\nColoque las verduras en la fuente para asar y mezcle con aceite. Coloque la rejilla para asar encima de las verduras. Rellenar la cavidad del ave con romero, tomillo, laurel y ajo, y atar las patas con hilo de cocina. Coloque el pavo secando al aire en la rejilla para asar, con la pechuga hacia arriba.\nUnte la piel del pavo con mantequilla clarificada y sazone generosamente la piel con sal. Asa el pavo durante 1 hora. Gire la sartén y cocine hasta que un termómetro insertado en la parte más gruesa del muslo alcance los 150 °F, de 1 a 1 1/2 horas más.\nDeje que el pavo repose a temperatura ambiente durante 30 minutos antes de cortarlo. Esto permitirá que los jugos se retengan y que el pavo alcance una temperatura interna de 165 °F.",
+        "pasos": [
+          "Si usa una olla de 12 cuartos, combine 4 litros de agua en la olla con sal, limón, miel, tomillo, perejil, hojas de laurel, ajo y granos de pimienta. Cubrir y llevar una ebullición. Revuelva hasta que la sal se disuelva, luego retire del fuego. Transfiera la salmuera a un recipiente apto para alimentos de 20 cuartos y agregue 6 cuartos de agua helada. Deja enfriar por completo.",
+          "Si usa una olla de 20 cuartos, combine 4 litros de agua en la olla con sal, limón, miel, tomillo, perejil, hojas de laurel, ajo y granos de pimienta. Cubrir y llevar una ebullición. Revuelva hasta que la sal se disuelva, luego retire del fuego y agregue 6 cuartos de agua helada. Deja enfriar por completo.",
+          "Sumerja el pavo en la salmuera y refrigerador por 24 horas.",
+          "Después de 24 horas, retire el pavo de la salmuera, séquelo y colóquelo en una bandeja para hornear con borde, con la pechuga hacia arriba, para que se seque al aire durante un mínimo de 24 horas en el refrigerador. Una vez que el pavo esté seco, estará listo para asar.",
+          "Precalienta el horno a 450°F con la rejilla en el tercio inferior del horno. Retire el pavo del refrigerador 1 hora antes de asarlo.",
+          "En una cacerola mediana, derrita la mantequilla a fuego lento. Retirar y dejar reposar 3 minutos. Retire la espuma y deséchela. Vierta lentamente la mantequilla en un recipiente mediano, dejando los sólidos lácteos en la olla. Deseche los sólidos y reserve la mantequilla clarificada en un recipiente.",
+          "Coloque las verduras en la fuente para asar y mezcle con aceite. Coloque la rejilla para asar encima de las verduras. Rellenar la cavidad del ave con romero, tomillo, laurel y ajo, y atar las patas con hilo de cocina. Coloque el pavo secando al aire en la rejilla para asar, con la pechuga hacia arriba.",
+          "Unte la piel del pavo con mantequilla clarificada y sazone generosamente la piel con sal. Asa el pavo durante 1 hora. Gire la sartén y cocine hasta que un termómetro insertado en la parte más gruesa del muslo alcance los 150 °F, de 1 a 1 1/2 horas más.",
+          "Deje que el pavo repose a temperatura ambiente durante 30 minutos antes de cortarlo. Esto permitirá que los jugos se retengan y que el pavo alcance una temperatura interna de 165 °F."
+        ],
+        "categorias_fittrack": [
+          "comidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3201429800.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 225,
+        "valor_nutricional": "225 kcal por porción",
+        "proteina_g": 28,
+        "carbohidratos_g": 5.8,
+        "grasas_g": 10,
+        "dificultad": ""
+      },
+      {
+        "id": 1919940266,
+        "nombre": "Pollo Tikka Masala",
+        "ingredientes": [
+          "6 dientes de ajo finamente rallados",
+          "4 cucharaditas de jengibre pelado finamente rallado",
+          "4 cucharaditas de cúrcuma molida",
+          "2 cucharaditas de garam masala",
+          "2 cucharaditas de cilantro molido",
+          "2 cucharaditas de comino molido",
+          "1 1/2 tazas de yogur de leche entera (no griego)",
+          "1 cucharada de sal kosher",
+          "2 libras de pechugas de pollo deshuesadas y sin piel, cortadas por la mitad a lo largo",
+          "3 cucharadas de ghee (mantequilla clarificada) o aceite vegetal",
+          "1 cebolla pequeña, en rodajas finas",
+          "1/4 taza de pasta de tomate",
+          "6 vainas de cardamomo, trituradas",
+          "2 chiles de árbol secos o 1/2 cucharadita de hojuelas de pimiento rojo triturado",
+          "1 lata de 28 onzas de tomates enteros pelados",
+          "2 tazas de crema espesa",
+          "3/4 taza de cilantro fresco picado más ramitas para decorar",
+          "Arroz basmati al vapor (para servir)"
+        ],
+        "ingredientes_principales": [
+          "6 dientes de ajo finamente rallados",
+          "4 cucharaditas de jengibre pelado finamente rallado",
+          "4 cucharaditas de cúrcuma molida",
+          "2 cucharaditas de garam masala"
+        ],
+        "instrucciones": "Combine el ajo, el jengibre, la cúrcuma, el garam masala, el cilantro y el comino en un tazón pequeño. Batir el yogur, la sal y la mitad de la mezcla de especias en un recipiente mediano; Agregue el pollo y dé vuelta para cubrir. Cubra y enfríe de 4 a 6 horas. Cubra y enfríe la mezcla de especias restantes.\nCaliente el ghee en una olla grande y pesada a fuego medio. Agregue la cebolla, la pasta de tomate, el cardamomo y los chiles y cocine, revolviendo con frecuencia, hasta que la pasta de tomate se oscurezca y la cebolla esté suave, aproximadamente 5 minutos. Agregue la mitad restante de la mezcla de especias y cocina, revolviendo con frecuencia, hasta que el fondo de la olla comience a dorarse, aproximadamente 4 minutos.\nAgrega los tomates con su jugo, aplastándolos con las manos a medida que los agregas. Deje hervir, reduzca el fuego y cocine a fuego lento, revolviendo con frecuencia y raspando los trozos dorados del fondo de la olla, hasta que la salsa espese, de 8 a 10 minutos.\nAgrega la nata y el cilantro picado. Cocine a fuego lento, revolviendo ocasionalmente, hasta que la salsa especial, de 30 a 40 minutos.\nMientras tanto, precaliente el asador. Forre una bandeja para hornear con borde con papel de aluminio y coloque una rejilla dentro de la bandeja. Coloque el pollo sobre la rejilla en una sola capa. Ase hasta que el pollo comience a ennegrecerse en algunas partes (no se cocinará bien), aproximadamente 10 minutos.\nCorte el pollo en trozos pequeños, agréguelo a la salsa y cocine a fuego lento, revolviendo ocasionalmente, hasta que el pollo esté bien cocido, de 8 a 10 minutos. Servir con arroz y ramitas de cilantro.\nHACER ADELANTE: El pollo se puede preparar con 2 días de anticipación. Cubrir; enfriar. Recalentar antes de servir.",
+        "pasos": [
+          "Combine el ajo, el jengibre, la cúrcuma, el garam masala, el cilantro y el comino en un tazón pequeño. Batir el yogur, la sal y la mitad de la mezcla de especias en un recipiente mediano; Agregue el pollo y dé vuelta para cubrir. Cubra y enfríe de 4 a 6 horas. Cubra y enfríe la mezcla de especias restantes.",
+          "Caliente el ghee en una olla grande y pesada a fuego medio. Agregue la cebolla, la pasta de tomate, el cardamomo y los chiles y cocine, revolviendo con frecuencia, hasta que la pasta de tomate se oscurezca y la cebolla esté suave, aproximadamente 5 minutos. Agregue la mitad restante de la mezcla de especias y cocina, revolviendo con frecuencia, hasta que el fondo de la olla comience a dorarse, aproximadamente 4 minutos.",
+          "Agrega los tomates con su jugo, aplastándolos con las manos a medida que los agregas. Deje hervir, reduzca el fuego y cocine a fuego lento, revolviendo con frecuencia y raspando los trozos dorados del fondo de la olla, hasta que la salsa espese, de 8 a 10 minutos.",
+          "Agrega la nata y el cilantro picado. Cocine a fuego lento, revolviendo ocasionalmente, hasta que la salsa especial, de 30 a 40 minutos.",
+          "Mientras tanto, precaliente el asador. Forre una bandeja para hornear con borde con papel de aluminio y coloque una rejilla dentro de la bandeja. Coloque el pollo sobre la rejilla en una sola capa. Ase hasta que el pollo comience a ennegrecerse en algunas partes (no se cocinará bien), aproximadamente 10 minutos.",
+          "Corte el pollo en trozos pequeños, agréguelo a la salsa y cocine a fuego lento, revolviendo ocasionalmente, hasta que el pollo esté bien cocido, de 8 a 10 minutos. Servir con arroz y ramitas de cilantro.",
+          "HACER ADELANTE: El pollo se puede preparar con 2 días de anticipación. Cubrir; enfriar. Recalentar antes de servir."
+        ],
+        "categorias_fittrack": [
+          "comidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-1919940266.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 687,
+        "valor_nutricional": "687 kcal por porción",
+        "proteina_g": 38,
+        "carbohidratos_g": 14.5,
+        "grasas_g": 53,
+        "dificultad": ""
+      },
+      {
+        "id": 2369733881,
+        "nombre": "Chile Verde De Cerdo Con Salsa De Chile Rojo",
+        "ingredientes": [
+          "3 tazas (o más) de caldo de pollo, divididas",
+          "1 libra de tomatillos, descascarados, enjuagados, cortados en trozos de 1/2 pulgada, divididos",
+          "1 manojo de cebollas verdes, picadas en trozos grandes",
+          "1 1/2 tazas (envasadas) de cilantro fresco con tallos tiernos",
+          "Aceite de oliva",
+          "6 dientes de ajo pelados",
+          "1 paleta de cerdo de 4 a 4 1/2 libras (culata de Boston), recortada y cortada en cubos de 1 1/2 pulgada",
+          "1 cebolla grande, picada (aproximadamente 2 tazas)",
+          "1 cucharada de semillas de comino",
+          "3/4 taza de chiles verdes suaves, pelados, asados ​​​​y cortados en cubitos (como Hatch o Anaheim)",
+          "2 cucharaditas de orégano seco (preferiblemente mexicano)",
+          "1 libra de papas yukon gold, peladas y cortadas en cubos de 3/4 de pulgada picadas",
+          "Fresco de cilantro",
+          "salsa de chile rojo",
+          "Información sobre los ingredientes: busque tomatillos (frutas verdes parecidas a los tomates con cáscara parecida al papel) en los supermercados y mercados latinos."
+        ],
+        "ingredientes_principales": [
+          "3 tazas (o más) de caldo de pollo, divididas",
+          "1 libra de tomatillos, descascarados, enjuagados, cortados en trozos de 1/2 pulgada, divididos",
+          "1 manojo de cebollas verdes, picadas en trozos grandes",
+          "1 1/2 tazas (envasadas) de cilantro fresco con tallos tiernos"
+        ],
+        "instrucciones": "Haga puré con 2 tazas de caldo de pollo, 1/4 de tomatillos, cebollas verdes, cilantro con tallos y ajo en una licuadora. Reserva la salsa verde.\nUnte una olla grande y pesada con aceite; calentar a fuego medio alto. Espolvorea la carne de cerdo con sal y pimienta. Trabajando en tandas, agregue la carne de cerdo a la olla; cocine hasta que se dore, volteando ocasionalmente, aproximadamente 4 minutos por tanda. Con una espumadera, transfiera la carne de cerdo al tazón. Retire toda la grasa de la olla menos 1 cucharada (agregue aceite si es necesario). Agrega la cebolla a la olla; saltee hasta que esté suave, aproximadamente 5 minutos. Espolvoree semillas de comino; cocine hasta que la cebolla esté dorada y el comino tostado, aproximadamente 2 minutos. Agrega los tomatillos restantes; cocine hasta que estén tiernos y dorados en algunos puntos, revolviendo ocasionalmente y reduciendo el fuego a medio si se dora demasiado rápido, aproximadamente 8 minutos. Regrese la carne de cerdo y su jugo a la olla. Agrega 2 tazas de salsa verde reservada, 1 taza de caldo, chiles y orégano. Cubrir; cocine a fuego medio-bajo hasta que la carne de cerdo esté tierna, aproximadamente 2 horas. HACER CON ANTICIPACIÓN: Se puede hacer con 3 días de anticipación. Dejar enfriar un poco. Enfríe sin tapar hasta que esté frío, luego cubra y mantenga frío. Lleve a fuego lento antes de continuar.\nAgrega las papas a la carne de cerdo. Cocine a fuego lento hasta que las patatas estén tiernas, unos 30 minutos. Agrega el resto de la salsa verde; llevar a fuego lento. Diluya con caldo adicional, si lo desea. Sazona con sal y pimienta.\nDivida el chile verde en tazones. Cubra con cilantro y una cucharada de salsa de chile rojo.",
+        "pasos": [
+          "Haga puré con 2 tazas de caldo de pollo, 1/4 de tomatillos, cebollas verdes, cilantro con tallos y ajo en una licuadora. Reserva la salsa verde.",
+          "Unte una olla grande y pesada con aceite; calentar a fuego medio alto. Espolvorea la carne de cerdo con sal y pimienta. Trabajando en tandas, agregue la carne de cerdo a la olla; cocine hasta que se dore, volteando ocasionalmente, aproximadamente 4 minutos por tanda. Con una espumadera, transfiera la carne de cerdo al tazón. Retire toda la grasa de la olla menos 1 cucharada (agregue aceite si es necesario). Agrega la cebolla a la olla; saltee hasta que esté suave, aproximadamente 5 minutos. Espolvoree semillas de comino; cocine hasta que la cebolla esté dorada y el comino tostado, aproximadamente 2 minutos. Agrega los tomatillos restantes; cocine hasta que estén tiernos y dorados en algunos puntos, revolviendo ocasionalmente y reduciendo el fuego a medio si se dora demasiado rápido, aproximadamente 8 minutos. Regrese la carne de cerdo y su jugo a la olla. Agrega 2 tazas de salsa verde reservada, 1 taza de caldo, chiles y orégano. Cubrir; cocine a fuego medio-bajo hasta que la carne de cerdo esté tierna, aproximadamente 2 horas. HACER CON ANTICIPACIÓN: Se puede hacer con 3 días de anticipación. Dejar enfriar un poco. Enfríe sin tapar hasta que esté frío, luego cubra y mantenga frío. Lleve a fuego lento antes de continuar.",
+          "Agrega las papas a la carne de cerdo. Cocine a fuego lento hasta que las patatas estén tiernas, unos 30 minutos. Agrega el resto de la salsa verde; llevar a fuego lento. Diluya con caldo adicional, si lo desea. Sazona con sal y pimienta.",
+          "Divida el chile verde en tazones. Cubra con cilantro y una cucharada de salsa de chile rojo."
+        ],
+        "categorias_fittrack": [
+          "comidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2369733881.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 431,
+        "valor_nutricional": "431 kcal por porción",
+        "proteina_g": 25,
+        "carbohidratos_g": 22,
+        "grasas_g": 27,
+        "dificultad": ""
+      },
+      {
+        "id": 2918771356,
+        "nombre": "Curry de coliflor y garbanzos",
+        "ingredientes": [
+          "1 coliflor mediana-grande (aproximadamente 1 3/4 libras/800 g), recortada",
+          "Sal marina",
+          "2 cucharadas de aceite de girasol",
+          "3 cebollas picadas",
+          "4 dientes de ajo picados",
+          "1 cucharadita de jengibre recién rallado",
+          "2 cucharaditas de cilantro molido",
+          "2 cucharaditas de comino molido",
+          "Una pizca grande de hojuelas de chile seco",
+          "Anís de 2 estrellas",
+          "1 lata (14 onzas/400 g) de tomates pera, picados, sin los extremos del tallo ni la piel",
+          "1 lata (14 onzas/400 g) de garbanzos, escurridos y enjuagados",
+          "2 cucharaditas de garam masala",
+          "Un buen puñado de cilantro picado",
+          "Sal marina y pimienta negra recién molida"
+        ],
+        "ingredientes_principales": [
+          "1 coliflor mediana-grande (aproximadamente 1 3/4 libras/800 g), recortada",
+          "Sal marina",
+          "2 cucharadas de aceite de girasol",
+          "3 cebollas picadas"
+        ],
+        "instrucciones": "Corta la coliflor en floretes medianos. Poner en una cacerola grande, cubrir con agua fría, agregar un poco de sal y llevar a ebullición. Esto cocinará parcialmente la coliflor. Retirar del fuego seguido, escurrir bien y mantener caliente en la sartén.\nCaliente el aceite en una segunda cacerola grande a fuego medio. Agrega las cebollas, el ajo y el jengibre y saltee durante unos 10 minutos, revolviendo con frecuencia.\nAgrega el cilantro molido, el comino, las hojuelas de chile, el anís estrellado y un poco de sal y pimienta y cocina por 5 minutos más.\nAgregue los tomates con su jugo y los garbanzos. Revuelva bien y luego agregue la coliflor precocida. Vierta suficiente agua fría para cubrir casi todo, pero no del todo (1/3 a 3/4 taza/100 a 200 ml) y cocine a fuego lento. Cocine a fuego lento durante 5 a 10 minutos, revolviendo una o dos veces, hasta que la coliflor esté tierna.\nAgrega el garam masala y la mitad del cilantro picado, luego revisa el sazón. Sirva espolvoreado con el cilantro restante y acompañado de arroz, panes planos o naan.",
+        "pasos": [
+          "Corta la coliflor en floretes medianos. Poner en una cacerola grande, cubrir con agua fría, agregar un poco de sal y llevar a ebullición. Esto cocinará parcialmente la coliflor. Retirar del fuego seguido, escurrir bien y mantener caliente en la sartén.",
+          "Caliente el aceite en una segunda cacerola grande a fuego medio. Agrega las cebollas, el ajo y el jengibre y saltee durante unos 10 minutos, revolviendo con frecuencia.",
+          "Agrega el cilantro molido, el comino, las hojuelas de chile, el anís estrellado y un poco de sal y pimienta y cocina por 5 minutos más.",
+          "Agregue los tomates con su jugo y los garbanzos. Revuelva bien y luego agregue la coliflor precocida. Vierta suficiente agua fría para cubrir casi todo, pero no del todo (1/3 a 3/4 taza/100 a 200 ml) y cocine a fuego lento. Cocine a fuego lento durante 5 a 10 minutos, revolviendo una o dos veces, hasta que la coliflor esté tierna.",
+          "Agrega el garam masala y la mitad del cilantro picado, luego revisa el sazón. Sirva espolvoreado con el cilantro restante y acompañado de arroz, panes planos o naan."
+        ],
+        "categorias_fittrack": [
+          "comidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2918771356.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 324,
+        "valor_nutricional": "324 kcal por porción",
+        "proteina_g": 14,
+        "carbohidratos_g": 42.3,
+        "grasas_g": 11,
+        "dificultad": ""
+      },
+      {
+        "id": 3693356864,
+        "nombre": "Pasta con tinta de calamar, camarones, nduja y tomate",
+        "ingredientes": [
+          "1 libra de camarones grandes con cabeza o con cáscara",
+          "3 cucharadas de aceite de oliva, divididas",
+          "6 dientes de ajo, divididos, 2 machacados, 4 en rodajas finas",
+          "1 hoja de laurel",
+          "1 taza de tomate passata o puré de tomates enteros pelados",
+          "4 onzas de nduja",
+          "Sal kosher",
+          "12 onzas de linguini con tinta de calamar",
+          "1/4 taza de jugo de limón fresco",
+          "1/4 taza de perejil fresco picado, y más para servir",
+          "Pimienta negra recién molida"
+        ],
+        "ingredientes_principales": [
+          "1 libra de camarones grandes con cabeza o con cáscara",
+          "3 cucharadas de aceite de oliva, divididas",
+          "6 dientes de ajo, divididos, 2 machacados, 4 en rodajas finas",
+          "1 hoja de laurel"
+        ],
+        "instrucciones": "Pelar y desvenar los camarones, guardando cabezas y/o caparazones. Picar finamente los camarones; dejar de lado. Caliente 1 cucharada de aceite en una cacerola mediana a fuego medio-alto y cocine el ajo machacado, revolviendo, hasta que esté dorado, aproximadamente 1 minuto. Agregue las cabezas y/o caparazones de los camarones reservados y cocine, revolviendo, hasta que estén de color rosa brillante, aproximadamente 2 minutos. Agrega la hoja de laurel y 2 tazas de agua y deja hervir. Reduzca el fuego y cocine a fuego lento hasta que el caldo esté ligeramente reducido y tenga sabor, de 8 a 10 minutos. Colar a través de un colador de malla fina en un tazón grande; desechar los sólidos.\nCaliente las 2 cucharadas de aceite restantes en una sartén grande a fuego medio-alto. Agregue el ajo rebanado y cocine, revolviendo, hasta que esté fragante, aproximadamente 1 minuto. Retire la sartén del fuego y agregue con cuidado los tomates y 1 taza de caldo (la mezcla puede chisporrotear). Vuelva al fuego y cocine, revolviendo ocasionalmente, hasta que la salsa comience a espesarse, aproximadamente 3 minutos. Agregue nduja, usando una cuchara de madera para incorporarla a la salsa. Reduzca el fuego y cocine a fuego lento, revolviendo ocasionalmente, hasta que los sabores se hayan fusionado, aproximadamente 3 minutos. Agregue los camarones reservados y cocine, revolviendo ocasionalmente, hasta que estén opacos, aproximadamente 2 minutos.\nMientras tanto, cocine la pasta en una olla grande con agua hirviendo con sal, revolviendo ocasionalmente, hasta que esté muy al dente (la pasta aún estará opaca y muy firme en el centro). Escurre la pasta y reserva 1 1/2 tazas del líquido de cocción de la pasta.\nAgregue la pasta y 1 taza del líquido de cocción de la pasta a la salsa y cocine, revolviendo con frecuencia y agregando más líquido de cocción para ayudar a terminar de cocinar la pasta, hasta que la pasta esté al dente y la salsa espesa (pero aún picante) y cubra la pasta, aproximadamente 5 minutos. Agrega el jugo de limón y 1/4 taza de perejil; sacudida. Pruebe y sazone con sal y pimienta. Sirva la pasta cubierta con más perejil.\nAdelante: el stock se puede preparar con 1 día de anticipación. Dejar enfriar; tapar y enfriar. Envuelva bien y enfríe los camarones por separado.",
+        "pasos": [
+          "Pelar y desvenar los camarones, guardando cabezas y/o caparazones. Picar finamente los camarones; dejar de lado. Caliente 1 cucharada de aceite en una cacerola mediana a fuego medio-alto y cocine el ajo machacado, revolviendo, hasta que esté dorado, aproximadamente 1 minuto. Agregue las cabezas y/o caparazones de los camarones reservados y cocine, revolviendo, hasta que estén de color rosa brillante, aproximadamente 2 minutos. Agrega la hoja de laurel y 2 tazas de agua y deja hervir. Reduzca el fuego y cocine a fuego lento hasta que el caldo esté ligeramente reducido y tenga sabor, de 8 a 10 minutos. Colar a través de un colador de malla fina en un tazón grande; desechar los sólidos.",
+          "Caliente las 2 cucharadas de aceite restantes en una sartén grande a fuego medio-alto. Agregue el ajo rebanado y cocine, revolviendo, hasta que esté fragante, aproximadamente 1 minuto. Retire la sartén del fuego y agregue con cuidado los tomates y 1 taza de caldo (la mezcla puede chisporrotear). Vuelva al fuego y cocine, revolviendo ocasionalmente, hasta que la salsa comience a espesarse, aproximadamente 3 minutos. Agregue nduja, usando una cuchara de madera para incorporarla a la salsa. Reduzca el fuego y cocine a fuego lento, revolviendo ocasionalmente, hasta que los sabores se hayan fusionado, aproximadamente 3 minutos. Agregue los camarones reservados y cocine, revolviendo ocasionalmente, hasta que estén opacos, aproximadamente 2 minutos.",
+          "Mientras tanto, cocine la pasta en una olla grande con agua hirviendo con sal, revolviendo ocasionalmente, hasta que esté muy al dente (la pasta aún estará opaca y muy firme en el centro). Escurre la pasta y reserva 1 1/2 tazas del líquido de cocción de la pasta.",
+          "Agregue la pasta y 1 taza del líquido de cocción de la pasta a la salsa y cocine, revolviendo con frecuencia y agregando más líquido de cocción para ayudar a terminar de cocinar la pasta, hasta que la pasta esté al dente y la salsa espesa (pero aún picante) y cubra la pasta, aproximadamente 5 minutos. Agrega el jugo de limón y 1/4 taza de perejil; sacudida. Pruebe y sazone con sal y pimienta. Sirva la pasta cubierta con más perejil.",
+          "Adelante: el stock se puede preparar con 1 día de anticipación. Dejar enfriar; tapar y enfriar. Envuelva bien y enfríe los camarones por separado."
+        ],
+        "categorias_fittrack": [
+          "comidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3693356864.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 603,
+        "valor_nutricional": "603 kcal por porción",
+        "proteina_g": 31,
+        "carbohidratos_g": 70.3,
+        "grasas_g": 22,
+        "dificultad": ""
+      },
+      {
+        "id": 2668654909,
+        "nombre": "Lomo De Res Con Salsa De Vino Tinto, Crema De Espinacas Y Papas Fritas Trufadas",
+        "ingredientes": [
+          "2 cucharadas de aceite de canola",
+          "8 onzas de chalotes, en rodajas (aproximadamente 2 tazas)",
+          "1 paquete de 6 onzas de champiñones rebanados",
+          "2 cucharadas de azúcar",
+          "2 cucharadas de vinagre de vino tinto",
+          "1 botella de 750 ml Pinot Noir u otro vino tinto seco",
+          "1 lata de 14 onzas de caldo de pollo bajo en sal",
+          "1 lata de 14 onzas de caldo de res",
+          "2 ramitas de tomillo fresco",
+          "1 1/2 cucharaditas de granos de pimienta negra enteros",
+          "1 hoja de laurel turco",
+          "1 cucharada de mantequilla, temperatura ambiente",
+          "1 cucharada de harina para todo uso",
+          "1 lomo de res asado de 2 libras",
+          "1 cucharada de aceite de oliva",
+          "1 taza de crema para batir",
+          "2 paquetes de 9 onzas de hojas frescas de espinaca tierna",
+          "Papas Fritas Trufadas"
+        ],
+        "ingredientes_principales": [
+          "2 cucharadas de aceite de canola",
+          "8 onzas de chalotes, en rodajas (aproximadamente 2 tazas)",
+          "1 paquete de 6 onzas de champiñones rebanados",
+          "2 cucharadas de azúcar"
+        ],
+        "instrucciones": "Caliente el aceite en una cacerola grande y pesada a fuego medio-alto. Agrega las chalotas y los champiñones; saltee hasta que estén tiernos, aproximadamente 12 minutos. Espolvorea azúcar; saltee hasta que la mezcla esté de color marrón oscuro, aproximadamente 4 minutos más. Agrega vinagre; revuelva hasta que el líquido se evapore, aproximadamente 1 minuto. Agrega el vino; hierva hasta que se reduzca a la mitad, aproximadamente 20 minutos. Agrega ambos caldos, el tomillo, los granos de pimienta y la hoja de laurel; llevar a ebullición. Reduzca el fuego a medio; cocine a fuego lento sin tapar durante 35 minutos para mezclar los sabores, revolviendo ocasionalmente.\nCuele la salsa a través de un colador fino y viértala en una cacerola pequeña; desechar los sólidos. Mezcle la mantequilla y la harina en un tazón pequeño. Deje que la salsa hierva a fuego medio-alto; agregue gradualmente la mezcla de harina. Cocine hasta que la salsa se reduzca a 1 1/4 tazas, aproximadamente 5 minutos. (La salsa se puede preparar con 1 día de anticipación. Cubra; enfríe. Vuelva a calentar a fuego medio).\nPrecalienta el horno a 350°F. Coloque la rejilla sobre una bandeja para hornear con borde. Espolvoree generosamente la carne con sal y pimienta. Caliente el aceite en una sartén grande y pesada a fuego alto. Agregue la carne a la sartén y cocine hasta que se dore por todos lados, aproximadamente 5 minutos. Transfiera la carne a la rejilla de una bandeja para hornear. Ase en el horno hasta que el termómetro insertado en el centro de la carne registre 120 °F para que esté medio cocido, aproximadamente 35 minutos. Transfiera la carne a una tabla de cortar y déjela reposar durante 10 minutos.\nHierva la crema para batir en una olla grande y pesada hasta que se reduzca a la mitad, aproximadamente 4 minutos. Agregue la mitad de las espinacas a la olla y revuelva hasta que las espinacas comiencen a marchitarse, aproximadamente 1 minuto. Agrega las espinacas restantes a la olla; revuelva hasta que todas las espinacas se ablanden, aproximadamente 2 minutos. Sazone al gusto con sal y pimienta.\nCorte el lomo de res transversalmente en rodajas de 1/4 de pulgada de grosor. Divida las espinacas a la crema en 6 platos. Cubra con rodajas de carne, dividiéndolas en partes iguales. Vierta la salsa sobre y alrededor de la carne. Divida las papas fritas trufadas en platos y sirva.",
+        "pasos": [
+          "Caliente el aceite en una cacerola grande y pesada a fuego medio-alto. Agrega las chalotas y los champiñones; saltee hasta que estén tiernos, aproximadamente 12 minutos. Espolvorea azúcar; saltee hasta que la mezcla esté de color marrón oscuro, aproximadamente 4 minutos más. Agrega vinagre; revuelva hasta que el líquido se evapore, aproximadamente 1 minuto. Agrega el vino; hierva hasta que se reduzca a la mitad, aproximadamente 20 minutos. Agrega ambos caldos, el tomillo, los granos de pimienta y la hoja de laurel; llevar a ebullición. Reduzca el fuego a medio; cocine a fuego lento sin tapar durante 35 minutos para mezclar los sabores, revolviendo ocasionalmente.",
+          "Cuele la salsa a través de un colador fino y viértala en una cacerola pequeña; desechar los sólidos. Mezcle la mantequilla y la harina en un tazón pequeño. Deje que la salsa hierva a fuego medio-alto; agregue gradualmente la mezcla de harina. Cocine hasta que la salsa se reduzca a 1 1/4 tazas, aproximadamente 5 minutos. (La salsa se puede preparar con 1 día de anticipación. Cubra; enfríe. Vuelva a calentar a fuego medio).",
+          "Precalienta el horno a 350°F. Coloque la rejilla sobre una bandeja para hornear con borde. Espolvoree generosamente la carne con sal y pimienta. Caliente el aceite en una sartén grande y pesada a fuego alto. Agregue la carne a la sartén y cocine hasta que se dore por todos lados, aproximadamente 5 minutos. Transfiera la carne a la rejilla de una bandeja para hornear. Ase en el horno hasta que el termómetro insertado en el centro de la carne registre 120 °F para que esté medio cocido, aproximadamente 35 minutos. Transfiera la carne a una tabla de cortar y déjela reposar durante 10 minutos.",
+          "Hierva la crema para batir en una olla grande y pesada hasta que se reduzca a la mitad, aproximadamente 4 minutos. Agregue la mitad de las espinacas a la olla y revuelva hasta que las espinacas comiencen a marchitarse, aproximadamente 1 minuto. Agrega las espinacas restantes a la olla; revuelva hasta que todas las espinacas se ablanden, aproximadamente 2 minutos. Sazone al gusto con sal y pimienta.",
+          "Corte el lomo de res transversalmente en rodajas de 1/4 de pulgada de grosor. Divida las espinacas a la crema en 6 platos. Cubra con rodajas de carne, dividiéndolas en partes iguales. Vierta la salsa sobre y alrededor de la carne. Divida las papas fritas trufadas en platos y sirva."
+        ],
+        "categorias_fittrack": [
+          "comidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2668654909.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 703,
+        "valor_nutricional": "703 kcal por porción",
+        "proteina_g": 37,
+        "carbohidratos_g": 42,
+        "grasas_g": 43,
+        "dificultad": ""
+      },
+      {
+        "id": 296407184,
+        "nombre": "Asado a la cacerola con tubérculos de invierno",
+        "ingredientes": [
+          "2 cucharaditas de tomillo fresco picado",
+          "2 cucharaditas de pimentón dulce húngaro",
+          "2 cucharaditas de sal kosher gruesa",
+          "2 cucharaditas de pimienta negra recién molida",
+          "1 cucharadita de mostaza seca",
+          "1 cucharadita de azúcar moreno dorado (envasado)",
+          "1 lomo asado de res deshuesado de 4 libras, alimentado con pasto, atado",
+          "6 onzas de tocino, cortado transversalmente en rodajas de 1/4 de pulgada de grosor y luego en rectángulos de 1x1/2 pulgada",
+          "2 tazas de vino tinto seco",
+          "1/2 taza de caldo de pollo bajo en sal",
+          "2 cebollas grandes, en rodajas finas",
+          "12 chalotas pequeñas, peladas",
+          "12 dientes de ajo pelados",
+          "3 hojas de laurel",
+          "4 zanahorias grandes (aproximadamente 1 libra), peladas y cortadas en trozos de 1 pulgada",
+          "3 chirivías medianas (aproximadamente 12 onzas), peladas y cortadas en trozos de 1 pulgada",
+          "1 raíz de apio pequeña, pelada y cortada en cubos de 1 pulgada"
+        ],
+        "ingredientes_principales": [
+          "2 cucharaditas de tomillo fresco picado",
+          "2 cucharaditas de pimentón dulce húngaro",
+          "2 cucharaditas de sal kosher gruesa",
+          "2 cucharaditas de pimienta negra recién molida"
+        ],
+        "instrucciones": "Precalienta el horno a 350°F. Mezcle los primeros 6 ingredientes en un tazón pequeño. Frote la mezcla de especias por toda la carne.\nCocine el tocino en una olla grande y pesada para horno a fuego medio hasta que esté dorado y ligeramente crujiente. Con una espumadera, transfiera el tocino a toallas de papel para escurrir. Vierta toda la grasa de la olla menos 2 cucharadas. Aumente el fuego a medio-alto. Agregue la carne y cocine hasta que se dore por todos lados, aproximadamente 12 minutos en total. Transfiera la carne al plato. Agrega el vino tinto a la olla; llevar a ebullición, raspando los trozos dorados. Hierva hasta que se reduzca a 1/2 taza, aproximadamente 5 minutos. Agrega el caldo y el tocino. Coloque la carne encima del tocino. Esparza cebollas, chalotes, ajo y hojas de laurel alrededor de la carne.\nTape la olla, transfiérala al horno y ase durante 1 hora. Voltee la carne; revuelve las cebollas. Cubra y ase 1 hora más, agregando 1/4 de taza de agua si está seco. Transfiera la carne al plato. Agrega las zanahorias, las chirivías y el apio a la olla; revuelva para cubrir. Coloque la carne sobre las verduras, cubra y ase hasta que la carne y las verduras estén tiernas, unos 45 minutos más. Transfiera la carne a un plato. Retire la grasa de la superficie de la salsa con una cuchara. Sazone la salsa al gusto con sal y pimienta. Vierta la salsa sobre la carne y sirva.",
+        "pasos": [
+          "Precalienta el horno a 350°F. Mezcle los primeros 6 ingredientes en un tazón pequeño. Frote la mezcla de especias por toda la carne.",
+          "Cocine el tocino en una olla grande y pesada para horno a fuego medio hasta que esté dorado y ligeramente crujiente. Con una espumadera, transfiera el tocino a toallas de papel para escurrir. Vierta toda la grasa de la olla menos 2 cucharadas. Aumente el fuego a medio-alto. Agregue la carne y cocine hasta que se dore por todos lados, aproximadamente 12 minutos en total. Transfiera la carne al plato. Agrega el vino tinto a la olla; llevar a ebullición, raspando los trozos dorados. Hierva hasta que se reduzca a 1/2 taza, aproximadamente 5 minutos. Agrega el caldo y el tocino. Coloque la carne encima del tocino. Esparza cebollas, chalotes, ajo y hojas de laurel alrededor de la carne.",
+          "Tape la olla, transfiérala al horno y ase durante 1 hora. Voltee la carne; revuelve las cebollas. Cubra y ase 1 hora más, agregando 1/4 de taza de agua si está seco. Transfiera la carne al plato. Agrega las zanahorias, las chirivías y el apio a la olla; revuelva para cubrir. Coloque la carne sobre las verduras, cubra y ase hasta que la carne y las verduras estén tiernas, unos 45 minutos más. Transfiera la carne a un plato. Retire la grasa de la superficie de la salsa con una cuchara. Sazone la salsa al gusto con sal y pimienta. Vierta la salsa sobre la carne y sirva."
+        ],
+        "categorias_fittrack": [
+          "comidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-296407184.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 556,
+        "valor_nutricional": "556 kcal por porción",
+        "proteina_g": 55,
+        "carbohidratos_g": 36.8,
+        "grasas_g": 21,
+        "dificultad": ""
+      },
+      {
+        "id": 208615662,
+        "nombre": "Tazón de salmón asiático con llovizna de lima",
+        "ingredientes": [
+          "1 taza de arroz jazmín",
+          "2 cucharaditas de mantequilla sin sal",
+          "1 diente de ajo grande, finamente picado",
+          "1/4 cucharadita de hojuelas de pimiento rojo",
+          "3 cucharadas de jarabe de arce puro",
+          "3 cucharadas de jugo de lima fresco",
+          "3 cucharadas de salsa de soja reducida en sodio",
+          "1 cucharadita de maicena",
+          "4 filetes de salmón (4 onzas cada uno), sin piel",
+          "1 cucharadita de aceite de canola",
+          "2 paquetes (5 onzas cada uno) de espinacas tiernas",
+          "2 cucharaditas de semillas de sésamo negro"
+        ],
+        "ingredientes_principales": [
+          "1 taza de arroz jazmín",
+          "2 cucharaditas de mantequilla sin sal",
+          "1 diente de ajo grande, finamente picado",
+          "1/4 cucharadita de hojuelas de pimiento rojo"
+        ],
+        "instrucciones": "Calienta el horno a 400°F. Cocine el arroz como se indica en el paquete. En una cacerola pequeña, derrita la mantequilla a fuego medio. Saltee el ajo y las hojuelas de pimienta hasta que el ajo esté ligeramente dorado, 1 minuto. Agrega el almíbar, el jugo y la salsa de soja; cocine hasta que burbujee, 3 minutos. En un tazón, combine la maicena y 1 cucharadita de agua; agregue el glaseado de ajo. Cocine hasta que esté ligeramente espeso, 1 minuto. Coloque los filetes en una bandeja para hornear forrada con papel de aluminio. Unte 1 cucharadita de glaseado sobre cada filete. Ase hasta que esté bien cocido, 12 minutos. En una sartén mediana, caliente el aceite a fuego medio. Agrega 1 paquete de espinacas; saltee hasta que se ablanden. Retirar de la sartén; dejar de lado. Repita con el segundo paquete de espinacas. Divida el arroz en 4 tazones; cubra cada uno con 1/4 de espinacas y 1 filete de salmón, partidos en trozos grandes. Rocíe con la salsa restante; espolvorea cada uno con 1/2 cucharadita de semillas de sésamo.",
+        "pasos": [
+          "Calienta el horno a 400°F. Cocine el arroz como se indica en el paquete. En una cacerola pequeña, derrita la mantequilla a fuego medio. Saltee el ajo y las hojuelas de pimienta hasta que el ajo esté ligeramente dorado, 1 minuto. Agrega el almíbar, el jugo y la salsa de soja; cocine hasta que burbujee, 3 minutos. En un tazón, combine la maicena y 1 cucharadita de agua; agregue el glaseado de ajo. Cocine hasta que esté ligeramente espeso, 1 minuto. Coloque los filetes en una bandeja para hornear forrada con papel de aluminio. Unte 1 cucharadita de glaseado sobre cada filete. Ase hasta que esté bien cocido, 12 minutos. En una sartén mediana, caliente el aceite a fuego medio. Agrega 1 paquete de espinacas; saltee hasta que se ablanden. Retirar de la sartén; dejar de lado. Repita con el segundo paquete de espinacas. Divida el arroz en 4 tazones; cubra cada uno con 1/4 de espinacas y 1 filete de salmón, partidos en trozos grandes. Rocíe con la salsa restante; espolvorea cada uno con 1/2 cucharadita de semillas de sésamo."
+        ],
+        "categorias_fittrack": [
+          "comidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-208615662.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 509,
+        "valor_nutricional": "509 kcal por porción",
+        "proteina_g": 30,
+        "carbohidratos_g": 52.2,
+        "grasas_g": 20,
+        "dificultad": ""
+      }
+    ],
+    "snacks": [
+      {
+        "id": 4234611740,
+        "nombre": "Hummus de jengibre y ajo",
+        "ingredientes": [
+          "1 diente de ajo pelado",
+          "1 trozo de jengibre fresco pelado de 1 pulgada de largo",
+          "2 tazas de garbanzos (garbanzos; de dos latas de 15 onzas), escurridos, 3 cucharadas de líquido reservado",
+          "1/4 taza de mantequilla de anacardo",
+          "3 cucharadas de vinagre de arroz sin condimentar",
+          "1 1/2 cucharaditas de salsa de soja",
+          "1/2 cucharadita de salsa de chile y ajo*",
+          "1/2 cucharadita de anís estrellado recién molido",
+          "1/4 taza de cilantro fresco picado",
+          "1 cebolla verde picada",
+          "2 anís estrellado entero (opcional)"
+        ],
+        "ingredientes_principales": [
+          "1 diente de ajo pelado",
+          "1 trozo de jengibre fresco pelado de 1 pulgada de largo",
+          "2 tazas de garbanzos (garbanzos; de dos latas de 15 onzas), escurridos, 3 cucharadas de líquido reservado",
+          "1/4 taza de mantequilla de anacardo"
+        ],
+        "instrucciones": "Utilizando turnos de encendido/apagado, pique el ajo y el jengibre en el procesador. Agregue los frijoles, el líquido de frijoles reservado, la mantequilla de anacardo, el vinagre de arroz, la salsa de soja, la salsa de chile y ajo y el anís estrellado molido. Procese la mezcla hasta obtener un puré grueso. Agrega el cilantro y la cebolla verde; proceso para combinar. Transfiera al recipiente; decore con anís estrellado entero, si lo desea.\n*Disponible en la sección de alimentos asiáticos de muchos supermercados y mercados asiáticos.",
+        "pasos": [
+          "Utilizando turnos de encendido/apagado, pique el ajo y el jengibre en el procesador. Agregue los frijoles, el líquido de frijoles reservado, la mantequilla de anacardo, el vinagre de arroz, la salsa de soja, la salsa de chile y ajo y el anís estrellado molido. Procese la mezcla hasta obtener un puré grueso. Agrega el cilantro y la cebolla verde; proceso para combinar. Transfiera al recipiente; decore con anís estrellado entero, si lo desea.",
+          "*Disponible en la sección de alimentos asiáticos de muchos supermercados y mercados asiáticos."
+        ],
+        "categorias_fittrack": [
+          "snacks"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-4234611740.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 404,
+        "valor_nutricional": "404 kcal por porción",
+        "proteina_g": 20,
+        "carbohidratos_g": 56.3,
+        "grasas_g": 11,
+        "dificultad": ""
+      },
+      {
+        "id": 3892755899,
+        "nombre": "Camarones En Escabeche",
+        "ingredientes": [
+          "1 zanahoria mediana, cortada en rodajas finas",
+          "1 bulbo mediano de hinojo, en rodajas finas",
+          "1 calabacín mediano, cortado en medias lunas",
+          "3 cucharaditas de sal kosher, divididas y más para blanquear",
+          "1 cebolla morada, cortada en juliana",
+          "1 pimiento rojo cortado en juliana",
+          "5 dientes de ajo, cortados en rodajas finas",
+          "2 cucharaditas de cilantro entero",
+          "2 cucharaditas de semillas de comino",
+          "1 cucharadita de semilla de alcaravea",
+          "1 cucharadita de semilla de hinojo",
+          "1 taza de aceite de oliva, cantidad dividida",
+          "1 taza de vino blanco",
+          "1 taza de vinagre de vino blanco",
+          "2 cucharadas de hojas de tomillo",
+          "2 libras de camarones, pelados, desvenados y sin cola",
+          "2 cucharadas de perejil de hoja plana, picado"
+        ],
+        "ingredientes_principales": [
+          "1 zanahoria mediana, cortada en rodajas finas",
+          "1 bulbo mediano de hinojo, en rodajas finas",
+          "1 calabacín mediano, cortado en medias lunas",
+          "3 cucharaditas de sal kosher, divididas y más para blanquear"
+        ],
+        "instrucciones": "Blanquear las verduras: En una olla grande con agua hirviendo con sal, blanquee las zanahorias, el hinojo y el calabacín hasta que estén tiernos y firmes, 1 minuto. Utilice una espumadera para retirar las verduras y sumérjalas directamente en un baño de agua helada. Retire y seque sobre toallas de papel. En un recipiente mediano, mezcle las verduras escaldadas con 1 cucharadita de sal. Enfríe en el refrigerador hasta que esté listo para armar el plato.\nPrepare verduras encurtidas: en una sartén a fuego medio-bajo, caliente 1/2 aceite de oliva y sude la cebolla, el pimiento, el ajo, las especias y 1 cucharadita de sal hasta que estén suaves, aproximadamente 10 minutos. Añade el vino, el vinagre y el tomillo. Retirar del fuego y dejar reposar 15 minutos.\nMientras tanto, hierva agua con sal en una olla grande y luego apague el fuego. Agregue los camarones y déjelos cocinar hasta que estén firmes pero aún ligeramente traslúcidos en el centro, de 1 a 2 minutos, dependiendo del tamaño de los camarones. Coloque los camarones cocidos en un plato no reactivo y espolvoree con la cucharadita de sal restante. Luego vierte la mezcla de vegetales encurtidos sobre los camarones.\nCubra con película transparente y refrigere al menos 4 horas o toda la noche. Antes de servir, agregue las verduras blanqueadas y la 1/2 taza de aceite de oliva restante. Ajuste la sazón y agregue más sal y vinagre si es necesario. Adorna con perejil.",
+        "pasos": [
+          "Blanquear las verduras: En una olla grande con agua hirviendo con sal, blanquee las zanahorias, el hinojo y el calabacín hasta que estén tiernos y firmes, 1 minuto. Utilice una espumadera para retirar las verduras y sumérjalas directamente en un baño de agua helada. Retire y seque sobre toallas de papel. En un recipiente mediano, mezcle las verduras escaldadas con 1 cucharadita de sal. Enfríe en el refrigerador hasta que esté listo para armar el plato.",
+          "Prepare verduras encurtidas: en una sartén a fuego medio-bajo, caliente 1/2 aceite de oliva y sude la cebolla, el pimiento, el ajo, las especias y 1 cucharadita de sal hasta que estén suaves, aproximadamente 10 minutos. Añade el vino, el vinagre y el tomillo. Retirar del fuego y dejar reposar 15 minutos.",
+          "Mientras tanto, hierva agua con sal en una olla grande y luego apague el fuego. Agregue los camarones y déjelos cocinar hasta que estén firmes pero aún ligeramente traslúcidos en el centro, de 1 a 2 minutos, dependiendo del tamaño de los camarones. Coloque los camarones cocidos en un plato no reactivo y espolvoree con la cucharadita de sal restante. Luego vierte la mezcla de vegetales encurtidos sobre los camarones.",
+          "Cubra con película transparente y refrigere al menos 4 horas o toda la noche. Antes de servir, agregue las verduras blanqueadas y la 1/2 taza de aceite de oliva restante. Ajuste la sazón y agregue más sal y vinagre si es necesario. Adorna con perejil."
+        ],
+        "categorias_fittrack": [
+          "snacks"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3892755899.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 493,
+        "valor_nutricional": "493 kcal por porción",
+        "proteina_g": 22,
+        "carbohidratos_g": 15.8,
+        "grasas_g": 38,
+        "dificultad": ""
+      },
+      {
+        "id": 631167456,
+        "nombre": "Queso paneer casero con hierbas",
+        "ingredientes": [
+          "8 tazas de leche entera",
+          "1 taza de crema espesa",
+          "3/4 taza de vinagre blanco destilado",
+          "1 cucharada más 1 1/2 cucharaditas de sal kosher, dividida",
+          "1/4 taza de hierbas frescas picadas (como perejil, albahaca y/u orégano)"
+        ],
+        "ingredientes_principales": [
+          "8 tazas de leche entera",
+          "1 taza de crema espesa",
+          "3/4 taza de vinagre blanco destilado",
+          "1 cucharada más 1 1/2 cucharaditas de sal kosher, dividida"
+        ],
+        "instrucciones": "Caliente lentamente la leche y la crema en una olla de 6 cuartos a fuego medio, revolviendo ocasionalmente para evitar quemaduras, hasta que la mezcla forme espuma y alcance los 190 °F, de 25 a 30 minutos. Agregue vinagre y 1 1/2 cucharadita. sal, revuelva una vez y continúe cocinando, aproximadamente 2 minutos. Retirar del fuego y dejar reposar hasta que la mezcla se separe en grumos de cuajada blanca lechosa y suero, aproximadamente 10 minutos.\nMientras tanto, forre un colador grande con 2 capas de gasa y colóquelo sobre un recipiente grande. Con una espumadera, transfiera con cuidado la cuajada al colador, dejando que el suero se acumule en un recipiente. Colar hasta que la cuajada comience a endurecerse, de 15 a 20 minutos, luego transfiera la cuajada a un tazón mediano con una espumadera. Deseche el sueño o reserve para otro uso.\nIncorpora las hierbas picadas y la 1 cucharada restante. sal en cuajada. Transfiera ambas capas de estopilla a un plato grande y vierta cuajada de hierbas en el centro. Use el dorso de una cuchara para aplanar la cuajada hasta obtener un grosor redondo de 3/4-1\". Junte los extremos de la estopilla y envuélvala bien alrededor de la cuajada. Coloque un segundo plato encima y use una lata u otro objeto pesado para pesarlo. Refrigere al menos 1 hora o hasta toda la noche.\nRetire la estopilla y coloque el queso prensado sobre una tabla de cortar. Córtelo en cubos de 1\" y sirva o use como desee.",
+        "pasos": [
+          "Caliente lentamente la leche y la crema en una olla de 6 cuartos a fuego medio, revolviendo ocasionalmente para evitar quemaduras, hasta que la mezcla forme espuma y alcance los 190 °F, de 25 a 30 minutos. Agregue vinagre y 1 1/2 cucharadita. sal, revuelva una vez y continúe cocinando, aproximadamente 2 minutos. Retirar del fuego y dejar reposar hasta que la mezcla se separe en grumos de cuajada blanca lechosa y suero, aproximadamente 10 minutos.",
+          "Mientras tanto, forre un colador grande con 2 capas de gasa y colóquelo sobre un recipiente grande. Con una espumadera, transfiera con cuidado la cuajada al colador, dejando que el suero se acumule en un recipiente. Colar hasta que la cuajada comience a endurecerse, de 15 a 20 minutos, luego transfiera la cuajada a un tazón mediano con una espumadera. Deseche el sueño o reserve para otro uso.",
+          "Incorpora las hierbas picadas y la 1 cucharada restante. sal en cuajada. Transfiera ambas capas de estopilla a un plato grande y vierta cuajada de hierbas en el centro. Use el dorso de una cuchara para aplanar la cuajada hasta obtener un grosor redondo de 3/4-1\". Junte los extremos de la estopilla y envuélvala bien alrededor de la cuajada. Coloque un segundo plato encima y use una lata u otro objeto pesado para pesarlo. Refrigere al menos 1 hora o hasta toda la noche.",
+          "Retire la estopilla y coloque el queso prensado sobre una tabla de cortar. Córtelo en cubos de 1\" y sirva o use como desee."
+        ],
+        "categorias_fittrack": [
+          "snacks"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-631167456.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 205,
+        "valor_nutricional": "205 kcal por porción",
+        "proteina_g": 8,
+        "carbohidratos_g": 14,
+        "grasas_g": 13,
+        "dificultad": ""
+      },
+      {
+        "id": 1337382264,
+        "nombre": "Queso Haloumi A La Parrilla Y Limón",
+        "ingredientes": [
+          "2 limones",
+          "1/2 libra de queso Haloumi",
+          "1 diente de ajo grande",
+          "1/4 cucharadita de sal",
+          "1/4 cucharadita de azúcar",
+          "1/4 taza más 2 cucharadas de aceite de oliva",
+          "4 rebanadas (de 3/4 de pulgada de grosor) de pan campesino o campestre",
+          "2 cucharadas de eneldo fresco finamente picado"
+        ],
+        "ingredientes_principales": [
+          "2 limones",
+          "1/2 libra de queso Haloumi",
+          "1 diente de ajo grande",
+          "1/4 cucharadita de sal"
+        ],
+        "instrucciones": "Prepare una parrilla de gas para cocinar con calor directo a fuego moderadamente alto.\nCorta 8 rodajas finas de limones, luego exprime suficiente jugo del resto para medir 2 cucharadas y ponlo en un bol.\nCorte el queso por la mitad en diagonal, luego corte cada triángulo, con el lado cortado hacia abajo, en rodajas de 1/3 de pulgada de grosor.\nPique el ajo y tritúrelo hasta obtener una pasta con una pizca de sal con el lado de un cuchillo grande y pesado, luego agréguelo al jugo de limón. Agrega la sal y el azúcar hasta que se disuelvan, luego agrega 1/4 taza de aceite y bata hasta que se combinen.\nMezcle por separado las rodajas de limón y el queso con 1/2 cucharada de aderezo.\nUnte ambos lados del sartén con las 2 cucharadas de aceite restantes.\nAse el pan, el queso y las rodajas de limón en la rejilla, tapado, volteándolos una vez (use una espátula de metal para raspar debajo del queso y aflojarlo antes de voltear), hasta que el pan esté tostado (de 2 a 3 minutos en total), aparecerán marcas de parrilla en el queso (de 3 a 4 minutos en total) y los limones comenzarán a marchitarse (de 4 a 6 minutos en total).\nBatir el eneldo con el aderezo restante. Divida el pan en 4 platos pequeños y cubeta con queso y rodajas de limón. Rocie con el aderezo y sirva inmediatamente.",
+        "pasos": [
+          "Prepare una parrilla de gas para cocinar con calor directo a fuego moderadamente alto.",
+          "Corta 8 rodajas finas de limones, luego exprime suficiente jugo del resto para medir 2 cucharadas y ponlo en un bol.",
+          "Corte el queso por la mitad en diagonal, luego corte cada triángulo, con el lado cortado hacia abajo, en rodajas de 1/3 de pulgada de grosor.",
+          "Pique el ajo y tritúrelo hasta obtener una pasta con una pizca de sal con el lado de un cuchillo grande y pesado, luego agréguelo al jugo de limón. Agrega la sal y el azúcar hasta que se disuelvan, luego agrega 1/4 taza de aceite y bata hasta que se combinen.",
+          "Mezcle por separado las rodajas de limón y el queso con 1/2 cucharada de aderezo.",
+          "Unte ambos lados del sartén con las 2 cucharadas de aceite restantes.",
+          "Ase el pan, el queso y las rodajas de limón en la rejilla, tapado, volteándolos una vez (use una espátula de metal para raspar debajo del queso y aflojarlo antes de voltear), hasta que el pan esté tostado (de 2 a 3 minutos en total), aparecerán marcas de parrilla en el queso (de 3 a 4 minutos en total) y los limones comenzarán a marchitarse (de 4 a 6 minutos en total).",
+          "Batir el eneldo con el aderezo restante. Divida el pan en 4 platos pequeños y cubeta con queso y rodajas de limón. Rocie con el aderezo y sirva inmediatamente."
+        ],
+        "categorias_fittrack": [
+          "snacks"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-1337382264.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 418,
+        "valor_nutricional": "418 kcal por porción",
+        "proteina_g": 12,
+        "carbohidratos_g": 18.3,
+        "grasas_g": 33,
+        "dificultad": ""
+      },
+      {
+        "id": 4214312431,
+        "nombre": "Tostada Clásica De Tomate Con Mayonesa Y Cebollino",
+        "ingredientes": [
+          "6 cucharadas de mayonesa",
+          "1/4 taza de cebollino fresco picado en trozos grandes, dividido",
+          "6 rebanadas de pan blanco tostado (como Wonder Bread o pan de papa Martin's)",
+          "1 libra de tomates multicolores muy maduros, cortados en rodajas de 1/4\" de grosor",
+          "1 1/2 cucharaditas de sal kosher",
+          "1 1/2 cucharaditas de pimienta negra recién molida",
+          "1 cucharadita de azúcar (opcional)"
+        ],
+        "ingredientes_principales": [
+          "6 cucharadas de mayonesa",
+          "1/4 taza de cebollino fresco picado en trozos grandes, dividido",
+          "6 rebanadas de pan blanco tostado (como Wonder Bread o pan de papa Martin's)",
+          "1 libra de tomates multicolores muy maduros, cortados en rodajas de 1/4\" de grosor"
+        ],
+        "instrucciones": "Combine mayonesa y 2 cucharadas. cebollino en un tazón pequeño. Unte cada tostada con 1 cucharada colmada. mayonesa de cebollino. Divida las rodajas de tomate entre las tostadas y espolvoree cada una con sal, pimienta y azúcar, si las usa. Cubra con las 2 cucharadas restantes. cebollino.",
+        "pasos": [
+          "Combine mayonesa y 2 cucharadas. cebollino en un tazón pequeño. Unte cada tostada con 1 cucharada colmada. mayonesa de cebollino. Divida las rodajas de tomate entre las tostadas y espolvoree cada una con sal, pimienta y azúcar, si las usa. Cubra con las 2 cucharadas restantes. cebollino."
+        ],
+        "categorias_fittrack": [
+          "snacks"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-4214312431.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 194,
+        "valor_nutricional": "194 kcal por porción",
+        "proteina_g": 4,
+        "carbohidratos_g": 17.5,
+        "grasas_g": 12,
+        "dificultad": ""
+      },
+      {
+        "id": 295909267,
+        "nombre": "Bocaditos de frittata con acelgas, salchicha y queso feta",
+        "ingredientes": [
+          "Spray de aceite vegetal antiadherente",
+          "1 manojo de 12 onzas de acelgas, sin tallos ni nervaduras centrales",
+          "1 cucharada de aceite de oliva",
+          "1 taza de cebolla picada",
+          "8 onzas de salchichas italianas suaves, sin tripa y salchicha partida en trozos de 1 pulgada",
+          "8 huevos grandes",
+          "1/4 taza de crema batida espesa",
+          "1/2 cucharadita de sal",
+          "1/2 cucharadita de pimienta negra recién molida",
+          "1 taza de queso feta desmenuzado (aproximadamente 4 1/2 onzas)",
+          "Hojas frescas de perejil italiano"
+        ],
+        "ingredientes_principales": [
+          "Spray de aceite vegetal antiadherente",
+          "1 manojo de 12 onzas de acelgas, sin tallos ni nervaduras centrales",
+          "1 cucharada de aceite de oliva",
+          "1 taza de cebolla picada"
+        ],
+        "instrucciones": "Precalienta el horno a 325°F. Rocíe una fuente para hornear de vidrio de 8 x 8 x 2 pulgadas con spray antiadherente. Pon a hervir una olla grande con agua con sal. Agregue las acelgas y cocine hasta que se ablanden, aproximadamente 2 minutos. Drenar. Picar finamente las acelgas, luego colocarlas en un paño de cocina y exprimirlas para secarlas. Reserva las acelgas.\nCaliente el aceite en una sartén antiadherente grande a fuego medio-alto. Agregue la cebolla a la sartén y saltee hasta que esté suave, de 4 a 5 minutos. Agregue la salchicha y saltee hasta que esté dorada y bien cocida, rompiéndola con un tenedor, de 5 a 7 minutos. Retirar del fuego y enfriar.\nBatir los huevos, la crema, la sal y la pimienta en un tazón grande para mezclar. Agrega las acelgas y la mezcla de salchichas enfriadas, luego el queso feta; revuelva para mezclar. Transfiera la mezcla a una fuente para hornear preparada.\nHornee la frittata hasta que cuaje en el centro, de 45 a 55 minutos. Transfiera la fuente para hornear a la rejilla y enfríe la frittata de 15 a 20 minutos. Coloque el plato encima del plato con frittata. Con guantes de cocina, sostenga firmemente la fuente para hornear y la fuente e invierta la frittata en una fuente; Coloque otro plato encima de la frittata e invierta nuevamente para que la frittata quede hacia arriba. Corta la frittata en 20 trozos. HACER CON ANTICIPACIÓN: Se puede hacer con 1 día de anticipación. Coloque los trozos de frittata en una bandeja para hornear con borde. Cubrir y enfriar. Vuelva a calentar en el horno a 325 °F hasta que esté completamente caliente, aproximadamente 10 minutos.\nTransfiera los trozos de frittata a un plato. Adorne cada trozo con perejil; sirva tibio o a temperatura ambiente.",
+        "pasos": [
+          "Precalienta el horno a 325°F. Rocíe una fuente para hornear de vidrio de 8 x 8 x 2 pulgadas con spray antiadherente. Pon a hervir una olla grande con agua con sal. Agregue las acelgas y cocine hasta que se ablanden, aproximadamente 2 minutos. Drenar. Picar finamente las acelgas, luego colocarlas en un paño de cocina y exprimirlas para secarlas. Reserva las acelgas.",
+          "Caliente el aceite en una sartén antiadherente grande a fuego medio-alto. Agregue la cebolla a la sartén y saltee hasta que esté suave, de 4 a 5 minutos. Agregue la salchicha y saltee hasta que esté dorada y bien cocida, rompiéndola con un tenedor, de 5 a 7 minutos. Retirar del fuego y enfriar.",
+          "Batir los huevos, la crema, la sal y la pimienta en un tazón grande para mezclar. Agrega las acelgas y la mezcla de salchichas enfriadas, luego el queso feta; revuelva para mezclar. Transfiera la mezcla a una fuente para hornear preparada.",
+          "Hornee la frittata hasta que cuaje en el centro, de 45 a 55 minutos. Transfiera la fuente para hornear a la rejilla y enfríe la frittata de 15 a 20 minutos. Coloque el plato encima del plato con frittata. Con guantes de cocina, sostenga firmemente la fuente para hornear y la fuente e invierta la frittata en una fuente; Coloque otro plato encima de la frittata e invierta nuevamente para que la frittata quede hacia arriba. Corta la frittata en 20 trozos. HACER CON ANTICIPACIÓN: Se puede hacer con 1 día de anticipación. Coloque los trozos de frittata en una bandeja para hornear con borde. Cubrir y enfriar. Vuelva a calentar en el horno a 325 °F hasta que esté completamente caliente, aproximadamente 10 minutos.",
+          "Transfiera los trozos de frittata a un plato. Adorne cada trozo con perejil; sirva tibio o a temperatura ambiente."
+        ],
+        "categorias_fittrack": [
+          "snacks"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-295909267.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 111,
+        "valor_nutricional": "111 kcal por porción",
+        "proteina_g": 6,
+        "carbohidratos_g": 1.5,
+        "grasas_g": 9,
+        "dificultad": ""
+      },
+      {
+        "id": 3762061698,
+        "nombre": "Rubias De Maíz Y Caramelo",
+        "ingredientes": [
+          "1 taza (2 barras) de mantequilla sin sal, derretida, y más para la sartén",
+          "1 1/4 tazas (envasadas) de azúcar moreno oscuro",
+          "2 huevos grandes, temperatura ambiente",
+          "1 cucharadita de extracto de vainilla",
+          "1/2 cucharadita de sal kosher",
+          "2 tazas de harina para todo uso",
+          "3/4 taza de maní salado, tostado y picado, dividido",
+          "3 tazas colmadas de maíz acaramelado con maní (como Cracker Jack)"
+        ],
+        "ingredientes_principales": [
+          "1 taza (2 barras) de mantequilla sin sal, derretida, y más para la sartén",
+          "1 1/4 tazas (envasadas) de azúcar moreno oscuro",
+          "2 huevos grandes, temperatura ambiente",
+          "1 cucharadita de extracto de vainilla"
+        ],
+        "instrucciones": "Precalienta el horno a 350°F. Unte con mantequilla un molde para hornear de 9x13\" y cúbralo con papel pergamino, dejando un saliente de 1\" en ambos lados largos.\nBatir el azúcar moreno y 1 taza de mantequilla en un tazón grande hasta que quede suave. Agregue los huevos, uno a la vez, batiendo entre adiciones, hasta que quede suave. Incorpora la vainilla y la sal. Agregue la harina y revuelva para combinar. Incorpora suavemente 1/2 taza de maní.\nVierta la masa en el molde preparado y alise la parte superior, empujando la masa hacia los bordes. Espolvoree uniformemente con caramelo de maíz y el 1/4 de taza de maní restante y presione suavemente.\nHornee las rubias hasta que estén doradas y firmes, de 25 a 30 minutos. Dejar enfriar sobre una rejilla. Levante la barra del molde usando el pergamino que sobresale y córtela en 24 cuadrados.\nLas barras se pueden almacenar en un recipiente hermético a temperatura ambiente hasta por 3 días.",
+        "pasos": [
+          "Precalienta el horno a 350°F. Unte con mantequilla un molde para hornear de 9x13\" y cúbralo con papel pergamino, dejando un saliente de 1\" en ambos lados largos.",
+          "Batir el azúcar moreno y 1 taza de mantequilla en un tazón grande hasta que quede suave. Agregue los huevos, uno a la vez, batiendo entre adiciones, hasta que quede suave. Incorpora la vainilla y la sal. Agregue la harina y revuelva para combinar. Incorpora suavemente 1/2 taza de maní.",
+          "Vierta la masa en el molde preparado y alise la parte superior, empujando la masa hacia los bordes. Espolvoree uniformemente con caramelo de maíz y el 1/4 de taza de maní restante y presione suavemente.",
+          "Hornee las rubias hasta que estén doradas y firmes, de 25 a 30 minutos. Dejar enfriar sobre una rejilla. Levante la barra del molde usando el pergamino que sobresale y córtela en 24 cuadrados.",
+          "Las barras se pueden almacenar en un recipiente hermético a temperatura ambiente hasta por 3 días."
+        ],
+        "categorias_fittrack": [
+          "snacks"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3762061698.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 271,
+        "valor_nutricional": "271 kcal por porción",
+        "proteina_g": 8,
+        "carbohidratos_g": 17,
+        "grasas_g": 19,
+        "dificultad": ""
+      },
+      {
+        "id": 2282247373,
+        "nombre": "Bruschetta con romero, tomates pera asados, ricotta y prosciutto",
+        "ingredientes": [
+          "6 cucharadas más 1 cucharadita de aceite de oliva virgen extra",
+          "2 dientes de ajo grandes, picados",
+          "2 cucharaditas de romero fresco finamente picado",
+          "1 cucharadita de sal kosher gruesa",
+          "1 cucharadita de pimienta negra recién molida",
+          "6 tomates ciruela grandes (aproximadamente 1 1/2 libras), cortados en cuartos a lo largo",
+          "Rebanadas de baguette cortadas en diagonal de 12 1/2 pulgadas de grosor (cada una de 3 a 4 pulgadas de largo)",
+          "12 cucharadas de queso ricotta, dividido",
+          "6 rodajas finas de prosciutto, cortadas por la mitad en forma transversal",
+          "1 cucharadita de jugo de limón fresco",
+          "1 taza de microgreens o rúcula tierna"
+        ],
+        "ingredientes_principales": [
+          "6 cucharadas más 1 cucharadita de aceite de oliva virgen extra",
+          "2 dientes de ajo grandes, picados",
+          "2 cucharaditas de romero fresco finamente picado",
+          "1 cucharadita de sal kosher gruesa"
+        ],
+        "instrucciones": "Precalienta el horno a 425°F. Revuelva 6 cucharadas de aceite, ajo, romero, 1 cucharadita de sal gruesa y 1 cucharadita de pimienta en un tazón grande para mezclar. Agregue los cuartos de tomate y revuelva para cubrir. Dejar reposar 5 minutos. Forre una bandeja para hornear con borde con papel de aluminio. Retire los tomates de la marinada y colóquelos, con el lado cortado hacia abajo, en una bandeja para hornear preparada (reserve la marinada para las tostadas).\nAse los tomates hasta que la piel esté dorada y con ampollas y los tomates estén muy tiernos, aproximadamente 35 minutos. Enfríe los tomates en una sábana. Mantenga la temperatura del horno.\nMientras tanto, coloque las rebanadas de pan en otra bandeja para hornear con borde. Unte la parte superior de cada uno con la marinada reservada (incluidos trocitos de ajo y romero).\nAse el pan hasta que la parte superior esté dorada, de 10 a 12 minutos. Tostadas frías en una bandeja.\nUnte 1 cucharada de queso ricotta sobre cada tostada; espolvorear con pimienta. Doble las mitades del prosciutto y colóquelas sobre ricotta. Coloque 2 cuartos de tomate encima del prosciutto. Batir el jugo de limón y la cucharadita de aceite restante en un tazón mediano para mezclar; sazone con sal y pimienta. Agregue los microgreens y revuelva para cubrir. Cubra la bruschetta con microgreens. Disponer en un plato y servir.",
+        "pasos": [
+          "Precalienta el horno a 425°F. Revuelva 6 cucharadas de aceite, ajo, romero, 1 cucharadita de sal gruesa y 1 cucharadita de pimienta en un tazón grande para mezclar. Agregue los cuartos de tomate y revuelva para cubrir. Dejar reposar 5 minutos. Forre una bandeja para hornear con borde con papel de aluminio. Retire los tomates de la marinada y colóquelos, con el lado cortado hacia abajo, en una bandeja para hornear preparada (reserve la marinada para las tostadas).",
+          "Ase los tomates hasta que la piel esté dorada y con ampollas y los tomates estén muy tiernos, aproximadamente 35 minutos. Enfríe los tomates en una sábana. Mantenga la temperatura del horno.",
+          "Mientras tanto, coloque las rebanadas de pan en otra bandeja para hornear con borde. Unte la parte superior de cada uno con la marinada reservada (incluidos trocitos de ajo y romero).",
+          "Ase el pan hasta que la parte superior esté dorada, de 10 a 12 minutos. Tostadas frías en una bandeja.",
+          "Unte 1 cucharada de queso ricotta sobre cada tostada; espolvorear con pimienta. Doble las mitades del prosciutto y colóquelas sobre ricotta. Coloque 2 cuartos de tomate encima del prosciutto. Batir el jugo de limón y la cucharadita de aceite restante en un tazón mediano para mezclar; sazone con sal y pimienta. Agregue los microgreens y revuelva para cubrir. Cubra la bruschetta con microgreens. Disponer en un plato y servir."
+        ],
+        "categorias_fittrack": [
+          "snacks"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2282247373.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 287,
+        "valor_nutricional": "287 kcal por porción",
+        "proteina_g": 11,
+        "carbohidratos_g": 15.8,
+        "grasas_g": 20,
+        "dificultad": ""
+      }
+    ],
+    "bebidas": [
+      {
+        "id": 2101702500,
+        "nombre": "Limonada de fresa y jengibre",
+        "ingredientes": [
+          "3 fresas peladas",
+          "4 onzas de cerveza de limón y jengibre",
+          "Rodaja de limón (para decorar)"
+        ],
+        "ingredientes_principales": [
+          "3 fresas peladas",
+          "4 onzas de cerveza de limón y jengibre",
+          "Rodaja de limón (para decorar)"
+        ],
+        "instrucciones": "Triture 3 fresas sin cáscara en un vaso alto.\nAgregue 4 onzas de cerveza de limón y jengibre y revuelva bien. Llene el vaso con hielo y decore con una rodaja de limón.",
+        "pasos": [
+          "Triture 3 fresas sin cáscara en un vaso alto.",
+          "Agregue 4 onzas de cerveza de limón y jengibre y revuelva bien. Llene el vaso con hielo y decore con una rodaja de limón."
+        ],
+        "categorias_fittrack": [
+          "bebidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2101702500.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 102,
+        "valor_nutricional": "102 kcal por porción",
+        "proteina_g": 2,
+        "carbohidratos_g": 21.3,
+        "grasas_g": 1,
+        "dificultad": ""
+      },
+      {
+        "id": 1066878440,
+        "nombre": "Batido de mango, frutos rojos y plátano",
+        "ingredientes": [
+          "1 plátano pelado muy maduro (preferiblemente congelado)",
+          "2 dátiles Medjool sin hueso",
+          "1 taza de trozos de mango congelados",
+          "3/4 taza de agua de coco",
+          "1/2 taza de moras o arándanos congelados",
+          "1/4 taza de yogur natural",
+          "1 cucharada de linaza molida"
+        ],
+        "ingredientes_principales": [
+          "1 plátano pelado muy maduro (preferiblemente congelado)",
+          "2 dátiles Medjool sin hueso",
+          "1 taza de trozos de mango congelados",
+          "3/4 taza de agua de coco"
+        ],
+        "instrucciones": "Haga puré 1 plátano pelado muy maduro (preferiblemente congelado), 2 dátiles Medjool sin hueso, 1 taza de trozos de mango congelados, 3/4 taza de agua de coco, 1/2 taza de moras o arándanos congelados, 1/4 taza de yogur natural y 1 cucharada de semillas de lino molidas en una licuadora hasta que quede suave.",
+        "pasos": [
+          "Haga puré 1 plátano pelado muy maduro (preferiblemente congelado), 2 dátiles Medjool sin hueso, 1 taza de trozos de mango congelados, 3/4 taza de agua de coco, 1/2 taza de moras o arándanos congelados, 1/4 taza de yogur natural y 1 cucharada de semillas de lino molidas en una licuadora hasta que quede suave."
+        ],
+        "categorias_fittrack": [
+          "bebidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-1066878440.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 234,
+        "valor_nutricional": "234 kcal por porción",
+        "proteina_g": 5,
+        "carbohidratos_g": 46.8,
+        "grasas_g": 3,
+        "dificultad": ""
+      },
+      {
+        "id": 2037352186,
+        "nombre": "Batido de yogur de naranja y plátano",
+        "ingredientes": [
+          "1 plátano grande, pelado, en rodajas y congelado",
+          "1 taza de jugo de naranja frío",
+          "1/2 taza de yogurt natural sin grasa",
+          "4 cubitos de hielo",
+          "1 cucharada de miel"
+        ],
+        "ingredientes_principales": [
+          "1 plátano grande, pelado, en rodajas y congelado",
+          "1 taza de jugo de naranja frío",
+          "1/2 taza de yogurt natural sin grasa",
+          "4 cubitos de hielo"
+        ],
+        "instrucciones": "Combine todos los ingredientes en la licuadora. Licue hasta que quede suave. Divida el batido en 2 vasos y sirva.",
+        "pasos": [
+          "Combine todos los ingredientes en la licuadora. Licue hasta que quede suave. Divida el batido en 2 vasos y sirva."
+        ],
+        "categorias_fittrack": [
+          "bebidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2037352186.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 183,
+        "valor_nutricional": "183 kcal por porción",
+        "proteina_g": 5,
+        "carbohidratos_g": 38.5,
+        "grasas_g": 1,
+        "dificultad": ""
+      },
+      {
+        "id": 853643945,
+        "nombre": "Jugo Verde con Polvo de Baobab",
+        "ingredientes": [
+          "1 repollo verde pequeño, sin hojas exteriores, cortado en gajos finos",
+          "1 bulbo de hinojo mediano, sin corazón y cortado en cuartos",
+          "2 manzanas verdes, partidas por la mitad",
+          "4 tallos de apio",
+          "1 tallo de limoncillo, sin las capas exteriores duras y recortado el extremo de la raíz (solo las partes de color verde pálido)",
+          "1 trozo de jengibre de 2 \", pelado",
+          "2 cucharaditas de baobab en polvo (opcional)"
+        ],
+        "ingredientes_principales": [
+          "1 repollo verde pequeño, sin hojas exteriores, cortado en gajos finos",
+          "1 bulbo de hinojo mediano, sin corazón y cortado en cuartos",
+          "2 manzanas verdes, partidas por la mitad",
+          "4 tallos de apio"
+        ],
+        "instrucciones": "Pase el repollo, el hinojo, las manzanas, el apio, la hierba de limón y el jengibre por un exprimidor. Transfiera el jugo a un recipiente hermético; cubra y enfríe hasta que esté frío.\nJusto antes de servir, agregue el polvo de baobab al jugo y revuelva hasta que se disuelva. Divide el jugo en vasos.",
+        "pasos": [
+          "Pase el repollo, el hinojo, las manzanas, el apio, la hierba de limón y el jengibre por un exprimidor. Transfiera el jugo a un recipiente hermético; cubra y enfríe hasta que esté frío.",
+          "Justo antes de servir, agregue el polvo de baobab al jugo y revuelva hasta que se disuelva. Divide el jugo en vasos."
+        ],
+        "categorias_fittrack": [
+          "bebidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-853643945.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 166,
+        "valor_nutricional": "166 kcal por porción",
+        "proteina_g": 3,
+        "carbohidratos_g": 36.3,
+        "grasas_g": 1,
+        "dificultad": ""
+      },
+      {
+        "id": 3610735384,
+        "nombre": "Jengibre, ginebra y jugo",
+        "ingredientes": [
+          "3 onzas (6 cucharadas) de cerveza de jengibre fría",
+          "1 1/2 onzas (3 cucharadas) de ginebra",
+          "1 cucharada de jugo de naranja fresco",
+          "1 cucharadita de jugo de limón fresco",
+          "1/2 cucharadita de Grand Marnier u otro licor con sabor a naranja",
+          "Adorne: una rodaja de naranja"
+        ],
+        "ingredientes_principales": [
+          "3 onzas (6 cucharadas) de cerveza de jengibre fría",
+          "1 1/2 onzas (3 cucharadas) de ginebra",
+          "1 cucharada de jugo de naranja fresco",
+          "1 cucharadita de jugo de limón fresco"
+        ],
+        "instrucciones": "Llene un vaso Old Fashioned de 8 onzas con cubitos de hielo. Agregue todos los ingredientes y revuelva hasta que se combinen.",
+        "pasos": [
+          "Llene un vaso Old Fashioned de 8 onzas con cubitos de hielo. Agregue todos los ingredientes y revuelva hasta que se combinen."
+        ],
+        "categorias_fittrack": [
+          "bebidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3610735384.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 158,
+        "valor_nutricional": "158 kcal por porción",
+        "proteina_g": 0,
+        "carbohidratos_g": 39.5,
+        "grasas_g": 0,
+        "dificultad": ""
+      },
+      {
+        "id": 2962331398,
+        "nombre": "Vodka, Romero, Limonada Fizz",
+        "ingredientes": [
+          "1 taza de jugo de limón fresco",
+          "1 taza de azúcar",
+          "2 ramitas de romero (8 pulgadas)",
+          "1/2 taza de vodka",
+          "Gaseosa o agua mineral fría",
+          "Adorne: 8 ramitas de romero (3 pulgadas)"
+        ],
+        "ingredientes_principales": [
+          "1 taza de jugo de limón fresco",
+          "1 taza de azúcar",
+          "2 ramitas de romero (8 pulgadas)",
+          "1/2 taza de vodka"
+        ],
+        "instrucciones": "Hierva el jugo de limón, el azúcar y el romero en una cacerola pequeña, revolviendo hasta que el azúcar se disuelva, luego reduzca el fuego y cocine a fuego lento durante 2 minutos. Deje enfriar completamente, aproximadamente 1 hora. Deseche las ramitas de romero.\nLlene 8 vasos (8 onzas) hasta la mitad con hielo. Divida el almíbar (aproximadamente 2 cucharadas cada uno) entre los vasos y agregue vodka (1 cucharada cada uno). Completa con agua mineral con gas.",
+        "pasos": [
+          "Hierva el jugo de limón, el azúcar y el romero en una cacerola pequeña, revolviendo hasta que el azúcar se disuelva, luego reduzca el fuego y cocine a fuego lento durante 2 minutos. Deje enfriar completamente, aproximadamente 1 hora. Deseche las ramitas de romero.",
+          "Llene 8 vasos (8 onzas) hasta la mitad con hielo. Divida el almíbar (aproximadamente 2 cucharadas cada uno) entre los vasos y agregue vodka (1 cucharada cada uno). Completa con agua mineral con gas."
+        ],
+        "categorias_fittrack": [
+          "bebidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2962331398.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 0,
+        "valor_nutricional": "0 kcal por porción",
+        "proteina_g": 0,
+        "carbohidratos_g": 0,
+        "grasas_g": 0,
+        "dificultad": ""
+      },
+      {
+        "id": 3936296537,
+        "nombre": "Jugo frío de pepino y naranja con orégano",
+        "ingredientes": [
+          "910 g/2 lb de pepinos medianos",
+          "2 1/4 tazas/530 ml de jugo fresco de naranja o mandarina, preferiblemente clementina",
+          "1 1/2 cucharadita de azúcar extrafina, y más según sea necesario",
+          "1/2 cucharadita de orégano seco o zaâtar, y más según sea necesario"
+        ],
+        "ingredientes_principales": [
+          "910 g/2 lb de pepinos medianos",
+          "2 1/4 tazas/530 ml de jugo fresco de naranja o mandarina, preferiblemente clementina",
+          "1 1/2 cucharadita de azúcar extrafina, y más según sea necesario",
+          "1/2 cucharadita de orégano seco o zaâtar, y más según sea necesario"
+        ],
+        "instrucciones": "Recorta los extremos de los pepinos y frota las cáscaras. Retire aproximadamente la mitad de la cáscara de cada pepino y retire las semillas si son grandes. Corta el pepino en trozos y colócalo en un procesador de alimentos o licuadora. Vierta el jugo de naranja y espolvoree el azúcar y el orégano. Licue durante al menos 1 minuto o hasta que esté hecho un puré muy fino. La bebida debe quedar un poco espesa y ligeramente espumosa. Pruebe la dulzura y el condimento y ajuste según sea necesario.\nVierta en una jarra, cubra y refrigere hasta que esté frío. Servir en vasos altos o en cuencos pequeños con cucharas.",
+        "pasos": [
+          "Recorta los extremos de los pepinos y frota las cáscaras. Retire aproximadamente la mitad de la cáscara de cada pepino y retire las semillas si son grandes. Corta el pepino en trozos y colócalo en un procesador de alimentos o licuadora. Vierta el jugo de naranja y espolvoree el azúcar y el orégano. Licue durante al menos 1 minuto o hasta que esté hecho un puré muy fino. La bebida debe quedar un poco espesa y ligeramente espumosa. Pruebe la dulzura y el condimento y ajuste según sea necesario.",
+          "Vierta en una jarra, cubra y refrigere hasta que esté frío. Servir en vasos altos o en cuencos pequeños con cucharas."
+        ],
+        "categorias_fittrack": [
+          "bebidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3936296537.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 59,
+        "valor_nutricional": "59 kcal por porción",
+        "proteina_g": 2,
+        "carbohidratos_g": 12.8,
+        "grasas_g": 0,
+        "dificultad": ""
+      },
+      {
+        "id": 11262159,
+        "nombre": "Limonada espumosa de estragón y ginebra",
+        "ingredientes": [
+          "10 ramitas grandes de estragón",
+          "2 limones, en rodajas finas",
+          "2 cucharadas de azúcar",
+          "3/4 taza de ginebra",
+          "3/4 taza de St-Germain (licor de flor de saúco)",
+          "1/3 taza de jugo de limón fresco",
+          "1 lata de 12 onzas de agua mineral con gas"
+        ],
+        "ingredientes_principales": [
+          "10 ramitas grandes de estragón",
+          "2 limones, en rodajas finas",
+          "2 cucharadas de azúcar",
+          "3/4 taza de ginebra"
+        ],
+        "instrucciones": "Triture las ramitas de estragón, las rodajas de limón y el azúcar en una jarra grande. Agregue ginebra, St-Germain, jugo de limón y agua mineral con gas. Agregue hielo y revuelva para combinar. Servir sobre hielo.",
+        "pasos": [
+          "Triture las ramitas de estragón, las rodajas de limón y el azúcar en una jarra grande. Agregue ginebra, St-Germain, jugo de limón y agua mineral con gas. Agregue hielo y revuelva para combinar. Servir sobre hielo."
+        ],
+        "categorias_fittrack": [
+          "bebidas"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-11262159.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 0,
+        "valor_nutricional": "0 kcal por porción",
+        "proteina_g": 0,
+        "carbohidratos_g": 0,
+        "grasas_g": 0,
+        "dificultad": ""
+      }
+    ],
+    "dulces": [
+      {
+        "id": 1596905565,
+        "nombre": "Pastel Streusel De Arándanos",
+        "ingredientes": [
+          "1 taza de harina para todo uso",
+          "1 cucharada más 1 cucharadita de azúcar moreno oscuro",
+          "1 cucharada más 1 cucharadita de azúcar granulada",
+          "3/4 cucharadita de canela",
+          "1/2 barra de mantequilla fría sin sal, cortada en trozos de 1/2 pulgada",
+          "1 taza de harina para todo uso",
+          "1 cucharadita de levadura en polvo",
+          "1/4 cucharadita de bicarbonato de sodio",
+          "1/2 cucharadita de sal",
+          "1/2 taza de crema agria",
+          "3/4 cucharadita de extracto puro de vainilla",
+          "1/2 barra de mantequilla sin sal, ablandada",
+          "3/4 taza de azúcar granulada",
+          "1 huevo grande",
+          "1/2 libra de arándanos (3 1/4 tazas)",
+          "Acompañamiento: nata montada azucarada"
+        ],
+        "ingredientes_principales": [
+          "1 taza de harina para todo uso",
+          "1 cucharada más 1 cucharadita de azúcar moreno oscuro",
+          "1 cucharada más 1 cucharadita de azúcar granulada",
+          "3/4 cucharadita de canela"
+        ],
+        "instrucciones": "Precalienta el horno a 350°F con la rejilla en el medio. Cubra el fondo y los lados de un molde para hornear cuadrado de 9 pulgadas con papel de aluminio resistente, dejando un saliente en 2 lados. Unte con mantequilla el fondo y los lados del molde, luego espolvoree con harina, eliminando el exceso.\nMezcle la harina, el azúcar, la canela y una pizca de sal en un tazón grande. Incorpora la mantequilla con las yemas de los dedos o con una batidora de repostería hasta que la mezcla forme grumos grandes.\nBatir la harina, el polvo para hornear, el bicarbonato de sodio y la sal en un recipiente.\nMezcle la crema agrícola y la vainilla en un tazón pequeño.\nBatir la mantequilla y el azúcar en un recipiente grande con una batidora eléctrica a velocidad media-alta hasta que queden pálidos y esponjosos, aproximadamente 5 minutos. Agrega el huevo y bate hasta que esté bien mezclado.\nA baja velocidad, mezcle la mezcla de harina en 3 tandas, alternando con la mezcla de crema agrícola y mezclando hasta que esté combinado.\nIncorpora suavemente los arándanos.\nVierta la masa en el molde, alisando la parte superior (preferiblemente con una espátula acodada). Desmenuza la mitad de la cobertura uniformemente sobre la masa.\nHornee durante 25 minutos, luego retírelo del horno y desmenuce el resto de la cobertura uniformemente sobre el pastel. Hornee hasta que al insertar un palillo de madera en el centro, éste salga limpio, unos 25 minutos más. Deje enfriar en el molde durante 10 minutos. Levante el pastel con papel de aluminio y déjelo enfriar completamente sobre una rejilla.",
+        "pasos": [
+          "Precalienta el horno a 350°F con la rejilla en el medio. Cubra el fondo y los lados de un molde para hornear cuadrado de 9 pulgadas con papel de aluminio resistente, dejando un saliente en 2 lados. Unte con mantequilla el fondo y los lados del molde, luego espolvoree con harina, eliminando el exceso.",
+          "Mezcle la harina, el azúcar, la canela y una pizca de sal en un tazón grande. Incorpora la mantequilla con las yemas de los dedos o con una batidora de repostería hasta que la mezcla forme grumos grandes.",
+          "Batir la harina, el polvo para hornear, el bicarbonato de sodio y la sal en un recipiente.",
+          "Mezcle la crema agrícola y la vainilla en un tazón pequeño.",
+          "Batir la mantequilla y el azúcar en un recipiente grande con una batidora eléctrica a velocidad media-alta hasta que queden pálidos y esponjosos, aproximadamente 5 minutos. Agrega el huevo y bate hasta que esté bien mezclado.",
+          "A baja velocidad, mezcle la mezcla de harina en 3 tandas, alternando con la mezcla de crema agrícola y mezclando hasta que esté combinado.",
+          "Incorpora suavemente los arándanos.",
+          "Vierta la masa en el molde, alisando la parte superior (preferiblemente con una espátula acodada). Desmenuza la mitad de la cobertura uniformemente sobre la masa.",
+          "Hornee durante 25 minutos, luego retírelo del horno y desmenuce el resto de la cobertura uniformemente sobre el pastel. Hornee hasta que al insertar un palillo de madera en el centro, éste salga limpio, unos 25 minutos más. Deje enfriar en el molde durante 10 minutos. Levante el pastel con papel de aluminio y déjelo enfriar completamente sobre una rejilla."
+        ],
+        "categorias_fittrack": [
+          "dulces"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-1596905565.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 288,
+        "valor_nutricional": "288 kcal por porción",
+        "proteina_g": 4,
+        "carbohidratos_g": 41,
+        "grasas_g": 12,
+        "dificultad": ""
+      },
+      {
+        "id": 1198471219,
+        "nombre": "Pastel De Cassata",
+        "ingredientes": [
+          "2 onzas (1/4 taza) de harina para todo uso",
+          "1 taza de leche",
+          "8 onzas (2 barras) de mantequilla sin sal",
+          "8 onzas (1 taza) de azúcar granulada extrafina",
+          "1/2 cucharadita de aceite cítrico (aceite puro de naranja o limón)",
+          "1 cucharadita de extracto de vainilla",
+          "1/4 taza de queso ricota",
+          "9 onzas (1 3/4 tazas) de harina para todo uso",
+          "2 cucharaditas de maicena",
+          "1 cucharadita de levadura en polvo",
+          "1/2 cucharadita de sal",
+          "3/4 taza de leche",
+          "1 cucharadita de extracto de vainilla",
+          "6 huevos, separados",
+          "16 onzas (2 tazas) de azúcar granulada extrafina, cantidad dividida",
+          "8 onzas (2 barras) de mantequilla sin sal",
+          "1 litro de fresas frescas, lavadas, peladas y cortadas en rodajas",
+          "4 tazas de crema batida"
+        ],
+        "ingredientes_principales": [
+          "2 onzas (1/4 taza) de harina para todo uso",
+          "1 taza de leche",
+          "8 onzas (2 barras) de mantequilla sin sal",
+          "8 onzas (1 taza) de azúcar granulada extrafina"
+        ],
+        "instrucciones": "1. Para hacer el relleno, mezcle rápidamente 4 cucharadas de leche con la harina. La suspensión quedará algo espesa, así que bate bien para que quede suave. Presione los grumos con una espátula flexible, si es necesario.\n2. Agregue el resto de la leche y transfiera la mezcla a una cacerola de fondo grueso de 2 cuartos. Llevar a ebullición a fuego medio, batiendo constantemente. Una vez que se formen burbujas que eructan vapor, retira la olla del fuego y continúa revolviendo durante otros 30 segundos.\n3. Cubra la mezcla de leche con una envoltura de plástico presionada directamente contra la superficie. Deje enfriar durante 15 a 30 minutos.\n4. Mientras tanto, combine la mantequilla, el azúcar, el aceite cítrico y la vainilla en el recipiente de una batidora eléctrica equipada con el accesorio de paleta y bata a velocidad alta por hasta 5 minutos.\n5. Agregue la mezcla de leche y continúe batiendo a velocidad alta hasta que el relleno esté suave, otros 5 minutos. Incorpora el queso ricotta 1 cucharada a la vez.\n6. Precalienta el horno a 335°F y coloca la rejilla en la posición media. Cubra el fondo de tres moldes redondos de 9 por 2 pulgadas con pergamino.\n7. Mida la harina, la maicena, el polvo para hornear y la sal en un recipiente, y la leche y la vainilla en otro recipiente. Batir cada uno para combinar.\n8. En la batidora de pie equipada con el accesorio para batir de alambre, bata las claras de huevo a alta velocidad hasta obtener un punto rígido. Rocíe 1 taza de azúcar mientras la batidora está funcionando. Coloque el merengue en un recipiente grande y reserva.\n9. Limpie ligeramente el tazón de la batidora y reemplace el batidor de alambre con el accesorio de paleta. Batir la mantequilla con la 1 taza restante de azúcar a velocidad baja.\n10. Añade las yemas de huevo una a la vez. Raspe los lados del recipiente hasta el fondo con una espátula flexible y mezcle a velocidad baja hasta que los ingredientes estén bien combinados.\n11. Agregue alternativamente los ingredientes secos y húmedos aproximadamente un cuarto a la vez sin hacer pausas entre adiciones.\n12. Detenga la batidora e incorpore suavemente el merengue a la masa con una espátula flexible. Vierta la mezcla de manera uniforme en los moldes preparados y horneados durante 27 a 30 minutos, o hasta que el pastel rebote cuando se presiona ligeramente y al insertar una brocheta de madera en el centro, éste salga limpio.\n13. Enfríe los pasteles durante 2 minutos, luego pase una espátula acodada por los bordes e invierta los pasteles sobre una superficie plana. Serán muy frágiles, así que manéjelos con cuidado.\n14. Arme el pastel extravagante agregando aproximadamente 1 taza de cada una de las fresas frescas y el relleno de ricota entre las capas. Cubre el exterior del bizcocho con la nata montada. Agrega más fresas frescas alrededor del borde del pastel si lo deseas.",
+        "pasos": [
+          "1. Para hacer el relleno, mezcle rápidamente 4 cucharadas de leche con la harina. La suspensión quedará algo espesa, así que bate bien para que quede suave. Presione los grumos con una espátula flexible, si es necesario.",
+          "2. Agregue el resto de la leche y transfiera la mezcla a una cacerola de fondo grueso de 2 cuartos. Llevar a ebullición a fuego medio, batiendo constantemente. Una vez que se formen burbujas que eructan vapor, retira la olla del fuego y continúa revolviendo durante otros 30 segundos.",
+          "3. Cubra la mezcla de leche con una envoltura de plástico presionada directamente contra la superficie. Deje enfriar durante 15 a 30 minutos.",
+          "4. Mientras tanto, combine la mantequilla, el azúcar, el aceite cítrico y la vainilla en el recipiente de una batidora eléctrica equipada con el accesorio de paleta y bata a velocidad alta por hasta 5 minutos.",
+          "5. Agregue la mezcla de leche y continúe batiendo a velocidad alta hasta que el relleno esté suave, otros 5 minutos. Incorpora el queso ricotta 1 cucharada a la vez.",
+          "6. Precalienta el horno a 335°F y coloca la rejilla en la posición media. Cubra el fondo de tres moldes redondos de 9 por 2 pulgadas con pergamino.",
+          "7. Mida la harina, la maicena, el polvo para hornear y la sal en un recipiente, y la leche y la vainilla en otro recipiente. Batir cada uno para combinar.",
+          "8. En la batidora de pie equipada con el accesorio para batir de alambre, bata las claras de huevo a alta velocidad hasta obtener un punto rígido. Rocíe 1 taza de azúcar mientras la batidora está funcionando. Coloque el merengue en un recipiente grande y reserva.",
+          "9. Limpie ligeramente el tazón de la batidora y reemplace el batidor de alambre con el accesorio de paleta. Batir la mantequilla con la 1 taza restante de azúcar a velocidad baja.",
+          "10. Añade las yemas de huevo una a la vez. Raspe los lados del recipiente hasta el fondo con una espátula flexible y mezcle a velocidad baja hasta que los ingredientes estén bien combinados.",
+          "11. Agregue alternativamente los ingredientes secos y húmedos aproximadamente un cuarto a la vez sin hacer pausas entre adiciones.",
+          "12. Detenga la batidora e incorpore suavemente el merengue a la masa con una espátula flexible. Vierta la mezcla de manera uniforme en los moldes preparados y horneados durante 27 a 30 minutos, o hasta que el pastel rebote cuando se presiona ligeramente y al insertar una brocheta de madera en el centro, éste salga limpio.",
+          "13. Enfríe los pasteles durante 2 minutos, luego pase una espátula acodada por los bordes e invierta los pasteles sobre una superficie plana. Serán muy frágiles, así que manéjelos con cuidado.",
+          "14. Arme el pastel extravagante agregando aproximadamente 1 taza de cada una de las fresas frescas y el relleno de ricota entre las capas. Cubre el exterior del bizcocho con la nata montada. Agrega más fresas frescas alrededor del borde del pastel si lo deseas."
+        ],
+        "categorias_fittrack": [
+          "dulces"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-1198471219.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 330,
+        "valor_nutricional": "330 kcal por porción",
+        "proteina_g": 4,
+        "carbohidratos_g": 38,
+        "grasas_g": 18,
+        "dificultad": ""
+      },
+      {
+        "id": 3796829179,
+        "nombre": "Pastel de harina de maíz y limón con glaseado de limón y salsa de arándanos triturados",
+        "ingredientes": [
+          "1 1/2 tazas (envasada) de azúcar en polvo, tamizada",
+          "2 cucharadas (o más) de jugo de limón fresco",
+          "1 1/2 tazas de harina para todo uso",
+          "1/3 taza de harina de maíz amarillo",
+          "3/4 taza de azúcar",
+          "3 1/2 cucharaditas de levadura en polvo",
+          "1/2 cucharadita de sal",
+          "1 taza de suero de leche",
+          "2 huevos grandes",
+          "1 cucharada de piel de limón finamente rallada",
+          "3/4 cucharadita de extracto de vainilla",
+          "1/2 taza (1 barra) de mantequilla sin sal, derretida y enfriada",
+          "Salsa de arándanos triturados"
+        ],
+        "ingredientes_principales": [
+          "1 1/2 tazas (envasada) de azúcar en polvo, tamizada",
+          "2 cucharadas (o más) de jugo de limón fresco",
+          "1 1/2 tazas de harina para todo uso",
+          "1/3 taza de harina de maíz amarillo"
+        ],
+        "instrucciones": "Combine el azúcar en polvo y 2 cucharadas de jugo de limón en un tazón pequeño. Revuelva con una cuchara hasta que quede suave y pastoso, agregando más jugo de limón en 1/2 cucharadita si el glaseado es demasiado espeso para esparcirse. Deja de lado.\nColoque la rejilla en el centro del horno y precaliente a 350°F. Unte con mantequilla un molde para pastel de 9 pulgadas de diámetro con lados de 2 pulgadas de alto; Cuba el fondo con pergamino. Combine la harina, la harina de maíz, el azúcar, el polvo para hornear y la sal en un tazón grande; Bata para mezclar. Batir el suero de leche, los huevos, la cáscara de limón y la vainilla en un tazón pequeño. Vierta la mezcla de suero de leche y la mantequilla derretida en la mezcla de harina. Con una espátula de goma, incorpore suavemente los líquidos a la mezcla de harina hasta que se mezclen (no revuelva). Vierta la masa en el molde; esparcir uniformemente.\nHornee el pastel hasta que al insertar un probador en el centro, éste salga limpio y el pastel se despegue de los lados del molde, aproximadamente 30 minutos.\nInmediatamente pase el cuchillo por los lados del pastel. Coloque la rejilla encima del pastel en el molde. Con guantes de cocina, sujete firmemente el molde y la rejilla e invierta el pastel sobre la rejilla. Retire el molde del pastel. Coloque otra rejilla en el fondo del pastel; invierta 1 vez más para que el pastel quede con la parte superior hacia arriba. Revuelva el glaseado hasta que se mezcle. Mientras el pastel aún esté muy caliente, vierta cucharadas de glaseado sobre el pastel; extiéndalo hasta 1/2 pulgada del borde (algo del glaseado puede gotear por los lados del pastel). Dejar enfriar por completo. Sirva con salsa de arándanos triturados.",
+        "pasos": [
+          "Combine el azúcar en polvo y 2 cucharadas de jugo de limón en un tazón pequeño. Revuelva con una cuchara hasta que quede suave y pastoso, agregando más jugo de limón en 1/2 cucharadita si el glaseado es demasiado espeso para esparcirse. Deja de lado.",
+          "Coloque la rejilla en el centro del horno y precaliente a 350°F. Unte con mantequilla un molde para pastel de 9 pulgadas de diámetro con lados de 2 pulgadas de alto; Cuba el fondo con pergamino. Combine la harina, la harina de maíz, el azúcar, el polvo para hornear y la sal en un tazón grande; Bata para mezclar. Batir el suero de leche, los huevos, la cáscara de limón y la vainilla en un tazón pequeño. Vierta la mezcla de suero de leche y la mantequilla derretida en la mezcla de harina. Con una espátula de goma, incorpore suavemente los líquidos a la mezcla de harina hasta que se mezclen (no revuelva). Vierta la masa en el molde; esparcir uniformemente.",
+          "Hornee el pastel hasta que al insertar un probador en el centro, éste salga limpio y el pastel se despegue de los lados del molde, aproximadamente 30 minutos.",
+          "Inmediatamente pase el cuchillo por los lados del pastel. Coloque la rejilla encima del pastel en el molde. Con guantes de cocina, sujete firmemente el molde y la rejilla e invierta el pastel sobre la rejilla. Retire el molde del pastel. Coloque otra rejilla en el fondo del pastel; invierta 1 vez más para que el pastel quede con la parte superior hacia arriba. Revuelva el glaseado hasta que se mezcle. Mientras el pastel aún esté muy caliente, vierta cucharadas de glaseado sobre el pastel; extiéndalo hasta 1/2 pulgada del borde (algo del glaseado puede gotear por los lados del pastel). Dejar enfriar por completo. Sirva con salsa de arándanos triturados."
+        ],
+        "categorias_fittrack": [
+          "dulces"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3796829179.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 405,
+        "valor_nutricional": "405 kcal por porción",
+        "proteina_g": 6,
+        "carbohidratos_g": 66,
+        "grasas_g": 13,
+        "dificultad": ""
+      },
+      {
+        "id": 2169918127,
+        "nombre": "Pastel De Pistacho Sin Harina Con Merengue De Fresa",
+        "ingredientes": [
+          "Aceite vegetal, para molde para pasteles",
+          "1 1/2 tazas de pistachos sin cáscara y sin sal (8 onzas)",
+          "3/4 taza de azúcar, dividida",
+          "6 huevos grandes, a temperatura ambiente",
+          "1 cucharadita de extracto de vainilla",
+          "1/2 cucharadita de sal kosher, y más para las claras de huevo",
+          "1/4 cucharadita de cardamomo molido",
+          "1 1/3 tazas de fresas liofilizadas (paquete de 1,2 onzas)",
+          "5 claras de huevo, a temperatura ambiente",
+          "1/2 cucharadita de vinagre blanco",
+          "1 taza de harina de almendras (4 onzas)",
+          "1 taza de azúcar extrafina",
+          "1 cucharada de fécula de patata",
+          "molde desmontable de 9 pulgadas"
+        ],
+        "ingredientes_principales": [
+          "Aceite vegetal, para molde para pasteles",
+          "1 1/2 tazas de pistachos sin cáscara y sin sal (8 onzas)",
+          "3/4 taza de azúcar, dividida",
+          "6 huevos grandes, a temperatura ambiente"
+        ],
+        "instrucciones": "Precalienta el horno a 325°F. Cepille ligeramente un molde desmontable de 9 pulgadas con aceite y cubre el fondo con una ronda de papel pergamino. Unte el pergamino con aceite y reserve la sartén.\nEn un procesador de alimentos, mezcle los pistachos con 1/4 taza de azúcar hasta que queden finamente molidos (evite molerlos demasiado); dejar de lado.\nEn dos tazones grandes, separa los 6 huevos en yemas y claras, reservando la sexta clara para otro uso. Agrega 1/4 de taza de azúcar, vainilla, sal y cardamomo al tazón con las yemas de huevo y bata con una batidora eléctrica hasta que esté espeso y de color amarillo pálido, aproximadamente 2 minutos. Deje la mezcla de yemas de huevo a un lado y limpie y seque bien las batidoras.\nAgrega una pizca de sal al bol con las claras y bate con una batidora eléctrica hasta que se formen picos suaves. Agregue gradualmente el 1/4 de taza de azúcar restante y continúe batiendo hasta que se formen picos rígidos.\nAgregue la mitad de las claras batidas y todos los pistachos molidos a la mezcla de yemas y mezcle hasta que se combinen. Agregue las claras de huevo restantes y mezcle hasta que la masa esté combinada. Vierta la masa en el molde preparado y alise la parte superior con una espátula de goma. Hornee hasta que comience a dorarse y apenas cuaje, de 20 a 25 minutos.\nEn un procesador de alimentos, procese las fresas hasta obtener un polvo fino. Reserva 1 cucharada. del polvo para decorar el pastel y vierte el polvo restante en un recipiente mediano. Incorpora la harina de almendras y la fécula de patata.\nEn un recipiente grande con una batidora eléctrica, bata 5 claras de huevo y vinagre hasta que se formen picos suaves, luego agregue gradualmente el azúcar y continúe batiendo hasta que el merengue esté rígido y brillante y todo el azúcar se haya disuelto, de 7 a 8 minutos. Incorpora suavemente la mezcla de almendras al merengue hasta que esté combinado.\nRetire el pastel del horno. Con una espátula acodada o un cuchillo de mesa, esparza la mezcla de merengue uniformemente sobre el hot cake, comenzando desde el exterior y avanzando hacia el centro. Regrese el pastel al horno y hornee hasta que el merengue esté ligeramente dorado y crujiente, de 25 a 30 minutos. Transfiera el molde a una rejilla para que se enfríe e inmediatamente pase un cuchillo por el borde del pastel para despegarlo del molde. Suelte y retire el costado del molde desmontable. Deje que el pastel se enfríe al menos 30 minutos antes de decorarlo.\nColoque el polvo de fresa reservado en un colador de malla fina y espolvoree sobre el pastel como desee.",
+        "pasos": [
+          "Precalienta el horno a 325°F. Cepille ligeramente un molde desmontable de 9 pulgadas con aceite y cubre el fondo con una ronda de papel pergamino. Unte el pergamino con aceite y reserve la sartén.",
+          "En un procesador de alimentos, mezcle los pistachos con 1/4 taza de azúcar hasta que queden finamente molidos (evite molerlos demasiado); dejar de lado.",
+          "En dos tazones grandes, separa los 6 huevos en yemas y claras, reservando la sexta clara para otro uso. Agrega 1/4 de taza de azúcar, vainilla, sal y cardamomo al tazón con las yemas de huevo y bata con una batidora eléctrica hasta que esté espeso y de color amarillo pálido, aproximadamente 2 minutos. Deje la mezcla de yemas de huevo a un lado y limpie y seque bien las batidoras.",
+          "Agrega una pizca de sal al bol con las claras y bate con una batidora eléctrica hasta que se formen picos suaves. Agregue gradualmente el 1/4 de taza de azúcar restante y continúe batiendo hasta que se formen picos rígidos.",
+          "Agregue la mitad de las claras batidas y todos los pistachos molidos a la mezcla de yemas y mezcle hasta que se combinen. Agregue las claras de huevo restantes y mezcle hasta que la masa esté combinada. Vierta la masa en el molde preparado y alise la parte superior con una espátula de goma. Hornee hasta que comience a dorarse y apenas cuaje, de 20 a 25 minutos.",
+          "En un procesador de alimentos, procese las fresas hasta obtener un polvo fino. Reserva 1 cucharada. del polvo para decorar el pastel y vierte el polvo restante en un recipiente mediano. Incorpora la harina de almendras y la fécula de patata.",
+          "En un recipiente grande con una batidora eléctrica, bata 5 claras de huevo y vinagre hasta que se formen picos suaves, luego agregue gradualmente el azúcar y continúe batiendo hasta que el merengue esté rígido y brillante y todo el azúcar se haya disuelto, de 7 a 8 minutos. Incorpora suavemente la mezcla de almendras al merengue hasta que esté combinado.",
+          "Retire el pastel del horno. Con una espátula acodada o un cuchillo de mesa, esparza la mezcla de merengue uniformemente sobre el hot cake, comenzando desde el exterior y avanzando hacia el centro. Regrese el pastel al horno y hornee hasta que el merengue esté ligeramente dorado y crujiente, de 25 a 30 minutos. Transfiera el molde a una rejilla para que se enfríe e inmediatamente pase un cuchillo por el borde del pastel para despegarlo del molde. Suelte y retire el costado del molde desmontable. Deje que el pastel se enfríe al menos 30 minutos antes de decorarlo.",
+          "Coloque el polvo de fresa reservado en un colador de malla fina y espolvoree sobre el pastel como desee."
+        ],
+        "categorias_fittrack": [
+          "dulces"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2169918127.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 460,
+        "valor_nutricional": "460 kcal por porción",
+        "proteina_g": 15,
+        "carbohidratos_g": 41.5,
+        "grasas_g": 26,
+        "dificultad": ""
+      },
+      {
+        "id": 2455237776,
+        "nombre": "Helado de ponche de huevo",
+        "ingredientes": [
+          "1 taza de leche entera",
+          "1/4 cucharadita de sal",
+          "7 yemas de huevo grandes",
+          "3/4 taza de azúcar",
+          "2 tazas de crema espesa fría",
+          "3 cucharadas de ron oscuro",
+          "1 cucharadita de vainilla",
+          "1/4 cucharadita de nuez moscada recién rallada",
+          "Equipo especial: termómetro de lectura instantánea; una heladera",
+          "Adorne: nuez moscada recién rallada"
+        ],
+        "ingredientes_principales": [
+          "1 taza de leche entera",
+          "1/4 cucharadita de sal",
+          "7 yemas de huevo grandes",
+          "3/4 taza de azúcar"
+        ],
+        "instrucciones": "Hierva la leche y la sal en una cacerola pesada de 2 a 3 cuartos a fuego moderado. Retirar del fuego.\nBatir las yemas y el azúcar en un bol, luego agregar gradualmente 1/4 taza de leche caliente, batiendo. Agregue la mezcla de yemas a la leche restante en la sartén en un chorro lento, batiendo y cocine a fuego lento, revolviendo constantemente con una cuchara de madera, hasta que la mezcla espese ligeramente, cubra el dorso de la cuchara y registre 175 °F en el termómetro, de 3 a 5 minutos. Vierta inmediatamente a través de un colador de malla fina colocado en un recipiente limpio y agregue la crema, el ron, la vainilla y la nuez moscada. Enfríe las natillas, tapadas, hasta que estén frías, al menos 2 horas.\nCongele en una máquina para hacer helados, luego transfiéralo a un recipiente hermético y póngalo en el congelador para que se endurezca, al menos 2 horas. Ablande ligeramente en el refrigerador antes de servir, aproximadamente 20 minutos.",
+        "pasos": [
+          "Hierva la leche y la sal en una cacerola pesada de 2 a 3 cuartos a fuego moderado. Retirar del fuego.",
+          "Batir las yemas y el azúcar en un bol, luego agregar gradualmente 1/4 taza de leche caliente, batiendo. Agregue la mezcla de yemas a la leche restante en la sartén en un chorro lento, batiendo y cocine a fuego lento, revolviendo constantemente con una cuchara de madera, hasta que la mezcla espese ligeramente, cubra el dorso de la cuchara y registre 175 °F en el termómetro, de 3 a 5 minutos. Vierta inmediatamente a través de un colador de malla fina colocado en un recipiente limpio y agregue la crema, el ron, la vainilla y la nuez moscada. Enfríe las natillas, tapadas, hasta que estén frías, al menos 2 horas.",
+          "Congele en una máquina para hacer helados, luego transfiéralo a un recipiente hermético y póngalo en el congelador para que se endurezca, al menos 2 horas. Ablande ligeramente en el refrigerador antes de servir, aproximadamente 20 minutos."
+        ],
+        "categorias_fittrack": [
+          "dulces"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-2455237776.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 205,
+        "valor_nutricional": "205 kcal por porción",
+        "proteina_g": 3,
+        "carbohidratos_g": 19,
+        "grasas_g": 13,
+        "dificultad": ""
+      },
+      {
+        "id": 545624368,
+        "nombre": "Sabayón de Limón con Pomelo",
+        "ingredientes": [
+          "3 pomelos",
+          "2 huevos enteros grandes",
+          "2 yemas de huevo grandes",
+          "3/4 taza de azúcar",
+          "1/2 taza de jugo de limón fresco",
+          "2 cucharadas de mantequilla fría sin sal, cortada por la mitad"
+        ],
+        "ingredientes_principales": [
+          "3 pomelos",
+          "2 huevos enteros grandes",
+          "2 yemas de huevo grandes",
+          "3/4 taza de azúcar"
+        ],
+        "instrucciones": "Corte la cáscara de los pomelos, incluida toda la médula blanca, con un cuchillo afilado. Corte los gajos sin membranas y divídalos en 6 tazones.\nBatir los huevos enteros, las yemas y el azúcar en un recipiente de metal hasta que se combinen bien, de 1 a 2 minutos. Coloque el tazón sobre una cacerola con agua hirviendo y bata hasta que esté espumoso, aproximadamente 2 minutos. Agregue un tercio del jugo de limón y bata hasta que espese, aproximadamente 1 minuto. Agregue la mitad del jugo de limón restante y bata hasta que espese, aproximadamente 1 minuto. Repita con el jugo de limón restante. Continúe cocinando, batiendo constantemente, hasta que espese y un termómetro de lectura instantánea registre 170°F, de 7 a 8 minutos más. Retire del fuego y agregue la mantequilla, 1 pieza a la vez, hasta que se incorpore. Dejar enfriar un poco.\nVierta el sabayón tibio sobre los gajos de pomelo. Sirva el sabayón restante a un lado.",
+        "pasos": [
+          "Corte la cáscara de los pomelos, incluida toda la médula blanca, con un cuchillo afilado. Corte los gajos sin membranas y divídalos en 6 tazones.",
+          "Batir los huevos enteros, las yemas y el azúcar en un recipiente de metal hasta que se combinen bien, de 1 a 2 minutos. Coloque el tazón sobre una cacerola con agua hirviendo y bata hasta que esté espumoso, aproximadamente 2 minutos. Agregue un tercio del jugo de limón y bata hasta que espese, aproximadamente 1 minuto. Agregue la mitad del jugo de limón restante y bata hasta que espese, aproximadamente 1 minuto. Repita con el jugo de limón restante. Continúe cocinando, batiendo constantemente, hasta que espese y un termómetro de lectura instantánea registre 170°F, de 7 a 8 minutos más. Retire del fuego y agregue la mantequilla, 1 pieza a la vez, hasta que se incorpore. Dejar enfriar un poco.",
+          "Vierta el sabayón tibio sobre los gajos de pomelo. Sirva el sabayón restante a un lado."
+        ],
+        "categorias_fittrack": [
+          "dulces"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-545624368.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 216,
+        "valor_nutricional": "216 kcal por porción",
+        "proteina_g": 4,
+        "carbohidratos_g": 34.3,
+        "grasas_g": 7,
+        "dificultad": ""
+      },
+      {
+        "id": 3278114656,
+        "nombre": "Paletas de pastel de limón congeladas",
+        "ingredientes": [
+          "2 latas (14 onzas) de leche condensada azucarada",
+          "2 cucharadas de ralladura de limón fresco (de 2 a 3 limones medianos)",
+          "1 taza de jugo de limón fresco (de 7 limones medianos)",
+          "1 taza de crema espesa fría",
+          "Equipo especial: 16 a 20 moldes para paletas heladas (de 3 a 5 onzas); palitos de helado de madera"
+        ],
+        "ingredientes_principales": [
+          "2 latas (14 onzas) de leche condensada azucarada",
+          "2 cucharadas de ralladura de limón fresco (de 2 a 3 limones medianos)",
+          "1 taza de jugo de limón fresco (de 7 limones medianos)",
+          "1 taza de crema espesa fría"
+        ],
+        "instrucciones": "Batir la leche condensada, la ralladura y el jugo. Batir la crema hasta que tenga picos rígidos, luego incorporar suavemente a la mezcla de leche condensada.\nVierta en moldes para paletas heladas, deteniéndose aproximadamente a 1/4 de pulgada de la parte superior (el relleno se expandirá ligeramente cuando se congele). Golpee los moldes llenos sobre la encimera un par de veces para eliminar las burbujas de aire.\nTapar los moldes e insertar los palitos, asegurándose de que queden rectos (importante para quitar la parte superior al desmoldar). Congele hasta que esté completamente firme, aproximadamente de 4 a 5 horas.\nPara desmoldar, sumerja los moldes en un recipiente profundo, como una olla con agua a temperatura ambiente, dejando que el agua llegue a 1/4 de pulgada de la parte superior de los moldes, durante 30 segundos. Retire la tapa y saque las paletas. Sirva inmediatamente o envuélvalos individualmente en una envoltura de plástico y congélelos hasta que estén listos para servir.",
+        "pasos": [
+          "Batir la leche condensada, la ralladura y el jugo. Batir la crema hasta que tenga picos rígidos, luego incorporar suavemente a la mezcla de leche condensada.",
+          "Vierta en moldes para paletas heladas, deteniéndose aproximadamente a 1/4 de pulgada de la parte superior (el relleno se expandirá ligeramente cuando se congele). Golpee los moldes llenos sobre la encimera un par de veces para eliminar las burbujas de aire.",
+          "Tapar los moldes e insertar los palitos, asegurándose de que queden rectos (importante para quitar la parte superior al desmoldar). Congele hasta que esté completamente firme, aproximadamente de 4 a 5 horas.",
+          "Para desmoldar, sumerja los moldes en un recipiente profundo, como una olla con agua a temperatura ambiente, dejando que el agua llegue a 1/4 de pulgada de la parte superior de los moldes, durante 30 segundos. Retire la tapa y saque las paletas. Sirva inmediatamente o envuélvalos individualmente en una envoltura de plástico y congélelos hasta que estén listos para servir."
+        ],
+        "categorias_fittrack": [
+          "dulces"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3278114656.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 259,
+        "valor_nutricional": "259 kcal por porción",
+        "proteina_g": 6,
+        "carbohidratos_g": 36.2,
+        "grasas_g": 10,
+        "dificultad": ""
+      },
+      {
+        "id": 3827706344,
+        "nombre": "Pastel de harina de maíz con fresas y almendras",
+        "ingredientes": [
+          "1/2 taza de almendras crudas con piel",
+          "2 onzas de fresas liofilizadas",
+          "3/4 taza de harina para todo uso",
+          "1/2 taza de azúcar granulada",
+          "1/4 cucharadita de sal kosher",
+          "1/2 taza (1 barra) de mantequilla fría sin sal, cortada en trozos",
+          "Spray de aceite vegetal antiadherente",
+          "1 1/4 tazas de harina para todo uso",
+          "1/3 taza de harina de maíz",
+          "1 1/2 cucharaditas de levadura en polvo",
+          "1/2 cucharadita de sal kosher",
+          "6 onzas de pasta de almendras",
+          "1 taza de azúcar granulada",
+          "3/4 taza (1 1/2 barra) de mantequilla sin sal, temperatura ambiente",
+          "3 huevos grandes",
+          "1 libra de fresas, peladas, mitad partidas por la mitad y mitad en cuartos",
+          "Azúcar en polvo (para servir)",
+          "Un molde desmontable de 9\""
+        ],
+        "ingredientes_principales": [
+          "1/2 taza de almendras crudas con piel",
+          "2 onzas de fresas liofilizadas",
+          "3/4 taza de harina para todo uso",
+          "1/2 taza de azúcar granulada"
+        ],
+        "instrucciones": "Pulse las almendras en un procesador de alimentos hasta que tengan aproximadamente el tamaño de granos de arroz. Agregue las fresas y presione hasta obtener un polvo grueso. Agregue la harina, el azúcar y la sal y presione para mezclar. Agregue la mantequilla y procese hasta que no queden puntos secos.\nPrecalienta el horno a 350°F. Cubra la sartén con spray antiadherente. Batir la harina, la harina de maíz, el polvo para hornear y la sal en un tazón mediano. Con una batidora eléctrica a velocidad media, rompa la pasta de almendras en un tazón grande hasta que se desmorone. Agregue el azúcar y la mantequilla y mezcle hasta que se mezclen, aproximadamente 2 minutos. Agregue los huevos uno a la vez, mezclando bien para incorporarlos después de cada adición. Aumente la velocidad a media-alta y bata hasta que la mezcla esté suave y esponjosa, aproximadamente 3 minutos. Reduzca la velocidad a baja y mezcle los ingredientes secos.\nVierta la masa en el molde; esparza las fresas por encima, seguidas de trozos de crumble. Hornee el pastel hasta que la parte superior esté dorada y al insertar un probador en el centro salga limpio, entre 80 y 90 minutos. Dejar enfriar en el molde antes de desmoldar. Espolvoree con azúcar en polvo justo antes de servir.\nEl pastel se puede hornear con 2 días de anticipación. Guárdelo bien envuelto a temperatura ambiente.",
+        "pasos": [
+          "Pulse las almendras en un procesador de alimentos hasta que tengan aproximadamente el tamaño de granos de arroz. Agregue las fresas y presione hasta obtener un polvo grueso. Agregue la harina, el azúcar y la sal y presione para mezclar. Agregue la mantequilla y procese hasta que no queden puntos secos.",
+          "Precalienta el horno a 350°F. Cubra la sartén con spray antiadherente. Batir la harina, la harina de maíz, el polvo para hornear y la sal en un tazón mediano. Con una batidora eléctrica a velocidad media, rompa la pasta de almendras en un tazón grande hasta que se desmorone. Agregue el azúcar y la mantequilla y mezcle hasta que se mezclen, aproximadamente 2 minutos. Agregue los huevos uno a la vez, mezclando bien para incorporarlos después de cada adición. Aumente la velocidad a media-alta y bata hasta que la mezcla esté suave y esponjosa, aproximadamente 3 minutos. Reduzca la velocidad a baja y mezcle los ingredientes secos.",
+          "Vierta la masa en el molde; esparza las fresas por encima, seguidas de trozos de crumble. Hornee el pastel hasta que la parte superior esté dorada y al insertar un probador en el centro salga limpio, entre 80 y 90 minutos. Dejar enfriar en el molde antes de desmoldar. Espolvoree con azúcar en polvo justo antes de servir.",
+          "El pastel se puede hornear con 2 días de anticipación. Guárdelo bien envuelto a temperatura ambiente."
+        ],
+        "categorias_fittrack": [
+          "dulces"
+        ],
+        "dieta": [],
+        "imagen_url": "assets/images/nutrition/recipes/kaggle-3827706344.jpg",
+        "fuente_url": "https://www.kaggle.com/datasets/hugodarwood/epirecipes",
+        "tiempo_minutos": 30,
+        "porciones": 2,
+        "calorias_aprox": 479,
+        "valor_nutricional": "479 kcal por porción",
+        "proteina_g": 7,
+        "carbohidratos_g": 52,
+        "grasas_g": 27,
+        "dificultad": ""
+      }
+    ]
+  }
+}

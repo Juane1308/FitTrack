@@ -59,15 +59,18 @@ dev_dependencies:
 flutter:
 
   assets:
+    - backend/data/nutrition/recipes.json
+    - backend/data/nutrition/foods.json
     - assets/images/fittrack_logo.png
-    - assets/images/nutrition/foods/categories/
-    - assets/images/nutrition/foods/items/
     - assets/images/nutrition_breakfast.jpg
+    - assets/images/nutrition_snack.jpg
     - assets/images/nutrition_lunch.jpg
     - assets/images/nutrition_dinner.jpg
-    - assets/images/nutrition_snack.jpg
     - assets/images/nutrition_sweets.jpg
-    - backend/data/nutrition/foods.json
+    - assets/images/nutrition/recipes/
+    - assets/images/nutrition/foods/
+    - assets/images/nutrition/foods/items/
+    - assets/images/nutrition/foods/categories/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

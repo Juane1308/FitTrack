@@ -3,6 +3,7 @@ import express from 'express';
 
 import { errorMiddleware, notFoundMiddleware } from './middlewares/error.middleware.js';
 import { authRouter } from './routes/auth.routes.js';
+import { nutritionRouter } from './routes/nutrition.routes.js';
 
 export function createApp() {
   const app = express();
@@ -15,11 +16,12 @@ export function createApp() {
     response.json({
       name: 'FITTRACK API',
       status: 'running',
-      features: ['register', 'login', 'email verification', 'password recovery'],
+      features: ['register', 'login', 'email verification', 'password recovery', 'nutrition'],
     });
   });
 
   app.use('/api/auth', authRouter);
+  app.use('/api/nutrition', nutritionRouter);
   app.use(notFoundMiddleware);
   app.use(errorMiddleware);
 
