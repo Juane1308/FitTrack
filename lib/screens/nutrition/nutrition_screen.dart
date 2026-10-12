@@ -73,12 +73,64 @@ class _NutritionScreenState extends State<NutritionScreen> {
     ),
   ];
 
+  static const _recipeCategories = <_RecipeCategory>[
+    _RecipeCategory(
+      'desayunos',
+      'Desayunos',
+      'Opciones saludables para comenzar el día.',
+      'assets/images/nutrition_breakfast.jpg',
+      Icons.breakfast_dining,
+    ),
+    _RecipeCategory(
+      'almuerzos',
+      'Almuerzos',
+      'Ideas equilibradas para la comida del mediodía.',
+      'assets/images/nutrition_lunch.jpg',
+      Icons.lunch_dining,
+    ),
+    _RecipeCategory(
+      'comidas',
+      'Comidas y cenas',
+      'Recetas nutritivas para tus comidas principales.',
+      'assets/images/nutrition_dinner.jpg',
+      Icons.dinner_dining,
+    ),
+    _RecipeCategory(
+      'snacks',
+      'Snacks',
+      'Pequeñas opciones para disfrutar entre comidas.',
+      'assets/images/nutrition_snack.jpg',
+      Icons.cookie_outlined,
+    ),
+    _RecipeCategory(
+      'bebidas',
+      'Bebidas',
+      'Bebidas para acompañar una alimentación equilibrada.',
+      null,
+      Icons.local_drink_outlined,
+    ),
+    _RecipeCategory(
+      'dulces',
+      'Dulces saludables',
+      'Alternativas dulces para disfrutar ocasionalmente.',
+      'assets/images/nutrition_sweets.jpg',
+      Icons.cake_outlined,
+    ),
+  ];
+
   final _repository = NutritionFoodRepository();
+  int _activeTab = 0;
   _FoodCategory? _selectedCategory;
+  _RecipeCategory? _selectedRecipeCategory;
 
   @override
   Widget build(BuildContext context) {
     final selected = _selectedCategory;
+    final selectedRecipe = _selectedRecipeCategory;
+    final selectionTitle = _activeTab == 0 ? selected?.name : selectedRecipe?.name;
+    final selectionDescription = _activeTab == 0
+        ? selected?.description
+        : selectedRecipe?.description;
 
     return SafeArea(
       child: Center(
@@ -91,29 +143,65 @@ class _NutritionScreenState extends State<NutritionScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (selected != null)
+                    if (selectionTitle != null)
                       TextButton.icon(
-                        onPressed: () => setState(() => _selectedCategory = null),
+                        onPressed: () => setState(() {
+                          if (_activeTab == 0) {
+                            _selectedCategory = null;
+                          } else {
+                            _selectedRecipeCategory = null;
+                          }
+                        }),
                         icon: const Icon(Icons.arrow_back, size: 18),
-                        label: const Text('Clasificaciones'),
+                        label: Text(
+                          _activeTab == 0 ? 'Clasificaciones' : 'Categorías',
+                        ),
                         style: TextButton.styleFrom(
                           foregroundColor: AppColors.primary,
                           padding: EdgeInsets.zero,
                         ),
                       ),
                     SectionTitle(
-                      title: selected?.name ?? 'Alimentos',
-                      subtitle: selected == null
+                      title: selectionTitle ?? (_activeTab == 0 ? 'Alimentos' : 'Recetas'),
+                      subtitle: selectionDescription ?? (_activeTab == 0
                           ? 'Conoce los grupos de alimentos y lo que aportan.'
-                          : selected.description,
+                          : 'Explora recetas saludables clasificadas por momento del día.'),
                     ),
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: SegmentedButton<int>(
+                    segments: const [
+                      ButtonSegment<int>(
+                        value: 0,
+                        label: Text('Alimentos'),
+                        icon: Icon(Icons.restaurant_menu),
+                      ),
+                      ButtonSegment<int>(
+                        value: 1,
+                        label: Text('Recetas'),
+                        icon: Icon(Icons.menu_book_outlined),
+                      ),
+                    ],
+                    selected: {_activeTab},
+                    onSelectionChanged: (selection) => setState(() {
+                      _activeTab = selection.first;
+                      _selectedCategory = null;
+                      _selectedRecipeCategory = null;
+                    }),
+                  ),
+                ),
+              ),
               Expanded(
-                child: selected == null
-                    ? _categoryList()
-                    : _foodList(selected),
+                child: _activeTab == 0
+                    ? (selected == null ? _categoryList() : _foodList(selected))
+                    : (selectedRecipe == null
+                          ? _recipeCategoryList()
+                          : _emptyRecipeCategory(selectedRecipe)),
               ),
             ],
           ),
@@ -137,6 +225,129 @@ class _NutritionScreenState extends State<NutritionScreen> {
         _categoryCard(category),
         const SizedBox(height: 12),
       ],
+    ],
+  );
+
+  Widget _recipeCategoryList() => ListView(
+    padding: const EdgeInsets.fromLTRB(20, 12, 20, 110),
+    children: [
+      Text(
+        'Categorías de recetas',
+        style: Theme.of(context)
+            .textTheme
+            .titleLarge
+            ?.copyWith(fontWeight: FontWeight.w800),
+      ),
+      const SizedBox(height: 6),
+      const Text(
+        'Elige el momento del día para explorar las recetas.',
+        style: TextStyle(color: AppColors.mutedText, height: 1.4),
+      ),
+      const SizedBox(height: 16),
+      for (final category in _recipeCategories) ...[
+        _recipeCategoryCard(category),
+        const SizedBox(height: 12),
+      ],
+    ],
+  );
+
+  Widget _recipeCategoryCard(_RecipeCategory category) => AppCard(
+    padding: EdgeInsets.zero,
+    child: InkWell(
+      onTap: () => setState(() => _selectedRecipeCategory = category),
+      borderRadius: BorderRadius.circular(20),
+      child: SizedBox(
+        height: 124,
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.horizontal(
+                left: Radius.circular(19),
+              ),
+              child: category.image == null
+                  ? _recipeCategoryFallback(category)
+                  : Image.asset(
+                      category.image!,
+                      width: 110,
+                      height: 124,
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, _, _) => _recipeCategoryFallback(category),
+                    ),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    category.name,
+                    style: const TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    category.description,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      color: AppColors.mutedText,
+                      height: 1.3,
+                      fontSize: 12,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  const Text(
+                    'Ver recetas',
+                    style: TextStyle(color: AppColors.mutedText, fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12),
+              child: Icon(Icons.chevron_right, color: AppColors.mutedText),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+
+  Widget _recipeCategoryFallback(_RecipeCategory category) => Container(
+    width: 110,
+    height: 124,
+    color: AppColors.primary.withValues(alpha: .12),
+    child: Icon(category.icon, color: AppColors.primary, size: 34),
+  );
+
+  Widget _emptyRecipeCategory(_RecipeCategory category) => ListView(
+    padding: const EdgeInsets.fromLTRB(20, 12, 20, 110),
+    children: [
+      AppCard(
+        child: Column(
+          children: [
+            Icon(category.icon, color: AppColors.primary, size: 36),
+            const SizedBox(height: 12),
+            Text(
+              'Recetas de ${category.name.toLowerCase()}',
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'El contenido de esta categoría se agregará en el siguiente requisito.',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: AppColors.mutedText, height: 1.4),
+            ),
+          ],
+        ),
+      ),
     ],
   );
 
@@ -425,4 +636,20 @@ class _FoodCategory {
   final String description;
   final IconData icon;
   final String image;
+}
+
+class _RecipeCategory {
+  const _RecipeCategory(
+    this.id,
+    this.name,
+    this.description,
+    this.image,
+    this.icon,
+  );
+
+  final String id;
+  final String name;
+  final String description;
+  final String? image;
+  final IconData icon;
 }
