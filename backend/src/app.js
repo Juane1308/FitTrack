@@ -4,6 +4,7 @@ import express from 'express';
 import { errorMiddleware, notFoundMiddleware } from './middlewares/error.middleware.js';
 import { authRouter } from './routes/auth.routes.js';
 import { nutritionRouter } from './routes/nutrition.routes.js';
+import { profileRouter } from './routes/profile.routes.js';
 
 export function createApp() {
   const app = express();
@@ -21,6 +22,7 @@ export function createApp() {
   });
 
   app.use('/api/auth', authRouter);
+  app.use('/api/profile', profileRouter);
   app.use('/api/nutrition', nutritionRouter);
   app.use(notFoundMiddleware);
   app.use(errorMiddleware);

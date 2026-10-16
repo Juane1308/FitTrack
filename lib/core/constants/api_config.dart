@@ -4,9 +4,9 @@ class ApiConfig {
   const ApiConfig._();
 
   /// La app usa autenticación simulada por defecto para poder probar el flujo
-  /// sin levantar el backend. Activa la API al ejecutar con
-  /// --dart-define=FITTRACK_USE_API=true.
-  static const useApi = bool.fromEnvironment(
+  /// sin levantar el backend. En producción, definir FITTRACK_API_URL activa
+  /// automáticamente la conexión con Railway.
+  static const _useApiFlag = bool.fromEnvironment(
     'FITTRACK_USE_API',
     defaultValue: false,
   );
@@ -14,6 +14,8 @@ class ApiConfig {
   static const _configuredBaseUrl = String.fromEnvironment(
     'FITTRACK_API_URL',
   );
+
+  static bool get useApi => _useApiFlag || _configuredBaseUrl.isNotEmpty;
 
   static String get baseUrl {
     if (_configuredBaseUrl.isNotEmpty) {

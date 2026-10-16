@@ -10,13 +10,11 @@ enum AuthStatus { loggedOut, loading, authenticated }
 class AuthProvider extends ChangeNotifier {
   AuthProvider({AuthRepository? repository})
     : _repository = repository ??
-          (ApiConfig.useApi ? ApiAuthRepository() : MockAuthRepository()),
-      _mockRepository = MockAuthRepository() {
+          (ApiConfig.useApi ? ApiAuthRepository() : MockAuthRepository()) {
     initialization = _restoreSession();
   }
 
-  AuthRepository _repository;
-  final MockAuthRepository _mockRepository;
+  final AuthRepository _repository;
   AuthStatus _status = AuthStatus.loggedOut;
   AppUser? _currentUser;
   String? _sessionToken;
@@ -108,15 +106,7 @@ class AuthProvider extends ChangeNotifier {
 
   Future<AuthResult> _withMockFallback(
     Future<AuthResult> Function(AuthRepository repository) action,
-  ) async {
-    var result = await action(_repository);
-    if (result.status == AuthResultStatus.networkError &&
-        _repository is ApiAuthRepository) {
-      _repository = _mockRepository;
-      result = await action(_repository);
-    }
-    return result;
-  }
+  ) => action(_repository);
 
   Future<void> logout() async {
     await _repository.logout();

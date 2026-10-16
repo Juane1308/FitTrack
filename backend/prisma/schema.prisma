@@ -7,6 +7,13 @@ datasource db {
   url      = env("DIRECT_URL")
 }
 
+enum Goal {
+  STRENGTH
+  WEIGHT_LOSS
+  MUSCLE_GAIN
+  GENERAL_FITNESS
+}
+
 model User {
   id                String                  @id @default(uuid()) @db.Uuid
   name              String                  @db.VarChar(120)
@@ -16,11 +23,36 @@ model User {
   emailVerifiedAt   DateTime?               @map("email_verified_at")
   createdAt         DateTime                @default(now()) @map("created_at")
   updatedAt         DateTime                @updatedAt @map("updated_at")
+  profile           UserProfile?
   authSessions      AuthSession[]
   passwordResets    PasswordResetToken[]
   emailCodes        EmailVerificationCode[]
 
   @@map("users")
+}
+
+model UserProfile {
+  id                   String   @id @default(uuid()) @db.Uuid
+  userId               String   @unique @map("user_id") @db.Uuid
+  objective            Goal?
+  birthDate            DateTime? @map("birth_date") @db.Date
+  weight               Decimal? @db.Decimal(8, 2)
+  height               Decimal? @db.Decimal(5, 2)
+  sportsActivity       String?  @map("sports_activity") @db.VarChar(160)
+  trainingLocation     String?  @map("training_location") @db.VarChar(160)
+  injuries             String?
+  pain                 String?
+  surgeries            String?
+  diseases             String?
+  allergies            String?
+  notificationsEnabled Boolean  @default(true) @map("notifications_enabled")
+  privacyEnabled       Boolean  @default(true) @map("privacy_enabled")
+  preferences          Json?
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_profiles")
 }
 
 model AuthSession {
