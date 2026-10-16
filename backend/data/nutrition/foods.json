@@ -5,7 +5,7 @@
       {
         "id": 1104812,
         "nombre": "Arroz integral",
-        "imagen_url": "assets/images/nutrition/foods/items/food-000.png",
+        "imagen_url": "assets/images/nutrition/foods/items/carbohidratos-01-arroz-integral.jpg",
         "categoria": "carbohidratos",
         "porcion": "100 g",
         "calorias": 365.2,
@@ -19,7 +19,7 @@
       {
         "id": 2346396,
         "nombre": "Avena",
-        "imagen_url": "assets/images/nutrition/foods/items/food-001.png",
+        "imagen_url": "assets/images/nutrition/foods/items/carbohidratos-02-avena.jpg",
         "categoria": "carbohidratos",
         "porcion": "100 g",
         "calorias": 381.6,
@@ -33,7 +33,7 @@
       {
         "id": 2512372,
         "nombre": "Quinua",
-        "imagen_url": "assets/images/nutrition/foods/items/food-002.png",
+        "imagen_url": "assets/images/nutrition/foods/items/carbohidratos-03-quinua.jpg",
         "categoria": "carbohidratos",
         "porcion": "100 g",
         "calorias": 385.2,
@@ -47,7 +47,7 @@
       {
         "id": 2346404,
         "nombre": "Camote",
-        "imagen_url": "assets/images/nutrition/foods/items/food-003.png",
+        "imagen_url": "assets/images/nutrition/foods/items/carbohidratos-04-camote.jpg",
         "categoria": "carbohidratos",
         "porcion": "100 g",
         "calorias": 79,
@@ -61,7 +61,7 @@
       {
         "id": 2710826,
         "nombre": "Maíz",
-        "imagen_url": "assets/images/nutrition/foods/items/food-004.png",
+        "imagen_url": "assets/images/nutrition/foods/items/carbohidratos-05-maiz.jpg",
         "categoria": "carbohidratos",
         "porcion": "100 g",
         "calorias": 84.5,
@@ -75,7 +75,7 @@
       {
         "id": 790774,
         "nombre": "Banano",
-        "imagen_url": "assets/images/nutrition/foods/items/food-005.png",
+        "imagen_url": "assets/images/nutrition/foods/items/carbohidratos-06-banano.jpg",
         "categoria": "carbohidratos",
         "porcion": "100 g",
         "calorias": 85,
@@ -91,7 +91,7 @@
       {
         "id": 323604,
         "nombre": "Huevo",
-        "imagen_url": "assets/images/nutrition/foods/items/food-006.png",
+        "imagen_url": "assets/images/nutrition/foods/items/proteinas-01-huevo.jpg",
         "categoria": "proteinas",
         "porcion": "100 g",
         "calorias": 150,
@@ -105,7 +105,7 @@
       {
         "id": 2684440,
         "nombre": "Salmón",
-        "imagen_url": "assets/images/nutrition/foods/items/food-007.png",
+        "imagen_url": "assets/images/nutrition/foods/items/proteinas-02-salmon.jpg",
         "categoria": "proteinas",
         "porcion": "100 g",
         "calorias": 130,
@@ -119,7 +119,7 @@
       {
         "id": 2644283,
         "nombre": "Lentejas",
-        "imagen_url": "assets/images/nutrition/foods/items/food-008.png",
+        "imagen_url": "assets/images/nutrition/foods/items/proteinas-03-lentejas.jpg",
         "categoria": "proteinas",
         "porcion": "100 g",
         "calorias": 360.3,
@@ -133,7 +133,7 @@
       {
         "id": 334194,
         "nombre": "Atún",
-        "imagen_url": "assets/images/nutrition/foods/items/food-009.png",
+        "imagen_url": "assets/images/nutrition/foods/items/proteinas-04-atun.jpg",
         "categoria": "proteinas",
         "porcion": "100 g",
         "calorias": 90,
@@ -147,7 +147,7 @@
       {
         "id": 2514743,
         "nombre": "Carne magra",
-        "imagen_url": "assets/images/nutrition/foods/items/food-010.png",
+        "imagen_url": "assets/images/nutrition/foods/items/proteinas-05-carne-magra.jpg",
         "categoria": "proteinas",
         "porcion": "100 g",
         "calorias": 184.9,
@@ -161,7 +161,7 @@
       {
         "id": 2684443,
         "nombre": "Camarones",
-        "imagen_url": "assets/images/nutrition/foods/items/food-011.png",
+        "imagen_url": "assets/images/nutrition/foods/items/proteinas-06-camarones.jpg",
         "categoria": "proteinas",
         "porcion": "100 g",
         "calorias": 71.4,
@@ -177,7 +177,7 @@
       {
         "id": 323294,
         "nombre": "Almendras",
-        "imagen_url": "assets/images/nutrition/foods/items/food-012.png",
+        "imagen_url": "assets/images/nutrition/foods/items/grasas-01-almendras.jpg",
         "categoria": "grasas",
         "porcion": "100 g",
         "calorias": 620,
@@ -191,7 +191,7 @@
       {
         "id": 748608,
         "nombre": "Aceite de oliva",
-        "imagen_url": "assets/images/nutrition/foods/items/food-013.png",
+        "imagen_url": "assets/images/nutrition/foods/items/grasas-02-aceite-de-oliva.jpg",
         "categoria": "grasas",
         "porcion": "100 g",
         "calorias": 0,
@@ -205,7 +205,7 @@
       {
         "id": 2346394,
         "nombre": "Nueces",
-        "imagen_url": "assets/images/nutrition/foods/items/food-014.png",
+        "imagen_url": "assets/images/nutrition/foods/items/grasas-03-nueces.jpg",
         "categoria": "grasas",
         "porcion": "100 g",
         "calorias": 729.6,
@@ -219,7 +219,7 @@
       {
         "id": 2515376,
         "nombre": "Maní",
-        "imagen_url": "assets/images/nutrition/foods/items/food-015.png",
+        "imagen_url": "assets/images/nutrition/foods/items/grasas-04-mani.jpg",
         "categoria": "grasas",
         "porcion": "100 g",
         "calorias": 588.3,
@@ -233,7 +233,7 @@
       {
         "id": 2515374,
         "nombre": "Marañones",
-        "imagen_url": "assets/images/nutrition/foods/items/food-016.png",
+        "imagen_url": "assets/images/nutrition/foods/items/grasas-05-maranones.jpg",
         "categoria": "grasas",
         "porcion": "100 g",
         "calorias": 564.7,
@@ -243,86 +243,12 @@
         "fibra_g": 4.1,
         "fuente": "USDA FoodData Central Foundation Foods",
         "descripcion_saludable": "Contienen grasas insaturadas y minerales como cobre y magnesio, además de algo de proteína vegetal."
-      }
-    ],
-    "vitaminas": [
-      {
-        "id": 1750352,
-        "nombre": "Espinaca",
-        "imagen_url": "assets/images/nutrition/foods/items/food-017.png",
-        "categoria": "vitaminas",
-        "porcion": "100 g",
-        "calorias": 26.6,
-        "proteina_g": 2.9,
-        "carbohidratos_g": 2.4,
-        "grasas_g": 0.6,
-        "fibra_g": 1.6,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Aporta folato, vitamina K y carotenoides, junto con fibra; se puede consumir cruda o cocida."
       },
-      {
-        "id": 326458,
-        "nombre": "Zanahoria",
-        "imagen_url": "assets/images/nutrition/foods/items/food-018.png",
-        "categoria": "vitaminas",
-        "porcion": "100 g",
-        "calorias": 37,
-        "proteina_g": 0.8,
-        "carbohidratos_g": 7.9,
-        "grasas_g": 0.5,
-        "fibra_g": 3.2,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Es conocida por su betacaroteno, que el organismo convierte en vitamina A, y también aporta fibra."
-      },
-      {
-        "id": 327501,
-        "nombre": "Naranja",
-        "imagen_url": "assets/images/nutrition/foods/items/food-019.png",
-        "categoria": "vitaminas",
-        "porcion": "100 g",
-        "calorias": 47,
-        "proteina_g": 0.9,
-        "carbohidratos_g": 11.8,
-        "grasas_g": 0.1,
-        "fibra_g": 2,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Proporciona vitamina C, agua y fibra cuando se consume entera; la fibra se reduce al exprimirla."
-      },
-      {
-        "id": 321900,
-        "nombre": "Brócoli",
-        "imagen_url": "assets/images/nutrition/foods/items/food-020.png",
-        "categoria": "vitaminas",
-        "porcion": "100 g",
-        "calorias": 32,
-        "proteina_g": 2.6,
-        "carbohidratos_g": 6.3,
-        "grasas_g": 0.3,
-        "fibra_g": 2.4,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Aporta fibra y vitaminas C y K, además de compuestos vegetales propios de las crucíferas."
-      },
-      {
-        "id": 321360,
-        "nombre": "Tomate",
-        "imagen_url": "assets/images/nutrition/foods/items/food-021.png",
-        "categoria": "vitaminas",
-        "porcion": "100 g",
-        "calorias": 27,
-        "proteina_g": 0.8,
-        "carbohidratos_g": 5.5,
-        "grasas_g": 0.6,
-        "fibra_g": 2.1,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Contiene vitamina C y licopeno, un carotenoide; puede disfrutarse fresco o cocido."
-      }
-    ],
-    "minerales": [
       {
         "id": 2515380,
         "nombre": "Semillas de calabaza",
-        "imagen_url": "assets/images/nutrition/foods/items/food-022.png",
-        "categoria": "minerales",
+        "imagen_url": "assets/images/nutrition/foods/items/grasas-06-semillas-de-calabaza.jpg",
+        "categoria": "grasas",
         "porcion": "100 g",
         "calorias": 554.6,
         "proteina_g": 29.9,
@@ -331,84 +257,14 @@
         "fibra_g": 5.1,
         "fuente": "USDA FoodData Central Foundation Foods",
         "descripcion_saludable": "Aportan proteína vegetal, grasas insaturadas y minerales como magnesio y zinc."
-      },
-      {
-        "id": 322892,
-        "nombre": "Leche",
-        "imagen_url": "assets/images/nutrition/foods/items/food-023.png",
-        "categoria": "minerales",
-        "porcion": "100 g",
-        "calorias": 60,
-        "proteina_g": 3.3,
-        "carbohidratos_g": 4.7,
-        "grasas_g": 3.2,
-        "fibra_g": 0,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Proporciona proteína y calcio; las versiones fortificadas también pueden aportar vitamina D."
-      },
-      {
-        "id": 330137,
-        "nombre": "Yogur natural",
-        "imagen_url": "assets/images/nutrition/foods/items/food-024.png",
-        "categoria": "minerales",
-        "porcion": "100 g",
-        "calorias": 61,
-        "proteina_g": 10.3,
-        "carbohidratos_g": 3.6,
-        "grasas_g": 0.4,
-        "fibra_g": 0,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Aporta proteína y calcio. Las variedades sin azúcar añadido permiten controlar mejor el dulzor de la comida."
-      },
-      {
-        "id": 1750346,
-        "nombre": "Champiñones",
-        "imagen_url": "assets/images/nutrition/foods/items/food-025.png",
-        "categoria": "minerales",
-        "porcion": "100 g",
-        "calorias": 44.1,
-        "proteina_g": 2.4,
-        "carbohidratos_g": 8.2,
-        "grasas_g": 0.2,
-        "fibra_g": 0,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Aportan fibra, vitaminas del grupo B y minerales; su sabor umami ayuda a dar profundidad a distintos platos."
-      },
-      {
-        "id": 2346396,
-        "nombre": "Avena",
-        "imagen_url": "assets/images/nutrition/foods/items/food-026.png",
-        "categoria": "minerales",
-        "porcion": "100 g",
-        "calorias": 381.6,
-        "proteina_g": 13.5,
-        "carbohidratos_g": 68.7,
-        "grasas_g": 5.9,
-        "fibra_g": 0,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Es fuente de carbohidratos y fibra soluble, útil para una comida saciante y para apoyar una digestión saludable."
-      },
-      {
-        "id": 2514743,
-        "nombre": "Carne magra",
-        "imagen_url": "assets/images/nutrition/foods/items/food-027.png",
-        "categoria": "minerales",
-        "porcion": "100 g",
-        "calorias": 184.9,
-        "proteina_g": 18.2,
-        "carbohidratos_g": 0,
-        "grasas_g": 12.8,
-        "fibra_g": 0,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Aporta proteína, hierro y vitamina B12, nutrientes que participan en la formación de tejidos y glóbulos rojos."
       }
     ],
-    "frutas_verduras": [
+    "frutas": [
       {
         "id": 327699,
         "nombre": "Fresas",
-        "imagen_url": "assets/images/nutrition/foods/items/food-028.png",
-        "categoria": "frutas_verduras",
+        "imagen_url": "assets/images/nutrition/foods/items/frutas-01-fresas.jpg",
+        "categoria": "frutas",
         "porcion": "100 g",
         "calorias": 31,
         "proteina_g": 0.6,
@@ -421,8 +277,8 @@
       {
         "id": 1105430,
         "nombre": "Manzana",
-        "imagen_url": "assets/images/nutrition/foods/items/food-029.png",
-        "categoria": "frutas_verduras",
+        "imagen_url": "assets/images/nutrition/foods/items/frutas-02-manzana.jpg",
+        "categoria": "frutas",
         "porcion": "100 g",
         "calorias": 62,
         "proteina_g": 0.2,
@@ -435,8 +291,8 @@
       {
         "id": 2263889,
         "nombre": "Arándanos",
-        "imagen_url": "assets/images/nutrition/foods/items/food-030.png",
-        "categoria": "frutas_verduras",
+        "imagen_url": "assets/images/nutrition/foods/items/frutas-03-arandanos.jpg",
+        "categoria": "frutas",
         "porcion": "100 g",
         "calorias": 63.9,
         "proteina_g": 0.7,
@@ -447,24 +303,10 @@
         "descripcion_saludable": "Contienen fibra y pigmentos vegetales llamados antocianinas, característicos de las frutas de color azul y morado."
       },
       {
-        "id": 2685573,
-        "nombre": "Coliflor",
-        "imagen_url": "assets/images/nutrition/foods/items/food-031.png",
-        "categoria": "frutas_verduras",
-        "porcion": "100 g",
-        "calorias": 27.6,
-        "proteina_g": 1.6,
-        "carbohidratos_g": 4.7,
-        "grasas_g": 0.2,
-        "fibra_g": 1.9,
-        "fuente": "USDA FoodData Central Foundation Foods",
-        "descripcion_saludable": "Aporta fibra y vitamina C; puede usarse en preparaciones variadas como alternativa a algunos acompañamientos con almidón."
-      },
-      {
         "id": 2263890,
         "nombre": "Uvas",
-        "imagen_url": "assets/images/nutrition/foods/items/food-032.png",
-        "categoria": "frutas_verduras",
+        "imagen_url": "assets/images/nutrition/foods/items/frutas-04-uvas.jpg",
+        "categoria": "frutas",
         "porcion": "100 g",
         "calorias": 85.9,
         "proteina_g": 0.9,
@@ -477,8 +319,8 @@
       {
         "id": 2346398,
         "nombre": "Piña",
-        "imagen_url": "assets/images/nutrition/foods/items/food-033.png",
-        "categoria": "frutas_verduras",
+        "imagen_url": "assets/images/nutrition/foods/items/frutas-05-pina.jpg",
+        "categoria": "frutas",
         "porcion": "100 g",
         "calorias": 60.1,
         "proteina_g": 0.5,
@@ -489,10 +331,96 @@
         "descripcion_saludable": "Proporciona vitamina C, agua y manganeso; su sabor dulce puede ayudar a complementar una colación."
       },
       {
+        "id": 327501,
+        "nombre": "Naranja",
+        "imagen_url": "assets/images/nutrition/foods/items/frutas-06-naranja.jpg",
+        "categoria": "frutas",
+        "porcion": "100 g",
+        "calorias": 47,
+        "proteina_g": 0.9,
+        "carbohidratos_g": 11.8,
+        "grasas_g": 0.1,
+        "fibra_g": 2,
+        "fuente": "USDA FoodData Central Foundation Foods",
+        "descripcion_saludable": "Proporciona vitamina C, agua y fibra cuando se consume entera; la fibra se reduce al exprimirla."
+      }
+    ],
+    "verduras": [
+      {
+        "id": 1750352,
+        "nombre": "Espinaca",
+        "imagen_url": "assets/images/nutrition/foods/items/verduras-01-espinaca.jpg",
+        "categoria": "verduras",
+        "porcion": "100 g",
+        "calorias": 26.6,
+        "proteina_g": 2.9,
+        "carbohidratos_g": 2.4,
+        "grasas_g": 0.6,
+        "fibra_g": 1.6,
+        "fuente": "USDA FoodData Central Foundation Foods",
+        "descripcion_saludable": "Aporta folato, vitamina K y carotenoides, junto con fibra; se puede consumir cruda o cocida."
+      },
+      {
+        "id": 326458,
+        "nombre": "Zanahoria",
+        "imagen_url": "assets/images/nutrition/foods/items/verduras-02-zanahoria.jpg",
+        "categoria": "verduras",
+        "porcion": "100 g",
+        "calorias": 37,
+        "proteina_g": 0.8,
+        "carbohidratos_g": 7.9,
+        "grasas_g": 0.5,
+        "fibra_g": 3.2,
+        "fuente": "USDA FoodData Central Foundation Foods",
+        "descripcion_saludable": "Es conocida por su betacaroteno, que el organismo convierte en vitamina A, y también aporta fibra."
+      },
+      {
+        "id": 321900,
+        "nombre": "Brócoli",
+        "imagen_url": "assets/images/nutrition/foods/items/verduras-03-brocoli.jpg",
+        "categoria": "verduras",
+        "porcion": "100 g",
+        "calorias": 32,
+        "proteina_g": 2.6,
+        "carbohidratos_g": 6.3,
+        "grasas_g": 0.3,
+        "fibra_g": 2.4,
+        "fuente": "USDA FoodData Central Foundation Foods",
+        "descripcion_saludable": "Aporta fibra y vitaminas C y K, además de compuestos vegetales propios de las crucíferas."
+      },
+      {
+        "id": 321360,
+        "nombre": "Tomate",
+        "imagen_url": "assets/images/nutrition/foods/items/verduras-04-tomate.jpg",
+        "categoria": "verduras",
+        "porcion": "100 g",
+        "calorias": 27,
+        "proteina_g": 0.8,
+        "carbohidratos_g": 5.5,
+        "grasas_g": 0.6,
+        "fibra_g": 2.1,
+        "fuente": "USDA FoodData Central Foundation Foods",
+        "descripcion_saludable": "Contiene vitamina C y licopeno, un carotenoide; puede disfrutarse fresco o cocido."
+      },
+      {
+        "id": 2685573,
+        "nombre": "Coliflor",
+        "imagen_url": "assets/images/nutrition/foods/items/verduras-05-coliflor.jpg",
+        "categoria": "verduras",
+        "porcion": "100 g",
+        "calorias": 27.6,
+        "proteina_g": 1.6,
+        "carbohidratos_g": 4.7,
+        "grasas_g": 0.2,
+        "fibra_g": 1.9,
+        "fuente": "USDA FoodData Central Foundation Foods",
+        "descripcion_saludable": "Aporta fibra y vitamina C; puede usarse en preparaciones variadas como alternativa a algunos acompañamientos con almidón."
+      },
+      {
         "id": 2685568,
         "nombre": "Calabacín",
-        "imagen_url": "assets/images/nutrition/foods/items/food-034.png",
-        "categoria": "frutas_verduras",
+        "imagen_url": "assets/images/nutrition/foods/items/verduras-06-calabacin.jpg",
+        "categoria": "verduras",
         "porcion": "100 g",
         "calorias": 19,
         "proteina_g": 1,
@@ -507,7 +435,7 @@
       {
         "id": 2644282,
         "nombre": "Garbanzos",
-        "imagen_url": "assets/images/nutrition/foods/items/food-035.png",
+        "imagen_url": "assets/images/nutrition/foods/items/legumbres-01-garbanzos.jpg",
         "categoria": "legumbres",
         "porcion": "100 g",
         "calorias": 383,
@@ -521,7 +449,7 @@
       {
         "id": 2644285,
         "nombre": "Fríjoles negros",
-        "imagen_url": "assets/images/nutrition/foods/items/food-036.png",
+        "imagen_url": "assets/images/nutrition/foods/items/legumbres-02-frijoles-negros.jpg",
         "categoria": "legumbres",
         "porcion": "100 g",
         "calorias": 118.4,
@@ -535,7 +463,7 @@
       {
         "id": 2644283,
         "nombre": "Lentejas rojas",
-        "imagen_url": "assets/images/nutrition/foods/items/food-037.png",
+        "imagen_url": "assets/images/nutrition/foods/items/legumbres-03-lentejas-rojas.jpg",
         "categoria": "legumbres",
         "porcion": "100 g",
         "calorias": 360.3,
@@ -549,7 +477,7 @@
       {
         "id": 2644291,
         "nombre": "Arvejas",
-        "imagen_url": "assets/images/nutrition/foods/items/food-038.png",
+        "imagen_url": "assets/images/nutrition/foods/items/legumbres-04-arvejas.jpg",
         "categoria": "legumbres",
         "porcion": "100 g",
         "calorias": 80.1,
@@ -563,7 +491,7 @@
       {
         "id": 2758981,
         "nombre": "Edamame",
-        "imagen_url": "assets/images/nutrition/foods/items/food-039.png",
+        "imagen_url": "assets/images/nutrition/foods/items/legumbres-05-edamame.jpg",
         "categoria": "legumbres",
         "porcion": "100 g",
         "calorias": 0,
@@ -577,7 +505,7 @@
       {
         "id": 2644289,
         "nombre": "Fríjoles rojos",
-        "imagen_url": "assets/images/nutrition/foods/items/food-040.png",
+        "imagen_url": "assets/images/nutrition/foods/items/legumbres-06-frijoles-rojos.jpg",
         "categoria": "legumbres",
         "porcion": "100 g",
         "calorias": 126.6,
@@ -593,7 +521,7 @@
       {
         "id": 322892,
         "nombre": "Leche",
-        "imagen_url": "assets/images/nutrition/foods/items/food-041.png",
+        "imagen_url": "assets/images/nutrition/foods/items/lacteos-01-leche.jpg",
         "categoria": "lacteos",
         "porcion": "100 g",
         "calorias": 60,
@@ -607,7 +535,7 @@
       {
         "id": 330137,
         "nombre": "Yogur natural",
-        "imagen_url": "assets/images/nutrition/foods/items/food-042.png",
+        "imagen_url": "assets/images/nutrition/foods/items/lacteos-02-yogur-natural.jpg",
         "categoria": "lacteos",
         "porcion": "100 g",
         "calorias": 61,
@@ -621,7 +549,7 @@
       {
         "id": 328841,
         "nombre": "Queso cottage",
-        "imagen_url": "assets/images/nutrition/foods/items/food-043.png",
+        "imagen_url": "assets/images/nutrition/foods/items/lacteos-03-queso-cottage.jpg",
         "categoria": "lacteos",
         "porcion": "100 g",
         "calorias": 84,
@@ -635,7 +563,7 @@
       {
         "id": 329370,
         "nombre": "Queso mozzarella",
-        "imagen_url": "assets/images/nutrition/foods/items/food-044.png",
+        "imagen_url": "assets/images/nutrition/foods/items/lacteos-04-queso-mozzarella.jpg",
         "categoria": "lacteos",
         "porcion": "100 g",
         "calorias": 298,
@@ -649,7 +577,7 @@
       {
         "id": 328637,
         "nombre": "Queso cheddar",
-        "imagen_url": "assets/images/nutrition/foods/items/food-045.png",
+        "imagen_url": "assets/images/nutrition/foods/items/lacteos-05-queso-cheddar.jpg",
         "categoria": "lacteos",
         "porcion": "100 g",
         "calorias": 408,
@@ -663,7 +591,7 @@
       {
         "id": 330137,
         "nombre": "Yogur griego",
-        "imagen_url": "assets/images/nutrition/foods/items/food-046.png",
+        "imagen_url": "assets/images/nutrition/foods/items/lacteos-06-yogur-griego.jpg",
         "categoria": "lacteos",
         "porcion": "100 g",
         "calorias": 61,

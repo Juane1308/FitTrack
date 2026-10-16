@@ -22,14 +22,13 @@ class _NutritionScreenState extends State<NutritionScreen> {
     _Category('dulces', 'Dulces saludables', 'assets/images/nutrition_sweets.jpg'),
   ];
   static const _foodCategories = <_FoodCategory>[
-    _FoodCategory('carbohidratos', 'Carbohidratos', 'Energía para el cerebro y el movimiento.', Icons.bolt, 'categories/carbohidratos.png'),
-    _FoodCategory('proteinas', 'Proteínas', 'Aminoácidos para formar y reparar tejidos.', Icons.fitness_center, 'categories/proteinas.png'),
-    _FoodCategory('grasas', 'Grasas saludables', 'Energía y apoyo en la absorción de vitaminas.', Icons.opacity, 'categories/grasas.png'),
-    _FoodCategory('vitaminas', 'Vitaminas', 'Micronutrientes que apoyan funciones esenciales del organismo.', Icons.medical_services_outlined, 'categories/vitaminas.png'),
-    _FoodCategory('minerales', 'Minerales', 'Nutrientes que contribuyen a funciones como huesos y músculos.', Icons.grain, 'categories/minerales.png'),
-    _FoodCategory('frutas_verduras', 'Frutas y verduras', 'Fibra, vitaminas y minerales para una alimentación variada.', Icons.eco, 'categories/frutas_verduras.png'),
-    _FoodCategory('legumbres', 'Legumbres', 'Fibra y proteínas de origen vegetal.', Icons.spa_outlined, 'categories/legumbres.png'),
-    _FoodCategory('lacteos', 'Lácteos y alternativas', 'Opciones que pueden aportar proteínas y otros nutrientes.', Icons.local_drink_outlined, 'categories/lacteos.png'),
+    _FoodCategory('carbohidratos', 'Carbohidratos', 'Energía para el cerebro y el movimiento.', Icons.bolt, 'categories/categoria-carbohidratos.jpg'),
+    _FoodCategory('proteinas', 'Proteínas', 'Aminoácidos para formar y reparar tejidos.', Icons.fitness_center, 'categories/categoria-proteinas.jpg'),
+    _FoodCategory('grasas', 'Grasas saludables', 'Energía y apoyo en la absorción de vitaminas.', Icons.opacity, 'categories/categoria-grasas.jpg'),
+    _FoodCategory('frutas', 'Frutas', 'Fibra, agua y micronutrientes para una alimentación variada.', Icons.local_florist_outlined, 'categories/categoria-frutas.jpg'),
+    _FoodCategory('verduras', 'Verduras', 'Alimentos ricos en fibra y diversos micronutrientes.', Icons.eco, 'categories/categoria-verduras.jpg'),
+    _FoodCategory('legumbres', 'Legumbres', 'Fibra y proteínas de origen vegetal.', Icons.spa_outlined, 'categories/categoria-legumbres.jpg'),
+    _FoodCategory('lacteos', 'Lácteos y alternativas', 'Opciones que pueden aportar proteínas y otros nutrientes.', Icons.local_drink_outlined, 'categories/categoria-lacteos.jpg'),
   ];
 
   final _repository = NutritionRecipeRepository();
@@ -231,6 +230,7 @@ class _NutritionScreenState extends State<NutritionScreen> {
               width: 110,
               height: 124,
               fit: BoxFit.cover,
+              alignment: Alignment.bottomCenter,
               semanticLabel: 'Imagen de ${category.label.toLowerCase()}',
               errorBuilder: (_, _, _) => Container(
                 width: 110,
@@ -259,26 +259,35 @@ class _NutritionScreenState extends State<NutritionScreen> {
     child: InkWell(
       onTap: () => _showFood(food),
       borderRadius: BorderRadius.circular(20),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      ClipRRect(
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(19)),
-        child: food.imageUrl.startsWith('assets/')
-            ? Image.asset(food.imageUrl, width: double.infinity, height: 150, fit: BoxFit.cover, errorBuilder: (_, _, _) => _imageFallback(150))
-            : _imageFallback(150),
-      ),
-      Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(food.name, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
-        const SizedBox(height: 4),
-        Text('${food.calories.toStringAsFixed(0)} kcal · ${food.serving}', style: const TextStyle(color: AppColors.primary, fontWeight: FontWeight.w700)),
-        const SizedBox(height: 10),
-        Wrap(spacing: 12, runSpacing: 6, children: [
-          _macroLabel('Proteína', food.protein),
-          _macroLabel('Carbohidratos', food.carbohydrates),
-          _macroLabel('Grasas', food.fat),
-          _macroLabel('Fibra', food.fiber),
+      child: SizedBox(
+        height: 126,
+        child: Row(children: [
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(14),
+              child: Image.asset(food.imageUrl, width: 104, height: 110, fit: BoxFit.cover,
+                alignment: Alignment.bottomCenter,
+                semanticLabel: 'Imagen de ${food.name}',
+                errorBuilder: (_, _, _) => _imageFallback(110, width: 104)),
+            ),
+          ),
+          Expanded(child: Padding(
+            padding: const EdgeInsets.fromLTRB(4, 8, 12, 8),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text(food.name, maxLines: 2, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 15, height: 1.15, fontWeight: FontWeight.w700)),
+              const SizedBox(height: 5),
+              Text('${food.calories.toStringAsFixed(0)} kcal · ${food.serving}', maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: AppColors.primary, fontSize: 11, fontWeight: FontWeight.w700)),
+              const SizedBox(height: 6),
+              Wrap(spacing: 9, runSpacing: 3, children: [
+                _compactMacro('Prot.', food.protein),
+                _compactMacro('Carb.', food.carbohydrates),
+                _compactMacro('Grasa', food.fat),
+              ]),
+            ]),
+          )),
         ]),
-      ])),
-      ]),
+      ),
     ),
   );
 
@@ -287,28 +296,40 @@ class _NutritionScreenState extends State<NutritionScreen> {
     child: InkWell(
       onTap: () => _showRecipe(recipe),
       borderRadius: BorderRadius.circular(20),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        ClipRRect(borderRadius: const BorderRadius.vertical(top: Radius.circular(19)), child: _image(recipe.imageUrl, recipe.name, 170)),
-        Padding(padding: const EdgeInsets.fromLTRB(16, 14, 16, 16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(recipe.name, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
-          const SizedBox(height: 10),
-          Wrap(spacing: 14, runSpacing: 6, children: [
-            _infoLabel(Icons.schedule, '${recipe.preparationMinutes} min'),
-            _infoLabel(Icons.people_alt_outlined, '${recipe.portions} porciones'),
-            _infoLabel(Icons.local_fire_department_outlined, recipe.caloriesLabel),
-          ]),
-          if (recipe.proteinGrams > 0) ...[
-            const SizedBox(height: 8),
-            Text('Proteína ${recipe.proteinGrams} g · Carbohidratos ${recipe.carbohydratesGrams} g · Grasas ${recipe.fatGrams} g', style: const TextStyle(color: AppColors.mutedText, fontSize: 11)),
-          ],
-        ])),
-      ]),
+      child: SizedBox(
+        height: 148,
+        child: Row(children: [
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(14),
+              child: _image(recipe.imageUrl, recipe.name, 132, width: 112),
+            ),
+          ),
+          Expanded(child: Padding(
+            padding: const EdgeInsets.fromLTRB(4, 9, 12, 9),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text(recipe.name, maxLines: 2, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 15, height: 1.15, fontWeight: FontWeight.w700)),
+              const SizedBox(height: 7),
+              Wrap(spacing: 9, runSpacing: 4, children: [
+                _infoLabel(Icons.schedule, '${recipe.preparationMinutes} min'),
+                _infoLabel(Icons.people_alt_outlined, '${recipe.portions} porciones'),
+                _infoLabel(Icons.local_fire_department_outlined, recipe.caloriesLabel),
+              ]),
+              if (recipe.proteinGrams > 0) ...[
+                const SizedBox(height: 6),
+                Text('P ${recipe.proteinGrams} g · C ${recipe.carbohydratesGrams} g · G ${recipe.fatGrams} g', maxLines: 2, overflow: TextOverflow.ellipsis, style: const TextStyle(color: AppColors.mutedText, fontSize: 10.5)),
+              ],
+            ]),
+          )),
+        ]),
+      ),
     ),
   );
 
-  Widget _image(String url, String name, double height) => url.startsWith('assets/')
-      ? Image.asset(url, width: double.infinity, height: height, fit: BoxFit.cover, semanticLabel: 'Fotografía de $name', errorBuilder: (_, _, _) => _imageFallback(height))
-      : _imageFallback(height);
+  Widget _image(String url, String name, double height, {double? width}) => url.startsWith('assets/')
+      ? Image.asset(url, width: width ?? double.infinity, height: height, fit: BoxFit.cover, semanticLabel: 'Fotografía de $name', errorBuilder: (_, _, _) => _imageFallback(height, width: width))
+      : _imageFallback(height, width: width);
 
   Future<void> _loadMoreRecipes(String category, NutritionRecipePage firstPage) async {
     final offset = _recipeOffsets[category] ?? firstPage.recipes.length;
@@ -329,11 +350,13 @@ class _NutritionScreenState extends State<NutritionScreen> {
     }
   }
 
-  Widget _imageFallback(double height) => Container(width: double.infinity, height: height, color: AppColors.primary.withValues(alpha: .08), child: const Icon(Icons.restaurant_outlined, color: AppColors.primary, size: 42));
+  Widget _imageFallback(double height, {double? width}) => Container(width: width ?? double.infinity, height: height, color: AppColors.primary.withValues(alpha: .08), child: const Icon(Icons.restaurant_outlined, color: AppColors.primary, size: 32));
 
   Widget _infoLabel(IconData icon, String text) => Row(mainAxisSize: MainAxisSize.min, children: [Icon(icon, size: 14, color: AppColors.primary), const SizedBox(width: 5), Text(text, style: const TextStyle(color: AppColors.mutedText, fontSize: 11))]);
 
   Widget _macroLabel(String name, num value) => Text('$name ${value.toStringAsFixed(1)} g', style: const TextStyle(fontSize: 11, color: AppColors.mutedText));
+
+  Widget _compactMacro(String name, num value) => Text('$name ${value.toStringAsFixed(0)} g', style: const TextStyle(fontSize: 10, color: AppColors.mutedText));
 
   void _showFood(NutritionFood food) {
     showModalBottomSheet<void>(
@@ -351,6 +374,7 @@ class _NutritionScreenState extends State<NutritionScreen> {
               width: double.infinity,
               height: 210,
               fit: BoxFit.cover,
+              alignment: Alignment.bottomCenter,
               errorBuilder: (_, _, _) => _imageFallback(210),
             ),
           ),

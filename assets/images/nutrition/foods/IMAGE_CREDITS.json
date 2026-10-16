@@ -1,0 +1,392 @@
+{
+  "note": "Imágenes seleccionadas de FitTrack-WEB y de fuentes abiertas, con sus créditos y licencias. El proyecto web no fue modificado.",
+  "images": [
+    {
+      "file": "items/proteinas-05-carne-magra.jpg",
+      "title": "beef.jpg",
+      "creator": "Kondo Yukihiro",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:A-chunk-of-beef-2.jpg",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "items/carbohidratos-02-avena.jpg",
+      "title": "Oatmeal (1).jpg",
+      "creator": "Renee Comet (Photographer)",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Oatmeal_(1).jpg",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "file": "items/carbohidratos-01-arroz-integral.jpg",
+      "title": "Bowl of Cooked Brown Rice.jpg",
+      "creator": "Ceeseven",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Bowl_of_Cooked_Brown_Rice.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/carbohidratos-03-quinua.jpg",
+      "title": "Liat Portal for Foodie Disorder - Stuffed Cabbage with Meat and Quinoa.jpg",
+      "creator": "HaJunkiyada",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Stuffed_Cabbage_with_Meat_and_Quinoa.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/carbohidratos-04-camote.jpg",
+      "title": "A mobile peddler selling baked sweet potato steamed punuts and buffalo nuts in New Taipei City2.jpg",
+      "creator": "ThomasYehYeh",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:A_mobile_peddler_selling_baked_sweet_potato_steamed_punuts_and_buffalo_nuts_in_New_Taipei_City2.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/carbohidratos-05-maiz.jpg",
+      "title": "Boiled Sweet Corn.jpg",
+      "creator": "Kasyap",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Boiled_Sweet_Corn.jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "items/grasas-05-maranones.jpg",
+      "title": "cashews.jpg",
+      "creator": "hz_westfalen_de (Pixabay)",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pile_of_cashews.jpg",
+      "license": "CC0 1.0"
+    },
+    {
+      "file": "items/lacteos-05-queso-cheddar.jpg",
+      "title": "cheddar.jpg",
+      "creator": "Jon Sullivan (PD Photo.org)",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:White_cheddar_cheese.jpg",
+      "license": "Dominio público"
+    },
+    {
+      "file": "items/lacteos-01-leche.jpg",
+      "title": "Milk in a glass.JPG",
+      "creator": "Meganbeckett27",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Milk_in_a_glass.JPG",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "file": "items/lacteos-03-queso-cottage.jpg",
+      "title": "Cottagecheese200px.jpg",
+      "creator": "FASTILY (TALK)",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cottagecheese200px.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "file": "items/lacteos-04-queso-mozzarella.jpg",
+      "title": "Buffalo Mozzarella.jpg",
+      "creator": "Punch Pizza",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Buffalo_Mozzarella.jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
+      "file": "items/lacteos-06-yogur-griego.jpg",
+      "title": "Yogurt fruit bowl.jpg",
+      "creator": "Jumbocombo0811",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Yogurt_fruit_bowl.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/grasas-01-almendras.jpg",
+      "title": "Almonds in a bowl.jpg",
+      "creator": "Tochiprecious",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Almonds_in_a_bowl.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/grasas-03-nueces.jpg",
+      "title": "Walnuts - whole and open with halved kernel.jpg",
+      "creator": "Ivar Leidus",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Walnuts_-_whole_and_open_with_halved_kernel.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/grasas-02-aceite-de-oliva.jpg",
+      "title": "Herbed Olive Oil",
+      "creator": "jshontz",
+      "sourcePage": "https://www.flickr.com/photos/29332685@N07/6145646390",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+    },
+    {
+      "file": "items/grasas-06-semillas-de-calabaza.jpg",
+      "title": "Portrait of a Bowl of Pumpkin Seeds.jpg",
+      "creator": "Christopher Sessums",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_Bowl_of_Pumpkin_Seeds.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    {
+      "file": "items/carbohidratos-06-banano.jpg",
+      "title": "DFC 4184 Bunches of ripe bananas neatly arranged at a bustling market stall ready for shoppers.jpg",
+      "creator": "PattayaPatrol",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:DFC_4184_Bunches_of_ripe_bananas_neatly_arranged_at_a_bustling_market_stall_ready_for_shoppers.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/frutas-02-manzana.jpg",
+      "title": "Red apple",
+      "creator": "Erika Tanith",
+      "sourcePage": "https://unsplash.com/photos/a-close-up-of-a-red-apple-with-water-drops-jfCQFqhHhEw",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license"
+    },
+    {
+      "file": "items/frutas-03-arandanos.jpg",
+      "title": "Blueberries in a bowl",
+      "creator": "",
+      "sourcePage": "https://unsplash.com/photos/a-white-bowl-filled-with-blueberries-on-top-of-a-table-8rINe68rOAE",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license"
+    },
+    {
+      "file": "items/frutas-01-fresas.jpg",
+      "title": "Fresh strawberries",
+      "creator": "",
+      "sourcePage": "https://unsplash.com/photos/a-bunch-of-strawberries-_NMPU2fZfz4",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license"
+    },
+    {
+      "file": "items/frutas-06-naranja.jpg",
+      "title": "Ambersweet oranges.jpg",
+      "creator": "",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Ambersweet_oranges.jpg",
+      "license": "Public domain",
+      "licenseUrl": ""
+    },
+    {
+      "file": "items/frutas-05-pina.jpg",
+      "title": "FRESH CUTS OF KENYAN GROWN PINEAPPLES.jpg",
+      "creator": "Joysal",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:FRESH_CUTS_OF_KENYAN_GROWN_PINEAPPLES.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/frutas-04-uvas.jpg",
+      "title": "grapes.jpg",
+      "creator": "Scott Bauer / USDA ARS",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:More_grapes.jpg",
+      "license": "Dominio público (USDA)"
+    },
+    {
+      "file": "items/legumbres-02-frijoles-negros.jpg",
+      "title": "Blackbeanstew.jpg",
+      "creator": "Badagnani",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Blackbeanstew.jpg",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    {
+      "file": "items/legumbres-01-garbanzos.jpg",
+      "title": "Liat Portal for Foodie Disorder - Hummus with spiced chickpeas.jpg",
+      "creator": "HaJunkiyada",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Hummus_with_spiced_chickpeas.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/legumbres-03-lentejas-rojas.jpg",
+      "title": "Liat Portal for Foodie Disorder - Cooked Lentils with Caramelized Onions.jpg",
+      "creator": "HaJunkiyada",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Cooked_Lentils_with_Caramelized_Onions.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/legumbres-06-frijoles-rojos.jpg",
+      "title": "Red kidney beans.jpg",
+      "creator": "Fumikas Sagisavas",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Red_kidney_beans.jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "items/legumbres-04-arvejas.jpg",
+      "title": "Green peas.jpg",
+      "creator": "No machine-readable author provided. Dunemaire assumed (based on copyright claims).",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Green_peas.jpg",
+      "license": "CC BY 2.5",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+    },
+    {
+      "file": "items/legumbres-05-edamame.jpg",
+      "title": "Shelled edamame beans.jpg",
+      "creator": "Fumikas Sagisavas",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Shelled_edamame_beans.jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "items/grasas-04-mani.jpg",
+      "title": "peanuts.jpg",
+      "creator": "TorbeyCharbel",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Peanuts_in_their_shells.jpg",
+      "license": "CC BY 4.0"
+    },
+    {
+      "file": "items/proteinas-06-camarones.jpg",
+      "title": "Liat Portal for Foodie Disorder - Cocktail Shrimp Plate with Sauce.jpg",
+      "creator": "HaJunkiyada",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Cocktail_Shrimp_Plate_with_Sauce.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/proteinas-04-atun.jpg",
+      "title": "Ahi tuna steak, corn, peas - Massachusetts.jpg",
+      "creator": "Daderot",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Ahi_tuna_steak,_corn,_peas_-_Massachusetts.jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "items/proteinas-02-salmon.jpg",
+      "title": "Frozen salmon fillet.jpg",
+      "creator": "Medicalfools / David Chancey",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Frozen_salmon_fillet.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/proteinas-01-huevo.jpg",
+      "title": "Raw eggs in a white bowl",
+      "creator": "Brina Blum",
+      "sourcePage": "https://unsplash.com/id/foto/telur-mentah-di-atas-mangkuk-_fBturNUtd8",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license"
+    },
+    {
+      "file": "items/proteinas-03-lentejas.jpg",
+      "title": "Liat Portal for Foodie Disorder - Cooked Lentils with Caramelized Onions.jpg",
+      "creator": "HaJunkiyada",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Cooked_Lentils_with_Caramelized_Onions.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/verduras-01-espinaca.jpg",
+      "title": "Fresh Spinach leaves.jpg",
+      "creator": "Charipearl",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_Spinach_leaves.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/verduras-03-brocoli.jpg",
+      "title": "Fresh Broccoli.jpg",
+      "creator": "Rukkyah",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_Broccoli.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "items/verduras-02-zanahoria.jpg",
+      "title": "A pile of carrots sitting next to each other",
+      "creator": "Nick Fewings",
+      "sourcePage": "https://unsplash.com/photos/a-pile-of-carrots-sitting-next-to-each-other-d9gDUaDpnes",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license"
+    },
+    {
+      "file": "items/verduras-04-tomate.jpg",
+      "title": "Fresh ripe tomatoes",
+      "creator": "Mustafa Akın",
+      "sourcePage": "https://unsplash.com/photos/fresh-ripe-tomatoes-are-shown-in-this-image--Hpx8dtEoSo",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license"
+    },
+    {
+      "file": "items/verduras-05-coliflor.jpg",
+      "title": "Cauliflower heads on a shelf.jpg",
+      "creator": "Jeffery Martin",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cauliflower_heads_on_a_shelf.jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "items/verduras-06-calabacin.jpg",
+      "title": "Chili and zucchini.jpg",
+      "creator": "Tiia Monto",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Chili_and_zucchini.jpg",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    {
+      "file": "categories/categoria-carbohidratos.jpg",
+      "title": "Stacks of corn tortillas and flour tortillas, top view.jpg",
+      "creator": "Vigilantcosmicpenguin",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Stacks_of_corn_tortillas_and_flour_tortillas,_top_view.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
+      "file": "categories/categoria-proteinas.jpg",
+      "title": "Cooked turkey breast - November 2023 - Sarah Stierch.jpg",
+      "creator": "Missvain",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Cooked_turkey_breast_-_November_2023_-_Sarah_Stierch.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    {
+      "file": "categories/categoria-grasas.jpg",
+      "title": "Pistachio Nuts (Unsplash).jpg",
+      "creator": "Mohd Radhi Noror Gumiet mohdradhi",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pistachio_Nuts_(Unsplash).jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "categories/categoria-frutas.jpg",
+      "title": "Fresh Cut Papaya With Zillions of Seeds (33812163615).jpg",
+      "creator": "Chic Bee",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fresh_Cut_Papaya_With_Zillions_of_Seeds_(33812163615).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    {
+      "file": "categories/categoria-legumbres.jpg",
+      "title": "Winter Hummus (Unsplash).jpg",
+      "creator": "Brooke Lark brookelark",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Winter_Hummus_(Unsplash).jpg",
+      "license": "CC0",
+      "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    {
+      "file": "categories/categoria-lacteos.jpg",
+      "title": "Ricotta cheese - Wiki Loves Sicilia 2024 19.jpg",
+      "creator": "Auregann",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Ricotta_cheese_-_Wiki_Loves_Sicilia_2024_19.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    {
+      "file": "categories/categoria-verduras.jpg",
+      "title": "Mixed vegetables.jpg",
+      "creator": "USDA (sin autor indicado)",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Mixed_vegetables.jpg",
+      "license": "Dominio público (USDA)",
+      "licenseUrl": ""
+    },
+    {
+      "file": "items/lacteos-02-yogur-natural.jpg",
+      "title": "Plain Yogurt.jpg",
+      "creator": "Alabama Extension",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Plain_Yogurt.jpg",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    }
+  ]
+}

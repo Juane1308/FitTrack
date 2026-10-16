@@ -15,14 +15,13 @@ const recipeCategories = [
   { id: 'dulces', label: 'Dulces saludables', image: 'assets/images/nutrition_sweets.jpg' },
 ];
 const foodCategories = [
-  { id: 'carbohidratos', label: 'Carbohidratos', description: 'Energía para el cerebro y el movimiento.', icon: 'energy', image: 'assets/images/nutrition/foods/food-000.jpg' },
-  { id: 'proteinas', label: 'Proteínas', description: 'Aminoácidos para formar y reparar tejidos.', icon: 'protein', image: 'assets/images/nutrition/foods/food-008.jpg' },
-  { id: 'grasas', label: 'Grasas saludables', description: 'Aportan energía y ayudan a absorber vitaminas.', icon: 'fat', image: 'assets/images/nutrition/foods/food-014.jpg' },
-  { id: 'vitaminas', label: 'Vitaminas', description: 'Micronutrientes que apoyan funciones esenciales del organismo.', icon: 'vitamins', image: 'assets/images/nutrition/foods/food-022.jpg' },
-  { id: 'minerales', label: 'Minerales', description: 'Nutrientes que contribuyen a funciones como huesos y músculos.', icon: 'minerals', image: 'assets/images/nutrition/foods/food-030.jpg' },
-  { id: 'frutas_verduras', label: 'Frutas y verduras', description: 'Fuentes variadas de fibra, vitaminas y minerales.', icon: 'produce', image: 'assets/images/nutrition/foods/food-034.jpg' },
-  { id: 'legumbres', label: 'Legumbres', description: 'Aportan fibra y proteínas vegetales.', icon: 'legumes', image: 'assets/images/nutrition/foods/food-040.jpg' },
-  { id: 'lacteos', label: 'Lácteos y alternativas', description: 'Opciones que aportan proteínas y otros nutrientes.', icon: 'dairy', image: 'assets/images/nutrition/foods/food-041.jpg' },
+  { id: 'carbohidratos', label: 'Carbohidratos', description: 'Energía para el cerebro y el movimiento.', icon: 'energy', image: 'assets/images/nutrition/foods/categories/categoria-carbohidratos.jpg' },
+  { id: 'proteinas', label: 'Proteínas', description: 'Aminoácidos para formar y reparar tejidos.', icon: 'protein', image: 'assets/images/nutrition/foods/categories/categoria-proteinas.jpg' },
+  { id: 'grasas', label: 'Grasas saludables', description: 'Aportan energía y ayudan a absorber vitaminas.', icon: 'fat', image: 'assets/images/nutrition/foods/categories/categoria-grasas.jpg' },
+  { id: 'frutas', label: 'Frutas', description: 'Fibra, agua y micronutrientes para una alimentación variada.', icon: 'fruit', image: 'assets/images/nutrition/foods/categories/categoria-frutas.jpg' },
+  { id: 'verduras', label: 'Verduras', description: 'Alimentos ricos en fibra y diversos micronutrientes.', icon: 'vegetable', image: 'assets/images/nutrition/foods/categories/categoria-verduras.jpg' },
+  { id: 'legumbres', label: 'Legumbres', description: 'Aportan fibra y proteínas vegetales.', icon: 'legumes', image: 'assets/images/nutrition/foods/categories/categoria-legumbres.jpg' },
+  { id: 'lacteos', label: 'Lácteos y alternativas', description: 'Opciones que aportan proteínas y otros nutrientes.', icon: 'dairy', image: 'assets/images/nutrition/foods/categories/categoria-lacteos.jpg' },
 ];
 
 export function getRecipeCategories() {
