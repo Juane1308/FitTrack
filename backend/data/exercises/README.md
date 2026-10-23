@@ -1,0 +1,1 @@
+Fuente de ejercicios: free-exercise-db (yuhonas/free-exercise-db), distribución JSON con imágenes, publicada como dominio público. Los nombres e instrucciones se conservan en el idioma de origen del dataset.
