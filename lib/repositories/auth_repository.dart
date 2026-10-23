@@ -48,8 +48,10 @@ abstract interface class AuthRepository {
   Future<void> logout();
 }
 
+/// Repositorio local utilizado únicamente por las pruebas automatizadas.
+/// La aplicación en producción usa [ApiAuthRepository] contra el backend.
 class MockAuthRepository implements AuthRepository {
-  final Map<String, _StoredUser> _users = {};
+  final Map<String, _MockStoredUser> _users = {};
 
   @override
   Future<AuthResult> register({
@@ -58,87 +60,46 @@ class MockAuthRepository implements AuthRepository {
     required String password,
     bool acceptTerms = true,
   }) async {
-    await Future<void>.delayed(const Duration(milliseconds: 250));
-    if (!acceptTerms) {
-      return const AuthResult(status: AuthResultStatus.termsNotAccepted);
-    }
+    if (!acceptTerms) return const AuthResult(status: AuthResultStatus.termsNotAccepted);
     final normalizedEmail = email.trim().toLowerCase();
     if (_users.containsKey(normalizedEmail)) {
       return const AuthResult(status: AuthResultStatus.emailAlreadyRegistered);
     }
-
-    _users[normalizedEmail] = _StoredUser(
-      user: AppUser(
-        name: name.trim(),
-        email: normalizedEmail,
-        goal: 'Definir objetivo',
-      ),
-      passwordHash: _hashPassword(password),
-      isActive: true,
-    );
-    return AuthResult(
-      status: AuthResultStatus.success,
-      user: _users[normalizedEmail]!.user,
-    );
+    final user = AppUser(name: name.trim(), email: normalizedEmail, goal: 'Definir objetivo');
+    _users[normalizedEmail] = _MockStoredUser(user: user, passwordHash: _hashPassword(password));
+    return AuthResult(status: AuthResultStatus.success, user: user, sessionToken: 'mock-session');
   }
 
   @override
-  Future<AuthResult> login({
-    required String email,
-    required String password,
-  }) async {
-    await Future<void>.delayed(const Duration(milliseconds: 250));
-    final storedUser = _users[email.trim().toLowerCase()];
-    if (storedUser == null ||
-        storedUser.passwordHash != _hashPassword(password)) {
+  Future<AuthResult> login({required String email, required String password}) async {
+    final stored = _users[email.trim().toLowerCase()];
+    if (stored == null || stored.passwordHash != _hashPassword(password)) {
       return const AuthResult(status: AuthResultStatus.invalidCredentials);
     }
-    if (!storedUser.isActive) {
-      return const AuthResult(status: AuthResultStatus.inactiveAccount);
-    }
-    return AuthResult(status: AuthResultStatus.success, user: storedUser.user);
+    return AuthResult(status: AuthResultStatus.success, user: stored.user, sessionToken: 'mock-session');
   }
 
   @override
   Future<AuthResult?> restoreSession() async => null;
 
   @override
-  Future<AuthResult> verifyEmail({required String email, required String code}) async {
-    await Future<void>.delayed(const Duration(milliseconds: 250));
-    return const AuthResult(status: AuthResultStatus.success);
-  }
+  Future<AuthResult> verifyEmail({required String email, required String code}) async => const AuthResult(status: AuthResultStatus.success);
 
   @override
-  Future<AuthResult> resendVerificationCode({required String email}) async {
-    await Future<void>.delayed(const Duration(milliseconds: 250));
-    return const AuthResult(status: AuthResultStatus.success);
-  }
+  Future<AuthResult> resendVerificationCode({required String email}) async => const AuthResult(status: AuthResultStatus.success);
 
   @override
-  Future<AuthResult> requestPasswordReset(String email) async {
-    await Future<void>.delayed(const Duration(milliseconds: 250));
-    // El MOCK no envía correos. Tampoco revela si una dirección existe.
-    return const AuthResult(status: AuthResultStatus.success);
-  }
+  Future<AuthResult> requestPasswordReset(String email) async => const AuthResult(status: AuthResultStatus.success);
 
   @override
-  Future<void> logout() async {
-    await Future<void>.delayed(const Duration(milliseconds: 100));
-  }
+  Future<void> logout() async {}
 
-  String _hashPassword(String password) {
-    return sha256.convert(utf8.encode(password)).toString();
-  }
+  String _hashPassword(String password) => sha256.convert(utf8.encode(password)).toString();
 }
 
-class _StoredUser {
-  const _StoredUser({
-    required this.user,
-    required this.passwordHash,
-    required this.isActive,
-  });
+class _MockStoredUser {
+  const _MockStoredUser({required this.user, required this.passwordHash});
 
   final AppUser user;
   final String passwordHash;
-  final bool isActive;
 }

@@ -55,7 +55,7 @@ class ModulePlaceholderScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      'Esta sección ya tiene navegación y datos mock separados de la interfaz.',
+                      'Esta sección mostrará los datos reales disponibles en tu cuenta.',
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodyMedium
                           ?.copyWith(color: AppColors.mutedText),
@@ -63,7 +63,7 @@ class ModulePlaceholderScreen extends StatelessWidget {
                     const SizedBox(height: 18),
                     Chip(
                       label: Text(
-                        '$count registro${count == 1 ? '' : 's'} mock disponible${count == 1 ? '' : 's'}',
+                        '$count registro${count == 1 ? '' : 's'} cargado${count == 1 ? '' : 's'}',
                       ),
                     ),
                   ],

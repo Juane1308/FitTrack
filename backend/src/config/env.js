@@ -6,7 +6,7 @@ const envSchema = z.object({
   PORT: z.coerce.number().int().min(1).max(65535).default(3000),
   DATABASE_URL: z.string().trim().default(''),
   DIRECT_URL: z.string().trim().default(''),
-  EMAIL_HOST: z.string().trim().default('smtp-relay.sendinblue.com'),
+  EMAIL_HOST: z.string().trim().default('smtp-relay.brevo.com'),
   EMAIL_PORT: z.coerce.number().int().min(1).max(65535).default(587),
   EMAIL_USER: z.string().trim().default(''),
   EMAIL_PASSWORD: z.string().trim().default(''),
@@ -26,5 +26,3 @@ export function hasDatabaseUrl() {
 export function hasDirectUrl() {
   return env.DIRECT_URL.startsWith('postgres://') || env.DIRECT_URL.startsWith('postgresql://');
 }
-
-

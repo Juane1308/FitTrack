@@ -53,6 +53,7 @@ class ProfileRepository {
     'diseases': profile.diseases,
     'allergies': profile.allergies,
     'trainingDays': profile.trainingDays,
+    'targetWeight': profile.targetWeight,
     'notificationsEnabled': profile.notificationsEnabled,
     'privateProfile': profile.privateProfile,
   };
@@ -72,6 +73,7 @@ class ProfileRepository {
     diseases: data['diseases'] as String? ?? '',
     allergies: data['allergies'] as String? ?? '',
     trainingDays: data['trainingDays'] is num ? (data['trainingDays'] as num).toInt() : 4,
+    targetWeight: _number(data['targetWeight']),
     notificationsEnabled: data['notificationsEnabled'] as bool? ?? true,
     privateProfile: data['privateProfile'] as bool? ?? true,
   );
