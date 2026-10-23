@@ -14,45 +14,82 @@ enum Goal {
   GENERAL_FITNESS
 }
 
+enum Difficulty {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum TrainingStatus {
+  STARTED
+  COMPLETED
+  CANCELLED
+}
+
+enum MealTime {
+  BREAKFAST
+  LUNCH
+  DINNER
+  SNACK
+}
+
 model User {
-  id                String                  @id @default(uuid()) @db.Uuid
-  name              String                  @db.VarChar(120)
-  email             String                  @unique @db.VarChar(255)
-  passwordHash      String                  @map("password_hash")
-  isActive          Boolean                 @default(false) @map("is_active")
-  emailVerifiedAt   DateTime?               @map("email_verified_at")
-  createdAt         DateTime                @default(now()) @map("created_at")
-  updatedAt         DateTime                @updatedAt @map("updated_at")
-  profile           UserProfile?
-  authSessions      AuthSession[]
-  passwordResets    PasswordResetToken[]
-  emailCodes        EmailVerificationCode[]
+  id               String            @id @default(uuid()) @db.Uuid
+  name             String            @db.VarChar(120)
+  email            String            @unique @db.VarChar(255)
+  passwordHash     String            @map("password_hash")
+  isActive         Boolean           @default(true) @map("is_active")
+  emailVerifiedAt   DateTime?         @map("email_verified_at")
+  createdAt        DateTime          @default(now()) @map("created_at")
+  updatedAt        DateTime          @updatedAt @map("updated_at")
+  profile          UserProfile?
+  authSessions     AuthSession[]
+  passwordResets   PasswordResetToken[]
+  emailCodes       EmailVerificationCode[]
+  trainingSessions TrainingSession[]
+  waterIntakes     WaterIntake[]
+  progressEntries  ProgressEntry[]
+  progressPhotos   ProgressPhoto[]
 
   @@map("users")
 }
 
 model UserProfile {
-  id                   String   @id @default(uuid()) @db.Uuid
-  userId               String   @unique @map("user_id") @db.Uuid
+  id                   String    @id @default(uuid()) @db.Uuid
+  userId               String    @unique @map("user_id") @db.Uuid
   objective            Goal?
   birthDate            DateTime? @map("birth_date") @db.Date
-  weight               Decimal? @db.Decimal(8, 2)
-  height               Decimal? @db.Decimal(5, 2)
-  sportsActivity       String?  @map("sports_activity") @db.VarChar(160)
-  trainingLocation     String?  @map("training_location") @db.VarChar(160)
+  weight               Decimal?  @db.Decimal(8, 2)
+  height               Decimal?  @db.Decimal(5, 2)
+  sportsActivity       String?   @map("sports_activity") @db.VarChar(160)
+  trainingLocation     String?   @map("training_location") @db.VarChar(160)
   injuries             String?
   pain                 String?
   surgeries            String?
   diseases             String?
   allergies            String?
-  notificationsEnabled Boolean  @default(true) @map("notifications_enabled")
-  privacyEnabled       Boolean  @default(true) @map("privacy_enabled")
+  notificationsEnabled Boolean   @default(true) @map("notifications_enabled")
+  privacyEnabled       Boolean   @default(true) @map("privacy_enabled")
   preferences          Json?
-  createdAt            DateTime @default(now()) @map("created_at")
-  updatedAt            DateTime @updatedAt @map("updated_at")
-  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt            DateTime  @default(now()) @map("created_at")
+  updatedAt            DateTime  @updatedAt @map("updated_at")
+  user                 User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("user_profiles")
+}
+
+model EmailVerificationCode {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @map("user_id") @db.Uuid
+  codeHash  String    @map("code_hash") @db.VarChar(64)
+  expiresAt DateTime  @map("expires_at")
+  usedAt    DateTime? @map("used_at")
+  attempts  Int       @default(0)
+  createdAt DateTime  @default(now()) @map("created_at")
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, expiresAt])
+  @@map("email_verification_codes")
 }
 
 model AuthSession {
@@ -81,16 +118,133 @@ model PasswordResetToken {
   @@map("password_reset_tokens")
 }
 
-model EmailVerificationCode {
-  id        String    @id @default(uuid()) @db.Uuid
-  userId    String    @map("user_id") @db.Uuid
-  codeHash  String    @map("code_hash") @db.VarChar(64)
-  expiresAt DateTime  @map("expires_at")
-  usedAt    DateTime? @map("used_at")
-  attempts  Int       @default(0)
-  createdAt DateTime  @default(now()) @map("created_at")
-  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+model Routine {
+  id           String            @id @default(uuid()) @db.Uuid
+  name         String            @db.VarChar(160)
+  level        Difficulty
+  durationMin  Int               @map("duration_min")
+  objective    Goal
+  muscleGroup  String            @map("muscle_group") @db.VarChar(100)
+  createdAt    DateTime          @default(now()) @map("created_at")
+  updatedAt    DateTime          @updatedAt @map("updated_at")
+  exercises    RoutineExercise[]
+  trainingLogs TrainingSession[]
 
-  @@index([userId, expiresAt])
-  @@map("email_verification_codes")
+  @@map("routines")
+}
+
+model Exercise {
+  id        String            @id @default(uuid()) @db.Uuid
+  slug      String?           @unique @db.VarChar(180)
+  name      String            @db.VarChar(160)
+  technique String
+  description String?
+  muscleCategory String?      @map("muscle_category") @db.VarChar(80)
+  primaryMuscles Json?        @map("primary_muscles")
+  imageUrl  String?           @map("image_url")
+  videoUrl  String?           @map("video_url")
+  equipment Json?
+  source    String?           @db.VarChar(80)
+  createdAt DateTime          @default(now()) @map("created_at")
+  updatedAt DateTime          @updatedAt @map("updated_at")
+  routines  RoutineExercise[]
+
+  @@map("exercises")
+}
+
+model RoutineExercise {
+  routineId   String   @map("routine_id") @db.Uuid
+  exerciseId  String   @map("exercise_id") @db.Uuid
+  sets        Int
+  repetitions Int
+  order       Int
+  routine     Routine  @relation(fields: [routineId], references: [id], onDelete: Cascade)
+  exercise    Exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+
+  @@id([routineId, exerciseId])
+  @@map("routine_exercises")
+}
+
+model TrainingSession {
+  id         String         @id @default(uuid()) @db.Uuid
+  userId     String         @map("user_id") @db.Uuid
+  routineId  String         @map("routine_id") @db.Uuid
+  startedAt  DateTime       @map("started_at")
+  finishedAt DateTime?      @map("finished_at")
+  status     TrainingStatus @default(STARTED)
+  user       User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  routine    Routine        @relation(fields: [routineId], references: [id], onDelete: Restrict)
+
+  @@index([userId, startedAt])
+  @@map("training_sessions")
+}
+
+model Food {
+  id            String   @id @default(uuid()) @db.Uuid
+  name          String   @db.VarChar(160)
+  category      String   @db.VarChar(100)
+  nutritionInfo Json     @map("nutrition_info")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  @@map("foods")
+}
+
+model Recipe {
+  id           String   @id @default(uuid()) @db.Uuid
+  name         String   @db.VarChar(160)
+  ingredients  Json
+  instructions String
+  mealTime     MealTime @map("meal_time")
+  imageUrl     String?  @map("image_url")
+  sourceUrl    String?  @map("source_url")
+  source       String?  @db.VarChar(80)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("recipes")
+}
+
+model WaterIntake {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  amount    Decimal  @db.Decimal(8, 2)
+  date      DateTime @db.Date
+  dailyGoal Decimal  @map("daily_goal") @db.Decimal(8, 2)
+  createdAt DateTime @default(now()) @map("created_at")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, date])
+  @@map("water_intakes")
+}
+
+model ProgressEntry {
+  id                String   @id @default(uuid()) @db.Uuid
+  userId            String   @map("user_id") @db.Uuid
+  weight            Decimal  @db.Decimal(8, 2)
+  height            Decimal  @db.Decimal(5, 2)
+  recordedAt        DateTime @map("recorded_at")
+  targetWeight      Decimal? @map("target_weight") @db.Decimal(8, 2)
+  completionPercent  Decimal? @map("completion_percent") @db.Decimal(5, 2)
+  createdAt         DateTime @default(now()) @map("created_at")
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, recordedAt])
+  @@map("progress_entries")
+}
+
+model ProgressPhoto {
+  id         String   @id @default(uuid()) @db.Uuid
+  userId     String   @map("user_id") @db.Uuid
+  fileId     String   @map("file_id") @db.VarChar(255)
+  storageKey String   @map("storage_key") @db.VarChar(500)
+  mimeType   String   @map("mime_type") @db.VarChar(100)
+  sizeBytes  Int      @map("size_bytes")
+  imageData  Bytes?   @map("image_data")
+  capturedAt DateTime @map("captured_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, capturedAt])
+  @@map("progress_photos")
 }

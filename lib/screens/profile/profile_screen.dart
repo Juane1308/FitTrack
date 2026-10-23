@@ -15,7 +15,8 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<AppStateProvider>();
     final auth = context.watch<AuthProvider>();
-    final user = auth.currentUser ?? state.currentUser;
+    final user = auth.currentUser;
+    if (user == null) return const SizedBox.shrink();
     final profile = state.profile;
 
     return SafeArea(

@@ -21,6 +21,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
   final _formKey = GlobalKey<FormState>();
   final _birthDate = TextEditingController();
   final _weight = TextEditingController();
+  final _targetWeight = TextEditingController();
   final _height = TextEditingController();
   final _sport = TextEditingController();
   final _injuries = TextEditingController();
@@ -51,6 +52,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
     _selectedBirthDate = profile.birthDate;
     _birthDate.text = _formatDate(profile.birthDate);
     _weight.text = profile.weight?.toString() ?? '';
+    _targetWeight.text = profile.targetWeight?.toString() ?? '';
     _height.text = profile.height?.toString() ?? '';
     _sport.text = profile.sport;
     _trainingPlace = profile.trainingPlace.isEmpty ? _trainingPlace : profile.trainingPlace;
@@ -64,7 +66,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
 
   @override
   void dispose() {
-    for (final controller in [_birthDate, _weight, _height, _sport, _injuries, _pain, _surgeries, _diseases, _allergies]) {
+    for (final controller in [_birthDate, _weight, _targetWeight, _height, _sport, _injuries, _pain, _surgeries, _diseases, _allergies]) {
       controller.dispose();
     }
     super.dispose();
@@ -85,6 +87,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
       goal: _goal,
       birthDate: _selectedBirthDate,
       weight: double.parse(_weight.text.trim().replaceAll(',', '.')),
+      targetWeight: _targetWeight.text.trim().isEmpty ? null : double.parse(_targetWeight.text.trim().replaceAll(',', '.')),
       height: double.parse(_height.text.trim().replaceAll(',', '.')),
       sport: _sport.text.trim(),
       trainingPlace: _trainingPlace,
@@ -99,7 +102,14 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
     try {
       final token = context.read<AuthProvider>().sessionToken;
       if (ApiConfig.useApi && token != null) {
-        await context.read<AppStateProvider>().saveRemoteProfile(token, profile);
+        final appState = context.read<AppStateProvider>();
+        await appState.saveRemoteProfile(token, profile);
+        try {
+          await appState.loadRemoteTraining(token);
+        } catch (_) {
+          // El perfil debe guardarse aunque el catálogo de entrenamiento aún
+          // no esté disponible en el backend.
+        }
       } else {
         context.read<AppStateProvider>().updateProfile(profile);
       }
@@ -271,6 +281,8 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
         TextFormField(controller: _birthDate, readOnly: true, onTap: _selectBirthDate, decoration: const InputDecoration(labelText: 'Fecha de nacimiento', prefixIcon: Icon(Icons.cake_outlined))),
         const SizedBox(height: 14),
         TextFormField(controller: _weight, keyboardType: const TextInputType.numberWithOptions(decimal: true), decoration: const InputDecoration(labelText: 'Peso (kg)', prefixIcon: Icon(Icons.monitor_weight_outlined)), validator: _positiveNumber),
+        const SizedBox(height: 14),
+        TextFormField(controller: _targetWeight, keyboardType: const TextInputType.numberWithOptions(decimal: true), decoration: const InputDecoration(labelText: 'Peso objetivo (kg)', helperText: 'Opcional: define el peso hacia el que quieres avanzar.', prefixIcon: Icon(Icons.flag_outlined)), validator: (value) => value == null || value.trim().isEmpty ? null : _positiveNumber(value)),
         const SizedBox(height: 14),
         TextFormField(controller: _height, keyboardType: const TextInputType.numberWithOptions(decimal: true), decoration: const InputDecoration(labelText: 'Altura (m, ejemplo 1.74)', prefixIcon: Icon(Icons.height)), validator: _positiveNumber),
         const SizedBox(height: 14),

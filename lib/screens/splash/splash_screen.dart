@@ -6,6 +6,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/constants/api_config.dart';
 import '../../providers/app_state_provider.dart';
 import '../../providers/auth_provider.dart';
+import '../../providers/progress_provider.dart';
 import '../auth/login_screen.dart';
 import '../home/main_shell.dart';
 import '../profile/profile_setup_screen.dart';
@@ -35,6 +36,14 @@ class _SplashScreenState extends State<SplashScreen> {
         await appState.loadRemoteProfile(auth.sessionToken!);
       } catch (_) {
         // Si el perfil no está disponible, el onboarding permitirá completarlo.
+      }
+      if (appState.isProfileComplete) {
+        try {
+          await appState.loadRemoteTraining(auth.sessionToken!);
+        } catch (_) {
+          // El home puede mostrar el estado vacío mientras se recupera el plan.
+        }
+        await context.read<ProgressProvider>().load(auth.sessionToken!);
       }
     }
     if (!mounted) return;

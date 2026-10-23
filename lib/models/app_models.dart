@@ -30,6 +30,7 @@ class UserProfile {
     required this.diseases,
     required this.allergies,
     this.trainingDays = 4,
+    this.targetWeight,
     this.notificationsEnabled = true,
     this.privateProfile = true,
   });
@@ -46,6 +47,7 @@ class UserProfile {
   final String diseases;
   final String allergies;
   final int trainingDays;
+  final double? targetWeight;
   final bool notificationsEnabled;
   final bool privateProfile;
 
@@ -62,6 +64,7 @@ class UserProfile {
     String? diseases,
     String? allergies,
     int? trainingDays,
+    double? targetWeight,
     bool? notificationsEnabled,
     bool? privateProfile,
   }) {
@@ -78,6 +81,7 @@ class UserProfile {
       diseases: diseases ?? this.diseases,
       allergies: allergies ?? this.allergies,
       trainingDays: trainingDays ?? this.trainingDays,
+      targetWeight: targetWeight ?? this.targetWeight,
       notificationsEnabled: notificationsEnabled ?? this.notificationsEnabled,
       privateProfile: privateProfile ?? this.privateProfile,
     );
@@ -85,6 +89,18 @@ class UserProfile {
 }
 
 class DashboardSummary {
+  static const empty = DashboardSummary(
+    routineName: 'Sin rutina asignada',
+    routineDate: '',
+    durationMinutes: 0,
+    difficulty: '',
+    weeklyGoal: 0,
+    progressPercent: 0,
+    calories: 0,
+    exerciseMinutes: 0,
+    activeStreak: 0,
+  );
+
   const DashboardSummary({
     required this.routineName,
     required this.routineDate,
@@ -272,6 +288,96 @@ class ProgressEntry {
   final String date;
   final double weight;
   final double height;
+}
+
+class ProgressSummary {
+  const ProgressSummary({
+    required this.currentWeight,
+    required this.initialWeight,
+    required this.weightChange,
+    required this.bmi,
+    required this.completedDays,
+    required this.plannedDays,
+    required this.weeklyProgress,
+    required this.activeStreak,
+    required this.totalMinutes,
+    required this.targetWeight,
+    required this.completionPercent,
+  });
+
+  static const empty = ProgressSummary(
+    currentWeight: null,
+    initialWeight: null,
+    weightChange: null,
+    bmi: null,
+    completedDays: 0,
+    plannedDays: 0,
+    weeklyProgress: 0,
+    activeStreak: 0,
+    totalMinutes: 0,
+    targetWeight: null,
+    completionPercent: null,
+  );
+
+  final double? currentWeight;
+  final double? initialWeight;
+  final double? weightChange;
+  final double? bmi;
+  final int completedDays;
+  final int plannedDays;
+  final double weeklyProgress;
+  final int activeStreak;
+  final int totalMinutes;
+  final double? targetWeight;
+  final double? completionPercent;
+}
+
+class WeeklyProgressPoint {
+  const WeeklyProgressPoint({
+    required this.date,
+    required this.label,
+    required this.completed,
+    required this.planned,
+    required this.durationMinutes,
+    required this.muscleGroup,
+  });
+
+  final String date;
+  final String label;
+  final bool completed;
+  final bool planned;
+  final int durationMinutes;
+  final String muscleGroup;
+}
+
+class ProgressData {
+  const ProgressData({required this.summary, required this.entries, required this.weekly, required this.photos, required this.photoEligible, required this.photoMessage});
+
+  static const empty = ProgressData(
+    summary: ProgressSummary.empty,
+    entries: <ProgressEntry>[],
+    weekly: <WeeklyProgressPoint>[],
+    photos: <ProgressPhotoData>[],
+    photoEligible: false,
+    photoMessage: 'Completa todos los entrenamientos de la semana para subir tu foto.',
+  );
+
+  final ProgressSummary summary;
+  final List<ProgressEntry> entries;
+  final List<WeeklyProgressPoint> weekly;
+  final List<ProgressPhotoData> photos;
+  final bool photoEligible;
+  final String photoMessage;
+}
+
+class ProgressPhotoData {
+  const ProgressPhotoData({required this.id, required this.weekStart, required this.capturedAt, required this.mimeType, required this.dataUrl});
+
+  final String id;
+  final String weekStart;
+  final DateTime capturedAt;
+  final String mimeType;
+  final String? dataUrl;
 }
 
 class ChatContext {

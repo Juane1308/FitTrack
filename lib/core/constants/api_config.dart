@@ -3,12 +3,11 @@ import 'package:flutter/foundation.dart';
 class ApiConfig {
   const ApiConfig._();
 
-  /// La app usa autenticación simulada por defecto para poder probar el flujo
-  /// sin levantar el backend. En producción, definir FITTRACK_API_URL activa
-  /// automáticamente la conexión con Railway.
+  /// La app consulta el backend real por defecto. En producción se debe
+  /// definir FITTRACK_API_URL con la URL pública del servicio desplegado.
   static const _useApiFlag = bool.fromEnvironment(
     'FITTRACK_USE_API',
-    defaultValue: false,
+    defaultValue: true,
   );
 
   static const _configuredBaseUrl = String.fromEnvironment(

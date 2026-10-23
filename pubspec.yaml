@@ -40,6 +40,7 @@ dependencies:
   crypto: ^3.0.7
   http: ^1.6.0
   shared_preferences: ^2.5.5
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -61,7 +62,6 @@ flutter:
   assets:
     - backend/data/nutrition/recipes.json
     - backend/data/nutrition/foods.json
-    - backend/data/exercises/exercises.json
     - assets/images/fittrack_logo.png
     - assets/images/nutrition_breakfast.jpg
     - assets/images/nutrition_snack.jpg

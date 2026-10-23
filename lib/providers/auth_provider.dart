@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 
-import '../core/constants/api_config.dart';
 import '../models/app_models.dart';
 import '../repositories/api_auth_repository.dart';
 import '../repositories/auth_repository.dart';
@@ -9,8 +8,7 @@ enum AuthStatus { loggedOut, loading, authenticated }
 
 class AuthProvider extends ChangeNotifier {
   AuthProvider({AuthRepository? repository})
-    : _repository = repository ??
-          (ApiConfig.useApi ? ApiAuthRepository() : MockAuthRepository()) {
+    : _repository = repository ?? ApiAuthRepository() {
     initialization = _restoreSession();
   }
 
@@ -53,7 +51,7 @@ class AuthProvider extends ChangeNotifier {
   }) async {
     _status = AuthStatus.loading;
     notifyListeners();
-    final result = await _withMockFallback(
+    final result = await _run(
       (repository) => repository.register(
         name: name,
         email: email,
@@ -72,7 +70,7 @@ class AuthProvider extends ChangeNotifier {
   }) async {
     _status = AuthStatus.loading;
     notifyListeners();
-    final result = await _withMockFallback(
+    final result = await _run(
       (repository) => repository.login(email: email, password: password),
     );
     if (result.isSuccess) {
@@ -87,24 +85,24 @@ class AuthProvider extends ChangeNotifier {
   }
 
   Future<AuthResult> verifyEmail({required String email, required String code}) {
-    return _withMockFallback(
+    return _run(
       (repository) => repository.verifyEmail(email: email, code: code),
     );
   }
 
   Future<AuthResult> resendVerificationCode({required String email}) {
-    return _withMockFallback(
+    return _run(
       (repository) => repository.resendVerificationCode(email: email),
     );
   }
 
   Future<AuthResult> requestPasswordReset(String email) {
-    return _withMockFallback(
+    return _run(
       (repository) => repository.requestPasswordReset(email),
     );
   }
 
-  Future<AuthResult> _withMockFallback(
+  Future<AuthResult> _run(
     Future<AuthResult> Function(AuthRepository repository) action,
   ) => action(_repository);
 
