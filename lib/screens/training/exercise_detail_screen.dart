@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../core/theme/app_colors.dart';
 import '../../models/app_models.dart';
 import '../../providers/training_provider.dart';
+import '../../utils/exercise_localization.dart';
 import '../../widgets/common/app_card.dart';
 
 class ExerciseDetailScreen extends StatelessWidget {
@@ -27,7 +28,7 @@ class ExerciseDetailScreen extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(18),
                   child: Image.network(detail.imageUrl!, height: 220, fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => _ExerciseFallback()),
+                errorBuilder: (_, _, _) => const _ExerciseFallback()),
                 )
               else
                 const _ExerciseFallback(),
@@ -70,12 +71,7 @@ class ExerciseDetailScreen extends StatelessWidget {
                       style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
                     ),
                     const SizedBox(height: 12),
-                    if (snapshot.connectionState == ConnectionState.waiting)
-                      const LinearProgressIndicator()
-                    else if (detail.instructions.isEmpty)
-                      Text(detail.technique)
-                    else
-                      ...detail.instructions.asMap().entries.map(
+                    ...exerciseInstructionsInSpanish(detail).asMap().entries.map(
                         (entry) => Padding(
                           padding: const EdgeInsets.only(bottom: 10),
                           child: Text('${entry.key + 1}. ${entry.value}'),

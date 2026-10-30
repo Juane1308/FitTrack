@@ -33,18 +33,43 @@ export async function getProgress(userId) {
   const days = Array.isArray(plan.days) ? plan.days : [];
   const serializedEntries = entries.map(serializeEntry);
   const photos = await getPhotos(userId);
+  const weekStart = plan.weekStart ?? mondayKey(new Date());
+  const weekEnd = dateAfter(weekStart, 7);
+  const [weekActivities, recentActivities, lifetimeDuration] = await Promise.all([
+    prisma.workoutActivity.findMany({
+      where: { userId, performedOn: { gte: dateAtUtc(weekStart), lt: dateAtUtc(weekEnd) } },
+      orderBy: { performedOn: 'asc' },
+    }),
+    prisma.workoutActivity.findMany({
+      where: { userId },
+      select: { performedOn: true },
+      distinct: ['performedOn'],
+      orderBy: { performedOn: 'desc' },
+      take: 370,
+    }),
+    prisma.workoutActivity.aggregate({
+      where: { userId },
+      _sum: { durationSeconds: true },
+    }),
+  ]);
   const currentWeight = serializedEntries.at(-1)?.weight ?? numberOrNull(profile?.weight);
   const initialWeight = serializedEntries[0]?.weight ?? currentWeight;
-  const completedDays = days.filter((day) => day?.completed === true).length;
+  const activityDates = new Set(weekActivities.map((activity) => dateKey(activity.performedOn)));
+  const planCompletedDates = days.filter((day) => day?.completed === true).map((day) => day.date);
+  const completedDates = new Set([...activityDates, ...planCompletedDates]);
+  const completedDays = completedDates.size;
   const plannedDays = Number(plan.trainingDays ?? profileTrainingDays(preferences));
-  const weekly = buildWeekly(days);
+  const weekly = buildWeekly(weekStart, days, weekActivities);
   const targetWeight = numberOrNull(preferences.targetWeight) ?? serializedEntries.at(-1)?.targetWeight ?? null;
   const completionPercent = currentWeight != null && targetWeight != null
     ? calculateCompletion(currentWeight, targetWeight)
     : null;
   const weekComplete = days.length > 0 && days.filter((day) => day?.planned !== false).every((day) => day?.completed === true);
-  const weekStart = plan.weekStart ?? mondayKey(new Date());
   const hasCurrentWeekPhoto = photos.some((photo) => photo.weekStart === weekStart);
+  const activitySeconds = weekActivities.reduce((total, activity) => total + activity.durationSeconds, 0);
+  const legacyCompletedSeconds = days
+    .filter((day) => day?.completed === true && !activityDates.has(day.date))
+    .reduce((total, day) => total + Number(day.actualDurationSeconds ?? Number(day.durationMinutes ?? 0) * 60), 0);
 
   return {
     summary: {
@@ -57,8 +82,12 @@ export async function getProgress(userId) {
       weeklyProgress: plannedDays > 0 ? Math.min(1, completedDays / plannedDays) : 0,
       targetWeight,
       completionPercent,
-      activeStreak: calculateStreak(days),
-      totalMinutes: days.filter((day) => day?.completed === true).reduce((total, day) => total + Number(day.durationMinutes ?? 0), 0),
+      activeStreak: calculateStreak(new Set([
+        ...recentActivities.map((activity) => dateKey(activity.performedOn)),
+        ...planCompletedDates,
+      ])),
+      totalMinutes: minutesFromSeconds((lifetimeDuration._sum.durationSeconds ?? 0) + legacyCompletedSeconds),
+      weeklyMinutes: minutesFromSeconds(activitySeconds + legacyCompletedSeconds),
     },
     entries: serializedEntries,
     weekly,
@@ -154,28 +183,70 @@ async function getPhotos(userId) {
   return rows.map((photo) => serializePhoto(photo, mondayKey(photo.capturedAt)));
 }
 
-function buildWeekly(days) {
+function buildWeekly(weekStart, days, activities) {
   const labels = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
   return labels.map((label, index) => {
-    const day = days[index];
+    const date = dateAfter(weekStart, index);
+    const day = days.find((item) => item?.date === date);
+    const dayActivities = activities.filter((activity) => dateKey(activity.performedOn) === date);
+    const recordedSeconds = dayActivities.reduce((total, activity) => total + activity.durationSeconds, 0);
     return {
-      date: day?.date ?? '',
+      date,
       label,
-      completed: day?.completed === true,
-      planned: Boolean(day),
-      durationMinutes: Number(day?.durationMinutes ?? 0),
+      completed: day?.completed === true || dayActivities.length > 0,
+      planned: Boolean(day) || dayActivities.length > 0,
+      durationMinutes: recordedSeconds > 0
+        ? minutesFromSeconds(recordedSeconds)
+        : Number(day?.actualDurationSeconds != null
+          ? minutesFromSeconds(day.actualDurationSeconds)
+          : day?.durationMinutes ?? 0),
       muscleGroup: day?.muscleGroup ?? '',
     };
   });
 }
 
-function calculateStreak(days) {
+function calculateStreak(dates) {
+  const current = bogotaDateKey(new Date());
+  let cursor = dates.has(current) ? current : addDate(current, -1);
   let streak = 0;
-  for (let index = days.length - 1; index >= 0; index -= 1) {
-    if (days[index]?.completed !== true) break;
+  while (dates.has(cursor)) {
     streak += 1;
+    cursor = addDate(cursor, -1);
   }
   return streak;
+}
+
+function dateAtUtc(value) {
+  return new Date(`${value}T00:00:00.000Z`);
+}
+
+function dateKey(value) {
+  return value.toISOString().slice(0, 10);
+}
+
+function bogotaDateKey(date) {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Bogota',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(date);
+  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function addDate(value, offset) {
+  const date = dateAtUtc(value);
+  date.setUTCDate(date.getUTCDate() + offset);
+  return date.toISOString().slice(0, 10);
+}
+
+function dateAfter(start, offset) {
+  return addDate(start, offset);
+}
+
+function minutesFromSeconds(seconds) {
+  return seconds > 0 ? Math.max(1, Math.round(seconds / 60)) : 0;
 }
 
 function calculateCompletion(weight, targetWeight) {
@@ -205,7 +276,7 @@ function serializePhoto(photo, weekStart) {
 }
 
 function mondayKey(date) {
-  const result = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+  const result = dateAtUtc(bogotaDateKey(date));
   const day = result.getUTCDay() || 7;
   result.setUTCDate(result.getUTCDate() - day + 1);
   return result.toISOString().slice(0, 10);

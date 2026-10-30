@@ -83,6 +83,7 @@ class ProgressRepository {
         weeklyProgress: _number(rawSummary['weeklyProgress']) ?? 0,
         activeStreak: _int(rawSummary['activeStreak']),
         totalMinutes: _int(rawSummary['totalMinutes']),
+        weeklyMinutes: _int(rawSummary['weeklyMinutes']),
         targetWeight: _number(rawSummary['targetWeight']),
         completionPercent: _number(rawSummary['completionPercent']),
       ),

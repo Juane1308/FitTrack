@@ -47,6 +47,7 @@ model User {
   passwordResets   PasswordResetToken[]
   emailCodes       EmailVerificationCode[]
   trainingSessions TrainingSession[]
+  workoutActivities WorkoutActivity[]
   waterIntakes     WaterIntake[]
   progressEntries  ProgressEntry[]
   progressPhotos   ProgressPhoto[]
@@ -140,6 +141,7 @@ model Exercise {
   technique String
   description String?
   muscleCategory String?      @map("muscle_category") @db.VarChar(80)
+  level     Difficulty        @default(INTERMEDIATE)
   primaryMuscles Json?        @map("primary_muscles")
   imageUrl  String?           @map("image_url")
   videoUrl  String?           @map("video_url")
@@ -177,6 +179,19 @@ model TrainingSession {
 
   @@index([userId, startedAt])
   @@map("training_sessions")
+}
+
+model WorkoutActivity {
+  id              String   @id @default(uuid()) @db.Uuid
+  userId          String   @map("user_id") @db.Uuid
+  routineName     String   @map("routine_name") @db.VarChar(160)
+  durationSeconds Int      @map("duration_seconds")
+  performedOn     DateTime @map("performed_on") @db.Date
+  createdAt       DateTime @default(now()) @map("created_at")
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, performedOn])
+  @@map("workout_activities")
 }
 
 model Food {

@@ -100,6 +100,7 @@ function normalizeExercise(exercise) {
   return {
     slug: exercise.slug ?? exercise.id ?? '',
     name,
+    level: normalizeLevel(exercise.level ?? exercise.difficulty),
     group,
     primaryMuscles,
     instructions,
@@ -109,6 +110,13 @@ function normalizeExercise(exercise) {
     muscleMap: exercise.muscleMap ?? null,
     muscleCategory: muscleCategory([...primaryMuscles, group, name]),
   };
+}
+
+function normalizeLevel(value) {
+  const level = String(value ?? '').trim().toLowerCase();
+  if (level.includes('begin')) return 'beginner';
+  if (level.includes('expert') || level.includes('advanced')) return 'expert';
+  return 'intermediate';
 }
 
 function equipmentValue(value) {

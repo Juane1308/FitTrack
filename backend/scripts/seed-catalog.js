@@ -113,6 +113,7 @@ async function saveExercises(exercises) {
         technique: exercise.instructions?.join('\n') || exercise.description || 'Técnica no disponible.',
         description: exercise.description ?? null,
         muscleCategory: exercise.muscleCategory ?? null,
+        level: difficultyValue(exercise.level),
         primaryMuscles: exercise.primaryMuscles ?? [],
         imageUrl: firstImage(exercise.images),
         videoUrl: null,
@@ -200,6 +201,7 @@ function normalizeDatasetExercise(exercise) {
     slug: String(exercise.id ?? exercise.name ?? '').trim(),
     name: String(exercise.name ?? '').trim(),
     group: muscleCategory,
+    level: String(exercise.level ?? 'intermediate').toLowerCase(),
     primaryMuscles: [...new Set(localizedMuscles)],
     instructions: Array.isArray(exercise.instructions) ? exercise.instructions : [],
     description: `Ejercicio de ${muscleCategory} para trabajar ${localizedMuscles.slice(0, 2).join(' y ') || 'la zona seleccionada'}.`,
@@ -212,6 +214,13 @@ function normalizeDatasetExercise(exercise) {
     muscleCategory,
     source: 'free-exercise-db',
   };
+}
+
+function difficultyValue(value) {
+  const level = String(value ?? '').toLowerCase();
+  if (level.includes('begin')) return 'BEGINNER';
+  if (level.includes('expert') || level.includes('advanced')) return 'ADVANCED';
+  return 'INTERMEDIATE';
 }
 
 function toExerciseImageUrl(image) {

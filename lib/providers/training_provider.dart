@@ -57,6 +57,21 @@ class TrainingProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> recordCompletedSession({
+    required String token,
+    required String routineName,
+    required int durationSeconds,
+    required String performedOn,
+  }) async {
+    await _trainingRepository.recordActivity(
+      token: token,
+      routineName: routineName,
+      durationSeconds: durationSeconds,
+      performedOn: performedOn,
+    );
+    await loadWeeklyPlan(token, forceRefresh: true);
+  }
+
   Future<void> loadExercises({
     bool forceRefresh = false,
     String group = 'all',

@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 
 import '../core/constants/api_config.dart';
 import '../models/app_models.dart';
+import 'exercise_repository.dart';
 
 class TrainingRepository {
   TrainingRepository({http.Client? client, String? baseUrl})
@@ -31,6 +32,24 @@ class TrainingRepository {
     return (data['days'] as List).whereType<Map<String, dynamic>>().map(_fromJson).toList(growable: false);
   }
 
+  Future<void> recordActivity({
+    required String token,
+    required String routineName,
+    required int durationSeconds,
+    required String performedOn,
+  }) async {
+    final response = await _client.post(
+      Uri.parse('$_baseUrl/training/activities'),
+      headers: _headers(token),
+      body: jsonEncode({
+        'routineName': routineName,
+        'durationSeconds': durationSeconds,
+        'performedOn': performedOn,
+      }),
+    ).timeout(const Duration(seconds: 20));
+    _ensureSuccess(response);
+  }
+
   WorkoutDay _fromJson(Map<String, dynamic> data) {
     final rawExercises = data['exercises'];
     final exercises = rawExercises is List
@@ -49,12 +68,13 @@ class TrainingRepository {
 
   Exercise _exerciseFromJson(Map<String, dynamic> data) => Exercise(
     slug: data['slug'] as String? ?? '',
-    name: data['name'] as String? ?? 'Ejercicio',
+    name: ExerciseRepository.spanishName(data['name'] as String? ?? 'Ejercicio'),
     technique: data['focus'] as String? ?? 'Técnica y movimiento seguro.',
     sets: data['sets'] is num ? (data['sets'] as num).toInt() : 3,
     repetitions: 10,
     primaryMuscle: data['primaryMuscle'] as String? ?? '',
     muscleCategory: data['muscleCategory'] as String? ?? 'general',
+    level: data['level'] as String? ?? 'intermediate',
     recommendedRepetitions: data['repetitions'] as String? ?? '8-12',
     recommendationFocus: data['focus'] as String? ?? 'Técnica y movimiento seguro.',
     imageUrl: data['imageUrl'] as String?,

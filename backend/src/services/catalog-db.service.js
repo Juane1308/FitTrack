@@ -24,6 +24,7 @@ export async function listStoredExercises({ group, pageSize = 200 } = {}) {
       images: row.imageUrl ? { female: row.imageUrl, male: row.imageUrl } : {},
       muscleMap: null,
       muscleCategory: row.muscleCategory ?? 'general',
+      level: String(row.level ?? 'INTERMEDIATE').toLowerCase(),
       source: row.source ?? 'database',
     }));
   } catch (error) {
@@ -51,6 +52,7 @@ export async function getStoredExercise(slug) {
       images: row.imageUrl ? { female: row.imageUrl, male: row.imageUrl } : {},
       muscleMap: null,
       muscleCategory: row.muscleCategory ?? 'general',
+      level: String(row.level ?? 'INTERMEDIATE').toLowerCase(),
       source: row.source ?? 'database',
     };
   } catch (error) {

@@ -84,7 +84,7 @@ class HomeScreenEnhanced extends StatelessWidget {
                 final columns = constraints.maxWidth > 650 ? 4 : 2;
                 return GridView.count(crossAxisCount: columns, shrinkWrap: true, physics: const NeverScrollableScrollPhysics(), crossAxisSpacing: 12, mainAxisSpacing: 12, childAspectRatio: 1.35, children: [
                   _MetricCard(icon: Icons.calendar_month_outlined, label: 'Días activos', value: '$completedDays/$plannedDays'),
-                  _MetricCard(icon: Icons.timer_outlined, label: 'Tiempo semanal', value: '${summary.totalMinutes} min'),
+                  _MetricCard(icon: Icons.timer_outlined, label: 'Tiempo semanal', value: '${summary.weeklyMinutes} min'),
                   _MetricCard(icon: Icons.local_fire_department_outlined, label: 'Racha actual', value: '${summary.activeStreak} días'),
                   _MetricCard(icon: Icons.monitor_weight_outlined, label: 'Peso actual', value: summary.currentWeight == null ? 'Sin registro' : '${summary.currentWeight!.toStringAsFixed(1)} kg'),
                 ]);

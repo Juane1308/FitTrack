@@ -1,0 +1,2 @@
+ALTER TABLE "exercises"
+ADD COLUMN "level" "Difficulty" NOT NULL DEFAULT 'INTERMEDIATE';

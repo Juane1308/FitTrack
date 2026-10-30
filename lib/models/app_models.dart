@@ -180,6 +180,7 @@ class Exercise {
     required this.repetitions,
     this.slug = '',
     this.group = '',
+    this.level = 'intermediate',
     this.primaryMuscle = '',
     this.muscleCategory = 'general',
     this.recommendedRepetitions = '8-12',
@@ -195,6 +196,7 @@ class Exercise {
   final int repetitions;
   final String slug;
   final String group;
+  final String level;
   final String primaryMuscle;
   final String muscleCategory;
   final String recommendedRepetitions;
@@ -301,6 +303,7 @@ class ProgressSummary {
     required this.weeklyProgress,
     required this.activeStreak,
     required this.totalMinutes,
+    this.weeklyMinutes = 0,
     required this.targetWeight,
     required this.completionPercent,
   });
@@ -315,6 +318,7 @@ class ProgressSummary {
     weeklyProgress: 0,
     activeStreak: 0,
     totalMinutes: 0,
+    weeklyMinutes: 0,
     targetWeight: null,
     completionPercent: null,
   );
@@ -328,6 +332,7 @@ class ProgressSummary {
   final double weeklyProgress;
   final int activeStreak;
   final int totalMinutes;
+  final int weeklyMinutes;
   final double? targetWeight;
   final double? completionPercent;
 }
