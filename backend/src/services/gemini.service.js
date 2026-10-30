@@ -188,6 +188,97 @@ function localizeRecipeContent(recipe) {
   };
 }
 
+export function buildAssistantFallback({
+  message,
+  section,
+  goal,
+  exercises = [],
+  exerciseCatalog = [],
+  foods = [],
+  requestedGroup = '',
+  requestedCount = null,
+}) {
+  const availableExercises = exerciseCatalog.length > 0 ? exerciseCatalog : exercises;
+  const isTrainingQuestion = /entren|ejercicio|rutina|cambia|alternativa|reemplaz|espalda|pecho|pierna|brazo|b[ií]ceps|tr[ií]ceps|hombro|abdomen/i.test(
+    `${message ?? ''} ${section ?? ''}`,
+  );
+
+  if (isTrainingQuestion && availableExercises.length > 0) {
+    const count = Math.min(requestedCount ?? 3, availableExercises.length);
+    const selected = availableExercises.slice(0, count);
+    const lines = selected.map((exercise, index) => {
+      const technique = Array.isArray(exercise.instructions)
+        ? exercise.instructions[0]
+        : '';
+      return `${index + 1}. ${exercise.name}${technique ? `: ${technique}` : ''}`;
+    });
+    const groupLabel = requestedGroup ? ` de ${requestedGroup}` : '';
+    return [
+      `Encontré ${selected.length} ejercicio${selected.length === 1 ? '' : 's'}${groupLabel} en el catálogo de FITTRACK para tu objetivo de ${goal || 'mantenerte activo'}:`,
+      ...lines,
+      'La selección respeta el catálogo disponible y el lugar de entrenamiento configurado.',
+    ].join('\n');
+  }
+
+  if (foods.length > 0 && /aliment|nutri|comida|receta|desayuno|almuerzo|cena/i.test(`${message ?? ''} ${section ?? ''}`)) {
+    const selected = foods.slice(0, requestedCount ?? 3);
+    return [
+      'Estas son opciones disponibles en el catálogo de FITTRACK:',
+      ...selected.map((food, index) => `${index + 1}. ${food.name}`),
+      'Puedo ayudarte a filtrarlas por comida, objetivo o alergias registradas.',
+    ].join('\n');
+  }
+
+  return 'Gemini está temporalmente ocupado. Puedo ayudarte con ejercicios, sustituciones o alimentos del catálogo; intenta de nuevo en unos segundos.';
+}
+
+export function selectAssistantExercises({
+  message,
+  responseText = '',
+  exercises = [],
+  exerciseCatalog = [],
+  requestedCount = null,
+}) {
+  const availableExercises = exerciseCatalog.length > 0 ? exerciseCatalog : exercises;
+  const isTrainingQuestion = /entren|ejercicio|rutina|cambia|alternativa|reemplaz|espalda|pecho|pierna|brazo|b[ií]ceps|tr[ií]ceps|hombro|abdomen/i.test(
+    `${message ?? ''}`,
+  );
+  if (!isTrainingQuestion || availableExercises.length === 0) return [];
+
+  const count = Math.min(requestedCount ?? 3, availableExercises.length);
+  const normalizedResponse = String(responseText).toLowerCase();
+  const matched = availableExercises.filter((exercise) => {
+    const name = String(exercise.name ?? '').trim().toLowerCase();
+    const slug = String(exercise.slug ?? '').trim().toLowerCase();
+    return (name && normalizedResponse.includes(name)) || (slug && normalizedResponse.includes(slug));
+  });
+  const selected = [...matched, ...availableExercises.filter((exercise) => !matched.includes(exercise))].slice(0, count);
+
+  return selected.map((exercise) => {
+    const recommendation = exercise.recommendation ?? {};
+    const imageUrl = exercise.images?.female
+      ?? exercise.images?.male
+      ?? exercise.images?.front
+      ?? exercise.imageUrl
+      ?? null;
+    return {
+      slug: exercise.slug ?? '',
+      name: exercise.name ?? 'Ejercicio',
+      imageUrl,
+      description: exercise.description ?? '',
+      technique: Array.isArray(exercise.instructions) ? exercise.instructions[0] ?? '' : '',
+      instructions: Array.isArray(exercise.instructions) ? exercise.instructions.slice(0, 5) : [],
+      muscleCategory: exercise.muscleCategory ?? exercise.group ?? 'general',
+      primaryMuscles: Array.isArray(exercise.primaryMuscles) ? exercise.primaryMuscles.slice(0, 4) : [],
+      equipment: exercise.equipment?.name ?? exercise.equipment ?? null,
+      level: exercise.level ?? 'intermediate',
+      sets: Number(recommendation.sets ?? 3),
+      repetitions: String(recommendation.repetitions ?? '8-12'),
+      recommendationFocus: recommendation.focus ?? 'técnica y movimiento seguro',
+    };
+  });
+}
+
 // TheMealDB is a real catalogue with many English records. This deterministic
 // fallback keeps the app in Spanish when Gemini is unavailable or rate-limited.
 // It intentionally translates culinary vocabulary while preserving quantities.
@@ -494,7 +585,7 @@ async function requestGemini(prompt, generationConfig) {
               : {}),
           },
         }),
-        signal: AbortSignal.timeout(45000),
+        signal: AbortSignal.timeout(12000),
       },
     );
 

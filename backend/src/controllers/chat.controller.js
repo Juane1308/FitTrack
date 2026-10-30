@@ -1,4 +1,8 @@
-import { askGemini } from '../services/gemini.service.js';
+import {
+  askGemini,
+  buildAssistantFallback,
+  selectAssistantExercises,
+} from '../services/gemini.service.js';
 import { inferExerciseGroup, listExercises, requestedExerciseCount } from '../services/exercise.service.js';
 import { getGeminiProfileContext, getUserProfile } from '../services/profile.service.js';
 
@@ -26,7 +30,7 @@ export async function chatController(request, response, next) {
       console.error('[chat-exercise-catalog-error]', error.message);
     }
 
-    const text = await askGemini({
+    const context = {
       message,
       section: typeof section === 'string' ? section : 'general',
       goal: resolvedGoal,
@@ -37,8 +41,28 @@ export async function chatController(request, response, next) {
       trainingPlace: profile?.trainingPlace ?? '',
       requestedGroup: requestedGroup ?? '',
       requestedCount,
+    };
+
+    let text;
+    try {
+      text = await askGemini(context);
+    } catch (error) {
+      console.warn(`[chat-gemini-fallback] ${error.message}`);
+      text = buildAssistantFallback(context);
+    }
+    const recommendedExercises = selectAssistantExercises({
+      message,
+      responseText: text,
+      exerciseCatalog,
+      exercises,
+      requestedCount,
     });
-    return response.json({ data: { message: text } });
+    return response.json({
+      data: {
+        message: text,
+        exercises: recommendedExercises,
+      },
+    });
   } catch (error) {
     return next(error);
   }
