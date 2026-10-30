@@ -1,14 +1,18 @@
+import '../data/exercise_techniques_es.dart';
 import '../models/app_models.dart';
 
-/// Guía breve en español para que las instrucciones del dataset en inglés no
-/// aparezcan sin traducir en las pantallas del entrenamiento.
+/// Devuelve pasos específicos en español cuando existe una traducción validada
+/// para el ejercicio del catálogo actual. No presenta instrucciones genéricas
+/// como si describieran la técnica particular de un movimiento.
 List<String> exerciseInstructionsInSpanish(Exercise exercise) {
-  final muscle = exercise.primaryMuscle.isNotEmpty
-      ? exercise.primaryMuscle.toLowerCase()
-      : exercise.muscleCategory.toLowerCase();
+  final instructions = exerciseTechniquesEs[exercise.slug];
+  if (instructions != null && instructions.isNotEmpty) {
+    return instructions;
+  }
+
   return [
-    'Colócate en una posición estable y activa los músculos de $muscle. Mantén la espalda alineada antes de iniciar.',
-    'Realiza el movimiento con control, respira de forma continua y utiliza un recorrido cómodo. Evita los rebotes.',
-    'Regresa despacio a la posición inicial y conserva el control durante cada repetición. Si sientes dolor, detén el ejercicio.',
+    'Todavía no hay una guía técnica específica en español para ${exercise.name}.',
+    'Antes de realizarlo, revisa una demostración confiable o consulta a un entrenador para confirmar la postura y el recorrido adecuados.',
+    'Detén el ejercicio si sientes dolor.',
   ];
 }
