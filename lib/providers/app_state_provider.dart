@@ -8,8 +8,8 @@ class AppStateProvider extends ChangeNotifier {
   AppStateProvider({
     ProfileRepository? profileRepository,
     TrainingRepository? trainingRepository,
-  })  : _profileRepository = profileRepository ?? ProfileRepository(),
-        _trainingRepository = trainingRepository ?? TrainingRepository() {
+  }) : _profileRepository = profileRepository ?? ProfileRepository(),
+       _trainingRepository = trainingRepository ?? TrainingRepository() {
     _dashboard = DashboardSummary.empty;
     _routines = const [];
   }
@@ -79,7 +79,10 @@ class AppStateProvider extends ChangeNotifier {
       }
     }
     activeDay ??= week.isNotEmpty ? week.first : null;
-    final minutes = week.fold<int>(0, (total, day) => total + day.durationMinutes);
+    final minutes = week.fold<int>(
+      0,
+      (total, day) => total + day.durationMinutes,
+    );
     _dashboard = DashboardSummary(
       routineName: activeDay?.title ?? 'Sin rutina asignada',
       routineDate: activeDay?.dayLabel ?? '',
@@ -90,15 +93,20 @@ class AppStateProvider extends ChangeNotifier {
       calories: 0,
       exerciseMinutes: minutes,
       activeStreak: completedDays,
+      routineImageUrl: activeDay?.imageUrl,
     );
-    _routines = week.map((day) => Routine(
-      name: day.title,
-      level: 'Personalizada',
-      durationMinutes: day.durationMinutes,
-      goal: _profile.goal,
-      muscleGroup: day.muscleGroup,
-      exercises: day.exercises,
-    )).toList(growable: false);
+    _routines = week
+        .map(
+          (day) => Routine(
+            name: day.title,
+            level: 'Personalizada',
+            durationMinutes: day.durationMinutes,
+            goal: _profile.goal,
+            muscleGroup: day.muscleGroup,
+            exercises: day.exercises,
+          ),
+        )
+        .toList(growable: false);
     notifyListeners();
   }
 }

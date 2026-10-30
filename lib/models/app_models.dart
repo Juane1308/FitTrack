@@ -111,6 +111,7 @@ class DashboardSummary {
     required this.calories,
     required this.exerciseMinutes,
     required this.activeStreak,
+    this.routineImageUrl,
   });
 
   final String routineName;
@@ -122,6 +123,7 @@ class DashboardSummary {
   final double calories;
   final int exerciseMinutes;
   final int activeStreak;
+  final String? routineImageUrl;
 }
 
 class WorkoutDay {
@@ -133,6 +135,7 @@ class WorkoutDay {
     required this.durationMinutes,
     required this.completed,
     required this.exercises,
+    this.imageUrl,
   });
 
   final String date;
@@ -142,6 +145,7 @@ class WorkoutDay {
   final int durationMinutes;
   final bool completed;
   final List<Exercise> exercises;
+  final String? imageUrl;
 
   WorkoutDay copyWith({bool? completed}) => WorkoutDay(
     date: date,
@@ -151,6 +155,7 @@ class WorkoutDay {
     durationMinutes: durationMinutes,
     completed: completed ?? this.completed,
     exercises: exercises,
+    imageUrl: imageUrl,
   );
 }
 
@@ -356,7 +361,14 @@ class WeeklyProgressPoint {
 }
 
 class ProgressData {
-  const ProgressData({required this.summary, required this.entries, required this.weekly, required this.photos, required this.photoEligible, required this.photoMessage});
+  const ProgressData({
+    required this.summary,
+    required this.entries,
+    required this.weekly,
+    required this.photos,
+    required this.photoEligible,
+    required this.photoMessage,
+  });
 
   static const empty = ProgressData(
     summary: ProgressSummary.empty,
@@ -364,7 +376,8 @@ class ProgressData {
     weekly: <WeeklyProgressPoint>[],
     photos: <ProgressPhotoData>[],
     photoEligible: false,
-    photoMessage: 'Completa todos los entrenamientos de la semana para subir tu foto.',
+    photoMessage:
+        'Completa todos los entrenamientos de la semana para subir tu foto.',
   );
 
   final ProgressSummary summary;
@@ -376,7 +389,13 @@ class ProgressData {
 }
 
 class ProgressPhotoData {
-  const ProgressPhotoData({required this.id, required this.weekStart, required this.capturedAt, required this.mimeType, required this.dataUrl});
+  const ProgressPhotoData({
+    required this.id,
+    required this.weekStart,
+    required this.capturedAt,
+    required this.mimeType,
+    required this.dataUrl,
+  });
 
   final String id;
   final String weekStart;

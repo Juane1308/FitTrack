@@ -12,6 +12,7 @@ import { chatRouter } from './routes/chat.routes.js';
 import { trainingRouter } from './routes/training.routes.js';
 import { recommendationRouter } from './routes/recommendation.routes.js';
 import { progressRouter } from './routes/progress.routes.js';
+import { mediaRouter } from './routes/media.routes.js';
 
 export function createApp() {
   const app = express();
@@ -36,6 +37,7 @@ export function createApp() {
   app.use('/api/training', trainingRouter);
   app.use('/api/recommendations', recommendationRouter);
   app.use('/api/progress', progressRouter);
+  app.use('/api/media', mediaRouter);
   app.use('/api/health', healthRouter);
 
   app.use(notFoundMiddleware);

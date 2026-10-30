@@ -38,9 +38,21 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
   bool _saving = false;
 
   static const _goals = [
-    ('Perder grasa', Icons.local_fire_department_outlined, 'Quiero un cuerpo más saludable.'),
-    ('Ganar masa muscular', Icons.fitness_center_outlined, 'Quiero ser más fuerte.'),
-    ('Mantenerme activo', Icons.favorite_border, 'Quiero mantener mi estado actual.'),
+    (
+      'Perder grasa',
+      Icons.local_fire_department_outlined,
+      'Quiero un cuerpo más saludable.',
+    ),
+    (
+      'Ganar masa muscular',
+      Icons.fitness_center_outlined,
+      'Quiero ser más fuerte.',
+    ),
+    (
+      'Mantenerme activo',
+      Icons.favorite_border,
+      'Quiero mantener mi estado actual.',
+    ),
     ('Mejorar resistencia', Icons.eco_outlined, 'Quiero sentirme mejor.'),
   ];
 
@@ -55,7 +67,9 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
     _targetWeight.text = profile.targetWeight?.toString() ?? '';
     _height.text = profile.height?.toString() ?? '';
     _sport.text = profile.sport;
-    _trainingPlace = profile.trainingPlace.isEmpty ? _trainingPlace : profile.trainingPlace;
+    _trainingPlace = profile.trainingPlace.isEmpty
+        ? _trainingPlace
+        : profile.trainingPlace;
     _trainingDays = profile.trainingDays;
     _injuries.text = profile.injuries;
     _pain.text = profile.pain;
@@ -66,7 +80,18 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
 
   @override
   void dispose() {
-    for (final controller in [_birthDate, _weight, _targetWeight, _height, _sport, _injuries, _pain, _surgeries, _diseases, _allergies]) {
+    for (final controller in [
+      _birthDate,
+      _weight,
+      _targetWeight,
+      _height,
+      _sport,
+      _injuries,
+      _pain,
+      _surgeries,
+      _diseases,
+      _allergies,
+    ]) {
       controller.dispose();
     }
     super.dispose();
@@ -87,7 +112,9 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
       goal: _goal,
       birthDate: _selectedBirthDate,
       weight: double.parse(_weight.text.trim().replaceAll(',', '.')),
-      targetWeight: _targetWeight.text.trim().isEmpty ? null : double.parse(_targetWeight.text.trim().replaceAll(',', '.')),
+      targetWeight: _targetWeight.text.trim().isEmpty
+          ? null
+          : double.parse(_targetWeight.text.trim().replaceAll(',', '.')),
       height: double.parse(_height.text.trim().replaceAll(',', '.')),
       sport: _sport.text.trim(),
       trainingPlace: _trainingPlace,
@@ -123,7 +150,8 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
         );
       }
     } catch (_) {
-      if (mounted) _showMessage('No se pudo guardar tu perfil. Intenta nuevamente.');
+      if (mounted)
+        _showMessage('No se pudo guardar tu perfil. Intenta nuevamente.');
     } finally {
       if (mounted) setState(() => _saving = false);
     }
@@ -164,59 +192,107 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 620),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 8, 18, 0),
-                    child: Row(
-                      children: [
-                        if (_step > 0)
-                          IconButton(
-                            onPressed: _saving ? null : () => setState(() => _step = 0),
-                            icon: const Icon(Icons.arrow_back_ios_new, size: 18),
-                          ),
-                        Expanded(
-                          child: Text(
-                            widget.editing ? 'Editar perfil' : 'Personaliza FITTRACK',
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 12),
-                    child: _ProgressDots(step: _step),
-                  ),
-                  Expanded(
-                    child: ListView(
-                      padding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
-                      children: [_step == 0 ? _goalStep() : _dataStep()],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: FilledButton(
-                        onPressed: _saving ? null : _continue,
-                        child: _saving
-                            ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2))
-                            : Text(_step == 0 ? 'Continuar' : 'Guardar y continuar'),
-                      ),
-                    ),
-                  ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.network(
+            ApiConfig.mediaUrl('auth-background'),
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+            errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+          ),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.black.withValues(alpha: .42),
+                  Colors.black.withValues(alpha: .76),
+                  Colors.black.withValues(alpha: .96),
                 ],
+                stops: const [0, .48, 1],
               ),
             ),
           ),
-        ),
+          SafeArea(
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 620),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 8, 18, 0),
+                        child: Row(
+                          children: [
+                            if (_step > 0)
+                              IconButton(
+                                onPressed: _saving
+                                    ? null
+                                    : () => setState(() => _step = 0),
+                                icon: const Icon(
+                                  Icons.arrow_back_ios_new,
+                                  size: 18,
+                                ),
+                              ),
+                            Expanded(
+                              child: Text(
+                                widget.editing
+                                    ? 'Editar perfil'
+                                    : 'Personaliza FITTRACK',
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 28,
+                          vertical: 12,
+                        ),
+                        child: _ProgressDots(step: _step),
+                      ),
+                      Expanded(
+                        child: ListView(
+                          padding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
+                          children: [_step == 0 ? _goalStep() : _dataStep()],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: FilledButton(
+                            onPressed: _saving ? null : _continue,
+                            child: _saving
+                                ? const SizedBox(
+                                    width: 20,
+                                    height: 20,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                    ),
+                                  )
+                                : Text(
+                                    _step == 0
+                                        ? 'Continuar'
+                                        : 'Guardar y continuar',
+                                  ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -226,9 +302,19 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 8),
-        const Text('¿Cuál es tu objetivo principal?', style: TextStyle(fontSize: 28, height: 1.05, fontWeight: FontWeight.w900)),
+        const Text(
+          '¿Cuál es tu objetivo principal?',
+          style: TextStyle(
+            fontSize: 28,
+            height: 1.05,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
         const SizedBox(height: 8),
-        const Text('Usaremos esta selección para personalizar tus recomendaciones.', style: TextStyle(color: AppColors.mutedText)),
+        const Text(
+          'Usaremos esta selección para personalizar tus recomendaciones.',
+          style: TextStyle(color: AppColors.mutedText),
+        ),
         const SizedBox(height: 24),
         GridView.count(
           crossAxisCount: 2,
@@ -246,19 +332,50 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                 duration: const Duration(milliseconds: 180),
                 padding: const EdgeInsets.all(14),
                 decoration: BoxDecoration(
-                  color: selected ? AppColors.primary.withValues(alpha: .16) : AppColors.surface.withValues(alpha: .42),
+                  color: selected
+                      ? AppColors.primary.withValues(alpha: .16)
+                      : AppColors.surface.withValues(alpha: .42),
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: selected ? AppColors.primary : const Color(0xFF26352F), width: selected ? 2 : 1),
+                  border: Border.all(
+                    color: selected
+                        ? AppColors.primary
+                        : const Color(0xFF26352F),
+                    width: selected ? 2 : 1,
+                  ),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Align(alignment: Alignment.topRight, child: Icon(selected ? Icons.check_circle : Icons.circle_outlined, color: selected ? AppColors.primary : Colors.transparent, size: 22)),
-                    Icon(goal.$2, color: selected ? AppColors.primary : AppColors.text, size: 38),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Icon(
+                        selected ? Icons.check_circle : Icons.circle_outlined,
+                        color: selected
+                            ? AppColors.primary
+                            : Colors.transparent,
+                        size: 22,
+                      ),
+                    ),
+                    Icon(
+                      goal.$2,
+                      color: selected ? AppColors.primary : AppColors.text,
+                      size: 38,
+                    ),
                     const SizedBox(height: 14),
-                    Text(goal.$1, textAlign: TextAlign.center, style: const TextStyle(fontWeight: FontWeight.w900)),
+                    Text(
+                      goal.$1,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontWeight: FontWeight.w900),
+                    ),
                     const SizedBox(height: 7),
-                    Text(goal.$3, textAlign: TextAlign.center, style: const TextStyle(color: AppColors.mutedText, fontSize: 11)),
+                    Text(
+                      goal.$3,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: AppColors.mutedText,
+                        fontSize: 11,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -274,56 +391,156 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 8),
-        const Text('Tus datos', style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900)),
+        const Text(
+          'Tus datos',
+          style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900),
+        ),
         const SizedBox(height: 8),
-        const Text('Estos datos se guardan en tu perfil para adaptar el contenido.', style: TextStyle(color: AppColors.mutedText)),
+        const Text(
+          'Estos datos se guardan en tu perfil para adaptar el contenido.',
+          style: TextStyle(color: AppColors.mutedText),
+        ),
         const SizedBox(height: 24),
-        TextFormField(controller: _birthDate, readOnly: true, onTap: _selectBirthDate, decoration: const InputDecoration(labelText: 'Fecha de nacimiento', prefixIcon: Icon(Icons.cake_outlined))),
+        TextFormField(
+          controller: _birthDate,
+          readOnly: true,
+          onTap: _selectBirthDate,
+          decoration: const InputDecoration(
+            labelText: 'Fecha de nacimiento',
+            prefixIcon: Icon(Icons.cake_outlined),
+          ),
+        ),
         const SizedBox(height: 14),
-        TextFormField(controller: _weight, keyboardType: const TextInputType.numberWithOptions(decimal: true), decoration: const InputDecoration(labelText: 'Peso (kg)', prefixIcon: Icon(Icons.monitor_weight_outlined)), validator: _positiveNumber),
+        TextFormField(
+          controller: _weight,
+          keyboardType: const TextInputType.numberWithOptions(decimal: true),
+          decoration: const InputDecoration(
+            labelText: 'Peso (kg)',
+            prefixIcon: Icon(Icons.monitor_weight_outlined),
+          ),
+          validator: _positiveNumber,
+        ),
         const SizedBox(height: 14),
-        TextFormField(controller: _targetWeight, keyboardType: const TextInputType.numberWithOptions(decimal: true), decoration: const InputDecoration(labelText: 'Peso objetivo (kg)', helperText: 'Opcional: define el peso hacia el que quieres avanzar.', prefixIcon: Icon(Icons.flag_outlined)), validator: (value) => value == null || value.trim().isEmpty ? null : _positiveNumber(value)),
+        TextFormField(
+          controller: _targetWeight,
+          keyboardType: const TextInputType.numberWithOptions(decimal: true),
+          decoration: const InputDecoration(
+            labelText: 'Peso objetivo (kg)',
+            helperText:
+                'Opcional: define el peso hacia el que quieres avanzar.',
+            prefixIcon: Icon(Icons.flag_outlined),
+          ),
+          validator: (value) => value == null || value.trim().isEmpty
+              ? null
+              : _positiveNumber(value),
+        ),
         const SizedBox(height: 14),
-        TextFormField(controller: _height, keyboardType: const TextInputType.numberWithOptions(decimal: true), decoration: const InputDecoration(labelText: 'Altura (m, ejemplo 1.74)', prefixIcon: Icon(Icons.height)), validator: _positiveNumber),
+        TextFormField(
+          controller: _height,
+          keyboardType: const TextInputType.numberWithOptions(decimal: true),
+          decoration: const InputDecoration(
+            labelText: 'Altura (m, ejemplo 1.74)',
+            prefixIcon: Icon(Icons.height),
+          ),
+          validator: _positiveNumber,
+        ),
         const SizedBox(height: 14),
-        TextFormField(controller: _sport, decoration: const InputDecoration(labelText: 'Actividad deportiva actual', prefixIcon: Icon(Icons.sports_outlined)),),
+        TextFormField(
+          controller: _sport,
+          decoration: const InputDecoration(
+            labelText: 'Actividad deportiva actual',
+            prefixIcon: Icon(Icons.sports_outlined),
+          ),
+        ),
         const SizedBox(height: 14),
         DropdownButtonFormField<int>(
           initialValue: _trainingDays,
-          decoration: const InputDecoration(labelText: '¿Cuántos días entrenas por semana?', prefixIcon: Icon(Icons.calendar_today_outlined)),
-          items: List.generate(7, (index) => index + 1).map((days) => DropdownMenuItem(value: days, child: Text('$days ${days == 1 ? 'día' : 'días'}'))).toList(),
-          onChanged: (value) => setState(() => _trainingDays = value ?? _trainingDays),
+          decoration: const InputDecoration(
+            labelText: '¿Cuántos días entrenas por semana?',
+            prefixIcon: Icon(Icons.calendar_today_outlined),
+          ),
+          items: List.generate(7, (index) => index + 1)
+              .map(
+                (days) => DropdownMenuItem(
+                  value: days,
+                  child: Text('$days ${days == 1 ? 'día' : 'días'}'),
+                ),
+              )
+              .toList(),
+          onChanged: (value) =>
+              setState(() => _trainingDays = value ?? _trainingDays),
         ),
         const SizedBox(height: 14),
         DropdownButtonFormField<String>(
           initialValue: _trainingPlace,
-          decoration: const InputDecoration(labelText: '¿Dónde entrenas normalmente?', prefixIcon: Icon(Icons.place_outlined)),
+          decoration: const InputDecoration(
+            labelText: '¿Dónde entrenas normalmente?',
+            prefixIcon: Icon(Icons.place_outlined),
+          ),
           items: const [
             DropdownMenuItem(value: 'Casa', child: Text('Casa')),
             DropdownMenuItem(value: 'Aire libre', child: Text('Aire libre')),
-            DropdownMenuItem(value: 'Gimnasio', child: Text('Gimnasio equipado')),
+            DropdownMenuItem(
+              value: 'Gimnasio',
+              child: Text('Gimnasio equipado'),
+            ),
           ],
-          onChanged: (value) => setState(() => _trainingPlace = value ?? _trainingPlace),
+          onChanged: (value) =>
+              setState(() => _trainingPlace = value ?? _trainingPlace),
         ),
         const SizedBox(height: 14),
-        _multiline(_injuries, 'Lesiones pasadas', Icons.healing_outlined, 'Ninguna'),
+        _multiline(
+          _injuries,
+          'Lesiones pasadas',
+          Icons.healing_outlined,
+          'Ninguna',
+        ),
         const SizedBox(height: 14),
-        _multiline(_pain, 'Dolores articulares', Icons.accessibility_new_outlined, 'Ninguno'),
+        _multiline(
+          _pain,
+          'Dolores articulares',
+          Icons.accessibility_new_outlined,
+          'Ninguno',
+        ),
         const SizedBox(height: 14),
-        _multiline(_surgeries, 'Cirugías', Icons.medical_services_outlined, 'Ninguna'),
+        _multiline(
+          _surgeries,
+          'Cirugías',
+          Icons.medical_services_outlined,
+          'Ninguna',
+        ),
         const SizedBox(height: 14),
-        _multiline(_diseases, 'Enfermedades crónicas', Icons.health_and_safety_outlined, 'Ninguna'),
+        _multiline(
+          _diseases,
+          'Enfermedades crónicas',
+          Icons.health_and_safety_outlined,
+          'Ninguna',
+        ),
         const SizedBox(height: 14),
-        _multiline(_allergies, 'Alergias alimentarias', Icons.warning_amber_outlined, 'Ninguna conocida'),
+        _multiline(
+          _allergies,
+          'Alergias alimentarias',
+          Icons.warning_amber_outlined,
+          'Ninguna conocida',
+        ),
       ],
     );
   }
 
-  Widget _multiline(TextEditingController controller, String label, IconData icon, String hint) => TextFormField(
-        controller: controller,
-        maxLines: 2,
-        decoration: InputDecoration(labelText: label, prefixIcon: Icon(icon), hintText: hint),
-      );
+  Widget _multiline(
+    TextEditingController controller,
+    String label,
+    IconData icon,
+    String hint,
+  ) => TextFormField(
+    controller: controller,
+    maxLines: 2,
+    decoration: InputDecoration(
+      labelText: label,
+      prefixIcon: Icon(icon),
+      hintText: hint,
+    ),
+  );
 }
 
 class _ProgressDots extends StatelessWidget {

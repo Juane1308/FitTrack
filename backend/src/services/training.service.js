@@ -30,6 +30,7 @@ const workoutActivitySchema = z.object({
   durationSeconds: z.coerce.number().int().min(1).max(86_400),
   performedOn: z.string().date(),
 });
+const ROUTINE_COVER_PATH = '/api/media/routine-cover';
 
 export async function getWeeklyTraining(userId) {
   const prisma = getPrismaClient();
@@ -80,6 +81,7 @@ export async function getWeeklyTraining(userId) {
       dayLabel: dayLabel(index),
       muscleGroup: group,
       title: `${GROUP_LABELS[group] ?? 'Cuerpo completo'} · ${goalLabel(goal)}`,
+      imageUrl: ROUTINE_COVER_PATH,
       durationMinutes: goal === 'STRENGTH' ? 55 : 45,
       completed: false,
       exercises,
@@ -189,7 +191,11 @@ function decoratePlan(plan) {
     weekStart: plan.weekStart,
     trainingDays: plan.trainingDays,
     generatedBy: plan.generatedBy,
-    days: plan.days.map((day) => ({ ...day, completed: Boolean(day.completed) })),
+    days: plan.days.map((day) => ({
+      ...day,
+      imageUrl: day.imageUrl || ROUTINE_COVER_PATH,
+      completed: Boolean(day.completed),
+    })),
   };
 }
 

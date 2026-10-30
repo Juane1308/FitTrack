@@ -10,9 +10,7 @@ class ApiConfig {
     defaultValue: true,
   );
 
-  static const _configuredBaseUrl = String.fromEnvironment(
-    'FITTRACK_API_URL',
-  );
+  static const _configuredBaseUrl = String.fromEnvironment('FITTRACK_API_URL');
 
   static bool get useApi => _useApiFlag || _configuredBaseUrl.isNotEmpty;
 
@@ -31,4 +29,6 @@ class ApiConfig {
 
     return 'http://localhost:3000/api';
   }
+
+  static String mediaUrl(String assetKey) => '$baseUrl/media/$assetKey';
 }
