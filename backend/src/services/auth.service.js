@@ -108,7 +108,19 @@ export async function registerUser(payload) {
     },
   });
 
-  await createAndSendVerificationCode(prisma, user);
+  try {
+    await createAndSendVerificationCode(prisma, user);
+  } catch (error) {
+    // Evita dejar un correo bloqueado si Brevo falla durante el registro.
+    try {
+      await prisma.user.deleteMany({
+        where: { id: user.id, emailVerifiedAt: null },
+      });
+    } catch (cleanupError) {
+      console.error('[registration-cleanup-error]', cleanupError.message);
+    }
+    throw error;
+  }
 
   return { user: publicUser(user) };
 }

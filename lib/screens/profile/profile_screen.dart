@@ -5,6 +5,9 @@ import '../../core/theme/app_colors.dart';
 import '../../models/app_models.dart';
 import '../../providers/app_state_provider.dart';
 import '../../providers/auth_provider.dart';
+import '../../providers/progress_provider.dart';
+import '../../providers/recommendation_provider.dart';
+import '../../providers/training_provider.dart';
 import '../auth/login_screen.dart';
 import 'profile_setup_screen.dart';
 
@@ -68,6 +71,10 @@ class ProfileScreen extends StatelessWidget {
                 label: 'Cerrar sesión',
                 danger: true,
                 onTap: () async {
+                  context.read<AppStateProvider>().clearUserData();
+                  context.read<ProgressProvider>().clearUserData();
+                  context.read<TrainingProvider>().clearUserData();
+                  context.read<RecommendationProvider>().clearUserData();
                   await context.read<AuthProvider>().logout();
                   if (!context.mounted) return;
                   Navigator.of(context).pushAndRemoveUntil(

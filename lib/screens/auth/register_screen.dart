@@ -94,6 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             TextFormField(
               controller: _nameController,
+              autofillHints: const [],
               textInputAction: TextInputAction.next,
               decoration: const InputDecoration(
                 labelText: 'Nombre',
@@ -104,6 +105,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             const SizedBox(height: 14),
             TextFormField(
               controller: _emailController,
+              autofillHints: const [],
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
               decoration: const InputDecoration(
@@ -115,6 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             const SizedBox(height: 14),
             TextFormField(
               controller: _passwordController,
+              autofillHints: const [],
               obscureText: _obscurePassword,
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(
@@ -138,6 +141,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             const SizedBox(height: 14),
             TextFormField(
               controller: _confirmationController,
+              autofillHints: const [],
               obscureText: _obscureConfirmation,
               textInputAction: TextInputAction.done,
               decoration: InputDecoration(

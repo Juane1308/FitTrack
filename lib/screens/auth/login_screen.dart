@@ -5,6 +5,9 @@ import '../../core/constants/api_config.dart';
 import '../../core/validators/validators.dart';
 import '../../providers/app_state_provider.dart';
 import '../../providers/auth_provider.dart';
+import '../../providers/progress_provider.dart';
+import '../../providers/recommendation_provider.dart';
+import '../../providers/training_provider.dart';
 import '../../repositories/auth_repository.dart';
 import '../home/main_shell.dart';
 import 'auth_messages.dart';
@@ -53,6 +56,10 @@ class _LoginScreenState extends State<LoginScreen> {
     }
     if (result.isSuccess) {
       final appState = context.read<AppStateProvider>();
+      appState.clearUserData();
+      context.read<ProgressProvider>().clearUserData();
+      context.read<TrainingProvider>().clearUserData();
+      context.read<RecommendationProvider>().clearUserData();
       if (result.sessionToken != null && ApiConfig.useApi) {
         try {
           await appState.loadRemoteProfile(result.sessionToken!);

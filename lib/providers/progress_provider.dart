@@ -18,6 +18,13 @@ class ProgressProvider extends ChangeNotifier {
   bool get isLoading => _status == ProgressLoadStatus.loading;
   String? get error => _error;
 
+  void clearUserData() {
+    _data = ProgressData.empty;
+    _status = ProgressLoadStatus.idle;
+    _error = null;
+    notifyListeners();
+  }
+
   Future<void> load(String token, {bool forceRefresh = false}) async {
     if (isLoading || (_status == ProgressLoadStatus.ready && !forceRefresh)) return;
     _status = ProgressLoadStatus.loading;

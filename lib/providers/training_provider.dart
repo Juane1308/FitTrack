@@ -32,6 +32,17 @@ class TrainingProvider extends ChangeNotifier {
   bool get weekLoading => _weekLoading;
   String? get weekError => _weekError;
 
+  void clearUserData() {
+    _weeklyPlan = const [];
+    _weekLoading = false;
+    _weekError = null;
+    _status = TrainingLoadStatus.idle;
+    _errorMessage = null;
+    _selectedGroup = 'all';
+    _selectedGoal = 'Mantenerme activo';
+    notifyListeners();
+  }
+
   Future<void> loadWeeklyPlan(String token, {bool forceRefresh = false}) async {
     if (_weekLoading || (_weeklyPlan.isNotEmpty && !forceRefresh)) return;
     _weekLoading = true;

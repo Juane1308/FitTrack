@@ -16,6 +16,13 @@ class RecommendationProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
 
+  void clearUserData() {
+    _recommendation = null;
+    _isLoading = false;
+    _errorMessage = null;
+    notifyListeners();
+  }
+
   Future<void> load(String? token, {bool refresh = false}) async {
     if (token == null || token.isEmpty || (_isLoading && !refresh)) return;
     if (_recommendation != null && !refresh) return;

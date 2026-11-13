@@ -7,6 +7,9 @@ import '../../core/constants/api_config.dart';
 import '../../providers/app_state_provider.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/progress_provider.dart';
+import '../../providers/recommendation_provider.dart';
+import '../../providers/training_provider.dart';
+import '../../repositories/profile_repository.dart';
 import '../auth/login_screen.dart';
 import '../home/main_shell.dart';
 import '../profile/profile_setup_screen.dart';
@@ -31,11 +34,21 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _openNext(AuthProvider auth, AppStateProvider appState) async {
+    final progressProvider = context.read<ProgressProvider>();
+    final trainingProvider = context.read<TrainingProvider>();
+    final recommendationProvider = context.read<RecommendationProvider>();
     if (auth.isAuthenticated && auth.sessionToken != null && ApiConfig.useApi) {
       try {
         await appState.loadRemoteProfile(auth.sessionToken!);
-      } catch (_) {
-        // Si el perfil no está disponible, el onboarding permitirá completarlo.
+      } catch (error) {
+        // Una sesión vencida no debe dejar al usuario atrapado en onboarding.
+        if (error is ProfileRequestException && error.statusCode == 401) {
+          appState.clearUserData();
+          progressProvider.clearUserData();
+          trainingProvider.clearUserData();
+          recommendationProvider.clearUserData();
+          await auth.logout();
+        }
       }
       if (appState.isProfileComplete) {
         try {
@@ -43,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
         } catch (_) {
           // El home puede mostrar el estado vacío mientras se recupera el plan.
         }
-        await context.read<ProgressProvider>().load(auth.sessionToken!);
+        await progressProvider.load(auth.sessionToken!);
       }
     }
     if (!mounted) return;
@@ -52,9 +65,8 @@ class _SplashScreenState extends State<SplashScreen> {
         : ApiConfig.useApi && !appState.isProfileComplete
         ? const ProfileSetupScreen()
         : const MainShell();
-      Navigator.of(
-        context,
-      ).pushReplacement(MaterialPageRoute<void>(builder: (_) => destination));
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute<void>(builder: (_) => destination));
   }
 
   @override

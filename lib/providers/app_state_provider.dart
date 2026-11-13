@@ -47,6 +47,18 @@ class AppStateProvider extends ChangeNotifier {
       _remoteProfile?.height != null &&
       _remoteProfile?.goal != 'Definir objetivo';
 
+  void clearUserData() {
+    _profile = const UserProfile(
+      goal: 'Definir objetivo', birthDate: null, weight: null, height: null,
+      sport: '', trainingPlace: '', injuries: '', pain: '', surgeries: '',
+      diseases: '', allergies: '',
+    );
+    _remoteProfile = null;
+    _dashboard = DashboardSummary.empty;
+    _routines = const [];
+    notifyListeners();
+  }
+
   void updateProfile(UserProfile profile) {
     _profile = profile;
     notifyListeners();

@@ -690,82 +690,14 @@ class _TrainingScreenState extends State<TrainingScreen> {
   });
 
   Future<void> _showCreateRoutineDialog() async {
-    final nameController = TextEditingController();
     final selected = _selectedExercises
         .map((id) => _exerciseCache[id])
         .whereType<Exercise>()
         .toList();
     final name = await showDialog<String>(
       context: context,
-      builder: (dialogContext) => StatefulBuilder(
-        builder: (context, setDialogState) => AlertDialog(
-          title: const Text('Nombre de la rutina'),
-          content: SizedBox(
-            width: 420,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TextField(
-                  controller: nameController,
-                  autofocus: true,
-                  textCapitalization: TextCapitalization.sentences,
-                  decoration: const InputDecoration(
-                    hintText: 'Escribe un nombre',
-                  ),
-                ),
-                const SizedBox(height: 14),
-                Text(
-                  'Ejercicios seleccionados (${selected.length})',
-                  style: const TextStyle(fontWeight: FontWeight.w800),
-                ),
-                const SizedBox(height: 8),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(maxHeight: 220),
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    itemCount: selected.length,
-                    separatorBuilder: (_, _) => const Divider(height: 1),
-                    itemBuilder: (_, index) => ListTile(
-                      dense: true,
-                      contentPadding: EdgeInsets.zero,
-                      leading: _ExerciseThumbnail(
-                        url: selected[index].imageUrl,
-                        size: 42,
-                      ),
-                      title: Text(
-                        selected[index].name,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(dialogContext),
-              child: const Text('Cancelar'),
-            ),
-            FilledButton(
-              onPressed: () {
-                final value = nameController.text.trim();
-                if (value.isEmpty || selected.isEmpty) {
-                  setDialogState(() {});
-                  return;
-                }
-                Navigator.pop(dialogContext, value);
-              },
-              style: _primaryButtonStyle(),
-              child: const Text('Crear rutina'),
-            ),
-          ],
-        ),
-      ),
+      builder: (_) => _CreateRoutineDialog(exercises: selected),
     );
-    nameController.dispose();
     if (!mounted || name == null) return;
     final normalized = name.trim();
     if (normalized.isEmpty || selected.isEmpty) return;
@@ -1371,6 +1303,109 @@ class _TrainingScreenState extends State<TrainingScreen> {
     foregroundColor: Colors.black,
     padding: const EdgeInsets.symmetric(vertical: 14),
     textStyle: const TextStyle(fontWeight: FontWeight.w800),
+  );
+}
+
+class _CreateRoutineDialog extends StatefulWidget {
+  const _CreateRoutineDialog({required this.exercises});
+
+  final List<Exercise> exercises;
+
+  @override
+  State<_CreateRoutineDialog> createState() => _CreateRoutineDialogState();
+}
+
+class _CreateRoutineDialogState extends State<_CreateRoutineDialog> {
+  final _nameController = TextEditingController();
+  String? _error;
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
+
+  void _create() {
+    final name = _nameController.text.trim();
+    if (name.isEmpty) {
+      setState(() => _error = 'Escribe un nombre para la rutina.');
+      return;
+    }
+    if (widget.exercises.isEmpty) {
+      setState(() => _error = 'Selecciona al menos un ejercicio.');
+      return;
+    }
+    Navigator.of(context).pop(name);
+  }
+
+  @override
+  Widget build(BuildContext context) => AlertDialog(
+    title: const Text('Nombre de la rutina'),
+    content: SizedBox(
+      width: 420,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextField(
+            controller: _nameController,
+            autofocus: true,
+            textCapitalization: TextCapitalization.sentences,
+            decoration: InputDecoration(
+              hintText: 'Escribe un nombre',
+              errorText: _error,
+            ),
+            onChanged: (_) {
+              if (_error != null) setState(() => _error = null);
+            },
+            onSubmitted: (_) => _create(),
+          ),
+          const SizedBox(height: 14),
+          Text(
+            'Ejercicios seleccionados (${widget.exercises.length})',
+            style: const TextStyle(fontWeight: FontWeight.w800),
+          ),
+          const SizedBox(height: 8),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 220),
+            child: ListView.separated(
+              shrinkWrap: true,
+              itemCount: widget.exercises.length,
+              separatorBuilder: (_, _) => const Divider(height: 1),
+              itemBuilder: (_, index) => ListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                leading: _ExerciseThumbnail(
+                  url: widget.exercises[index].imageUrl,
+                  size: 42,
+                ),
+                title: Text(
+                  widget.exercises[index].name,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+    actions: [
+      TextButton(
+        onPressed: () => Navigator.of(context).pop(),
+        child: const Text('Cancelar'),
+      ),
+      FilledButton(
+        onPressed: _create,
+        style: FilledButton.styleFrom(
+          backgroundColor: AppColors.primary,
+          foregroundColor: Colors.black,
+          padding: const EdgeInsets.symmetric(vertical: 14),
+          textStyle: const TextStyle(fontWeight: FontWeight.w800),
+        ),
+        child: const Text('Crear rutina'),
+      ),
+    ],
   );
 }
 

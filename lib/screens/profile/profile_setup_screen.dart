@@ -6,6 +6,11 @@ import '../../core/theme/app_colors.dart';
 import '../../models/app_models.dart';
 import '../../providers/app_state_provider.dart';
 import '../../providers/auth_provider.dart';
+import '../../providers/progress_provider.dart';
+import '../../providers/recommendation_provider.dart';
+import '../../providers/training_provider.dart';
+import '../../repositories/profile_repository.dart';
+import '../auth/login_screen.dart';
 import '../home/main_shell.dart';
 
 class ProfileSetupScreen extends StatefulWidget {
@@ -149,9 +154,14 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
           (_) => false,
         );
       }
-    } catch (_) {
-      if (mounted)
-        _showMessage('No se pudo guardar tu perfil. Intenta nuevamente.');
+    } catch (error) {
+      if (error is ProfileRequestException && error.statusCode == 401) {
+        await _logout();
+        return;
+      }
+      if (mounted) {
+        _showMessage('No se pudo guardar tu perfil: $error');
+      }
     } finally {
       if (mounted) setState(() => _saving = false);
     }
@@ -189,6 +199,19 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
       ..showSnackBar(SnackBar(content: Text(message)));
   }
 
+  Future<void> _logout() async {
+    context.read<AppStateProvider>().clearUserData();
+    context.read<ProgressProvider>().clearUserData();
+    context.read<TrainingProvider>().clearUserData();
+    context.read<RecommendationProvider>().clearUserData();
+    await context.read<AuthProvider>().logout();
+    if (!mounted) return;
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute<void>(builder: (_) => const LoginScreen()),
+      (_) => false,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -199,7 +222,7 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
             ApiConfig.mediaUrl('auth-background'),
             fit: BoxFit.cover,
             alignment: Alignment.center,
-            errorBuilder: (_, __, ___) => const SizedBox.shrink(),
+            errorBuilder: (_, _, _) => const SizedBox.shrink(),
           ),
           DecoratedBox(
             decoration: BoxDecoration(
@@ -248,6 +271,12 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen> {
                                 ),
                               ),
                             ),
+                            if (!widget.editing)
+                              IconButton(
+                                tooltip: 'Cerrar sesión',
+                                onPressed: _saving ? null : _logout,
+                                icon: const Icon(Icons.logout),
+                              ),
                           ],
                         ),
                       ),

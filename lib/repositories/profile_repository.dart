@@ -14,10 +14,9 @@ class ProfileRepository {
   final String _baseUrl;
 
   Future<UserProfile?> fetchProfile(String token) async {
-    final response = await _client.get(
-      Uri.parse('$_baseUrl/profile'),
-      headers: _headers(token),
-    ).timeout(const Duration(seconds: 12));
+    final response = await _client
+        .get(Uri.parse('$_baseUrl/profile'), headers: _headers(token))
+        .timeout(const Duration(seconds: 12));
     _ensureSuccess(response);
     final payload = jsonDecode(response.body) as Map<String, dynamic>;
     final data = payload['data'];
@@ -25,11 +24,13 @@ class ProfileRepository {
   }
 
   Future<UserProfile> saveProfile(String token, UserProfile profile) async {
-    final response = await _client.patch(
-      Uri.parse('$_baseUrl/profile'),
-      headers: _headers(token),
-      body: jsonEncode(_toJson(profile)),
-    ).timeout(const Duration(seconds: 12));
+    final response = await _client
+        .patch(
+          Uri.parse('$_baseUrl/profile'),
+          headers: _headers(token),
+          body: jsonEncode(_toJson(profile)),
+        )
+        .timeout(const Duration(seconds: 12));
     _ensureSuccess(response);
     final payload = jsonDecode(response.body) as Map<String, dynamic>;
     return _fromJson(payload['data'] as Map<String, dynamic>);
@@ -72,7 +73,9 @@ class ProfileRepository {
     surgeries: data['surgeries'] as String? ?? '',
     diseases: data['diseases'] as String? ?? '',
     allergies: data['allergies'] as String? ?? '',
-    trainingDays: data['trainingDays'] is num ? (data['trainingDays'] as num).toInt() : 4,
+    trainingDays: data['trainingDays'] is num
+        ? (data['trainingDays'] as num).toInt()
+        : 4,
     targetWeight: _number(data['targetWeight']),
     notificationsEnabled: data['notificationsEnabled'] as bool? ?? true,
     privateProfile: data['privateProfile'] as bool? ?? true,
@@ -82,7 +85,33 @@ class ProfileRepository {
 
   void _ensureSuccess(http.Response response) {
     if (response.statusCode < 200 || response.statusCode >= 300) {
-      throw Exception('No se pudo guardar el perfil.');
+      var message = 'Error HTTP ${response.statusCode}';
+      try {
+        final body = jsonDecode(response.body);
+        if (body is Map<String, dynamic>) {
+          final serverMessage = body['error'];
+          final details = body['details'];
+          if (serverMessage is String && serverMessage.isNotEmpty) {
+            message = serverMessage;
+          }
+          if (details is List && details.isNotEmpty) {
+            message = '$message ${details.whereType<String>().join(' ')}';
+          }
+        }
+      } catch (_) {
+        // Conserva el estado HTTP cuando el servidor no devuelve JSON.
+      }
+      throw ProfileRequestException(message, response.statusCode);
     }
   }
+}
+
+class ProfileRequestException implements Exception {
+  const ProfileRequestException(this.message, this.statusCode);
+
+  final String message;
+  final int statusCode;
+
+  @override
+  String toString() => message;
 }
