@@ -64,6 +64,7 @@ flutter:
     - backend/data/nutrition/foods.json
     - backend/data/exercises/exercises.json
     - assets/images/fittrack_logo.png
+    - assets/images/assistant_chat_button.jpeg
     - assets/images/nutrition_breakfast.jpg
     - assets/images/nutrition_snack.jpg
     - assets/images/nutrition_lunch.jpg

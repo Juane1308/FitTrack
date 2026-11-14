@@ -26,15 +26,16 @@ class ContextualChatButton extends StatelessWidget {
         child: FloatingActionButton(
           heroTag: 'contextual-chat-button',
           tooltip: 'Asistente virtual',
+          clipBehavior: Clip.antiAlias,
           onPressed: () => _openChat(context),
-          child: ClipOval(
-            child: Image.network(
-              ApiConfig.mediaUrl('assistant-logo'),
-              width: 31,
-              height: 31,
-              fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) => const Icon(
-                Icons.chat_bubble_outline_rounded,
+          child: SizedBox.expand(
+            child: ClipOval(
+              child: Image.asset(
+                'assets/images/assistant_chat_button.jpeg',
+                fit: BoxFit.cover,
+                errorBuilder: (_, __, ___) => const Icon(
+                  Icons.chat_bubble_outline_rounded,
+                ),
               ),
             ),
           ),
