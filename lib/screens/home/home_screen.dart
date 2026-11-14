@@ -8,13 +8,19 @@ import '../../widgets/common/app_card.dart';
 import '../../widgets/common/section_title.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({this.onOpenTraining, super.key});
+
+  final VoidCallback? onOpenTraining;
 
   @override
   Widget build(BuildContext context) {
     final state = context.watch<AppStateProvider>();
     final dashboard = state.dashboard;
-    final user = context.watch<AuthProvider>().currentUser ?? state.currentUser;
+    final user = context.watch<AuthProvider>().currentUser;
+
+    if (user == null) {
+      return const SizedBox.shrink();
+    }
 
     return SafeArea(
       child: Center(
@@ -24,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(20, 24, 20, 110),
             children: [
               Text(
-                'Hola, ${user.name} 👋',
+                'Hola, ${user.name}',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.w900,
                   color: AppColors.text,
@@ -70,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 18),
                       FilledButton.icon(
-                        onPressed: () {},
+                        onPressed: onOpenTraining,
                         style: FilledButton.styleFrom(
                           backgroundColor: Colors.white,
                           foregroundColor: AppColors.primary,
@@ -85,7 +91,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 26),
               const SectionTitle(
                 title: 'Tu resumen',
-                subtitle: 'Indicadores mock para la primera etapa',
+                subtitle: 'Datos calculados con tu actividad registrada',
               ),
               const SizedBox(height: 14),
               LayoutBuilder(

@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/constants/api_config.dart';
 import '../../core/validators/validators.dart';
+import '../../providers/app_state_provider.dart';
 import '../../providers/auth_provider.dart';
+import '../../providers/progress_provider.dart';
+import '../../providers/recommendation_provider.dart';
+import '../../providers/training_provider.dart';
+import '../../repositories/auth_repository.dart';
 import '../home/main_shell.dart';
 import 'auth_messages.dart';
 import 'auth_scaffold.dart';
 import 'forgot_password_screen.dart';
 import 'register_screen.dart';
+import 'verify_email_screen.dart';
+import '../profile/profile_setup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -36,9 +44,37 @@ class _LoginScreenState extends State<LoginScreen> {
       password: _passwordController.text,
     );
     if (!mounted) return;
+    if (result.status == AuthResultStatus.emailNotVerified) {
+      Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (_) => VerifyEmailScreen(
+            email: _emailController.text.trim().toLowerCase(),
+          ),
+        ),
+      );
+      return;
+    }
     if (result.isSuccess) {
+      final appState = context.read<AppStateProvider>();
+      appState.clearUserData();
+      context.read<ProgressProvider>().clearUserData();
+      context.read<TrainingProvider>().clearUserData();
+      context.read<RecommendationProvider>().clearUserData();
+      if (result.sessionToken != null && ApiConfig.useApi) {
+        try {
+          await appState.loadRemoteProfile(result.sessionToken!);
+        } catch (_) {
+          // El onboarding puede reintentar el guardado después.
+        }
+      }
+      if (!mounted) return;
+      final needsProfile = ApiConfig.useApi && !appState.isProfileComplete;
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute<void>(builder: (_) => const MainShell()),
+        MaterialPageRoute<void>(
+          builder: (_) => needsProfile
+              ? const ProfileSetupScreen()
+              : const MainShell(),
+        ),
         (_) => false,
       );
     } else {

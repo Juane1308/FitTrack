@@ -1,3 +1,5 @@
 # Servicios del chatbot
 
-La etapa 1 solo prepara el punto de integración. La implementación MOCK del chatbot se desarrollará en la etapa 8 mediante una interfaz de servicio reemplazable.
+El cliente consulta el endpoint autenticado `/api/chat`. El backend incorpora
+el perfil del usuario, su objetivo, el lugar de entrenamiento y el catálogo de
+ejercicios almacenado en Neon antes de solicitar la recomendación a Gemini.

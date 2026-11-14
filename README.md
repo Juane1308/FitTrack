@@ -6,6 +6,14 @@ Aplicación multiplataforma para seguimiento del entrenamiento, alimentación y 
 
 Etapas 1 y 2: proyecto base y autenticación MOCK funcionando con Flutter, Android, iOS y Web habilitados.
 
+El módulo Alimentación presenta recetas generales organizadas por categoría, con fotografías y detalle de ingredientes e instrucciones. No registra consumo de alimentos, macros ni agua.
+
+### Dataset de recetas
+
+El catálogo de nutrición usa archivos locales: 8 recetas por categoría basadas en datasets públicos de Kaggle e información nutricional de alimentos derivada de USDA FoodData Central. Los títulos, ingredientes y pasos se guardan traducidos en español. Las imágenes se incluyen como assets de Flutter y el backend entrega los JSON locales sin consultar Spoonacular ni servicios de traducción. Consulta `backend/README.md` para conocer las fuentes y ejecutar el catálogo.
+
+El conjunto es de recetas tradicionales, no fue validado clínicamente como una colección de recetas saludables. Algunas recetas no tienen cantidades detalladas para sus ingredientes. Las calorías son aproximadas.
+
 Incluye:
 
 - Tema visual inicial en español.

@@ -6,9 +6,101 @@ class AppUser {
   final String name;
   final String email;
   final String goal;
+
+  AppUser copyWith({String? name, String? email, String? goal}) {
+    return AppUser(
+      name: name ?? this.name,
+      email: email ?? this.email,
+      goal: goal ?? this.goal,
+    );
+  }
+}
+
+class UserProfile {
+  const UserProfile({
+    required this.goal,
+    required this.birthDate,
+    required this.weight,
+    required this.height,
+    required this.sport,
+    required this.trainingPlace,
+    required this.injuries,
+    required this.pain,
+    required this.surgeries,
+    required this.diseases,
+    required this.allergies,
+    this.trainingDays = 4,
+    this.targetWeight,
+    this.notificationsEnabled = true,
+    this.privateProfile = true,
+  });
+
+  final String goal;
+  final DateTime? birthDate;
+  final double? weight;
+  final double? height;
+  final String sport;
+  final String trainingPlace;
+  final String injuries;
+  final String pain;
+  final String surgeries;
+  final String diseases;
+  final String allergies;
+  final int trainingDays;
+  final double? targetWeight;
+  final bool notificationsEnabled;
+  final bool privateProfile;
+
+  UserProfile copyWith({
+    String? goal,
+    DateTime? birthDate,
+    double? weight,
+    double? height,
+    String? sport,
+    String? trainingPlace,
+    String? injuries,
+    String? pain,
+    String? surgeries,
+    String? diseases,
+    String? allergies,
+    int? trainingDays,
+    double? targetWeight,
+    bool? notificationsEnabled,
+    bool? privateProfile,
+  }) {
+    return UserProfile(
+      goal: goal ?? this.goal,
+      birthDate: birthDate ?? this.birthDate,
+      weight: weight ?? this.weight,
+      height: height ?? this.height,
+      sport: sport ?? this.sport,
+      trainingPlace: trainingPlace ?? this.trainingPlace,
+      injuries: injuries ?? this.injuries,
+      pain: pain ?? this.pain,
+      surgeries: surgeries ?? this.surgeries,
+      diseases: diseases ?? this.diseases,
+      allergies: allergies ?? this.allergies,
+      trainingDays: trainingDays ?? this.trainingDays,
+      targetWeight: targetWeight ?? this.targetWeight,
+      notificationsEnabled: notificationsEnabled ?? this.notificationsEnabled,
+      privateProfile: privateProfile ?? this.privateProfile,
+    );
+  }
 }
 
 class DashboardSummary {
+  static const empty = DashboardSummary(
+    routineName: 'Sin rutina asignada',
+    routineDate: '',
+    durationMinutes: 0,
+    difficulty: '',
+    weeklyGoal: 0,
+    progressPercent: 0,
+    calories: 0,
+    exerciseMinutes: 0,
+    activeStreak: 0,
+  );
+
   const DashboardSummary({
     required this.routineName,
     required this.routineDate,
@@ -19,6 +111,7 @@ class DashboardSummary {
     required this.calories,
     required this.exerciseMinutes,
     required this.activeStreak,
+    this.routineImageUrl,
   });
 
   final String routineName;
@@ -30,6 +123,40 @@ class DashboardSummary {
   final double calories;
   final int exerciseMinutes;
   final int activeStreak;
+  final String? routineImageUrl;
+}
+
+class WorkoutDay {
+  const WorkoutDay({
+    required this.date,
+    required this.dayLabel,
+    required this.muscleGroup,
+    required this.title,
+    required this.durationMinutes,
+    required this.completed,
+    required this.exercises,
+    this.imageUrl,
+  });
+
+  final String date;
+  final String dayLabel;
+  final String muscleGroup;
+  final String title;
+  final int durationMinutes;
+  final bool completed;
+  final List<Exercise> exercises;
+  final String? imageUrl;
+
+  WorkoutDay copyWith({bool? completed}) => WorkoutDay(
+    date: date,
+    dayLabel: dayLabel,
+    muscleGroup: muscleGroup,
+    title: title,
+    durationMinutes: durationMinutes,
+    completed: completed ?? this.completed,
+    exercises: exercises,
+    imageUrl: imageUrl,
+  );
 }
 
 class Routine {
@@ -50,26 +177,82 @@ class Routine {
   final List<Exercise> exercises;
 }
 
+class UserCustomRoutine {
+  const UserCustomRoutine({
+    required this.id,
+    required this.name,
+    required this.exerciseSlugs,
+    this.createdAt,
+  });
+
+  final String id;
+  final String name;
+  final List<String> exerciseSlugs;
+  final DateTime? createdAt;
+}
+
 class Exercise {
   const Exercise({
     required this.name,
     required this.technique,
     required this.sets,
     required this.repetitions,
+    this.slug = '',
+    this.group = '',
+    this.level = 'intermediate',
+    this.primaryMuscle = '',
+    this.muscleCategory = 'general',
+    this.recommendedRepetitions = '8-12',
+    this.recommendationFocus = 'técnica y movimiento seguro',
+    this.imageUrl,
+    this.instructions = const [],
+    this.description = '',
   });
 
   final String name;
   final String technique;
   final int sets;
   final int repetitions;
+  final String slug;
+  final String group;
+  final String level;
+  final String primaryMuscle;
+  final String muscleCategory;
+  final String recommendedRepetitions;
+  final String recommendationFocus;
+  final String? imageUrl;
+  final List<String> instructions;
+  final String description;
 }
 
 class Food {
-  const Food({required this.id, required this.name, required this.category});
+  const Food({
+    required this.id,
+    required this.name,
+    required this.category,
+    this.imageUrl,
+    this.barcode,
+    this.servingGrams,
+    this.calories,
+    this.fat,
+    this.protein,
+    this.carbohydrates,
+    this.fiber,
+    this.mealTime = 'all',
+  });
 
   final String id;
   final String name;
   final String category;
+  final String? imageUrl;
+  final String? barcode;
+  final double? servingGrams;
+  final double? calories;
+  final double? fat;
+  final double? protein;
+  final double? carbohydrates;
+  final double? fiber;
+  final String mealTime;
 }
 
 class Recipe {
@@ -78,12 +261,42 @@ class Recipe {
     required this.name,
     required this.ingredients,
     required this.mealTime,
+    this.imageUrl,
+    this.instructions,
+    this.sourceUrl,
   });
 
   final String id;
   final String name;
   final List<String> ingredients;
   final String mealTime;
+  final String? imageUrl;
+  final String? instructions;
+  final String? sourceUrl;
+}
+
+class PersonalizedRecommendation {
+  const PersonalizedRecommendation({
+    required this.generatedBy,
+    required this.trainingTitle,
+    required this.trainingSummary,
+    required this.trainingGroups,
+    required this.safetyNotes,
+    required this.nutritionMethod,
+    required this.nutritionSummary,
+    required this.meals,
+    required this.focusFoods,
+  });
+
+  final String generatedBy;
+  final String trainingTitle;
+  final String trainingSummary;
+  final List<String> trainingGroups;
+  final List<String> safetyNotes;
+  final String nutritionMethod;
+  final String nutritionSummary;
+  final List<String> meals;
+  final List<String> focusFoods;
 }
 
 class ProgressEntry {
@@ -96,6 +309,113 @@ class ProgressEntry {
   final String date;
   final double weight;
   final double height;
+}
+
+class ProgressSummary {
+  const ProgressSummary({
+    required this.currentWeight,
+    required this.initialWeight,
+    required this.weightChange,
+    required this.bmi,
+    required this.completedDays,
+    required this.plannedDays,
+    required this.weeklyProgress,
+    required this.activeStreak,
+    required this.totalMinutes,
+    this.weeklyMinutes = 0,
+    required this.targetWeight,
+    required this.completionPercent,
+  });
+
+  static const empty = ProgressSummary(
+    currentWeight: null,
+    initialWeight: null,
+    weightChange: null,
+    bmi: null,
+    completedDays: 0,
+    plannedDays: 0,
+    weeklyProgress: 0,
+    activeStreak: 0,
+    totalMinutes: 0,
+    weeklyMinutes: 0,
+    targetWeight: null,
+    completionPercent: null,
+  );
+
+  final double? currentWeight;
+  final double? initialWeight;
+  final double? weightChange;
+  final double? bmi;
+  final int completedDays;
+  final int plannedDays;
+  final double weeklyProgress;
+  final int activeStreak;
+  final int totalMinutes;
+  final int weeklyMinutes;
+  final double? targetWeight;
+  final double? completionPercent;
+}
+
+class WeeklyProgressPoint {
+  const WeeklyProgressPoint({
+    required this.date,
+    required this.label,
+    required this.completed,
+    required this.planned,
+    required this.durationMinutes,
+    required this.muscleGroup,
+  });
+
+  final String date;
+  final String label;
+  final bool completed;
+  final bool planned;
+  final int durationMinutes;
+  final String muscleGroup;
+}
+
+class ProgressData {
+  const ProgressData({
+    required this.summary,
+    required this.entries,
+    required this.weekly,
+    required this.photos,
+    required this.photoEligible,
+    required this.photoMessage,
+  });
+
+  static const empty = ProgressData(
+    summary: ProgressSummary.empty,
+    entries: <ProgressEntry>[],
+    weekly: <WeeklyProgressPoint>[],
+    photos: <ProgressPhotoData>[],
+    photoEligible: false,
+    photoMessage:
+        'Completa todos los entrenamientos de la semana para subir tu foto.',
+  );
+
+  final ProgressSummary summary;
+  final List<ProgressEntry> entries;
+  final List<WeeklyProgressPoint> weekly;
+  final List<ProgressPhotoData> photos;
+  final bool photoEligible;
+  final String photoMessage;
+}
+
+class ProgressPhotoData {
+  const ProgressPhotoData({
+    required this.id,
+    required this.weekStart,
+    required this.capturedAt,
+    required this.mimeType,
+    required this.dataUrl,
+  });
+
+  final String id;
+  final String weekStart;
+  final DateTime capturedAt;
+  final String mimeType;
+  final String? dataUrl;
 }
 
 class ChatContext {

@@ -6,6 +6,7 @@ import '../../providers/auth_provider.dart';
 import 'auth_messages.dart';
 import 'auth_scaffold.dart';
 import 'login_screen.dart';
+import 'verify_email_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -40,7 +41,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
-    final result = await context.read<AuthProvider>().register(
+    final authProvider = context.read<AuthProvider>();
+    final result = await authProvider.register(
       name: _nameController.text,
       email: _emailController.text,
       password: _passwordController.text,
@@ -51,23 +53,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
-    await showDialog<void>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Cuenta creada correctamente.'),
-        content: const Text('Ahora puedes iniciar sesión en FITTRACK.'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('Continuar'),
-          ),
-        ],
+    if (!authProvider.requiresEmailVerification) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Cuenta simulada creada. Ya puedes iniciar sesión.'),
+        ),
+      );
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute<void>(builder: (_) => const LoginScreen()),
+      );
+      return;
+    }
+
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute<void>(
+        builder: (_) => VerifyEmailScreen(
+          email: _emailController.text.trim().toLowerCase(),
+        ),
       ),
-    );
-    if (!mounted) return;
-    Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute<void>(builder: (_) => const LoginScreen()),
-      (_) => false,
     );
   }
 
@@ -91,6 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             TextFormField(
               controller: _nameController,
+              autofillHints: const [],
               textInputAction: TextInputAction.next,
               decoration: const InputDecoration(
                 labelText: 'Nombre',
@@ -101,6 +105,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             const SizedBox(height: 14),
             TextFormField(
               controller: _emailController,
+              autofillHints: const [],
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
               decoration: const InputDecoration(
@@ -112,6 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             const SizedBox(height: 14),
             TextFormField(
               controller: _passwordController,
+              autofillHints: const [],
               obscureText: _obscurePassword,
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(
@@ -135,6 +141,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             const SizedBox(height: 14),
             TextFormField(
               controller: _confirmationController,
+              autofillHints: const [],
               obscureText: _obscureConfirmation,
               textInputAction: TextInputAction.done,
               decoration: InputDecoration(

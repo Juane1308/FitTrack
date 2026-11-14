@@ -4,12 +4,17 @@
 *.pyc
 *.swp
 .DS_Store
+.env
+.env.*
+!.env.example
+**/node_modules/
 .atom/
 .build/
 .buildlog/
 .history
 .svn/
 .swiftpm/
+.nutrition-data-build/
 migrate_working_dir/
 
 # IntelliJ related

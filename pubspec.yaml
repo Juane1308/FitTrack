@@ -38,6 +38,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   provider: ^6.1.5+1
   crypto: ^3.0.7
+  http: ^1.6.0
+  shared_preferences: ^2.5.5
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -57,7 +60,20 @@ dev_dependencies:
 flutter:
 
   assets:
+    - backend/data/nutrition/recipes.json
+    - backend/data/nutrition/foods.json
+    - backend/data/exercises/exercises.json
     - assets/images/fittrack_logo.png
+    - assets/images/assistant_chat_button.jpeg
+    - assets/images/nutrition_breakfast.jpg
+    - assets/images/nutrition_snack.jpg
+    - assets/images/nutrition_lunch.jpg
+    - assets/images/nutrition_dinner.jpg
+    - assets/images/nutrition_sweets.jpg
+    - assets/images/nutrition/recipes/
+    - assets/images/nutrition/foods/
+    - assets/images/nutrition/foods/items/
+    - assets/images/nutrition/foods/categories/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

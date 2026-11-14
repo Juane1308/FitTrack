@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../core/constants/app_constants.dart';
 import '../../widgets/chatbot/contextual_chat_button.dart';
 import '../nutrition/nutrition_screen.dart';
-import '../profile/profile_screen.dart';
-import '../progress/progress_screen.dart';
+import '../profile/profile_screen_enhanced.dart';
+import '../progress/progress_screen_enhanced.dart';
 import '../training/training_screen.dart';
-import 'home_screen.dart';
+import 'home_screen_enhanced.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -20,22 +20,24 @@ class _MainShellState extends State<MainShell> {
 
   static const _sections = AppSection.values;
 
-  final _screens = const [
-    HomeScreen(),
-    TrainingScreen(),
-    NutritionScreen(),
-    ProgressScreen(),
-    ProfileScreen(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     final section = _sections[_selectedIndex];
+    final screens = [
+      HomeScreenEnhanced(
+        onOpenTraining: () => setState(() => _selectedIndex = 1),
+        onOpenProgress: () => setState(() => _selectedIndex = 3),
+      ),
+      const TrainingScreen(),
+      const NutritionScreen(),
+      const ProgressScreenEnhanced(),
+      const ProfileScreenEnhanced(),
+    ];
 
     return Scaffold(
       body: Stack(
         children: [
-          IndexedStack(index: _selectedIndex, children: _screens),
+          IndexedStack(index: _selectedIndex, children: screens),
           ContextualChatButton(section: section),
         ],
       ),
