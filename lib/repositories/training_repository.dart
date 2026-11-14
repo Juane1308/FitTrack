@@ -14,6 +14,96 @@ class TrainingRepository {
   final http.Client _client;
   final String _baseUrl;
 
+  Future<List<UserCustomRoutine>> fetchUserRoutines(String token) async {
+    final response = await _client
+        .get(Uri.parse('$_baseUrl/training/routines'), headers: _headers(token))
+        .timeout(const Duration(seconds: 20));
+    _ensureSuccess(response);
+    final payload = jsonDecode(response.body) as Map<String, dynamic>;
+    final data = payload['data'];
+    if (data is! List) return const [];
+    return data
+        .whereType<Map<String, dynamic>>()
+        .map(_userRoutineFromJson)
+        .toList(growable: false);
+  }
+
+  Future<UserCustomRoutine> createUserRoutine({
+    required String token,
+    required String name,
+    required List<String> exerciseSlugs,
+  }) async {
+    final response = await _client
+        .post(
+          Uri.parse('$_baseUrl/training/routines'),
+          headers: _headers(token),
+          body: jsonEncode({'name': name, 'exerciseSlugs': exerciseSlugs}),
+        )
+        .timeout(const Duration(seconds: 20));
+    _ensureSuccess(response);
+    final payload = jsonDecode(response.body) as Map<String, dynamic>;
+    return _userRoutineFromJson(payload['data'] as Map<String, dynamic>);
+  }
+
+  Future<void> deleteUserRoutine({
+    required String token,
+    required String routineId,
+  }) async {
+    final response = await _client
+        .delete(
+          Uri.parse(
+            '$_baseUrl/training/routines/${Uri.encodeComponent(routineId)}',
+          ),
+          headers: _headers(token),
+        )
+        .timeout(const Duration(seconds: 20));
+    _ensureSuccess(response);
+  }
+
+  Future<Set<String>> fetchSavedRoutineIds(String token) async {
+    final response = await _client
+        .get(
+          Uri.parse('$_baseUrl/training/favorites'),
+          headers: _headers(token),
+        )
+        .timeout(const Duration(seconds: 20));
+    _ensureSuccess(response);
+    final payload = jsonDecode(response.body) as Map<String, dynamic>;
+    final data = payload['data'];
+    if (data is! List) return <String>{};
+    return data.whereType<String>().toSet();
+  }
+
+  Future<Set<String>> replaceSavedRoutineIds({
+    required String token,
+    required Set<String> routineIds,
+  }) async {
+    final response = await _client
+        .put(
+          Uri.parse('$_baseUrl/training/favorites'),
+          headers: _headers(token),
+          body: jsonEncode({'routineKeys': routineIds.toList()}),
+        )
+        .timeout(const Duration(seconds: 20));
+    _ensureSuccess(response);
+    final payload = jsonDecode(response.body) as Map<String, dynamic>;
+    final data = payload['data'];
+    if (data is! List) return <String>{};
+    return data.whereType<String>().toSet();
+  }
+
+  UserCustomRoutine _userRoutineFromJson(Map<String, dynamic> data) =>
+      UserCustomRoutine(
+        id: data['id'] as String? ?? '',
+        name: data['name'] as String? ?? 'Mi rutina',
+        exerciseSlugs: data['exerciseSlugs'] is List
+            ? (data['exerciseSlugs'] as List).whereType<String>().toList(
+                growable: false,
+              )
+            : const [],
+        createdAt: DateTime.tryParse(data['createdAt'] as String? ?? ''),
+      );
+
   Future<List<WorkoutDay>> fetchWeek(String token) async {
     final response = await _client
         .get(Uri.parse('$_baseUrl/training/week'), headers: _headers(token))
@@ -56,15 +146,17 @@ class TrainingRepository {
     required int durationSeconds,
     required String performedOn,
   }) async {
-    final response = await _client.post(
-      Uri.parse('$_baseUrl/training/activities'),
-      headers: _headers(token),
-      body: jsonEncode({
-        'routineName': routineName,
-        'durationSeconds': durationSeconds,
-        'performedOn': performedOn,
-      }),
-    ).timeout(const Duration(seconds: 20));
+    final response = await _client
+        .post(
+          Uri.parse('$_baseUrl/training/activities'),
+          headers: _headers(token),
+          body: jsonEncode({
+            'routineName': routineName,
+            'durationSeconds': durationSeconds,
+            'performedOn': performedOn,
+          }),
+        )
+        .timeout(const Duration(seconds: 20));
     _ensureSuccess(response);
   }
 
@@ -92,7 +184,9 @@ class TrainingRepository {
 
   Exercise _exerciseFromJson(Map<String, dynamic> data) => Exercise(
     slug: data['slug'] as String? ?? '',
-    name: ExerciseRepository.spanishName(data['name'] as String? ?? 'Ejercicio'),
+    name: ExerciseRepository.spanishName(
+      data['name'] as String? ?? 'Ejercicio',
+    ),
     technique: data['focus'] as String? ?? 'Técnica y movimiento seguro.',
     sets: data['sets'] is num ? (data['sets'] as num).toInt() : 3,
     repetitions: 10,

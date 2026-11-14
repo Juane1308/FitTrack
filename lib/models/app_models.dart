@@ -177,6 +177,20 @@ class Routine {
   final List<Exercise> exercises;
 }
 
+class UserCustomRoutine {
+  const UserCustomRoutine({
+    required this.id,
+    required this.name,
+    required this.exerciseSlugs,
+    this.createdAt,
+  });
+
+  final String id;
+  final String name;
+  final List<String> exerciseSlugs;
+  final DateTime? createdAt;
+}
+
 class Exercise {
   const Exercise({
     required this.name,

@@ -1,9 +1,7 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../models/app_models.dart';
@@ -15,8 +13,7 @@ import '../../providers/training_provider.dart';
 import '../../utils/exercise_localization.dart';
 import 'exercise_detail_screen.dart';
 
-/// Entrenamiento mantiene los datos de catálogo y el plan semanal del backend,
-/// y guarda localmente favoritos y rutinas creadas por el usuario.
+/// Entrenamiento carga catálogo, plan semanal y personalización desde el backend.
 class TrainingScreen extends StatefulWidget {
   const TrainingScreen({super.key});
 
@@ -35,9 +32,6 @@ class _TrainingScreenState extends State<TrainingScreen> {
     'abdomen': 'Abdomen',
   };
 
-  static const _savedKey = 'training.saved';
-  static const _createdKey = 'training.created';
-
   int _tab = 0;
   String _group = 'all';
   String _exerciseQuery = '';
@@ -46,8 +40,6 @@ class _TrainingScreenState extends State<TrainingScreen> {
   final Set<String> _selectedExercises = {};
   final Map<String, Exercise> _exerciseCache = {};
   final Map<String, _TrainingRoutine> _routineCache = {};
-  Set<String> _savedRoutineIds = {};
-  Map<String, List<String>> _createdRoutines = {};
   _TrainingRoutine? _selectedRoutine;
   int _detailTab = 0;
 
@@ -68,11 +60,10 @@ class _TrainingScreenState extends State<TrainingScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await _readLocalRoutines();
-      if (!mounted) return;
       _load();
       final token = context.read<AuthProvider>().sessionToken;
       if (token != null) {
+        context.read<TrainingProvider>().loadUserRoutines(token);
         context.read<TrainingProvider>().loadWeeklyPlan(token);
         context.read<RecommendationProvider>().load(token);
       }
@@ -83,38 +74,6 @@ class _TrainingScreenState extends State<TrainingScreen> {
   void dispose() {
     _sessionTicker?.cancel();
     super.dispose();
-  }
-
-  Future<void> _readLocalRoutines() async {
-    final prefs = await SharedPreferences.getInstance();
-    final saved = prefs.getStringList(_savedKey) ?? const <String>[];
-    final raw = prefs.getString(_createdKey);
-    final decoded = raw == null ? null : _decodeCreated(raw);
-    if (!mounted) return;
-    setState(() {
-      _savedRoutineIds = saved.toSet();
-      _createdRoutines = decoded ?? {};
-    });
-  }
-
-  Map<String, List<String>>? _decodeCreated(String raw) {
-    try {
-      final decoded = Map<String, dynamic>.from(jsonDecode(raw) as Map);
-      return decoded.map(
-        (name, ids) => MapEntry(
-          name,
-          ids is List ? ids.map((id) => id.toString()).toList() : <String>[],
-        ),
-      );
-    } catch (_) {
-      return null;
-    }
-  }
-
-  Future<void> _persistLocalRoutines() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setStringList(_savedKey, _savedRoutineIds.toList());
-    await prefs.setString(_createdKey, jsonEncode(_createdRoutines));
   }
 
   void _load({bool forceRefresh = false}) {
@@ -376,7 +335,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
           ...plan.map(
             (day) => _RoutineCard(
               routine: _TrainingRoutine.fromWorkoutDay(day),
-              isSaved: _savedRoutineIds.contains('weekly:${day.date}'),
+              isSaved: training.savedRoutineIds.contains('weekly:${day.date}'),
               completed: day.completed,
               onComplete: () => _toggleRoutineCompletion(day),
               onTap: () => _openRoutine(_TrainingRoutine.fromWorkoutDay(day)),
@@ -403,7 +362,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
         ...visible.map(
           (routine) => _RoutineCard(
             routine: routine,
-            isSaved: _savedRoutineIds.contains(routine.id),
+            isSaved: training.savedRoutineIds.contains(routine.id),
             onTap: () => _openRoutine(routine),
             onSave: () => _toggleSaved(routine.id),
           ),
@@ -550,18 +509,18 @@ class _TrainingScreenState extends State<TrainingScreen> {
       for (final day in plan)
         'weekly:${day.date}': _TrainingRoutine.fromWorkoutDay(day),
     };
-    final saved = _savedRoutineIds
+    final saved = training.savedRoutineIds
         .map((id) => byId[id] ?? weeklyById[id])
         .whereType<_TrainingRoutine>()
         .toList();
-    final created = _createdRoutines.entries.map((entry) {
-      final exercises = entry.value
+    final created = training.userRoutines.map((userRoutine) {
+      final exercises = userRoutine.exerciseSlugs
           .map((id) => _exerciseCache[id])
           .whereType<Exercise>()
           .toList();
       return _TrainingRoutine(
-        id: 'created:${entry.key}',
-        name: entry.key,
+        id: 'custom:${userRoutine.id}',
+        name: userRoutine.name,
         group: exercises.isEmpty
             ? 'Personalizada'
             : _groupLabel(exercises.first.muscleCategory),
@@ -573,7 +532,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
       );
     }).toList();
 
-    if (training.isLoading &&
+    if ((training.isLoading || training.personalRoutinesLoading) &&
         training.exercises.isEmpty &&
         saved.isEmpty &&
         created.isEmpty) {
@@ -598,7 +557,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
             (routine) => _RoutineCard(
               routine: routine,
               showDelete: true,
-              onDelete: () => _deleteCreatedRoutine(routine.name),
+              onDelete: () => _deleteCreatedRoutine(routine.id),
               onTap: () => _openRoutine(routine),
             ),
           ),
@@ -701,40 +660,90 @@ class _TrainingScreenState extends State<TrainingScreen> {
     if (!mounted || name == null) return;
     final normalized = name.trim();
     if (normalized.isEmpty || selected.isEmpty) return;
-    if (_createdRoutines.containsKey(normalized)) {
+    final training = context.read<TrainingProvider>();
+    if (training.userRoutines.any(
+      (routine) => routine.name.toLowerCase() == normalized.toLowerCase(),
+    )) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Ya existe una rutina con ese nombre.')),
       );
       return;
     }
+    final token = context.read<AuthProvider>().sessionToken;
+    if (token == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Inicia sesión para guardar tu rutina.')),
+      );
+      return;
+    }
+    try {
+      await training.createUserRoutine(
+        token: token,
+        name: normalized,
+        exerciseSlugs: selected.map((exercise) => exercise.slug).toList(),
+      );
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('No se pudo guardar la rutina. Inténtalo nuevamente.'),
+        ),
+      );
+      return;
+    }
+    if (!mounted) return;
     setState(() {
-      _createdRoutines[normalized] = selected
-          .map((exercise) => exercise.slug)
-          .toList();
       _selectionMode = false;
       _selectedExercises.clear();
       _tab = 2;
     });
-    await _persistLocalRoutines();
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Rutina "$normalized" creada correctamente.')),
     );
   }
 
-  Future<void> _deleteCreatedRoutine(String name) async {
-    setState(() => _createdRoutines.remove(name));
-    await _persistLocalRoutines();
+  Future<void> _deleteCreatedRoutine(String routineKey) async {
+    final token = context.read<AuthProvider>().sessionToken;
+    if (token == null) return;
+    final routineId = routineKey.startsWith('custom:')
+        ? routineKey.substring('custom:'.length)
+        : routineKey;
+    try {
+      await context.read<TrainingProvider>().deleteUserRoutine(
+        token: token,
+        routineId: routineId,
+      );
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('No se pudo eliminar la rutina. Inténtalo nuevamente.'),
+        ),
+      );
+      return;
+    }
     if (!mounted) return;
     ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text('Se eliminó la rutina "$name".')));
+        .showSnackBar(const SnackBar(content: Text('Se eliminó la rutina.')));
   }
 
   Future<void> _toggleSaved(String id) async {
-    setState(() {
-      if (!_savedRoutineIds.add(id)) _savedRoutineIds.remove(id);
-    });
-    await _persistLocalRoutines();
+    final token = context.read<AuthProvider>().sessionToken;
+    if (token == null) return;
+    try {
+      await context.read<TrainingProvider>().toggleSavedRoutine(
+        token: token,
+        routineKey: id,
+      );
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('No se pudo actualizar la rutina guardada.'),
+        ),
+      );
+    }
   }
 
   void _openRoutine(_TrainingRoutine routine) {
@@ -788,11 +797,16 @@ class _TrainingScreenState extends State<TrainingScreen> {
                 ),
                 IconButton(
                   onPressed: () => _toggleSaved(routine.id),
-                  tooltip: _savedRoutineIds.contains(routine.id)
+                  tooltip:
+                      context.read<TrainingProvider>().savedRoutineIds.contains(
+                        routine.id,
+                      )
                       ? 'Quitar de guardadas'
                       : 'Guardar rutina',
                   icon: Icon(
-                    _savedRoutineIds.contains(routine.id)
+                    context.read<TrainingProvider>().savedRoutineIds.contains(
+                          routine.id,
+                        )
                         ? Icons.bookmark
                         : Icons.bookmark_border,
                     color: AppColors.primary,

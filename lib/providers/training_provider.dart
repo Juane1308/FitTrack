@@ -7,9 +7,11 @@ import '../repositories/training_repository.dart';
 enum TrainingLoadStatus { idle, loading, ready, error }
 
 class TrainingProvider extends ChangeNotifier {
-  TrainingProvider({ExerciseRepository? repository, TrainingRepository? trainingRepository})
-    : _repository = repository ?? ExerciseRepository(),
-      _trainingRepository = trainingRepository ?? TrainingRepository();
+  TrainingProvider({
+    ExerciseRepository? repository,
+    TrainingRepository? trainingRepository,
+  }) : _repository = repository ?? ExerciseRepository(),
+       _trainingRepository = trainingRepository ?? TrainingRepository();
 
   final ExerciseRepository _repository;
   final TrainingRepository _trainingRepository;
@@ -21,6 +23,11 @@ class TrainingProvider extends ChangeNotifier {
   List<WorkoutDay> _weeklyPlan = const [];
   bool _weekLoading = false;
   String? _weekError;
+  List<UserCustomRoutine> _userRoutines = const [];
+  Set<String> _savedRoutineIds = <String>{};
+  bool _personalRoutinesLoading = false;
+  String? _personalRoutinesError;
+  int _userDataGeneration = 0;
 
   TrainingLoadStatus get status => _status;
   List<Exercise> get exercises => _exercises;
@@ -31,16 +38,112 @@ class TrainingProvider extends ChangeNotifier {
   List<WorkoutDay> get weeklyPlan => _weeklyPlan;
   bool get weekLoading => _weekLoading;
   String? get weekError => _weekError;
+  List<UserCustomRoutine> get userRoutines => _userRoutines;
+  Set<String> get savedRoutineIds => Set.unmodifiable(_savedRoutineIds);
+  bool get personalRoutinesLoading => _personalRoutinesLoading;
+  String? get personalRoutinesError => _personalRoutinesError;
 
   void clearUserData() {
+    _userDataGeneration++;
     _weeklyPlan = const [];
     _weekLoading = false;
     _weekError = null;
+    _userRoutines = const [];
+    _savedRoutineIds = <String>{};
+    _personalRoutinesLoading = false;
+    _personalRoutinesError = null;
     _status = TrainingLoadStatus.idle;
     _errorMessage = null;
     _selectedGroup = 'all';
     _selectedGoal = 'Mantenerme activo';
     notifyListeners();
+  }
+
+  Future<void> loadUserRoutines(
+    String token, {
+    bool forceRefresh = false,
+  }) async {
+    if (_personalRoutinesLoading ||
+        (!forceRefresh &&
+            _personalRoutinesError == null &&
+            (_userRoutines.isNotEmpty || _savedRoutineIds.isNotEmpty))) {
+      return;
+    }
+    _personalRoutinesLoading = true;
+    final requestGeneration = _userDataGeneration;
+    _personalRoutinesError = null;
+    notifyListeners();
+    try {
+      final results = await Future.wait([
+        _trainingRepository.fetchUserRoutines(token),
+        _trainingRepository.fetchSavedRoutineIds(token),
+      ]);
+      if (requestGeneration == _userDataGeneration) {
+        _userRoutines = results[0] as List<UserCustomRoutine>;
+        _savedRoutineIds = results[1] as Set<String>;
+      }
+    } catch (_) {
+      if (requestGeneration == _userDataGeneration) {
+        _personalRoutinesError = 'No se pudieron cargar tus rutinas guardadas.';
+      }
+    } finally {
+      if (requestGeneration == _userDataGeneration) {
+        _personalRoutinesLoading = false;
+        notifyListeners();
+      }
+    }
+  }
+
+  Future<UserCustomRoutine> createUserRoutine({
+    required String token,
+    required String name,
+    required List<String> exerciseSlugs,
+  }) async {
+    final requestGeneration = _userDataGeneration;
+    final routine = await _trainingRepository.createUserRoutine(
+      token: token,
+      name: name,
+      exerciseSlugs: exerciseSlugs,
+    );
+    if (requestGeneration == _userDataGeneration) {
+      _userRoutines = [routine, ..._userRoutines];
+      notifyListeners();
+    }
+    return routine;
+  }
+
+  Future<void> deleteUserRoutine({
+    required String token,
+    required String routineId,
+  }) async {
+    final requestGeneration = _userDataGeneration;
+    await _trainingRepository.deleteUserRoutine(
+      token: token,
+      routineId: routineId,
+    );
+    if (requestGeneration == _userDataGeneration) {
+      _userRoutines = _userRoutines
+          .where((routine) => routine.id != routineId)
+          .toList();
+      notifyListeners();
+    }
+  }
+
+  Future<void> toggleSavedRoutine({
+    required String token,
+    required String routineKey,
+  }) async {
+    final requestGeneration = _userDataGeneration;
+    final updated = Set<String>.from(_savedRoutineIds);
+    if (!updated.add(routineKey)) updated.remove(routineKey);
+    final saved = await _trainingRepository.replaceSavedRoutineIds(
+      token: token,
+      routineIds: updated,
+    );
+    if (requestGeneration == _userDataGeneration) {
+      _savedRoutineIds = saved;
+      notifyListeners();
+    }
   }
 
   Future<void> loadWeeklyPlan(String token, {bool forceRefresh = false}) async {
@@ -60,7 +163,11 @@ class TrainingProvider extends ChangeNotifier {
 
   Future<void> toggleDay(String token, WorkoutDay day) async {
     try {
-      _weeklyPlan = await _trainingRepository.completeDay(token, day.date, !day.completed);
+      _weeklyPlan = await _trainingRepository.completeDay(
+        token,
+        day.date,
+        !day.completed,
+      );
       notifyListeners();
     } catch (_) {
       _weekError = 'No se pudo actualizar el día de entrenamiento.';
@@ -89,8 +196,10 @@ class TrainingProvider extends ChangeNotifier {
     String goal = 'Mantenerme activo',
   }) async {
     if (_status == TrainingLoadStatus.loading ||
-        (_status == TrainingLoadStatus.ready && !forceRefresh &&
-            group == _selectedGroup && goal == _selectedGoal)) {
+        (_status == TrainingLoadStatus.ready &&
+            !forceRefresh &&
+            group == _selectedGroup &&
+            goal == _selectedGoal)) {
       return;
     }
 
@@ -109,7 +218,8 @@ class TrainingProvider extends ChangeNotifier {
       _exercises = exercises;
       _status = TrainingLoadStatus.ready;
       if (_exercises.isEmpty) {
-        _errorMessage = 'No hay ejercicios reales disponibles para este filtro.';
+        _errorMessage =
+            'No hay ejercicios reales disponibles para este filtro.';
       }
     } catch (_) {
       _exercises = const [];
@@ -123,5 +233,4 @@ class TrainingProvider extends ChangeNotifier {
     if (exercise.slug.isEmpty) return Future.value(exercise);
     return _repository.fetchExercise(exercise.slug);
   }
-
 }

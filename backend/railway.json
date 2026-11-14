@@ -4,6 +4,7 @@
     "buildCommand": "npm ci && npm run prisma:generate"
   },
   "deploy": {
+    "preDeployCommand": ["npm run prisma:migrate:deploy"],
     "startCommand": "npm start",
     "healthcheckPath": "/api",
     "healthcheckTimeout": 120,
