@@ -11,11 +11,38 @@ export async function listExercises({ group, goal, trainingPlace, preferDatabase
   const recommendation = recommendationFor(goal);
 
   return exercises
-    .filter((exercise) => !normalizedGroup
-      || exercise.muscleCategory === normalizedGroup
-      || (normalizedGroup === 'brazos' && ['biceps', 'triceps'].includes(exercise.muscleCategory)))
+    .filter((exercise) => exerciseBelongsToGroup(exercise, normalizedGroup))
     .filter((exercise) => isAvailableAt(exercise, trainingPlace))
     .map((exercise) => ({ ...exercise, recommendation }));
+}
+
+export function exerciseBelongsToGroup(exercise, requestedGroup) {
+  const group = normalizeExerciseText(requestedGroup);
+  if (!group) return true;
+
+  const aliases = {
+    brazos: ['biceps', 'triceps', 'brazo'],
+    biceps: ['biceps'],
+    triceps: ['triceps'],
+    hombros: ['hombro', 'shoulder', 'deltoid', 'deltoide'],
+    espalda: ['espalda', 'back', 'upper-back', 'dorsal', 'lat', 'trapecio', 'trapezius', 'rhomboid'],
+    pecho: ['pecho', 'chest', 'pectoral'],
+    pierna: ['pierna', 'leg', 'quad', 'cuadriceps', 'hamstring', 'isquiotibial', 'femoral', 'glute', 'gluteo', 'calf', 'pantorrilla', 'thigh'],
+    abdomen: ['abdomen', 'abdominal', 'core', 'oblique', 'abs'],
+  };
+  const terms = aliases[group] ?? [group];
+  const primaryMuscles = Array.isArray(exercise?.primaryMuscles) ? exercise.primaryMuscles : [];
+  if (primaryMuscles.length > 0) {
+    const primaryText = primaryMuscles.map(normalizeExerciseText).join(' ');
+    return terms.some((term) => primaryText.includes(term));
+  }
+
+  const categoryText = [exercise?.muscleCategory, exercise?.group]
+    .map(normalizeExerciseText)
+    .join(' ');
+  if (categoryText.trim()) return terms.some((term) => categoryText.includes(term));
+
+  return terms.some((term) => normalizeExerciseText(exercise?.name).includes(term));
 }
 
 export function inferExerciseGroup(text, section = '') {
@@ -32,9 +59,30 @@ export function inferExerciseGroup(text, section = '') {
 }
 
 export function requestedExerciseCount(text) {
-  const value = String(text ?? '').toLowerCase();
-  const match = value.match(/(?:de|con|por lo menos|al menos)\s+(\d{1,2})\s+ejercicios?|(?:rutina|entrenamiento)\s+(\d{1,2})\s+ejercicios?/);
-  const count = Number(match?.[1] ?? match?.[2]);
+  const value = normalizeExerciseText(text);
+  const numberWords = {
+    un: 1,
+    uno: 1,
+    una: 1,
+    dos: 2,
+    tres: 3,
+    cuatro: 4,
+    cinco: 5,
+    seis: 6,
+    siete: 7,
+    ocho: 8,
+    nueve: 9,
+    diez: 10,
+    once: 11,
+    doce: 12,
+    trece: 13,
+    catorce: 14,
+    quince: 15,
+    dieciseis: 16,
+  };
+  const match = value.match(/\b(\d{1,2}|un|uno|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieciseis)\s+ejercicios?\b/);
+  const rawCount = match?.[1];
+  const count = rawCount && numberWords[rawCount] ? numberWords[rawCount] : Number(rawCount);
   return Number.isInteger(count) && count >= 1 && count <= 16 ? count : null;
 }
 
@@ -200,4 +248,12 @@ function localizedValue(value) {
     return value.es ?? value.en ?? Object.values(value)[0] ?? '';
   }
   return '';
+}
+
+function normalizeExerciseText(value) {
+  return String(value ?? '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
 }

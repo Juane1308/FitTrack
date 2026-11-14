@@ -1,4 +1,5 @@
 import { env } from '../config/env.js';
+import { exerciseBelongsToGroup } from './exercise.service.js';
 
 export async function askGemini({
   message,
@@ -19,8 +20,9 @@ export async function askGemini({
   }
 
   const availableExercises = exerciseCatalog.length > 0 ? exerciseCatalog : exercises;
+  const filteredExercises = availableExercises.filter((exercise) => exerciseBelongsToGroup(exercise, requestedGroup));
   const catalogContext = JSON.stringify({
-    ejerciciosDelCatalogoFiltrado: availableExercises.slice(0, 16).map((item) => ({
+    ejerciciosDelCatalogoFiltrado: filteredExercises.slice(0, 16).map((item) => ({
       slug: item.slug,
       nombre: item.name,
       zona: item.muscleCategory,
@@ -199,13 +201,14 @@ export function buildAssistantFallback({
   requestedCount = null,
 }) {
   const availableExercises = exerciseCatalog.length > 0 ? exerciseCatalog : exercises;
+  const filteredExercises = availableExercises.filter((exercise) => exerciseBelongsToGroup(exercise, requestedGroup));
   const isTrainingQuestion = /entren|ejercicio|rutina|cambia|alternativa|reemplaz|espalda|pecho|pierna|brazo|b[ií]ceps|tr[ií]ceps|hombro|abdomen/i.test(
     `${message ?? ''} ${section ?? ''}`,
   );
 
-  if (isTrainingQuestion && availableExercises.length > 0) {
-    const count = Math.min(requestedCount ?? 3, availableExercises.length);
-    const selected = availableExercises.slice(0, count);
+  if (isTrainingQuestion && filteredExercises.length > 0) {
+    const count = Math.min(requestedCount ?? 3, filteredExercises.length);
+    const selected = filteredExercises.slice(0, count);
     const lines = selected.map((exercise, index) => {
       const technique = Array.isArray(exercise.instructions)
         ? exercise.instructions[0]
@@ -238,21 +241,23 @@ export function selectAssistantExercises({
   exercises = [],
   exerciseCatalog = [],
   requestedCount = null,
+  requestedGroup = '',
 }) {
   const availableExercises = exerciseCatalog.length > 0 ? exerciseCatalog : exercises;
+  const filteredExercises = availableExercises.filter((exercise) => exerciseBelongsToGroup(exercise, requestedGroup));
   const isTrainingQuestion = /entren|ejercicio|rutina|cambia|alternativa|reemplaz|espalda|pecho|pierna|brazo|b[ií]ceps|tr[ií]ceps|hombro|abdomen/i.test(
     `${message ?? ''}`,
   );
-  if (!isTrainingQuestion || availableExercises.length === 0) return [];
+  if (!isTrainingQuestion || filteredExercises.length === 0) return [];
 
-  const count = Math.min(requestedCount ?? 3, availableExercises.length);
+  const count = Math.min(requestedCount ?? 3, filteredExercises.length);
   const normalizedResponse = String(responseText).toLowerCase();
-  const matched = availableExercises.filter((exercise) => {
+  const matched = filteredExercises.filter((exercise) => {
     const name = String(exercise.name ?? '').trim().toLowerCase();
     const slug = String(exercise.slug ?? '').trim().toLowerCase();
     return (name && normalizedResponse.includes(name)) || (slug && normalizedResponse.includes(slug));
   });
-  const selected = [...matched, ...availableExercises.filter((exercise) => !matched.includes(exercise))].slice(0, count);
+  const selected = [...matched, ...filteredExercises.filter((exercise) => !matched.includes(exercise))].slice(0, count);
 
   return selected.map((exercise) => {
     const recommendation = exercise.recommendation ?? {};
@@ -277,6 +282,36 @@ export function selectAssistantExercises({
       recommendationFocus: recommendation.focus ?? 'técnica y movimiento seguro',
     };
   });
+}
+
+export function enforceExerciseResponse({
+  message,
+  responseText = '',
+  recommendedExercises = [],
+  requestedGroup = '',
+  requestedCount = null,
+}) {
+  const isTrainingQuestion = /entren|ejercicio|rutina|cambia|alternativa|reemplaz|espalda|pecho|pierna|brazo|b[ií]ceps|tr[ií]ceps|hombro|abdomen/i.test(
+    `${message ?? ''}`,
+  );
+  if (!isTrainingQuestion || recommendedExercises.length === 0 || (requestedCount === null && !requestedGroup)) {
+    return responseText;
+  }
+
+  const groupLabel = requestedGroup ? ` de ${requestedGroup}` : '';
+  const quantityLabel = requestedCount !== null && recommendedExercises.length === requestedCount
+    ? `exactamente ${requestedCount}`
+    : `${recommendedExercises.length}`;
+  const lines = recommendedExercises.map((exercise, index) => {
+    const technique = exercise.technique || exercise.description || '';
+    return `${index + 1}. ${exercise.name}${technique ? `: ${technique}` : ''}`;
+  });
+
+  return [
+    `Te recomiendo ${quantityLabel} ejercicio${recommendedExercises.length === 1 ? '' : 's'}${groupLabel} del catálogo de FITTRACK:`,
+    ...lines,
+    'La selección respeta el grupo muscular, tu objetivo y el catálogo disponible.',
+  ].join('\n');
 }
 
 // TheMealDB is a real catalogue with many English records. This deterministic

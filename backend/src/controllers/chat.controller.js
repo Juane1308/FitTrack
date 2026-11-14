@@ -1,6 +1,7 @@
 import {
   askGemini,
   buildAssistantFallback,
+  enforceExerciseResponse,
   selectAssistantExercises,
 } from '../services/gemini.service.js';
 import { inferExerciseGroup, listExercises, requestedExerciseCount } from '../services/exercise.service.js';
@@ -56,10 +57,18 @@ export async function chatController(request, response, next) {
       exerciseCatalog,
       exercises,
       requestedCount,
+      requestedGroup,
+    });
+    const assistantMessage = enforceExerciseResponse({
+      message,
+      responseText: text,
+      recommendedExercises,
+      requestedGroup,
+      requestedCount,
     });
     return response.json({
       data: {
-        message: text,
+        message: assistantMessage,
         exercises: recommendedExercises,
       },
     });
