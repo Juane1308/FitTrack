@@ -7,17 +7,20 @@ import '../../models/app_models.dart';
 import '../../providers/app_state_provider.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/progress_provider.dart';
+import '../../providers/training_provider.dart';
 import '../../widgets/charts/weekly_activity_chart.dart';
 import '../../widgets/common/app_card.dart';
 
 class HomeScreenEnhanced extends StatelessWidget {
   const HomeScreenEnhanced({
     this.onOpenTraining,
+    this.onStartRoutine,
     this.onOpenProgress,
     super.key,
   });
 
   final VoidCallback? onOpenTraining;
+  final ValueChanged<WorkoutDay>? onStartRoutine;
   final VoidCallback? onOpenProgress;
 
   @override
@@ -26,7 +29,16 @@ class HomeScreenEnhanced extends StatelessWidget {
     final dashboard = state.dashboard;
     final user = context.watch<AuthProvider>().currentUser;
     final progress = context.watch<ProgressProvider>().data;
+    final training = context.watch<TrainingProvider>();
     if (user == null) return const SizedBox.shrink();
+
+    WorkoutDay? recommendedWorkout;
+    for (final day in training.weeklyPlan) {
+      if (!day.completed) {
+        recommendedWorkout = day;
+        break;
+      }
+    }
 
     final summary = progress.summary;
     final plannedDays = summary.plannedDays > 0
@@ -38,9 +50,12 @@ class HomeScreenEnhanced extends StatelessWidget {
     final progressPercent = plannedDays == 0
         ? 0.0
         : (completedDays / plannedDays).clamp(0.0, 1.0).toDouble();
-    final canStart =
-        dashboard.routineName.trim().isNotEmpty &&
-        dashboard.routineName != 'Sin rutina';
+    final canStart = recommendedWorkout != null;
+    final routineName =
+        recommendedWorkout?.title ??
+        (training.weeklyPlan.isEmpty
+            ? dashboard.routineName
+            : 'Meta semanal completada');
 
     return Stack(
       children: [
@@ -95,9 +110,7 @@ class HomeScreenEnhanced extends StatelessWidget {
                   const SizedBox(height: 20),
                   _SectionHeading(
                     eyebrow: 'PLAN DE HOY',
-                    title: canStart
-                        ? dashboard.routineName
-                        : 'Tu rutina está por definirse',
+                    title: routineName,
                     actionLabel: 'Ver entrenamiento',
                     onAction: onOpenTraining,
                   ),
@@ -105,7 +118,13 @@ class HomeScreenEnhanced extends StatelessWidget {
                   _TodayWorkoutCard(
                     dashboard: dashboard,
                     available: canStart,
-                    onStart: onOpenTraining,
+                    weeklyComplete:
+                        training.weeklyPlan.isNotEmpty &&
+                        recommendedWorkout == null,
+                    workout: recommendedWorkout,
+                    onStart: recommendedWorkout == null
+                        ? onOpenTraining
+                        : () => onStartRoutine?.call(recommendedWorkout!),
                   ),
                   const SizedBox(height: 20),
                   const _SectionHeading(
@@ -328,16 +347,22 @@ class _TodayWorkoutCard extends StatelessWidget {
   const _TodayWorkoutCard({
     required this.dashboard,
     required this.available,
+    required this.weeklyComplete,
+    this.workout,
     this.onStart,
   });
 
   final DashboardSummary dashboard;
   final bool available;
+  final bool weeklyComplete;
+  final WorkoutDay? workout;
   final VoidCallback? onStart;
 
   @override
   Widget build(BuildContext context) {
-    final routineImageUrl = dashboard.routineImageUrl?.isNotEmpty == true
+    final routineImageUrl = workout?.imageUrl?.isNotEmpty == true
+        ? workout!.imageUrl!
+        : dashboard.routineImageUrl?.isNotEmpty == true
         ? dashboard.routineImageUrl!
         : ApiConfig.mediaUrl('routine-cover');
 
@@ -410,7 +435,11 @@ class _TodayWorkoutCard extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      available ? dashboard.routineName : 'Sin rutina asignada',
+                      available
+                          ? (workout?.title ?? dashboard.routineName)
+                          : (weeklyComplete
+                                ? 'Meta semanal completada'
+                                : 'Sin rutina asignada'),
                       style: const TextStyle(
                         fontSize: 21,
                         fontWeight: FontWeight.w900,
@@ -419,7 +448,9 @@ class _TodayWorkoutCard extends StatelessWidget {
                     const SizedBox(height: 5),
                     Text(
                       available
-                          ? '${dashboard.routineDate} · ${dashboard.durationMinutes} min · ${dashboard.difficulty}'
+                          ? '${workout?.dayLabel ?? dashboard.routineDate} · ${workout?.durationMinutes ?? dashboard.durationMinutes} min · Rutina recomendada'
+                          : weeklyComplete
+                          ? 'Ya completaste los entrenamientos de esta semana.'
                           : 'Abre Entrenar para configurar tu siguiente sesión.',
                       style: const TextStyle(color: Colors.white70),
                     ),

@@ -28,6 +28,7 @@ class TrainingProvider extends ChangeNotifier {
   bool _personalRoutinesLoading = false;
   String? _personalRoutinesError;
   int _userDataGeneration = 0;
+  int _weekRequestSequence = 0;
 
   TrainingLoadStatus get status => _status;
   List<Exercise> get exercises => _exercises;
@@ -45,7 +46,9 @@ class TrainingProvider extends ChangeNotifier {
 
   void clearUserData() {
     _userDataGeneration++;
+    _weekRequestSequence++;
     _weeklyPlan = const [];
+    _exercises = const [];
     _weekLoading = false;
     _weekError = null;
     _userRoutines = const [];
@@ -147,31 +150,55 @@ class TrainingProvider extends ChangeNotifier {
   }
 
   Future<void> loadWeeklyPlan(String token, {bool forceRefresh = false}) async {
-    if (_weekLoading || (_weeklyPlan.isNotEmpty && !forceRefresh)) return;
+    if ((!forceRefresh && _weekLoading) ||
+        (_weeklyPlan.isNotEmpty && !forceRefresh)) {
+      return;
+    }
+    final requestGeneration = _userDataGeneration;
+    final requestSequence = ++_weekRequestSequence;
     _weekLoading = true;
     _weekError = null;
     notifyListeners();
     try {
-      _weeklyPlan = await _trainingRepository.fetchWeek(token);
+      final week = await _trainingRepository.fetchWeek(token);
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _weekRequestSequence) {
+        _weeklyPlan = week;
+      }
     } catch (_) {
-      _weekError = 'No se pudo generar tu rutina semanal.';
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _weekRequestSequence) {
+        _weekError = 'No se pudo generar tu rutina semanal.';
+      }
     } finally {
-      _weekLoading = false;
-      notifyListeners();
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _weekRequestSequence) {
+        _weekLoading = false;
+        notifyListeners();
+      }
     }
   }
 
   Future<void> toggleDay(String token, WorkoutDay day) async {
+    final requestGeneration = _userDataGeneration;
+    final requestSequence = ++_weekRequestSequence;
     try {
-      _weeklyPlan = await _trainingRepository.completeDay(
+      final week = await _trainingRepository.completeDay(
         token,
         day.date,
         !day.completed,
       );
-      notifyListeners();
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _weekRequestSequence) {
+        _weeklyPlan = week;
+        notifyListeners();
+      }
     } catch (_) {
-      _weekError = 'No se pudo actualizar el día de entrenamiento.';
-      notifyListeners();
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _weekRequestSequence) {
+        _weekError = 'No se pudo actualizar el día de entrenamiento.';
+        notifyListeners();
+      }
     }
   }
 
@@ -181,13 +208,16 @@ class TrainingProvider extends ChangeNotifier {
     required int durationSeconds,
     required String performedOn,
   }) async {
+    final requestGeneration = _userDataGeneration;
     await _trainingRepository.recordActivity(
       token: token,
       routineName: routineName,
       durationSeconds: durationSeconds,
       performedOn: performedOn,
     );
-    await loadWeeklyPlan(token, forceRefresh: true);
+    if (requestGeneration == _userDataGeneration) {
+      await loadWeeklyPlan(token, forceRefresh: true);
+    }
   }
 
   Future<void> loadExercises({
@@ -208,6 +238,7 @@ class TrainingProvider extends ChangeNotifier {
 
     _status = TrainingLoadStatus.loading;
     _errorMessage = null;
+    final requestGeneration = _userDataGeneration;
     notifyListeners();
 
     try {
@@ -215,6 +246,7 @@ class TrainingProvider extends ChangeNotifier {
         group: group == 'all' ? null : group,
         goal: goal,
       );
+      if (requestGeneration != _userDataGeneration) return;
       _exercises = exercises;
       _status = TrainingLoadStatus.ready;
       if (_exercises.isEmpty) {
@@ -222,6 +254,7 @@ class TrainingProvider extends ChangeNotifier {
             'No hay ejercicios reales disponibles para este filtro.';
       }
     } catch (_) {
+      if (requestGeneration != _userDataGeneration) return;
       _exercises = const [];
       _status = TrainingLoadStatus.error;
       _errorMessage = 'No se pudo consultar el catálogo de ejercicios.';
@@ -231,6 +264,15 @@ class TrainingProvider extends ChangeNotifier {
 
   Future<Exercise> loadDetails(Exercise exercise) {
     if (exercise.slug.isEmpty) return Future.value(exercise);
-    return _repository.fetchExercise(exercise.slug);
+    return _repository
+        .fetchExercise(exercise.slug)
+        .then(
+          (detail) => detail.copyWith(
+            sets: exercise.sets,
+            repetitions: exercise.repetitions,
+            recommendedRepetitions: exercise.recommendedRepetitions,
+            recommendationFocus: exercise.recommendationFocus,
+          ),
+        );
   }
 }

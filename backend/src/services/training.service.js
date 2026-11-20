@@ -42,8 +42,9 @@ export async function getWeeklyTraining(userId) {
   const preferences = asObject(profile.preferences);
   const weekStart = mondayKey(new Date());
   const storedPlan = preferences.trainingPlan;
+  const weekActivities = await listWeekActivities(prisma, userId, weekStart);
   if (storedPlan?.weekStart === weekStart && storedPlan.generatedBy === 'fittrack-recommender-v2' && Array.isArray(storedPlan.days)) {
-    return decoratePlan(storedPlan);
+    return decoratePlan(storedPlan, weekActivities);
   }
 
   const trainingDays = clampDays(preferences.trainingDays);
@@ -93,7 +94,7 @@ export async function getWeeklyTraining(userId) {
     where: { userId },
     data: { preferences: { ...preferences, trainingDays, trainingPlan } },
   });
-  return decoratePlan(trainingPlan);
+  return decoratePlan(trainingPlan, weekActivities);
 }
 
 function firstExerciseImage(images) {
@@ -143,15 +144,10 @@ export async function recordWorkoutActivity(userId, payload) {
   const { routineName, durationSeconds, performedOn } = result.data;
   const prisma = getPrismaClient();
   const activity = await prisma.$transaction(async (transaction) => {
-    const profile = await transaction.userProfile.findUnique({ where: { userId } });
+    const profile = await transaction.userProfile.findUnique({ where: { userId }, select: { userId: true } });
     if (!profile) throw new AuthError(404, 'No se encontró el perfil del usuario.');
 
-    const preferences = asObject(profile.preferences);
-    const plan = asObject(preferences.trainingPlan);
-    const days = Array.isArray(plan.days) ? plan.days : [];
-    const completedPlanDate = days.find((day) => day.date === performedOn)?.date;
-
-    const record = await transaction.workoutActivity.create({
+    return transaction.workoutActivity.create({
       data: {
         userId,
         routineName,
@@ -159,23 +155,6 @@ export async function recordWorkoutActivity(userId, payload) {
         performedOn: new Date(`${performedOn}T12:00:00.000Z`),
       },
     });
-
-    if (completedPlanDate) {
-      const sameDate = await transaction.workoutActivity.aggregate({
-        where: { userId, performedOn: new Date(`${completedPlanDate}T12:00:00.000Z`) },
-        _sum: { durationSeconds: true },
-      });
-      const actualDurationSeconds = sameDate._sum.durationSeconds ?? durationSeconds;
-      const nextDays = days.map((day) => day.date === completedPlanDate
-        ? { ...day, completed: true, actualDurationSeconds }
-        : day);
-      await transaction.userProfile.update({
-        where: { userId },
-        data: { preferences: { ...preferences, trainingPlan: { ...plan, days: nextDays } } },
-      });
-    }
-
-    return record;
   });
 
   return {
@@ -186,15 +165,45 @@ export async function recordWorkoutActivity(userId, payload) {
   };
 }
 
-function decoratePlan(plan) {
+async function listWeekActivities(prisma, userId, weekStart) {
+  const weekEnd = dateAfter(weekStart, 7);
+  return prisma.workoutActivity.findMany({
+    where: {
+      userId,
+      performedOn: {
+        gte: new Date(`${weekStart}T00:00:00.000Z`),
+        lt: new Date(`${weekEnd}T00:00:00.000Z`),
+      },
+    },
+    orderBy: [{ performedOn: 'asc' }, { createdAt: 'asc' }],
+  });
+}
+
+function decoratePlan(plan, activities) {
+  const activityDates = new Set((activities ?? []).map((activity) => activity.performedOn.toISOString().slice(0, 10)));
+  const manuallyCompletedIndexes = plan.days
+    .map((day, index) => day?.completed === true && !activityDates.has(day.date) ? index : -1)
+    .filter((index) => index >= 0);
+  const completionCount = activities == null
+    ? null
+    : Math.min(plan.days.length, activityDates.size + manuallyCompletedIndexes.length);
+  const completedIndexes = new Set(manuallyCompletedIndexes);
+  if (completionCount != null) {
+    let remaining = completionCount - completedIndexes.size;
+    for (let index = 0; index < plan.days.length && remaining > 0; index++) {
+      if (completedIndexes.has(index)) continue;
+      completedIndexes.add(index);
+      remaining--;
+    }
+  }
   return {
     weekStart: plan.weekStart,
     trainingDays: plan.trainingDays,
     generatedBy: plan.generatedBy,
-    days: plan.days.map((day) => ({
+    days: plan.days.map((day, index) => ({
       ...day,
       imageUrl: day.imageUrl || ROUTINE_COVER_PATH,
-      completed: Boolean(day.completed),
+      completed: completionCount == null ? Boolean(day.completed) : completedIndexes.has(index),
     })),
   };
 }

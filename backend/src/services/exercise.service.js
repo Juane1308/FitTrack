@@ -8,12 +8,14 @@ export async function listExercises({ group, goal, trainingPlace, preferDatabase
   const storedExercises = preferDatabase ? await listStoredExercises({ group }) : [];
   const exercises = storedExercises.length > 0 ? storedExercises : await getExerciseIndex();
   const normalizedGroup = group?.trim().toLowerCase();
-  const recommendation = recommendationFor(goal);
 
   return exercises
     .filter((exercise) => exerciseBelongsToGroup(exercise, normalizedGroup))
     .filter((exercise) => isAvailableAt(exercise, trainingPlace))
-    .map((exercise) => ({ ...exercise, recommendation }));
+    .map((exercise) => ({
+      ...exercise,
+      recommendation: recommendationFor(goal, exercise),
+    }));
 }
 
 export function exerciseBelongsToGroup(exercise, requestedGroup) {
@@ -228,18 +230,50 @@ function muscleCategory(values) {
   return 'general';
 }
 
-function recommendationFor(goal) {
+function recommendationFor(goal, exercise) {
   const normalized = String(goal ?? '').toUpperCase();
+  const exerciseText = normalizeExerciseText([
+    exercise?.slug,
+    exercise?.name,
+    exercise?.group,
+    ...(Array.isArray(exercise?.primaryMuscles) ? exercise.primaryMuscles : []),
+  ].join(' '));
+  const isCore = /abdomen|abdominal|core|oblic|plank|plancha|crunch|sit.?up|leg.?raise/.test(exerciseText);
+  const isTimed = /plank|plancha|wall.?sit|isometric|isometr|hold|hollow.?body/.test(exerciseText);
+  const isCompound = /press|squat|sentadilla|deadlift|peso.?muerto|row|remo|pull.?up|dominada|push.?up|flexion|dip|fondos|lunge|zancada|hip.?thrust/.test(exerciseText);
+  const sets = normalized.includes('STRENGTH') || normalized.includes('FUERZA')
+    ? (isCompound ? 4 : 3)
+    : normalized.includes('MUSCLE') || normalized.includes('MASA')
+      ? (isCompound ? 4 : 3)
+      : (isCompound && !isCore ? 4 : 3);
+
+  if (isCore) {
+    return {
+      goal: goalLabelForRecommendation(goal),
+      sets: 3,
+      repetitions: isTimed ? '30-45 segundos' : '12-20',
+      focus: isTimed ? 'mantén una postura firme y respira con control' : 'control del movimiento y estabilidad del tronco',
+    };
+  }
+
   if (normalized.includes('STRENGTH') || normalized.includes('FUERZA')) {
-    return { goal: 'Ganar fuerza', sets: 4, repetitions: '4-8', focus: 'cargas controladas y descansos amplios' };
+    return { goal: 'Ganar fuerza', sets, repetitions: isCompound ? '4-8' : '8-12', focus: 'cargas controladas y descansos amplios' };
   }
-  if (normalized.includes('MUSCLE') || normalized.includes('MASA')) {
-    return { goal: 'Ganar masa muscular', sets: 3, repetitions: '8-12', focus: 'progresión gradual y técnica' };
+  if (normalized.includes('MUSCLE') || normalized.includes('MASA') || normalized.includes('GANAR')) {
+    return { goal: 'Ganar masa muscular', sets, repetitions: isCompound ? '6-10' : '10-15', focus: 'progresión gradual y técnica' };
   }
-  if (normalized.includes('WEIGHT') || normalized.includes('GRASA')) {
-    return { goal: 'Perder grasa', sets: 3, repetitions: '10-15', focus: 'circuitos moderados y constancia' };
+  if (normalized.includes('WEIGHT') || normalized.includes('GRASA') || normalized.includes('BAJAR') || normalized.includes('PERDER')) {
+    return { goal: 'Perder grasa', sets, repetitions: isCompound ? '10-15' : '12-18', focus: 'circuitos moderados y constancia' };
   }
-  return { goal: 'Mantenerme activo', sets: 3, repetitions: '8-12', focus: 'técnica y movimiento seguro' };
+  return { goal: 'Mantenerme activo', sets, repetitions: isCompound ? '8-12' : '10-15', focus: 'técnica y movimiento seguro' };
+}
+
+function goalLabelForRecommendation(goal) {
+  const normalized = String(goal ?? '').toUpperCase();
+  if (normalized.includes('STRENGTH') || normalized.includes('FUERZA')) return 'Ganar fuerza';
+  if (normalized.includes('MUSCLE') || normalized.includes('MASA') || normalized.includes('GANAR')) return 'Ganar masa muscular';
+  if (normalized.includes('WEIGHT') || normalized.includes('GRASA') || normalized.includes('BAJAR') || normalized.includes('PERDER')) return 'Perder grasa';
+  return 'Mantenerme activo';
 }
 
 function localizedValue(value) {

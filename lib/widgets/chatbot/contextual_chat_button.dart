@@ -298,7 +298,7 @@ class _RecommendedExerciseCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '${exercise.muscleCategory} · ${exercise.sets} series × ${exercise.recommendedRepetitions}',
+                    '${exercise.muscleCategory} · ${exercise.sets} series × ${exercise.targetLabel}',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(

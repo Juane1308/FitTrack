@@ -12,6 +12,8 @@ class ProgressProvider extends ChangeNotifier {
   ProgressData _data = ProgressData.empty;
   ProgressLoadStatus _status = ProgressLoadStatus.idle;
   String? _error;
+  int _userDataGeneration = 0;
+  int _requestSequence = 0;
 
   ProgressData get data => _data;
   ProgressLoadStatus get status => _status;
@@ -19,6 +21,8 @@ class ProgressProvider extends ChangeNotifier {
   String? get error => _error;
 
   void clearUserData() {
+    _userDataGeneration++;
+    _requestSequence++;
     _data = ProgressData.empty;
     _status = ProgressLoadStatus.idle;
     _error = null;
@@ -26,18 +30,33 @@ class ProgressProvider extends ChangeNotifier {
   }
 
   Future<void> load(String token, {bool forceRefresh = false}) async {
-    if (isLoading || (_status == ProgressLoadStatus.ready && !forceRefresh)) return;
+    if ((!forceRefresh && isLoading) ||
+        (_status == ProgressLoadStatus.ready && !forceRefresh)) {
+      return;
+    }
+    final requestGeneration = _userDataGeneration;
+    final requestSequence = ++_requestSequence;
     _status = ProgressLoadStatus.loading;
     _error = null;
     notifyListeners();
     try {
-      _data = await _repository.fetch(token);
-      _status = ProgressLoadStatus.ready;
+      final data = await _repository.fetch(token);
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _requestSequence) {
+        _data = data;
+        _status = ProgressLoadStatus.ready;
+      }
     } catch (_) {
-      _status = ProgressLoadStatus.error;
-      _error = 'No se pudo cargar tu progreso.';
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _requestSequence) {
+        _status = ProgressLoadStatus.error;
+        _error = 'No se pudo cargar tu progreso.';
+      }
     }
-    notifyListeners();
+    if (requestGeneration == _userDataGeneration &&
+        requestSequence == _requestSequence) {
+      notifyListeners();
+    }
   }
 
   Future<void> addEntry({
@@ -47,23 +66,35 @@ class ProgressProvider extends ChangeNotifier {
     DateTime? recordedAt,
     double? targetWeight,
   }) async {
+    final requestGeneration = _userDataGeneration;
+    final requestSequence = ++_requestSequence;
     _status = ProgressLoadStatus.loading;
     _error = null;
     notifyListeners();
     try {
-      _data = await _repository.addEntry(
+      final data = await _repository.addEntry(
         token: token,
         weight: weight,
         height: height,
         recordedAt: recordedAt,
         targetWeight: targetWeight,
       );
-      _status = ProgressLoadStatus.ready;
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _requestSequence) {
+        _data = data;
+        _status = ProgressLoadStatus.ready;
+      }
     } catch (_) {
-      _status = ProgressLoadStatus.error;
-      _error = 'No se pudo guardar la medición.';
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _requestSequence) {
+        _status = ProgressLoadStatus.error;
+        _error = 'No se pudo guardar la medición.';
+      }
     }
-    notifyListeners();
+    if (requestGeneration == _userDataGeneration &&
+        requestSequence == _requestSequence) {
+      notifyListeners();
+    }
   }
 
   Future<void> uploadPhoto({
@@ -72,21 +103,33 @@ class ProgressProvider extends ChangeNotifier {
     required String mimeType,
     String fileName = 'progreso.jpg',
   }) async {
+    final requestGeneration = _userDataGeneration;
+    final requestSequence = ++_requestSequence;
     _status = ProgressLoadStatus.loading;
     _error = null;
     notifyListeners();
     try {
-      _data = await _repository.uploadPhoto(
+      final data = await _repository.uploadPhoto(
         token: token,
         bytes: bytes,
         mimeType: mimeType,
         fileName: fileName,
       );
-      _status = ProgressLoadStatus.ready;
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _requestSequence) {
+        _data = data;
+        _status = ProgressLoadStatus.ready;
+      }
     } catch (_) {
-      _status = ProgressLoadStatus.error;
-      _error = 'No se pudo guardar la foto. Verifica que hayas completado la semana.';
+      if (requestGeneration == _userDataGeneration &&
+          requestSequence == _requestSequence) {
+        _status = ProgressLoadStatus.error;
+        _error = 'No se pudo guardar la foto. Verifica que hayas completado la semana.';
+      }
     }
-    notifyListeners();
+    if (requestGeneration == _userDataGeneration &&
+        requestSequence == _requestSequence) {
+      notifyListeners();
+    }
   }
 }

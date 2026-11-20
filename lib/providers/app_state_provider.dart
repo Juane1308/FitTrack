@@ -19,6 +19,7 @@ class AppStateProvider extends ChangeNotifier {
 
   late DashboardSummary _dashboard;
   late List<Routine> _routines;
+  int _userDataGeneration = 0;
 
   UserProfile _profile = const UserProfile(
     goal: 'Definir objetivo',
@@ -48,6 +49,7 @@ class AppStateProvider extends ChangeNotifier {
       _remoteProfile?.goal != 'Definir objetivo';
 
   void clearUserData() {
+    _userDataGeneration++;
     _profile = const UserProfile(
       goal: 'Definir objetivo', birthDate: null, weight: null, height: null,
       sport: '', trainingPlace: '', injuries: '', pain: '', surgeries: '',
@@ -65,7 +67,9 @@ class AppStateProvider extends ChangeNotifier {
   }
 
   Future<UserProfile?> loadRemoteProfile(String token) async {
+    final requestGeneration = _userDataGeneration;
     final profile = await _profileRepository.fetchProfile(token);
+    if (requestGeneration != _userDataGeneration) return profile;
     _remoteProfile = profile;
     if (profile != null) {
       _profile = profile;
@@ -75,13 +79,18 @@ class AppStateProvider extends ChangeNotifier {
   }
 
   Future<void> saveRemoteProfile(String token, UserProfile profile) async {
-    _profile = await _profileRepository.saveProfile(token, profile);
+    final requestGeneration = _userDataGeneration;
+    final savedProfile = await _profileRepository.saveProfile(token, profile);
+    if (requestGeneration != _userDataGeneration) return;
+    _profile = savedProfile;
     _remoteProfile = _profile;
     notifyListeners();
   }
 
   Future<void> loadRemoteTraining(String token) async {
+    final requestGeneration = _userDataGeneration;
     final week = await _trainingRepository.fetchWeek(token);
+    if (requestGeneration != _userDataGeneration) return;
     final completedDays = week.where((day) => day.completed).length;
     WorkoutDay? activeDay;
     for (final day in week) {

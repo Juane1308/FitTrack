@@ -33,7 +33,9 @@ export async function getProgress(userId) {
   const days = Array.isArray(plan.days) ? plan.days : [];
   const serializedEntries = entries.map(serializeEntry);
   const photos = await getPhotos(userId);
-  const weekStart = plan.weekStart ?? mondayKey(new Date());
+  // El perfil puede conservar el plan de la semana anterior hasta que se
+  // regenere. El progreso debe consultar siempre la semana calendario actual.
+  const weekStart = mondayKey(new Date());
   const weekEnd = dateAfter(weekStart, 7);
   const [weekActivities, recentActivities, lifetimeDuration] = await Promise.all([
     prisma.workoutActivity.findMany({
@@ -56,19 +58,21 @@ export async function getProgress(userId) {
   const initialWeight = serializedEntries[0]?.weight ?? currentWeight;
   const activityDates = new Set(weekActivities.map((activity) => dateKey(activity.performedOn)));
   const planCompletedDates = days.filter((day) => day?.completed === true).map((day) => day.date);
-  const completedDates = new Set([...activityDates, ...planCompletedDates]);
-  const completedDays = completedDates.size;
   const plannedDays = Number(plan.trainingDays ?? profileTrainingDays(preferences));
+  const legacyCompletedDays = planCompletedDates.filter((date) =>
+    date >= weekStart && date < weekEnd && !activityDates.has(date),
+  ).length;
+  const completedDays = Math.min(plannedDays, activityDates.size + legacyCompletedDays);
   const weekly = buildWeekly(weekStart, days, weekActivities);
   const targetWeight = numberOrNull(preferences.targetWeight) ?? serializedEntries.at(-1)?.targetWeight ?? null;
   const completionPercent = currentWeight != null && targetWeight != null
     ? calculateCompletion(currentWeight, targetWeight)
     : null;
-  const weekComplete = days.length > 0 && days.filter((day) => day?.planned !== false).every((day) => day?.completed === true);
+  const weekComplete = plannedDays > 0 && completedDays >= plannedDays;
   const hasCurrentWeekPhoto = photos.some((photo) => photo.weekStart === weekStart);
   const activitySeconds = weekActivities.reduce((total, activity) => total + activity.durationSeconds, 0);
   const legacyCompletedSeconds = days
-    .filter((day) => day?.completed === true && !activityDates.has(day.date))
+    .filter((day) => day?.date >= weekStart && day?.date < weekEnd && day?.completed === true && !activityDates.has(day.date))
     .reduce((total, day) => total + Number(day.actualDurationSeconds ?? Number(day.durationMinutes ?? 0) * 60), 0);
 
   return {

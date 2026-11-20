@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/constants/app_constants.dart';
+import '../../models/app_models.dart';
+import '../../providers/auth_provider.dart';
+import '../../providers/progress_provider.dart';
+import '../../providers/training_provider.dart';
 import '../../widgets/chatbot/contextual_chat_button.dart';
 import '../nutrition/nutrition_screen.dart';
 import '../profile/profile_screen_enhanced.dart';
@@ -17,8 +22,33 @@ class MainShell extends StatefulWidget {
 
 class _MainShellState extends State<MainShell> {
   int _selectedIndex = 0;
+  WorkoutDay? _routineToStart;
 
   static const _sections = AppSection.values;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final token = context.read<AuthProvider>().sessionToken;
+      if (token == null) return;
+      context.read<TrainingProvider>().loadWeeklyPlan(token);
+      context.read<ProgressProvider>().load(token);
+    });
+  }
+
+  void _startRecommendedRoutine(WorkoutDay day) {
+    setState(() {
+      _selectedIndex = 1;
+      _routineToStart = day;
+    });
+  }
+
+  void _routineRequestHandled() {
+    if (!mounted || _routineToStart == null) return;
+    setState(() => _routineToStart = null);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +56,13 @@ class _MainShellState extends State<MainShell> {
     final screens = [
       HomeScreenEnhanced(
         onOpenTraining: () => setState(() => _selectedIndex = 1),
+        onStartRoutine: _startRecommendedRoutine,
         onOpenProgress: () => setState(() => _selectedIndex = 3),
       ),
-      const TrainingScreen(),
+      TrainingScreen(
+        routineToStart: _routineToStart,
+        onRoutineStarted: _routineRequestHandled,
+      ),
       const NutritionScreen(),
       const ProgressScreenEnhanced(),
       const ProfileScreenEnhanced(),

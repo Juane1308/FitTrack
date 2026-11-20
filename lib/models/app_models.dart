@@ -223,6 +223,38 @@ class Exercise {
   final String? imageUrl;
   final List<String> instructions;
   final String description;
+
+  Exercise copyWith({
+    int? sets,
+    int? repetitions,
+    String? recommendedRepetitions,
+    String? recommendationFocus,
+  }) => Exercise(
+    name: name,
+    technique: technique,
+    sets: sets ?? this.sets,
+    repetitions: repetitions ?? this.repetitions,
+    slug: slug,
+    group: group,
+    level: level,
+    primaryMuscle: primaryMuscle,
+    muscleCategory: muscleCategory,
+    recommendedRepetitions:
+        recommendedRepetitions ?? this.recommendedRepetitions,
+    recommendationFocus: recommendationFocus ?? this.recommendationFocus,
+    imageUrl: imageUrl,
+    instructions: instructions,
+    description: description,
+  );
+
+  bool get isTimedTarget => RegExp(
+    r'segund|minut',
+    caseSensitive: false,
+  ).hasMatch(recommendedRepetitions);
+
+  String get targetLabel => isTimedTarget
+      ? recommendedRepetitions
+      : '$recommendedRepetitions repeticiones';
 }
 
 class Food {

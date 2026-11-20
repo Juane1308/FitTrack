@@ -15,7 +15,10 @@ import 'exercise_detail_screen.dart';
 
 /// Entrenamiento carga catálogo, plan semanal y personalización desde el backend.
 class TrainingScreen extends StatefulWidget {
-  const TrainingScreen({super.key});
+  const TrainingScreen({this.routineToStart, this.onRoutineStarted, super.key});
+
+  final WorkoutDay? routineToStart;
+  final VoidCallback? onRoutineStarted;
 
   @override
   State<TrainingScreen> createState() => _TrainingScreenState();
@@ -67,6 +70,32 @@ class _TrainingScreenState extends State<TrainingScreen> {
         context.read<TrainingProvider>().loadWeeklyPlan(token);
         context.read<RecommendationProvider>().load(token);
       }
+      final routineRequest = widget.routineToStart;
+      if (routineRequest != null && mounted) {
+        _startRoutine(_TrainingRoutine.fromWorkoutDay(routineRequest));
+        widget.onRoutineStarted?.call();
+      }
+    });
+  }
+
+  @override
+  void didUpdateWidget(covariant TrainingScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    final request = widget.routineToStart;
+    if (request == null || identical(request, oldWidget.routineToStart)) return;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      if (_sessionActive) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Termina la rutina actual antes de comenzar otra.'),
+          ),
+        );
+        widget.onRoutineStarted?.call();
+        return;
+      }
+      _startRoutine(_TrainingRoutine.fromWorkoutDay(request));
+      widget.onRoutineStarted?.call();
     });
   }
 
@@ -987,7 +1016,9 @@ class _TrainingScreenState extends State<TrainingScreen> {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    'Objetivo: ${exercise.recommendedRepetitions} repeticiones',
+                    exercise.isTimedTarget
+                        ? 'Objetivo: mantener la posición durante ${exercise.recommendedRepetitions}'
+                        : 'Objetivo: ${exercise.recommendedRepetitions} repeticiones',
                     style: const TextStyle(color: AppColors.mutedText),
                   ),
                   const SizedBox(height: 12),
@@ -995,6 +1026,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
                     current: _setNumber,
                     total: sets,
                     repetitions: exercise.recommendedRepetitions,
+                    isTimed: exercise.isTimedTarget,
                   ),
                   const SizedBox(height: 12),
                   Container(
@@ -1720,11 +1752,13 @@ class _CurrentSeriesCard extends StatelessWidget {
     required this.current,
     required this.total,
     required this.repetitions,
+    required this.isTimed,
   });
 
   final int current;
   final int total;
   final String repetitions;
+  final bool isTimed;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -1777,7 +1811,9 @@ class _CurrentSeriesCard extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          'Completa $repetitions repeticiones y registra el fin de la serie.',
+          isTimed
+              ? 'Mantén la posición durante $repetitions y registra el fin de la serie.'
+              : 'Completa $repetitions repeticiones y registra el fin de la serie.',
           style: const TextStyle(color: AppColors.text, fontSize: 12),
         ),
       ],
@@ -1840,7 +1876,7 @@ class _ExerciseRow extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   Text(
-                    '${exercise.primaryMuscle.isEmpty ? exercise.muscleCategory : exercise.primaryMuscle} · ${exercise.sets} series × ${exercise.recommendedRepetitions} repeticiones',
+                    '${exercise.primaryMuscle.isEmpty ? exercise.muscleCategory : exercise.primaryMuscle} · ${exercise.sets} series × ${exercise.targetLabel}',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(

@@ -45,7 +45,10 @@ class ExerciseDetailScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     _Stat(label: 'Series', value: '${detail.sets}'),
-                    _Stat(label: 'Repeticiones', value: '${detail.repetitions}'),
+                    _Stat(
+                      label: detail.isTimedTarget ? 'Duración' : 'Objetivo',
+                      value: detail.recommendedRepetitions,
+                    ),
                     if (detail.primaryMuscle.isNotEmpty)
                       _Stat(label: 'Músculo', value: detail.primaryMuscle),
                   ],
@@ -54,7 +57,7 @@ class ExerciseDetailScreen extends StatelessWidget {
               const SizedBox(height: 16),
               AppCard(
                 child: Text(
-                  'Recomendado para ${detail.recommendationFocus}. ${detail.sets} series de ${detail.recommendedRepetitions} repeticiones para tu meta.',
+                  'Recomendado para ${detail.recommendationFocus}. ${detail.sets} series de ${detail.targetLabel} para tu meta.',
                 ),
               ),
               const SizedBox(height: 16),
